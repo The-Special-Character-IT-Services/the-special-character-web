@@ -78,11 +78,6 @@ const Button = ({
             font-size: 13px;
             color: black;
             padding: 10px 20px;
-            text-transform: uppercase;
-            font-weight: 600;
-            border-width: 2px;
-            border-color: gray;
-            border: solid;
           }
         `}
       </style>
