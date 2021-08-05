@@ -1,4 +1,3 @@
-import React from 'react';
 import cn from 'classnames';
 
 interface Props {}
@@ -19,64 +18,54 @@ const variantsMapping = {
   blockquote: 'blockquote',
 };
 
-const Typography = ({ variant, children, ...props }: Props) => {
+const Typography = ({ variant, children, className, ...props }: Props) => {
   const Component = variant ? variantsMapping[variant] : 'p';
   return (
-    <Component className={`typography--class-${variant}`} {...props}>
+    <Component
+      className={cn(`typography--class-${variant} ${className}`)}
+      {...props}>
       {children}
       <style jsx>
         {`
-          .typography--class-h1 {
-            margin-top: 0;
-            margin-bottom: 1.5rem;
+          .commonHeading {
             font-family: Newsreader, sans-serif;
+            margin-top: 0;
+            font-weight: bold;
+          }
+          .mb1rem {
+            margin-bottom: 1rem;
+          }
+          .typography--class-h1 {
+            margin-bottom: 1.5rem;
             color: #0f437f;
             font-size: 3.75em;
             line-height: 1.3em;
-            font-weight: 600;
           }
           .typography--class-h2 {
-            margin-top: 0;
-            margin-bottom: 1rem;
-            font-family: Newsreader, sans-serif;
             color: #0f437f;
             font-size: 2.375em;
             line-height: 1.289em;
-            font-weight: 600;
           }
           .typography--class-h3 {
-            margin-top: 0;
-            margin-bottom: 1rem;
             color: #1e3d60;
             font-size: 1.5em;
             line-height: 1.5em;
-            font-weight: 700;
           }
           .typography--class-h4 {
-            margin-top: 0;
-            margin-bottom: 1rem;
             color: #1e3d60;
             font-size: 1.25em;
             line-height: 1.5em;
-            font-weight: 700;
           }
           .typography--class-h5 {
-            margin-top: 0;
-            margin-bottom: 1rem;
-            font-family: Newsreader, sans-serif;
             color: #0f437f;
             font-size: 1.125em;
             line-height: 1.444em;
-            font-weight: 600;
           }
           .typography--class-h6 {
-            margin-top: 0;
             margin-bottom: 0.625rem;
-            font-family: Newsreader, sans-serif;
             color: #0f437f;
             font-size: 1em;
             line-height: 1.5em;
-            font-weight: 600;
           }
           .typography--class-smallP {
             font-size: 0.938em;
