@@ -1,7 +1,9 @@
-interface Props {}
+type Props = {
+  children: JSX.Element;
+};
 
-const Layout = (props: Props) => {
-  return <></>;
+const Layout = ({ children }: Props) => {
+  return <>{children}</>;
 };
 
 export default Layout;
