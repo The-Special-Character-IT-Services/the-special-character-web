@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 interface Props {
   size: 'small' | 'default' | 'large';
   className: 'primary' | 'secondary' | String;
-  isDisabled: Boolean;
+  isDisabled?: Boolean;
   children: JSX.Element;
-  isLoading: Boolean;
+  isLoading?: Boolean;
   onClick: Function;
-  rest: Object;
+  rest?: Object;
 }
 
 const Button = ({
