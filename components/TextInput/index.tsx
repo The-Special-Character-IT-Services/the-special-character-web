@@ -8,13 +8,13 @@ const TextInput = ({ variant, className, component, ...rest }: Props) => {
     <div>
       {component === 'textarea' ? (
         <textarea
-          className={(variant, { className: !!className })}
+          className={`${variant} ${{ className: !!className }}`}
           component={component}
           {...rest}
         />
       ) : (
         <input
-          className={(variant, { className: !!className })}
+          className={`${variant} ${{ className: !!className }}`}
           component={component}
           {...rest}
         />
