@@ -1,7 +1,4 @@
-$breakpointSm: 576px;
-$breakpointMd: 768px;
-$breakpointLg: 992px;
-$breakpointXl: 1200px;
+@use './variables.scss';
 :root {
   --Primary1: #064ea4;
   --Secondary1: #e1edfb;
@@ -39,13 +36,13 @@ $breakpointXl: 1200px;
   --kumbhFont: 'Kumbh Sans', sans-serif;
   --newsReaderFont: Newsreader, sans-serif;
 }
-@media screen and (max-width: $breakpointLg) {
+@media screen and (max-width: variables.$breakpointLg) {
   :root {
     --fs-h1: 3.125em;
     --fs-blockquote: 1.375em;
   }
 }
-@media screen and (max-width: $breakpointMd) {
+@media screen and (max-width: variables.$breakpointMd) {
   :root {
     --fs-h1: 2.625em;
     --fs-h2: 2em;
@@ -54,7 +51,7 @@ $breakpointXl: 1200px;
     --fs-blockquote: 1.25em;
   }
 }
-@media screen and (max-width: $breakpointSm) {
+@media screen and (max-width: variables.$breakpointSm) {
   :root {
     --fs-h1: 2.188em;
     --fs-h2: 1.625em;
@@ -88,3 +85,53 @@ a {
 * {
   box-sizing: border-box;
 }
+
+$xs: 10px;
+$small: 25px;
+$medium: 50px;
+$large: 75px;
+$xlarge: 100px;
+$xxlarge: 150px;
+
+@mixin space($type: margin, $direction: all, $amount: $medium) {
+  @if $type == padding {
+    @if $direction == all {
+      padding: $amount;
+    } @else if $direction == top {
+      padding-top: $amount;
+    } @else if $direction == left {
+      padding-left: $amount;
+    } @else if $direction == right {
+      padding-right: $amount;
+    } @else if $direction == horizontal {
+      padding-right: $amount;
+      padding-left: $amount;
+    } @else if $direction == vertical {
+      padding-top: $amount;
+      padding-bottom: $amount;
+    } @else {
+      padding-bottom: $amount;
+    }
+  } @else {
+    @if $direction == all {
+      margin: $amount;
+    } @else if $direction == top {
+      margin-top: $amount;
+    } @else if $direction == left {
+      margin-left: $amount;
+    } @else if $direction == right {
+      margin-right: $amount;
+    } @else if $direction == horizontal {
+      margin-right: $amount;
+      margin-left: $amount;
+    } @else if $direction == vertical {
+      margin-top: $amount;
+      margin-bottom: $amount;
+    } @else {
+      margin-bottom: $amount;
+    }
+  }
+}
+// body {
+//   @include space(margin, horizontal, $large);
+// }
