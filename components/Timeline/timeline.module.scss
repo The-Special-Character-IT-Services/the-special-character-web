@@ -7,7 +7,7 @@
   margin-top: 1rem;
   margin-right: 1.25rem;
   border-radius: 1000px;
-  background-color: var(--Secondary3);
+  background-color: $Secondary3;
 }
 .timelineYearContent {
   display: flex;
@@ -19,11 +19,11 @@
     padding: 1rem 1.625rem;
     border-style: solid;
     border-width: 1px;
-    border-color: var(--Neutral300);
+    border-color: $Neutral300;
     border-radius: 1000px;
-    background-color: var(--Neutral100);
+    background-color: $Neutral100;
     box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
-    color: var(--Neutral700);
+    color: $Neutral700;
     line-height: 1.111em;
     font-weight: 700;
   }

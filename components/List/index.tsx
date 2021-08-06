@@ -1,8 +1,14 @@
-interface Props {}
+interface Props {
+  isNumberedList?: boolean;
+  listItem: JSX.Element;
+  props?: Object;
+  className: 'commonParentList' | String;
+  keyProp: String;
+  valueProp: String;
+}
 import cn from 'classnames';
 
 const List = ({
-  variant,
   listItem,
   className,
   keyProp,

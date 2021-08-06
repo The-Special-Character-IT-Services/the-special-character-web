@@ -1,8 +1,11 @@
-interface Props {}
+interface Props {
+  props?: Object;
+  data: JSX.Element;
+}
 import Typography from '@components/Typography';
 import styles from './timeline.module.scss';
 
-const Timeline = ({ props, data }: Props) => {
+const Timeline = ({ data, ...props }: Props) => {
   return (
     <div className="w-layout-grid timeline-grid">
       {data?.map(item => {
