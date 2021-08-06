@@ -9,11 +9,10 @@ const Divider = () => {
       <style jsx>
         {`
           div {
-            display: flex;
-            justify-content: center;
             height: 1px;
+            width: 100%;
+            opacity: 0.15;
             background-color: #415977;
-            width: 90%;
           }
         `}
       </style>
