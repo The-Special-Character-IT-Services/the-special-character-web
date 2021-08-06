@@ -1,4 +1,10 @@
-function Error({ statusCode }) {
+import { NextPageContext } from 'next';
+
+interface Props {
+  statusCode?: number;
+}
+
+const Error = ({ statusCode }: Props) => {
   return (
     <p>
       {statusCode
@@ -6,9 +12,9 @@ function Error({ statusCode }) {
         : 'An error occurred on client'}
     </p>
   );
-}
+};
 
-Error.getInitialProps = ({ res, err }) => {
+Error.getInitialProps = ({ res, err }: NextPageContext) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
   return { statusCode };
 };
