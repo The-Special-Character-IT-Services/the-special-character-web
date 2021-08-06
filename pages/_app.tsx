@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '../styles/globals.scss';
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import Layout from '@components/Layout';
 
