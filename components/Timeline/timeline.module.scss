@@ -1,0 +1,68 @@
+@import '../../styles/variables.scss';
+
+.timelineYearDot {
+  width: 1.5rem;
+  min-height: 1.5rem;
+  min-width: 1.5rem;
+  margin-top: 1rem;
+  margin-right: 1.25rem;
+  border-radius: 1000px;
+  background-color: var(--Secondary3);
+}
+.timelineYearContent {
+  display: flex;
+  max-width: 517px;
+  flex-direction: column;
+  align-items: flex-start;
+  & .timelineYear {
+    margin-bottom: 2rem;
+    padding: 1rem 1.625rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--Neutral300);
+    border-radius: 1000px;
+    background-color: var(--Neutral100);
+    box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
+    color: var(--Neutral700);
+    line-height: 1.111em;
+    font-weight: 700;
+  }
+  & .timelineYearTitle {
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+  }
+  .timelineYearParagraph {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: $breakpointLg) {
+  .timelineYearContent .timelineYear {
+    margin-bottom: 1.75rem;
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .timelineYearDot {
+    margin-right: 1.875rem;
+  }
+  .timelineYearContent {
+    max-width: none;
+    & .timelineYear {
+      margin-bottom: 1.438rem;
+    }
+  }
+  .timelineYearTitle {
+    margin-bottom: 0.625rem;
+  }
+}
+@media only screen and (max-width: $breakpointSm) {
+  .timelineYearDot {
+    margin-right: 0.938rem;
+  }
+  .timelineYearContent .timelineYear {
+    margin-bottom: 1rem;
+    padding: 0.875rem 1.25rem;
+  }
+  .timelineYearParagraph {
+    max-width: 393px;
+  }
+}
