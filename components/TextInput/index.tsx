@@ -56,14 +56,14 @@ const TextInput = ({ variant, className, component, ...rest }: Props) => {
             border-radius: 25px;
             background-color: #f9fafb;
             transition-duration: 300ms;
-          }
-          &:hover {
-            border: solid 1px #becad7;
-            transition-duration: 300ms;
-          }
-          &:focus {
-            border: solid 1px #becad7;
-            transition-duration: 300ms;
+            &:hover {
+              border: solid 1px #becad7;
+              transition-duration: 300ms;
+            }
+            &:focus {
+              border: solid 1px #becad7;
+              transition-duration: 300ms;
+            }
           }
         `}
       </style>
