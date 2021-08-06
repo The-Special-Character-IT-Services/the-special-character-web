@@ -88,3 +88,53 @@ a {
 * {
   box-sizing: border-box;
 }
+
+$xs: 10px;
+$small: 25px;
+$medium: 50px;
+$large: 75px;
+$xlarge: 100px;
+$xxlarge: 150px;
+
+@mixin space($type: margin, $direction: all, $amount: $medium) {
+  @if $type == padding {
+    @if $direction == all {
+      padding: $amount;
+    } @else if $direction == top {
+      padding-top: $amount;
+    } @else if $direction == left {
+      padding-left: $amount;
+    } @else if $direction == right {
+      padding-right: $amount;
+    } @else if $direction == horizontal {
+      padding-right: $amount;
+      padding-left: $amount;
+    } @else if $direction == vertical {
+      padding-top: $amount;
+      padding-bottom: $amount;
+    } @else {
+      padding-bottom: $amount;
+    }
+  } @else {
+    @if $direction == all {
+      margin: $amount;
+    } @else if $direction == top {
+      margin-top: $amount;
+    } @else if $direction == left {
+      margin-left: $amount;
+    } @else if $direction == right {
+      margin-right: $amount;
+    } @else if $direction == horizontal {
+      margin-right: $amount;
+      margin-left: $amount;
+    } @else if $direction == vertical {
+      margin-top: $amount;
+      margin-bottom: $amount;
+    } @else {
+      margin-bottom: $amount;
+    }
+  }
+}
+body {
+  @include space(margin, horizontal, $large);
+}

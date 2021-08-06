@@ -11,18 +11,18 @@ const variantsMapping = {
   h6: 'h6',
   smallP: 'p',
   largeP: 'p',
-  defaultP: 'p',
   a: 'a',
   bold: 'strong',
   italic: 'em',
   blockquote: 'blockquote',
+  label: 'label',
 };
 
 const Typography = ({ variant, children, className, ...props }: Props) => {
   const Component = variant ? variantsMapping[variant] : 'p';
   return (
     <Component
-      className={cn(`typography--class-${variant} `, {
+      className={cn(variant ? `typography--class-${variant}` : null, {
         [className]: !!className,
       })}
       {...props}>
@@ -103,6 +103,13 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
             box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
             font-size: var(--fs-blockquote);
             line-height: 1.583em;
+          }
+          .typography--class-label {
+            display: block;
+            margin-bottom: 1rem;
+            color: var(--Neutral700);
+            line-height: 1.111em;
+            font-weight: 700;
           }
           @media screen and (max-width: 991px) {
             .typography--class-h1 {
