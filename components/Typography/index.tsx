@@ -22,7 +22,9 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
   const Component = variant ? variantsMapping[variant] : 'p';
   return (
     <Component
-      className={cn(`typography--class-${variant} ${className}`)}
+      className={cn(`typography--class-${variant} `, {
+        [className]: !!className,
+      })}
       {...props}>
       {children}
       <style jsx>
