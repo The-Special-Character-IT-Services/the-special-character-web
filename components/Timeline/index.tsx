@@ -66,7 +66,7 @@ const Timeline = ({ data, ...props }: Props) => {
             top: 0px;
             bottom: 0px;
             width: 2px;
-            background-color: #e7eaee;
+            background-color: $Neutral300;
           }
           @media screen and (max-width: $breakpointLg) {
             .timeline-grid {
