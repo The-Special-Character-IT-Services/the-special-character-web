@@ -66,14 +66,4 @@ const TextInput = ({ name, label, className, isTextArea, ...rest }: Props) => {
   );
 };
 
-// TextInput.propTypes = {
-//   variant: PropTypes.oneOf(['contactInput', 'contactTextArea']),
-//   component: PropTypes.string,
-// };
-
-// TextInput.defaultProps = {
-//   variant: 'contactInput',
-//   component: 'input',
-// };
-
 export default TextInput;
