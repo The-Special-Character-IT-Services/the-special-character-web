@@ -1,11 +1,6 @@
 interface Props {}
 import cn from 'classnames';
 
-const variantsMapping = {
-  ul: 'ul',
-  ol: 'ol',
-};
-
 const List = ({
   variant,
   listItem,
