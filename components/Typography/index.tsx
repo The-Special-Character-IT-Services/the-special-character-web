@@ -40,7 +40,8 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
   const Component = variant ? variantsMapping[variant] : 'p';
   return (
     <Component
-      className={cn(variant ? `typography--class-${variant}` : null, {
+      className={cn({
+        [`typography--class-${variant}`]: !!variant,
         [className]: !!className,
       })}
       {...props}>
