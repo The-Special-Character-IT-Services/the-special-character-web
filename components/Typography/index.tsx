@@ -111,7 +111,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
             line-height: 1.111em;
             font-weight: 700;
           }
-          @media screen and (max-width: 991px) {
+          @media screen and (max-width: 992px) {
             .typography--class-h1 {
               margin-bottom: 1.25rem;
             }
@@ -122,7 +122,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
               padding: 3.625rem 3.938rem;
             }
           }
-          @media screen and (max-width: 767px) {
+          @media screen and (max-width: 768px) {
             .typography--class-h1 {
               margin-bottom: 1rem;
             }
@@ -136,7 +136,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
               padding: 3rem 3.125rem;
             }
           }
-          @media screen and (max-width: 479px) {
+          @media screen and (max-width: 576px) {
             .typography--class-h1 {
               margin-bottom: 0.625rem;
             }
