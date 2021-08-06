@@ -42,18 +42,18 @@ const Button = ({
           .primary {
             background-color: #064ea4;
             color: #f9fafb;
-          }
-          .primary:hover {
-            background-color: #1e3d60;
-            transform: scale(0.97);
+            &:hover {
+              background-color: #1e3d60;
+              transform: scale(0.97);
+            }
           }
           .secondary {
             background-color: #e7eaee;
             color: #1e3d60;
-          }
-          .secondary:hover {
-            background-color: #becad7;
-            transform: scale(0.97);
+            &:hover {
+              background-color: #becad7;
+              transform: scale(0.97);
+            }
           }
           .small {
             padding: 16px 30px;
