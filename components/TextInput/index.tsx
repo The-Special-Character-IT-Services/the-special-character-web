@@ -34,14 +34,15 @@ const TextInput = ({ variant, className, component, ...rest }: Props) => {
             border-radius: 30px;
             transition: ease-in-out 0.3s;
             transition-duration: 300ms;
+            &:hover {
+              border: solid 1px #becad7;
+              transition-duration: 300ms;
+            }
+            &:focus {
+              border: solid 1px #becad7;
+            }
           }
-          .contactInput:hover {
-            border: solid 1px #becad7;
-            transition-duration: 300ms;
-          }
-          .contactInput:focus {
-            border: solid 1px #becad7;
-          }
+
           .contactTextArea {
             outline: none;
             resize: vertical;
@@ -56,11 +57,11 @@ const TextInput = ({ variant, className, component, ...rest }: Props) => {
             background-color: #f9fafb;
             transition-duration: 300ms;
           }
-          .contactTextArea:hover {
+          &:hover {
             border: solid 1px #becad7;
             transition-duration: 300ms;
           }
-          .contactTextArea:focus {
+          &:focus {
             border: solid 1px #becad7;
             transition-duration: 300ms;
           }
