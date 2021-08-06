@@ -62,7 +62,7 @@ const Button = ({
             padding: 20px 36px;
           }
           .large {
-            padding: 22px 48px;
+            padding: 23px 48px;
           }
           .buttonIcon {
             background-color: #e0edfb;
