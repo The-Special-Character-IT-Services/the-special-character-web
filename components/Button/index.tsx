@@ -17,10 +17,15 @@ const Button = ({
     <>
       <button
         type="button"
-        className={classNames(!isDisabled && !isLoading && [variant], 'btn', {
-          disable: isDisabled || isLoading,
-          [className]: !!className,
-        })}
+        className={classNames(
+          !isDisabled && !isLoading && [variant],
+          'btn',
+          'primary',
+          {
+            disable: isDisabled || isLoading,
+            [className]: !!className,
+          }
+        )}
         onClick={isDisabled || isLoading ? () => {} : onClick}
         {...rest}>
         {children}

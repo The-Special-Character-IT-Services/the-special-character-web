@@ -1,3 +1,4 @@
+import Button from '@components/Button';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
@@ -61,6 +62,7 @@ export default function Home() {
           </span>
         </a>
       </footer>
+      <Button>Hello</Button>
     </div>
   );
 }
