@@ -34,7 +34,7 @@
     transform: scale(1.03);
   }
 }
-@media screen and (min-width: variables.$breakpointLg) {
+@media screen and (min-width: $breakpointLg) {
   .card,
   .cardHover {
     & > div {
@@ -45,7 +45,7 @@
     }
   }
 }
-@media screen and (min-width: variables.$breakpointSm) {
+@media screen and (min-width: $breakpointSm) {
   .card,
   .cardHover {
     & > div {

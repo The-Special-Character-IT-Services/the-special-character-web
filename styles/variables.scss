@@ -37,18 +37,18 @@ $fs-largeP: 1.5em;
 $fs-blockquote: 1.5em;
 $kumbhFont: 'Kumbh Sans', sans-serif;
 $newsReaderFont: Newsreader, sans-serif;
-@media screen and (max-width: variables.$breakpointLg) {
+@media screen and (max-width: $breakpointLg) {
   $fs-h1: 3.125em;
   $fs-blockquote: 1.375em;
 }
-@media screen and (max-width: variables.$breakpointMd) {
+@media screen and (max-width: $breakpointMd) {
   $fs-h1: 2.625em;
   $fs-h2: 2em;
   $fs-h3: 1.375em;
   $fs-largeP: 1.25em;
   $fs-blockquote: 1.25em;
 }
-@media screen and (max-width: variables.$breakpointSm) {
+@media screen and (max-width: $breakpointSm) {
   $fs-h1: 2.188em;
   $fs-h2: 1.625em;
   $fs-h3: 1.25em;
