@@ -37,17 +37,23 @@ $fs-largeP: 1.5em;
 $fs-blockquote: 1.5em;
 $kumbhFont: 'Kumbh Sans', sans-serif;
 $newsReaderFont: Newsreader, sans-serif;
-$fs-h1: 3.125em;
-$fs-blockquote: 1.375em;
-$fs-h1: 2.625em;
-$fs-h2: 2em;
-$fs-h3: 1.375em;
-$fs-largeP: 1.25em;
-$fs-blockquote: 1.25em;
-$fs-h1: 2.188em;
-$fs-h2: 1.625em;
-$fs-h3: 1.25em;
-$fs-h4: 1.125em;
-$fs-h5: 1em;
-$fs-h6: 0.875em;
-$fs-blockquote: 1.125em;
+@media screen and (max-width: variables.$breakpointLg) {
+  $fs-h1: 3.125em;
+  $fs-blockquote: 1.375em;
+}
+@media screen and (max-width: variables.$breakpointMd) {
+  $fs-h1: 2.625em;
+  $fs-h2: 2em;
+  $fs-h3: 1.375em;
+  $fs-largeP: 1.25em;
+  $fs-blockquote: 1.25em;
+}
+@media screen and (max-width: variables.$breakpointSm) {
+  $fs-h1: 2.188em;
+  $fs-h2: 1.625em;
+  $fs-h3: 1.25em;
+  $fs-h4: 1.125em;
+  $fs-h5: 1em;
+  $fs-h6: 0.875em;
+  $fs-blockquote: 1.125em;
+}
