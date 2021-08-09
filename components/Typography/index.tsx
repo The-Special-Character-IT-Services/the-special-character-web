@@ -29,6 +29,7 @@ const variantsMapping = {
   h6: 'h6',
   smallP: 'p',
   largeP: 'p',
+  btnText: 'p',
   a: 'a',
   bold: 'strong',
   italic: 'em',
@@ -130,6 +131,13 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
             color: $Neutral700;
             line-height: 1.111em;
             font-weight: 700;
+          }
+          .typography--class-btnText {
+            font-size: 1em;
+            line-height: 1.125em;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.08em;
           }
           @media screen and (max-width: $breakpointLg) {
             .typography--class-h1 {
