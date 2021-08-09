@@ -1,79 +1,13 @@
-$breakpointSm: 576px;
-$breakpointMd: 768px;
-$breakpointLg: 992px;
-$breakpointXl: 1200px;
-:root {
-  --Primary1: #064ea4;
-  --Secondary1: #e1edfb;
-  --Secondary2: #fcdf69;
-  --Secondary3: #f99d77;
-  --Neutral800: #0f437f;
-  --Neutral700: #1e3d60;
-  --Neutral600: #62778f;
-  --Neutral500: #8096b0;
-  --Neutral400: #becad7;
-  --Neutral300: #e7eaee;
-  --Neutral200: #f9fafb;
-  --Neutral100: #ffffff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --orange: #fd7e14;
-  --green: #28a745;
-  --gray: #6c757d;
-  --gray-dark: #343a40;
-  --success: #020202;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --fs-body: 1.125em;
-  --fs-h1: 3.75em;
-  --fs-h2: 2.375em;
-  --fs-h3: 1.5em;
-  --fs-h4: 1.25em;
-  --fs-h5: 1.125em;
-  --fs-h6: 1em;
-  --fs-smallP: 0.938em;
-  --fs-largeP: 1.5em;
-  --fs-blockquote: 1.5em;
-  --kumbhFont: 'Kumbh Sans', sans-serif;
-  --newsReaderFont: Newsreader, sans-serif;
-}
-@media screen and (max-width: $breakpointLg) {
-  :root {
-    --fs-h1: 3.125em;
-    --fs-blockquote: 1.375em;
-  }
-}
-@media screen and (max-width: $breakpointMd) {
-  :root {
-    --fs-h1: 2.625em;
-    --fs-h2: 2em;
-    --fs-h3: 1.375em;
-    --fs-largeP: 1.25em;
-    --fs-blockquote: 1.25em;
-  }
-}
-@media screen and (max-width: $breakpointSm) {
-  :root {
-    --fs-h1: 2.188em;
-    --fs-h2: 1.625em;
-    --fs-h3: 1.25em;
-    --fs-h4: 1.125em;
-    --fs-h5: 1em;
-    --fs-h6: 0.875em;
-    --fs-blockquote: 1.125em;
-  }
-}
+@import './variables.scss';
 html,
 body {
   padding: 0;
   margin: 0;
 }
 body {
-  font-family: var(--kumbhFont);
-  color: var(--Neutral600);
-  font-size: var(--fs-body);
+  font-family: $kumbhFont;
+  color: $Neutral600;
+  font-size: $fs-body;
   line-height: 1.667em;
 }
 p {
@@ -88,3 +22,53 @@ a {
 * {
   box-sizing: border-box;
 }
+
+$xs: 10px;
+$small: 25px;
+$medium: 50px;
+$large: 75px;
+$xlarge: 100px;
+$xxlarge: 150px;
+
+@mixin space($type: margin, $direction: all, $amount: $medium) {
+  @if $type == padding {
+    @if $direction == all {
+      padding: $amount;
+    } @else if $direction == top {
+      padding-top: $amount;
+    } @else if $direction == left {
+      padding-left: $amount;
+    } @else if $direction == right {
+      padding-right: $amount;
+    } @else if $direction == horizontal {
+      padding-right: $amount;
+      padding-left: $amount;
+    } @else if $direction == vertical {
+      padding-top: $amount;
+      padding-bottom: $amount;
+    } @else {
+      padding-bottom: $amount;
+    }
+  } @else {
+    @if $direction == all {
+      margin: $amount;
+    } @else if $direction == top {
+      margin-top: $amount;
+    } @else if $direction == left {
+      margin-left: $amount;
+    } @else if $direction == right {
+      margin-right: $amount;
+    } @else if $direction == horizontal {
+      margin-right: $amount;
+      margin-left: $amount;
+    } @else if $direction == vertical {
+      margin-top: $amount;
+      margin-bottom: $amount;
+    } @else {
+      margin-bottom: $amount;
+    }
+  }
+}
+// body {
+//   @include space(margin, horizontal, $large);
+// }
