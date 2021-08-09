@@ -1,9 +1,8 @@
-import React from 'react';
+import Typography from '@components/Typography';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 interface Props {
-  size: 'small' | 'default' | 'large';
   className: 'primary' | 'secondary' | String;
   isDisabled?: Boolean;
   children: JSX.Element;
@@ -13,7 +12,6 @@ interface Props {
 }
 
 const Button = ({
-  size,
   className,
   isDisabled,
   children,
@@ -25,57 +23,39 @@ const Button = ({
     <>
       <button
         type="button"
-        className={classNames(
-          !isDisabled && !isLoading && [size],
-          'btn',
-          'primary',
-          {
-            disable: isDisabled || isLoading,
-            [className]: !!className,
-          }
-        )}
+        className={classNames(!isDisabled && !isLoading, 'btn', 'primary', {
+          disable: isDisabled || isLoading,
+          [className]: !!className,
+        })}
         onClick={isDisabled || isLoading ? () => {} : onClick}
         {...rest}>
-        {children}
+        <Typography variant="btnText">{children}</Typography>
       </button>
       <style jsx>
         {`
+          @import '../../styles/variables.scss';
           .btn {
             transition-duration: 300ms;
-            border-radius: 100px;
-            text-transform: uppercase;
-            font-family: sans-serif;
-            font-weight: 500;
+            border-radius: 6.25rem;
             border: none;
             align-items: center;
-            line-height: 1.175rem;
             cursor: pointer;
-            font-size: 16px;
-
+            padding: 1.5rem 2.5rem;
             &.primary {
-              background-color: #064ea4;
-              color: #f9fafb;
+              background-color: $Primary1;
+              color: $Neutral200;
               &:hover {
-                background-color: #1e3d60;
+                background-color: $Neutral700;
                 transform: scale(0.97);
               }
             }
             &.secondary {
-              background-color: #e7eaee;
-              color: #1e3d60;
+              background-color: $Neutral300;
+              color: $Neutral700;
               &:hover {
-                background-color: #becad7;
+                background-color: $Neutral400;
                 transform: scale(0.97);
               }
-            }
-            &.small {
-              padding: 16px 30px;
-            }
-            &.default {
-              padding: 20px 36px;
-            }
-            &.large {
-              padding: 23px 48px;
             }
             &.buttonIcon {
               background-color: #e0edfb;
@@ -93,6 +73,19 @@ const Button = ({
               padding: 10px 20px;
             }
           }
+
+          @media screen and (max-width: $breakpointMd) {
+            .btn {
+              padding-right: 1.875rem;
+              padding-left: 1.875rem;
+            }
+          }
+          @media screen and (max-width: $breakpointSm) {
+            .btn {
+              display: block;
+              padding: 1.25rem 1.125rem;
+            }
+          }
         `}
       </style>
     </>
@@ -100,19 +93,17 @@ const Button = ({
 };
 
 Button.propTypes = {
-  size: PropTypes.oneOf(['small', 'default', 'large']),
-  // variant: PropTypes.oneOf([
-  //   'primary',
-  //   'secondary',
-  //   'buttonIcon',
-  //   'disable',
-  //   'btn',
-  // ]),
+  variant: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'buttonIcon',
+    'disable',
+    'btn',
+  ]),
 };
 
 Button.defaultProps = {
-  // variant: 'primary',
-  size: 'small',
+  variant: 'primary',
 };
 
 export default Button;
