@@ -56,7 +56,6 @@ const Timeline = ({ data, ...props }: Props) => {
           }
           .timeline-year-wrapper {
             display: flex;
-            justify-content: space-between;
             align-items: flex-start;
             z-index: 1;
           }
