@@ -2,18 +2,12 @@ import Button from '@components/Button';
 import Card from '@components/Card';
 import Typography from '@components/Typography';
 import classNames from 'classnames';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import styles from './accordian.module.scss';
 
 interface Props {}
 
-const Accordian = ({
-  variant,
-  children,
-  className,
-  label,
-  ...props
-}: Props) => {
+const Accordian = ({ children, className, label, ...props }: Props) => {
   const toggleRef = useRef();
   const childRef = useRef();
 
