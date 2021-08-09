@@ -1,11 +1,18 @@
-import React from 'react';
+interface Props {
+  isFooterTop: boolean;
+  isFooterBottom: boolean;
+}
+import cn from 'classnames';
 
-interface Props {}
-
-const Divider = () => {
+const Divider = ({ isFooterTop, isFooterBottom }: Props) => {
   return (
     <>
-      <div className="divider footer-top" />
+      <div
+        className={cn('divider', {
+          ['footer-top']: !!isFooterTop,
+          ['footer-bottom']: !!isFooterBottom,
+        })}
+      />
       <style jsx>
         {`
           @import '../../styles/variables.scss';
@@ -41,10 +48,16 @@ const Divider = () => {
               margin-top: 2.5rem;
               margin-bottom: 3.75rem;
             }
+            .footer-bottom {
+              margin-top: 4.813rem;
+            }
           }
           @media screen and (max-width: $breakpointSm) {
             .footer-top {
               margin-bottom: 3.12rem;
+            }
+            .footer-bottom {
+              margin-top: 4rem;
             }
           }
         `}
