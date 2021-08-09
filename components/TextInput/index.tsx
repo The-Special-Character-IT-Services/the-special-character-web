@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Typography from '@components/Typography';
@@ -10,53 +9,79 @@ interface Props {
   isTextArea?: boolean;
 }
 
-const TextInput = ({ name, label, className, isTextArea, ...rest }: Props) => {
+const TextInput = ({
+  name,
+  placeholder,
+  label,
+  className,
+  isTextArea,
+  ...rest
+}: Props) => {
   const Component = isTextArea ? 'textarea' : 'input';
 
   return (
     <div className="input-wrapper">
-      <label htmlFor={name}>
-        <Typography>{label}</Typography>
-      </label>
+      <Typography variant="label" htmlFor={name}>
+        {label}
+      </Typography>
       <Component
         id={name}
         className={cn('contactInput', {
           textArea: isTextArea,
           [className]: !!className,
         })}
-        placeholder="input"
+        placeholder={placeholder}
         {...rest}
       />
       <style jsx>
         {`
+          @import '../../styles/variables.scss';
           .input-wrapper {
-            display: flex;
-            flex-direction: column;
-            > label {
-              margin: auto 0.25rem;
+            & > label {
+              display: block;
+              margin-bottom: 1rem;
+              color: $Neutral700;
+              line-height: 1.111em;
+              font-weight: 700;
             }
             & > .contactInput {
-              outline: none;
-              border: solid 1px transparent;
-              background-color: #f9fafb;
-              min-height: 65px;
-              padding: 16px 30px;
-              font-size: 24px;
-              color: #0f437f;
+              min-height: 4rem;
+              max-width: 100%;
+              min-width: 100%;
+              margin-bottom: 0px;
+              padding-right: 1.875rem;
+              padding-left: 1.875rem;
+              border: 1px solid transparent;
+              border-radius: 6.25rem;
+              background-color: $Neutral200;
+              color: $Neutral800;
               font-size: 18px;
               line-height: 1.111em;
-              border-radius: 30px;
-              transition-duration: 300ms;
-              transition-timing-function: ease-in-out;
               &.textArea {
                 resize: vertical;
-                min-height: 10rem;
-                padding: 32px 30px;
+                min-height: 12rem;
+                font-family: inherit;
+                padding: 2rem 1.875rem;
+                margin-right: 1.875rem;
+                border-radius: 1.25rem;
               }
               &:hover,
               &:focus {
-                border-color: #becad7;
+                border-color: $Neutral400;
                 transition-duration: 300ms;
+                outline: 0;
+              }
+            }
+          }
+          @media screen and (max-width: $breakpointSm) {
+            .input-wrapper {
+              & > .contactInput {
+                padding-right: 0.9rem;
+                padding-left: 0.9rem;
+                &.textArea {
+                  padding-right: 0.9rem;
+                  padding-left: 0.9rem;
+                }
               }
             }
           }
