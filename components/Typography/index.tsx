@@ -133,7 +133,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
             font-weight: 700;
           }
           .typography--class-btnText {
-            font-size: 1em;
+            font-size: $fs-btnText;
             line-height: 1.125em;
             text-transform: uppercase;
             font-weight: 700;
