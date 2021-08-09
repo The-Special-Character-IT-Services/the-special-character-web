@@ -133,11 +133,13 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
             font-weight: 700;
           }
           .typography--class-btnText {
-            font-size: 1em;
+            font-size: $fs-btnText;
             line-height: 1.125em;
             text-transform: uppercase;
             font-weight: 700;
             letter-spacing: 0.08em;
+            font-family: sans-serif;
+            margin: 0;
           }
           @media screen and (max-width: $breakpointLg) {
             .typography--class-h1 {
