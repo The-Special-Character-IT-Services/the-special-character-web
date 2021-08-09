@@ -11,18 +11,18 @@ const variantsMapping = {
   h6: 'h6',
   smallP: 'p',
   largeP: 'p',
-  defaultP: 'p',
   a: 'a',
   bold: 'strong',
   italic: 'em',
   blockquote: 'blockquote',
+  label: 'label',
 };
 
 const Typography = ({ variant, children, className, ...props }: Props) => {
   const Component = variant ? variantsMapping[variant] : 'p';
   return (
     <Component
-      className={cn(`typography--class-${variant} `, {
+      className={cn(variant ? `typography--class-${variant}` : null, {
         [className]: !!className,
       })}
       {...props}>
@@ -104,7 +104,14 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
             font-size: var(--fs-blockquote);
             line-height: 1.583em;
           }
-          @media screen and (max-width: 991px) {
+          .typography--class-label {
+            display: block;
+            margin-bottom: 1rem;
+            color: var(--Neutral700);
+            line-height: 1.111em;
+            font-weight: 700;
+          }
+          @media screen and (max-width: 992px) {
             .typography--class-h1 {
               margin-bottom: 1.25rem;
             }
@@ -115,7 +122,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
               padding: 3.625rem 3.938rem;
             }
           }
-          @media screen and (max-width: 767px) {
+          @media screen and (max-width: 768px) {
             .typography--class-h1 {
               margin-bottom: 1rem;
             }
@@ -129,7 +136,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
               padding: 3rem 3.125rem;
             }
           }
-          @media screen and (max-width: 479px) {
+          @media screen and (max-width: 576px) {
             .typography--class-h1 {
               margin-bottom: 0.625rem;
             }

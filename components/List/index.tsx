@@ -1,20 +1,16 @@
 interface Props {}
 import cn from 'classnames';
 
-const variantsMapping = {
-  ul: 'ul',
-  ol: 'ol',
-};
-
 const List = ({
   variant,
   listItem,
   className,
   keyProp,
   valueProp,
+  isNumberedList,
   ...props
 }: Props) => {
-  const Component = variant ? variantsMapping[variant] : 'ul';
+  const Component = isNumberedList ? 'ol' : 'ul';
   return (
     <Component
       className={cn('commonParentList', { [className]: !!className })}
