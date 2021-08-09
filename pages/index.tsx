@@ -1,5 +1,5 @@
 import Button from '@components/Button';
-import Typography from '@components/Typography';
+import Divider from '@components/Divider';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
@@ -63,8 +63,13 @@ export default function Home() {
           </span>
         </a>
       </footer>
-      <Button className="m-b-5">Hello</Button>
-      <Typography variant="label">Hello</Typography>
+      <Button className="secondary" size="default">
+        Hello
+      </Button>
+      <Divider />
+      <Button className="secondary" size="large">
+        Hello
+      </Button>
     </div>
   );
 }
