@@ -85,6 +85,8 @@ const Header = (props: Props) => {
           @import './styles/variables.scss';
           .container-default {
             width: 100%;
+            transition: all ease 0.3s;
+            -webkit-transition: all ease 0.3s;
             z-index: 50;
             padding: 1.75rem 1.5rem;
             background-color: $Neutral100;

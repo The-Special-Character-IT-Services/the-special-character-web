@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+.titlePerks {
+  margin-bottom: 58px !important;
+  color: $Neutral100 !important;
+}
+@media screen and (max-width: $breakpointLg) {
+  .titlePerks {
+    margin-bottom: 50px !important;
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .titlePerks {
+    margin-bottom: 40px !important;
+  }
+}

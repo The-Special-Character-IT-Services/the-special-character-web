@@ -1,11 +1,11 @@
-@use '../../styles/variables.scss';
+@import '../../styles/variables.scss';
 
 .card,
 .cardHover {
   overflow: hidden;
   box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
   border-radius: 2rem;
-  background-color: #fff;
+  background-color: $Neutral100;
   display: flex;
   transition-duration: 300ms;
 
@@ -34,6 +34,20 @@
     transform: scale(1.03);
   }
 }
+.perkCard {
+  max-width: 340px;
+  & .imagePerk {
+    margin-bottom: 39px;
+  }
+  & .subTitlePerk {
+    color: $Neutral100 !important;
+    margin-bottom: 1rem;
+  }
+  & .paragraphPerk {
+    margin-bottom: 0px;
+    color: $Neutral300;
+  }
+}
 @media screen and (min-width: $breakpointLg) {
   .card,
   .cardHover {
@@ -53,6 +67,48 @@
       padding-right: 1.5rem;
       padding-bottom: 1.5rem;
       padding-left: 1.5rem;
+    }
+  }
+}
+@media screen and (max-width: $breakpointLg) {
+  .perkCard {
+    display: flex;
+    max-width: none;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    & .imagePerk {
+      width: 100%;
+      max-width: 230px;
+      margin-right: 30px;
+      margin-bottom: 0px;
+    }
+    & .perkContent {
+      max-width: 540px;
+    }
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .perkCard {
+    & .imagePerk {
+      max-width: 192px;
+      margin-right: 0px;
+      margin-bottom: 30px;
+    }
+    & .subTitlePerk {
+      margin-bottom: 10px;
+    }
+  }
+}
+@media screen and (max-width: $breakpointSm) {
+  .perkCard {
+    text-align: center;
+    flex-direction: column;
+    & .imagePerk {
+      max-width: 185px;
+    }
+    & .subTitlePerk {
+      margin-bottom: 6px;
     }
   }
 }
