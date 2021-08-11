@@ -1,11 +1,17 @@
-import React from 'react';
+import Typography from '@components/Typography';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-interface Props {}
+interface Props {
+  className: 'primary' | 'secondary' | String;
+  isDisabled?: Boolean;
+  children: JSX.Element;
+  isLoading?: Boolean;
+  onClick: Function;
+  rest?: Object;
+}
 
 const Button = ({
-  variant,
   className,
   isDisabled,
   children,
@@ -17,67 +23,69 @@ const Button = ({
     <>
       <button
         type="button"
-        className={classNames(!isDisabled && !isLoading && [variant], 'btn', {
+        className={classNames(!isDisabled && !isLoading, 'btn', 'primary', {
           disable: isDisabled || isLoading,
           [className]: !!className,
         })}
         onClick={isDisabled || isLoading ? () => {} : onClick}
         {...rest}>
-        {children}
+        <Typography variant="btnText">{children}</Typography>
       </button>
       <style jsx>
         {`
+          @import '../../styles/variables.scss';
           .btn {
             transition-duration: 300ms;
-            border-radius: 100px;
-            text-transform: uppercase;
-            font-family: sans-serif;
-            font-weight: 500;
+            border-radius: 6.25rem;
             border: none;
             align-items: center;
-            line-height: 1.175rem;
             cursor: pointer;
-            font-size: 16px;
-          }
-          .primary {
-            background-color: #064ea4;
-            color: #f9fafb;
-            &:hover {
-              background-color: #1e3d60;
-              transform: scale(0.97);
+            padding: 1.5rem 2.5rem;
+            &.primary {
+              background-color: $Primary1;
+              color: $Neutral200;
+              &:hover {
+                background-color: $Neutral700;
+                transform: scale(0.97);
+              }
+            }
+            &.secondary {
+              background-color: $Neutral300;
+              color: $Neutral700;
+              &:hover {
+                background-color: $Neutral400;
+                transform: scale(0.97);
+              }
+            }
+            &.buttonIcon {
+              background-color: #e0edfb;
+              min-height: 80px;
+              min-width: 80px;
+              border-radius: 80px;
+              border: none;
+            }
+            &.disable {
+              cursor: not-allowed;
+              background-color: gray;
+              opacity: 0.5;
+              font-size: 13px;
+              color: black;
+              padding: 10px 20px;
             }
           }
-          .secondary {
-            background-color: #e7eaee;
-            color: #1e3d60;
-            &:hover {
-              background-color: #becad7;
-              transform: scale(0.97);
+
+          @media screen and (max-width: $breakpointMd) {
+            .btn {
+              padding-right: 1.875rem;
+              padding-left: 1.875rem;
             }
           }
-          .small {
-            padding: 16px 30px;
-          }
-          .default {
-            padding: 20px 36px;
-          }
-          .large {
-            padding: 23px 48px;
-          }
-          .buttonIcon {
-            background-color: #e0edfb;
-            min-height: 80px;
-            min-width: 80px;
-            border-radius: 80px;
-            border: none;
-          }
-          .disable {
-            cursor: not-allowed;
-            background-color: gray;
-            opacity: 0.5;
-            font-size: 13px;
-            color: black;
-            padding: 10px 20px;
+          @media screen and (max-width: $breakpointSm) {
+            .btn {
+              display: block;
+              padding: 1.25rem 1.125rem;
+              width: 100%;
+            }
           }
         `}
       </style>
@@ -87,12 +95,8 @@ const Button = ({
 
 Button.propTypes = {
   variant: PropTypes.oneOf([
-    'small',
-    'default',
-    'large',
-    'sSmall',
-    'sDefault',
-    'sLarge',
+    'primary',
+    'secondary',
     'buttonIcon',
     'disable',
     'btn',
@@ -100,7 +104,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  variant: 'small',
+  variant: 'primary',
 };
 
 export default Button;
