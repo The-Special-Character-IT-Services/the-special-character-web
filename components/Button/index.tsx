@@ -100,6 +100,7 @@ Button.propTypes = {
     'buttonIcon',
     'disable',
     'btn',
+    'small',
   ]),
 };
 

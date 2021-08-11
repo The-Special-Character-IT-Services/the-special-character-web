@@ -1,20 +1,22 @@
-@use '../../styles/variables.scss';
+@import '../../styles/variables.scss';
 
 .card,
 .cardHover {
+  position: relative;
   overflow: hidden;
   box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
   border-radius: 2rem;
-  background-color: #fff;
+  background-color: $Neutral100;
   display: flex;
   transition-duration: 300ms;
-
-  & > img {
+  margin-right: 27px;
+  & img {
     width: 100%;
     min-height: 100%;
     object-fit: cover;
     transition-duration: 300ms;
   }
+
   & > div {
     display: flex;
     padding-top: 0.5rem;
@@ -25,13 +27,18 @@
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0%;
+    text-align: left;
   }
 }
 .cardHover:hover {
   cursor: pointer;
   transform: translate3d(0, -10px, 0.01px);
-  & > img {
-    transform: scale(1.03);
+  & img {
+    transform: scale(1.1);
+  }
+
+  & h3 {
+    color: $Primary1;
   }
 }
 @media screen and (min-width: $breakpointLg) {

@@ -7,11 +7,10 @@ import styles from './banner.module.scss';
 interface Props {}
 
 const Banner = (props: Props) => {
-  const divRef = useRef();
   return (
     <section className="banner">
       <div className="container">
-        <div className="leftDiv" ref={divRef}>
+        <div className="leftDiv">
           <Typography variant="h1" style={{ marginTop: 0, fontFamily: 'auto' }}>
             Grow your skills, define your future
           </Typography>
