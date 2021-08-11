@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+.navLink {
+  line-height: 1.111em;
+  font-weight: 700;
+  color: $Neutral700 !important;
+  text-decoration: none !important;
+}
+
+@media screen and (max-width: 991px) {
+  .navLink {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .navLink {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .navLink {
+    font-size: 28px;
+  }
+}
