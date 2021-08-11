@@ -15,6 +15,7 @@ const Images = ({ children, className, variant, alt, ...props }: Props) => {
               justify-content: center;
               border-radius: 2rem;
               overflow: hidden;
+              width: fit-content;
             }
             .avtar {
               display: flex;
