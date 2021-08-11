@@ -139,7 +139,6 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
             font-weight: 700;
             letter-spacing: 0.08em;
             font-family: sans-serif;
-            margin: 0;
           }
           @media screen and (max-width: $breakpointLg) {
             .typography--class-h1 {
