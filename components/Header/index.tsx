@@ -124,7 +124,7 @@ const Header = (props: Props) => {
             position: fixed;
             box-shadow: 0px 1px 27px -3px rgb(0 0 0 / 20%);
           }
-          @media screen and (max-width: 991px) {
+          @media screen and (max-width: $breakpointLg) {
             .right0 {
               width: 100% !important;
             }
@@ -210,12 +210,12 @@ const Header = (props: Props) => {
               }
             }
           }
-          @media screen and (max-width: 767px) {
+          @media screen and (max-width: $breakpointMd) {
             .nav-item-wrapper {
               padding: 13px 0;
             }
           }
-          @media screen and (max-width: 479px) {
+          @media screen and (max-width: $breakpointSm) {
             .container-default {
               padding-right: 1rem;
               padding-left: 1rem;

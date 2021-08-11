@@ -7,10 +7,12 @@ const Teachers = (props: Props) => {
     <section className="featured-teacher">
       <style jsx>
         {`
-                    .featured-teacher{
-                        
-                    }
-                    `}
+          .featured-teacher {
+            padding-bottom: 216px;
+            padding-top: 184px;
+          }
+          
+        `}
       </style>
     </section>
   );
