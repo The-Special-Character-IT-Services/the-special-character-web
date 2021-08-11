@@ -37,14 +37,14 @@
 .perkCard {
   max-width: 340px;
   & .imagePerk {
-    margin-bottom: 39px;
+    margin-bottom: 2.438rem;
   }
   & .subTitlePerk {
     color: $Neutral100 !important;
     margin-bottom: 1rem;
   }
   & .paragraphPerk {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     color: $Neutral300;
   }
 }
@@ -80,8 +80,8 @@
     & .imagePerk {
       width: 100%;
       max-width: 230px;
-      margin-right: 30px;
-      margin-bottom: 0px;
+      margin-right: 1.875rem;
+      margin-bottom: 0;
     }
     & .perkContent {
       max-width: 540px;
@@ -92,11 +92,11 @@
   .perkCard {
     & .imagePerk {
       max-width: 192px;
-      margin-right: 0px;
-      margin-bottom: 30px;
+      margin-right: 0;
+      margin-bottom: 1.875rem;
     }
     & .subTitlePerk {
-      margin-bottom: 10px;
+      margin-bottom: 0.625rem;
     }
   }
 }
@@ -108,7 +108,7 @@
       max-width: 185px;
     }
     & .subTitlePerk {
-      margin-bottom: 6px;
+      margin-bottom: 0.375rem;
     }
   }
 }
