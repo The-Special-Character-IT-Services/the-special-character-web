@@ -11,7 +11,24 @@ const Teachers = (props: Props) => {
             padding-bottom: 216px;
             padding-top: 184px;
           }
-          
+          @media screen and (max-width: $breakpointLg) {
+            .featured-teacher {
+              padding-bottom: 173px;
+              padding-top: 147px;
+            }
+          }
+          @media screen and (max-width: $breakpointMd) {
+            .featured-teacher {
+              padding-bottom: 173px;
+              padding-top: 147px;
+            }
+          }
+          @media screen and (max-width: $breakpointSm) {
+            .featured-teacher {
+              padding-bottom: 173px;
+              padding-top: 147px;
+            }
+          }
         `}
       </style>
     </section>

@@ -61,41 +61,41 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
           .typography--class-h1 {
             margin-bottom: 1.5rem;
             color: $Neutral800;
-            font-size: $fs-h1;
+            font-size: var(--fs-h1);
             line-height: 1.3em;
           }
           .typography--class-h2 {
             color: $Neutral800;
-            font-size: $fs-h2;
+            font-size: var(--fs-h2);
             line-height: 1.289em;
           }
           .typography--class-h3 {
             color: $Neutral700;
-            font-size: $fs-h3;
+            font-size: var(--fs-h3);
             line-height: 1.5em;
           }
           .typography--class-h4 {
             color: $Neutral700;
-            font-size: $fs-h4;
+            font-size: var(--fs-h4);
             line-height: 1.5em;
           }
           .typography--class-h5 {
             color: $Neutral800;
-            font-size: $fs-h5;
+            font-size: var(--fs-h5);
             line-height: 1.444em;
           }
           .typography--class-h6 {
             margin-bottom: 0.625rem;
             color: $Neutral800;
-            font-size: $fs-h6;
+            font-size: var(--fs-h6);
             line-height: 1.5em;
           }
           .typography--class-smallP {
-            font-size: $fs-smallP;
+            font-size: var(--fs-smallP);
             line-height: 1.6em;
           }
           .typography--class-largeP {
-            font-size: $fs-largeP;
+            font-size: var(--fs-largeP);
             line-height: 1.583em;
           }
           .typography--class-a {
@@ -122,7 +122,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
             border-radius: 10px 20px 20px 10px;
             background-color: $Neutral100;
             box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
-            font-size: $fs-blockquote;
+            font-size: var(--fs-blockquote);
             line-height: 1.583em;
           }
           .typography--class-label {
@@ -133,7 +133,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
             font-weight: 700;
           }
           .typography--class-btnText {
-            font-size: $fs-btnText;
+            font-size: var(--fs-btnText);
             line-height: 1.125em;
             text-transform: uppercase;
             font-weight: 700;

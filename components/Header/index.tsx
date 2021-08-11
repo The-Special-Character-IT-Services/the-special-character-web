@@ -86,7 +86,6 @@ const Header = (props: Props) => {
           .container-default {
             width: 100%;
             transition: all ease 0.3s;
-            -webkit-transition: all ease 0.3s;
             z-index: 50;
             padding: 1.75rem 1.5rem;
             background-color: $Neutral100;
@@ -130,7 +129,6 @@ const Header = (props: Props) => {
             }
             @mixin all-transition($time) {
               transition: all $time;
-              -webkit-transition: all $time;
             }
             .container-default {
               & .nav-menu {
