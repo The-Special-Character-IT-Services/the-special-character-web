@@ -33,7 +33,7 @@ const List = ({
       <style jsx>{`
         .commonParentList {
           margin-top: 0;
-          margin-bottom: 0.625rem;
+          margin-bottom: 0.6rem;
           padding-left: 2.5rem;
           & > li {
             margin-bottom: 1rem;

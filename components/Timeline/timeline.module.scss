@@ -16,7 +16,7 @@
   align-items: flex-start;
   & .timelineYear {
     margin-bottom: 2rem;
-    padding: 1rem 1.625rem;
+    padding: 1rem 1.6rem;
     border-style: solid;
     border-width: 1px;
     border-color: $Neutral300;
@@ -35,32 +35,32 @@
     margin-bottom: 0;
   }
 }
-@media screen and (max-width: $breakpointLg) {
+@media screen and (max-width: $breakpointLgForMw) {
   .timelineYearContent .timelineYear {
     margin-bottom: 1.75rem;
   }
 }
-@media screen and (max-width: $breakpointMd) {
+@media screen and (max-width: $breakpointMdForMw) {
   .timelineYearDot {
-    margin-right: 1.875rem;
+    margin-right: 1.75rem;
   }
   .timelineYearContent {
     max-width: none;
     & .timelineYear {
-      margin-bottom: 1.438rem;
+      margin-bottom: 1.5rem;
     }
   }
   .timelineYearTitle {
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.6rem;
   }
 }
-@media only screen and (max-width: $breakpointSm) {
+@media only screen and (max-width: $breakpointSmForMw) {
   .timelineYearDot {
-    margin-right: 0.938rem;
+    margin-right: 1rem;
   }
   .timelineYearContent .timelineYear {
     margin-bottom: 1rem;
-    padding: 0.875rem 1.25rem;
+    padding: 0.8rem 1.25rem;
   }
   .timelineYearParagraph {
     max-width: 393px;
