@@ -73,9 +73,9 @@ const AboutEducation = (props: Props) => {
               </div>
             </aside>
           </div>
-          <Link href="/about">
-            <Button className="secondary">About Education</Button>
-          </Link>
+          {/* <Link href="/about"> */}
+          <Button className="secondary">About Education</Button>
+          {/* </Link> */}
         </div>
       </section>
       <style jsx>{`
