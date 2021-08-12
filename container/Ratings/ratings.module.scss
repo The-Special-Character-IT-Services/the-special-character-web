@@ -1,0 +1,205 @@
+@import '../../styles/variables.scss';
+.ratings {
+  overflow: hidden;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+  background-color: $Primary1;
+  & > .container {
+    max-width: 1209px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > .leftDiv {
+      position: relative;
+      z-index: 1;
+      margin-right: 1.875rem;
+      & > h2 {
+        font-family: auto;
+        max-width: 520px;
+        color: $Neutral100;
+      }
+      & > p {
+        max-width: 520px;
+        color: $Neutral300;
+      }
+      & button {
+        background-color: $Neutral100;
+        color: $Primary1;
+      }
+    }
+    & > .rightDiv {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > .cards {
+        position: relative;
+        z-index: 1;
+        margin-right: 1.25rem;
+      }
+      & > .singleCard {
+        position: relative;
+        z-index: 1;
+      }
+      & > .middleCircle {
+        width: 335px;
+        min-height: 335px;
+        border-radius: 1000px;
+        background-color: $Secondary3;
+        position: absolute;
+      }
+    }
+    & > .bottomCircle {
+      left: 21rem;
+      bottom: -21rem;
+      width: 336px;
+      min-height: 336px;
+      border-radius: 1000px;
+      background-color: $Secondary1;
+      position: absolute;
+    }
+    & .firstCircle {
+      left: -18rem;
+      top: -16rem;
+      width: 356px;
+      min-height: 356px;
+      border-radius: 1000px;
+      background-color: $Secondary2;
+      position: absolute;
+    }
+  }
+}
+.box {
+  flex-direction: column;
+  max-width: 235px;
+  margin-bottom: 1.25rem;
+  padding: 3rem 1.625rem 2.5rem;
+  text-align: center;
+  margin-right: 0;
+  & .boxHead {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family: auto;
+    font-weight: 600;
+    font-size: 3.375rem;
+    color: $Neutral700;
+    line-height: 1.037em;
+  }
+  & .boxPara {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: $breakpointLg) {
+  .ratings {
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+    & > .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      & > .leftDiv {
+        margin-right: 0;
+        margin-bottom: 3.75rem;
+      }
+      & > .bottomCircle {
+        left: auto;
+        right: -2rem;
+      }
+      & > .firstCircle {
+        left: -16rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .ratings {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+    & > .container {
+      & > .leftDiv {
+        margin-bottom: 3.125rem;
+      }
+      & > .rightDiv {
+        & > .middleCircle {
+          width: 268px;
+          min-height: 268px;
+          min-width: 268px;
+        }
+      }
+      & > .bottomCircle {
+        bottom: -289px;
+        width: 268px;
+        min-height: 268px;
+        min-width: 268px;
+      }
+      & > .firstCircle {
+        left: -14rem;
+        top: 8rem;
+        width: 285px;
+        min-height: 285px;
+        min-width: 285px;
+      }
+    }
+  }
+  .box {
+    & .boxHead {
+      font-size: 3rem;
+    }
+  }
+}
+@media screen and (max-width: $breakpointSm) {
+  .ratings {
+    & > .container {
+      padding-right: 1rem;
+      padding-left: 1rem;
+      align-items: stretch;
+      & > .rightDiv {
+        margin-right: 0;
+        margin-left: 0;
+        flex-direction: column;
+        align-items: stretch;
+        & > .cards {
+          margin-right: 0;
+          margin-bottom: 1.25rem;
+        }
+        & > .middleCircle {
+          left: 3rem;
+          top: 8rem;
+          width: 214px;
+          min-height: 214px;
+          min-width: 214px;
+        }
+      }
+      & > .bottomCircle {
+        bottom: -15rem;
+        width: 214px;
+        min-height: 214px;
+        min-width: 214px;
+      }
+      & > .firstCircle {
+        left: -12rem;
+        top: 17rem;
+        width: 228px;
+        min-height: 228px;
+        min-width: 228px;
+      }
+    }
+  }
+  .box {
+    max-width: 100%;
+    padding: 2rem 1.5rem 2rem;
+    & .boxHead {
+      margin-bottom: 0.375rem;
+      font-size: 2.375rem;
+    }
+  }
+}

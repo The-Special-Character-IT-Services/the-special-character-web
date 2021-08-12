@@ -1,0 +1,188 @@
+@import '../../styles/variables.scss';
+
+.courses {
+  overflow: hidden;
+  padding-top: 12.875rem;
+  padding-bottom: 12.875rem;
+  background-color: $Neutral200;
+
+  & > .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1209px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    flex: 1;
+    text-align: center;
+    & > .head {
+      margin-top: 0;
+      margin-bottom: 3.375rem;
+      font-family: auto;
+    }
+
+    & > .cardDiv {
+      width: 100%;
+      position: relative;
+      left: 0;
+      right: 0;
+      overflow: visible;
+      height: 100%;
+      & .faculty {
+        display: flex;
+        flex: 1;
+        gap: 1rem;
+        align-items: center;
+      }
+      & .price {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        top: 2rem;
+        right: 1.25rem;
+        gap: 0.5rem;
+        & > button {
+          padding: 0.875rem;
+          & > p {
+            font-size: 0.75rem;
+          }
+          &:hover {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.leftArrow {
+  left: -1.4rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 62.5rem;
+  background-color: $Neutral100;
+  box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
+  transition: background-color 300ms ease, box-shadow 300ms ease,
+    color 300ms ease, transform 300ms ease;
+  transform-style: preserve-3d;
+  z-index: 3;
+  right: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  cursor: pointer;
+  overflow: hidden;
+  & > .leftIcon {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    & svg {
+      fill: $Neutral700;
+    }
+  }
+  &:hover {
+    background-color: $Primary1;
+    & > .leftIcon {
+      & svg {
+        fill: $Neutral100;
+      }
+    }
+  }
+}
+.rightArrow {
+  right: -23px;
+  width: 80px;
+  height: 80px;
+  border-radius: 1000px;
+  background-color: $Neutral100;
+  box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
+  transition: background-color 300ms ease, box-shadow 300ms ease,
+    color 300ms ease, transform 300ms ease;
+  transform-style: preserve-3d;
+  z-index: 3;
+  left: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  cursor: pointer;
+  overflow: hidden;
+  & > .rightIcon {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    & svg {
+      fill: $Neutral700;
+    }
+  }
+  &:hover {
+    background-color: $Primary1;
+    & > .rightIcon {
+      & svg {
+        fill: $Neutral100;
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointLg) {
+  .courses {
+    padding-top: 165px;
+    padding-bottom: 165px;
+  }
+  .rightArrow,
+  .leftArrow {
+    right: -1.125rem;
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .courses {
+    padding-top: 132px;
+    padding-bottom: 132px;
+  }
+  .rightArrow,
+  .leftArrow {
+    width: 4.375rem;
+    height: 4.375rem;
+  }
+}
+@media screen and (max-width: $breakpointSm) {
+  .courses {
+    padding-top: 105px;
+    padding-bottom: 105px;
+    & > .container {
+      & > .cardDiv {
+        & .price {
+          top: 1rem;
+          gap: 5px;
+          right: 1rem;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  .rightArrow,
+  .leftArrow {
+    top: -10.375rem;
+    width: 65px;
+    max-height: 65px;
+    min-height: 65px;
+    min-width: 65px;
+  }
+  .rightArrow {
+    right: -0.625rem;
+  }
+  .leftArrow {
+    left: -0.625rem;
+  }
+}
