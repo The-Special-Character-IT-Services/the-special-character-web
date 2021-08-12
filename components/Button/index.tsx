@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 interface Props {
-  className: 'primary' | 'secondary' | String;
+  className: 'primary' | 'secondary' | 'buttonIcon' | String;
   isDisabled?: Boolean;
   children: JSX.Element;
   isLoading?: Boolean;
@@ -58,11 +58,18 @@ const Button = ({
               }
             }
             &.buttonIcon {
-              background-color: #e0edfb;
-              min-height: 80px;
-              min-width: 80px;
-              border-radius: 80px;
+              background-color: $icon;
+              min-height: 60px;
+              min-width: 60px;
+              padding: 0;
+              border-radius: 60px;
               border: none;
+              cursor: auto;
+
+              &:hover {
+                background-color: $icon;
+                transform: scale(1);
+              }
             }
             &.disable {
               cursor: not-allowed;
@@ -84,7 +91,6 @@ const Button = ({
             .btn {
               display: block;
               padding: 1.25rem 1.125rem;
-              width: 100%;
             }
           }
         `}
