@@ -3,6 +3,7 @@ import Typography from '@components/Typography';
 import classnames from 'classnames';
 import card from '@components/Card/card.module.scss';
 import styles from './perk.module.scss';
+import Image from 'next/image';
 
 interface Props {}
 
@@ -18,9 +19,11 @@ const Perk = (props: Props) => {
           </Typography>
           <div className="perks-grid">
             <Card variant="perkCard">
-              <img
+              <Image
                 src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e21e810beff7a8011b340_image-1-perks-education-x-template.svg"
                 alt="Perk Image"
+                height={233}
+                width={233}
                 className={card.imagePerk}
               />
               <div className="perkContent">
@@ -36,10 +39,12 @@ const Perk = (props: Props) => {
               </div>
             </Card>
             <Card variant="perkCard">
-              <img
+              <Image
                 src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e21e8936529d4f0ebfe91_image-2-perks-education-x-template.svg"
                 alt="Perk Image"
                 className={card.imagePerk}
+                height={233}
+                width={233}
               />
               <div className="perkContent">
                 <Typography
@@ -54,10 +59,12 @@ const Perk = (props: Props) => {
               </div>
             </Card>
             <Card variant="perkCard">
-              <img
+              <Image
                 src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e21e8c0c9f4644adea00a_image-3-perks-education-x-template.svg"
                 alt="Perk Image"
                 className={card.imagePerk}
+                height={233}
+                width={233}
               />
               <div className="perkContent">
                 <Typography
