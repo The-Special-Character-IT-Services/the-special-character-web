@@ -48,7 +48,7 @@ const Timeline = ({ data, ...props }: Props) => {
           .timeline-grid {
             position: relative;
             z-index: 1;
-            grid-row-gap: 4.063rem;
+            grid-row-gap: 4rem;
             grid-template-columns: auto;
             grid-template-rows: auto;
             width: 100%;
@@ -67,12 +67,12 @@ const Timeline = ({ data, ...props }: Props) => {
             width: 2px;
             background-color: $Neutral300;
           }
-          @media screen and (max-width: $breakpointLg) {
+          @media screen and (max-width: $breakpointLgForMw) {
             .timeline-grid {
               grid-row-gap: 3.125rem;
             }
           }
-          @media screen and (max-width: $breakpointMd) {
+          @media screen and (max-width: $breakpointMdForMw) {
             .timeline-grid {
               grid-row-gap: 2.5rem;
               max-width: 100%;

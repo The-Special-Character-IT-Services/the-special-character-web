@@ -79,7 +79,7 @@
     }
   }
 }
-@media screen and (min-width: $breakpointLg) {
+@media screen and (min-width: $breakpointLgForMw) {
   .accordian {
     & > .active {
       & > p {
@@ -88,7 +88,7 @@
     }
   }
 }
-@media screen and (min-width: $breakpointMd) {
+@media screen and (min-width: $breakpointMdForMw) {
   .accordian {
     & > .active {
       & > p {
@@ -97,7 +97,7 @@
     }
   }
 }
-@media screen and (min-width: $breakpointSm) {
+@media screen and (min-width: $breakpointSmForMw) {
   .accordian {
     & > .active {
       & > p {
