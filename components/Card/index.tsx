@@ -5,13 +5,11 @@ import PropTypes from 'prop-types';
 
 const Card = ({ variant, children, className, ...props }: Props) => {
   return (
-    <>
       <div
         className={classNames(styles[variant], { [className]: !!className })}
         {...props}>
         {children}
       </div>
-    </>
   );
 };
 Card.propTypes = {

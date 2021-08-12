@@ -112,3 +112,10 @@ $xxlarge: 150px;
 // body {
 //   @include space(margin, horizontal, $large);
 // }
+.slick-slider .slick-slide {
+  padding: 0 1rem;
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  overflow: visible;
+}
