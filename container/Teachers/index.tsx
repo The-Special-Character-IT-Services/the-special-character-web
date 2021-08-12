@@ -85,6 +85,7 @@ const Teachers = (props: Props) => {
           }
           @media screen and (max-width: $breakpointLgForMw) {
             .featured-teacher {
+              padding-top: 9.188rem;
               padding-bottom: 10.813rem;
             }
             .featured-teacher-wrapper {
@@ -102,6 +103,7 @@ const Teachers = (props: Props) => {
           }
           @media screen and (max-width: $breakpointMdForMw) {
             .featured-teacher {
+              padding-top: 7.375rem;
               padding-bottom: 8.625rem;
             }
             .split-content {
@@ -110,6 +112,7 @@ const Teachers = (props: Props) => {
           }
           @media screen and (max-width: $breakpointSmForMw) {
             .featured-teacher {
+              padding-top: 6rem;
               padding-bottom: 6.938rem;
             }
             .container-default {

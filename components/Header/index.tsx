@@ -143,7 +143,7 @@ const Header = (props: Props) => {
                   z-index: 40;
                   position: fixed;
                   right: -8rem;
-                  top: 5.8rem;
+                  top: 5.75rem;
                   @include all-transition(0.3s);
                   & > a {
                     width: 60%;
