@@ -42,12 +42,12 @@
 }
 @media screen and (max-width: $breakpointMdForMw) {
   .timelineYearDot {
-    margin-right: 1.875rem;
+    margin-right: 1.75rem;
   }
   .timelineYearContent {
     max-width: none;
     & .timelineYear {
-      margin-bottom: 1.438rem;
+      margin-bottom: 1.5rem;
     }
   }
   .timelineYearTitle {
@@ -56,7 +56,7 @@
 }
 @media only screen and (max-width: $breakpointSmForMw) {
   .timelineYearDot {
-    margin-right: 0.938rem;
+    margin-right: 1rem;
   }
   .timelineYearContent .timelineYear {
     margin-bottom: 1rem;

@@ -149,7 +149,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
               margin-bottom: 1.25rem;
             }
             .typography--class-blockquote {
-              padding: 3.625rem 3.938rem;
+              padding: 3.625rem 4rem;
             }
           }
           @media screen and (max-width: $breakpointMdForMw) {

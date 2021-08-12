@@ -117,8 +117,8 @@ const Perk = (props: Props) => {
           }
           @media screen and (max-width: $breakpointLgForMw) {
             .perks {
-              padding-top: 9.188rem;
-              padding-bottom: 9.375rem;
+              padding-top: 9rem;
+              padding-bottom: 9.25rem;
             }
             .perks-grid {
               grid-row-gap: 3.75rem;
@@ -133,11 +133,11 @@ const Perk = (props: Props) => {
           }
           @media screen and (max-width: $breakpointMdForMw) {
             .perks {
-              padding-top: 7.375rem;
+              padding-top: 7.25rem;
               padding-bottom: 7.5rem;
             }
             .perks-grid {
-              grid-row-gap: 3.125rem;
+              grid-row-gap: 3rem;
             }
             .arrow-wrapper {
               bottom: -83px;
@@ -151,7 +151,7 @@ const Perk = (props: Props) => {
               padding: 0 1rem;
             }
             .perks {
-              padding-top: 5.875rem;
+              padding-top: 5.75rem;
               padding-bottom: 6rem;
             }
             .arrow-wrapper {

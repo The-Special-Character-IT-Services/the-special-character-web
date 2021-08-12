@@ -78,15 +78,15 @@ const Teachers = (props: Props) => {
           }
           .split-content {
             max-width: 47%;
-            margin-right: 1.875rem;
+            margin-right: 2rem;
           }
           .featured-teacher-content {
             max-width: 46%;
           }
           @media screen and (max-width: $breakpointLgForMw) {
             .featured-teacher {
-              padding-top: 9.188rem;
-              padding-bottom: 10.813rem;
+              padding-top: 9rem;
+              padding-bottom: 11rem;
             }
             .featured-teacher-wrapper {
               flex-direction: column;
@@ -103,8 +103,8 @@ const Teachers = (props: Props) => {
           }
           @media screen and (max-width: $breakpointMdForMw) {
             .featured-teacher {
-              padding-top: 7.375rem;
-              padding-bottom: 8.625rem;
+              padding-top: 7.25rem;
+              padding-bottom: 8.5rem;
             }
             .split-content {
               margin-bottom: 1.875rem;
@@ -113,7 +113,7 @@ const Teachers = (props: Props) => {
           @media screen and (max-width: $breakpointSmForMw) {
             .featured-teacher {
               padding-top: 6rem;
-              padding-bottom: 6.938rem;
+              padding-bottom: 7rem;
             }
             .container-default {
               padding: 0 1rem;

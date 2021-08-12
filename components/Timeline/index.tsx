@@ -48,7 +48,7 @@ const Timeline = ({ data, ...props }: Props) => {
           .timeline-grid {
             position: relative;
             z-index: 1;
-            grid-row-gap: 4.063rem;
+            grid-row-gap: 4rem;
             grid-template-columns: auto;
             grid-template-rows: auto;
             width: 100%;

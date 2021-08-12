@@ -44,7 +44,7 @@ const SubscriptionEmail = (props: Props) => {
             min-height: 65px;
             margin-bottom: 0;
             outline: none;
-            padding: 0 1.875rem;
+            padding: 0 2rem;
             border: 1px solid transparent;
             border-radius: 100px;
             background-color: $Neutral200;
@@ -59,21 +59,21 @@ const SubscriptionEmail = (props: Props) => {
           }
           .input.footer-newsletter {
             min-height: 71px;
-            padding-right: 7.813rem;
-            padding-left: 1.438rem;
+            padding-right: 7.75rem;
+            padding-left: 1.5rem;
             background-color: $Neutral100;
           }
           .button-primary.footer-newsletter {
             position: absolute;
             right: 10px;
-            padding: 0.938rem 1.5rem;
+            padding: 1rem 1.5rem;
             font-size: 0.875rem;
-            line-height: 1.143em;
+            line-height: 1.15em;
           }
 
           .w-button {
             display: inline-block;
-            padding: 0.563rem 0.938rem;
+            padding: 0.5rem 1rem;
             background-color: $Primary1;
             color: $Neutral100;
             border: 0;
