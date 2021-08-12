@@ -137,10 +137,11 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
             line-height: 1.125em;
             text-transform: uppercase;
             font-weight: 700;
+            margin: 0;
             letter-spacing: 0.08em;
             font-family: sans-serif;
           }
-          @media screen and (max-width: $breakpointLg) {
+          @media screen and (max-width: $breakpointLgForMw) {
             .typography--class-h1 {
               margin-bottom: 1.25rem;
             }
@@ -151,7 +152,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
               padding: 3.625rem 3.938rem;
             }
           }
-          @media screen and (max-width: $breakpointMd) {
+          @media screen and (max-width: $breakpointMdForMw) {
             .typography--class-h1 {
               margin-bottom: 1rem;
             }
@@ -165,7 +166,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
               padding: 3rem 3.125rem;
             }
           }
-          @media screen and (max-width: $breakpointSm) {
+          @media screen and (max-width: $breakpointSmForMw) {
             .typography--class-h1 {
               margin-bottom: 0.625rem;
             }

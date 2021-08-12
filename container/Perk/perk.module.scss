@@ -2,13 +2,14 @@
 .titlePerks {
   margin-bottom: 58px !important;
   color: $Neutral100 !important;
+  font-family: auto;
 }
-@media screen and (max-width: $breakpointLg) {
+@media screen and (max-width: $breakpointLgForMw) {
   .titlePerks {
     margin-bottom: 50px !important;
   }
 }
-@media screen and (max-width: $breakpointMd) {
+@media screen and (max-width: $breakpointMdForMw) {
   .titlePerks {
     margin-bottom: 40px !important;
   }

@@ -31,52 +31,51 @@ const SubscriptionEmail = (props: Props) => {
             display: block;
             width: 100%;
             height: 38px;
-            padding: 8px 12px;
-            margin-bottom: 10px;
-            font-size: 14px;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.625rem;
+            font-size: 0.875rem;
             line-height: 1.42857143;
-            color: #333333;
+            color: $gray-dark;
             vertical-align: middle;
-            background-color: #ffffff;
-            border: 1px solid #cccccc;
+            background-color: $Neutral100;
+            border: 1px solid $lightgray;
           }
           .input {
             min-height: 65px;
-            margin-bottom: 0px;
+            margin-bottom: 0;
             outline: none;
-            padding-right: 30px;
-            padding-left: 30px;
+            padding: 0 1.875rem;
             border: 1px solid transparent;
             border-radius: 100px;
-            background-color: #f9fafb;
+            background-color: $Neutral200;
             -webkit-transition: border-color 300ms ease, color 300ms ease;
             transition: border-color 300ms ease, color 300ms ease;
-            color: #0f437f;
-            font-size: 18px;
+            color: $Neutral800;
+            font-size: 1.125rem;
             line-height: 1.111em;
             &:hover {
-              border-color: #becad7;
+              border-color: $Neutral400;
             }
           }
           .input.footer-newsletter {
             min-height: 71px;
-            padding-right: 125px;
-            padding-left: 23px;
-            background-color: #fff;
+            padding-right: 7.813rem;
+            padding-left: 1.438rem;
+            background-color: $Neutral100;
           }
           .button-primary.footer-newsletter {
             position: absolute;
             right: 10px;
-            padding: 15px 24px;
-            font-size: 14px;
+            padding: 0.938rem 1.5rem;
+            font-size: 0.875rem;
             line-height: 1.143em;
           }
 
           .w-button {
             display: inline-block;
-            padding: 9px 15px;
-            background-color: #3898ec;
-            color: white;
+            padding: 0.563rem 0.938rem;
+            background-color: $Primary1;
+            color: $Neutral100;
             border: 0;
             line-height: inherit;
             text-decoration: none;
@@ -84,9 +83,9 @@ const SubscriptionEmail = (props: Props) => {
             border-radius: 0;
           }
           .button-primary {
-            padding: 24px 40px;
+            padding: 1.5rem 2.5rem;
             border-radius: 1000px;
-            background-color: #064ea4;
+            background-color: $Primary1;
             -webkit-transition: background-color 300ms ease,
               -webkit-transform 300ms ease;
             transition: background-color 300ms ease,
@@ -94,8 +93,8 @@ const SubscriptionEmail = (props: Props) => {
             transition: transform 300ms ease, background-color 300ms ease;
             transition: transform 300ms ease, background-color 300ms ease,
               -webkit-transform 300ms ease;
-            color: #fff;
-            font-size: 16px;
+            color: $Neutral100;
+            font-size: 1rem;
             line-height: 1.125em;
             font-weight: 700;
             text-align: center;
@@ -104,16 +103,16 @@ const SubscriptionEmail = (props: Props) => {
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
           }
-          @media screen and (max-width: $breakpointSm) {
+          @media screen and (max-width: $breakpointSmForMw) {
             .footer-newsletter-form {
               flex-direction: column;
               align-items: stretch;
             }
             .input.footer-newsletter {
               min-height: 65px;
-              margin-bottom: 20px;
-              padding-right: 20px;
-              padding-left: 20px;
+              margin-bottom: 1.25rem;
+              padding-right: 1.25rem;
+              padding-left: 1.25rem;
             }
             .button-primary.footer-newsletter {
               position: static;

@@ -35,12 +35,12 @@
     margin-bottom: 0;
   }
 }
-@media screen and (max-width: $breakpointLg) {
+@media screen and (max-width: $breakpointLgForMw) {
   .timelineYearContent .timelineYear {
     margin-bottom: 1.75rem;
   }
 }
-@media screen and (max-width: $breakpointMd) {
+@media screen and (max-width: $breakpointMdForMw) {
   .timelineYearDot {
     margin-right: 1.875rem;
   }
@@ -54,7 +54,7 @@
     margin-bottom: 0.625rem;
   }
 }
-@media only screen and (max-width: $breakpointSm) {
+@media only screen and (max-width: $breakpointSmForMw) {
   .timelineYearDot {
     margin-right: 0.938rem;
   }

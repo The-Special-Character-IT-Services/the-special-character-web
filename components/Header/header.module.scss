@@ -6,17 +6,17 @@
   text-decoration: none !important;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: $breakpointLgForMw) {
   .navLink {
     font-size: 32px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: $breakpointMdForMw) {
   .navLink {
     font-size: 30px;
   }
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: $breakpointSmForMw) {
   .navLink {
     font-size: 28px;
   }

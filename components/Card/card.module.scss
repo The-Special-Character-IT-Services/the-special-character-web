@@ -70,7 +70,7 @@
     }
   }
 }
-@media screen and (max-width: $breakpointLg) {
+@media screen and (max-width: $breakpointLgForMw) {
   .perkCard {
     display: flex;
     max-width: none;
@@ -88,7 +88,7 @@
     }
   }
 }
-@media screen and (max-width: $breakpointMd) {
+@media screen and (max-width: $breakpointMdForMw) {
   .perkCard {
     & .imagePerk {
       max-width: 192px;
@@ -97,10 +97,11 @@
     }
     & .subTitlePerk {
       margin-bottom: 0.625rem;
+      font-family: auto;
     }
   }
 }
-@media screen and (max-width: $breakpointSm) {
+@media screen and (max-width: $breakpointSmForMw) {
   .perkCard {
     text-align: center;
     flex-direction: column;

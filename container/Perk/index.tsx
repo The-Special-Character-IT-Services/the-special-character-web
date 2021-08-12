@@ -115,7 +115,7 @@ const Perk = (props: Props) => {
             right: 0px;
             bottom: -116px;
           }
-          @media screen and (max-width: $breakpointLg) {
+          @media screen and (max-width: $breakpointLgForMw) {
             .perks {
               padding-top: 9.188rem;
               padding-bottom: 9.375rem;
@@ -131,7 +131,7 @@ const Perk = (props: Props) => {
               }
             }
           }
-          @media screen and (max-width: $breakpointMd) {
+          @media screen and (max-width: $breakpointMdForMw) {
             .perks {
               padding-top: 7.375rem;
               padding-bottom: 7.5rem;
@@ -146,7 +146,7 @@ const Perk = (props: Props) => {
               }
             }
           }
-          @media screen and (max-width: $breakpointSm) {
+          @media screen and (max-width: $breakpointSmForMw) {
             .container-default {
               padding: 0 1rem;
             }

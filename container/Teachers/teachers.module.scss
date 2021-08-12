@@ -1,0 +1,85 @@
+@import '../../styles/variables.scss';
+
+.classH2 {
+  font-family: auto !important;
+}
+.featuredTeacherParagraph {
+  margin-bottom: 2.188rem;
+}
+.btn {
+  margin-right: 1.625rem;
+  margin-bottom: 1.25rem;
+}
+.cardFeaturedTeacher {
+  position: relative;
+  z-index: 1;
+  max-width: 89%;
+  margin: -10.438rem auto 0 auto;
+  padding: 2.813rem 2.5rem 2.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 24px 38px 0 rgb(30 61 96 / 5%) !important;
+  & .cardFeaturedTeacherBadge {
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1.25rem 0.625rem;
+    border-radius: 1000px;
+    background-color: $Secondary1;
+    color: $Primary1;
+    font-size: 0.875rem;
+    line-height: 1.143em;
+    font-weight: 700;
+  }
+  & .cardFeaturedTeacherTitle {
+    margin-bottom: 1.125rem;
+    font-family: auto !important;
+  }
+  & .cardFeaturedTeacherAbout {
+    padding: 0;
+    & .cardFeaturedTeacherName {
+      margin-bottom: 0.688rem;
+      color: $Neutral700;
+      line-height: 1.111em;
+      font-weight: 700;
+    }
+    & .cardFeaturedTeacherRole {
+      font-size: 1rem;
+      line-height: 1.125em;
+      letter-spacing: -0.02em;
+    }
+  }
+}
+@media screen and (max-width: $breakpointLgForMw) {
+  .btn {
+    margin-right: 0.625rem;
+  }
+  .cardFeaturedTeacher {
+    text-align: left;
+  }
+}
+@media screen and (max-width: $breakpointMdForMw) {
+  .featuredTeacherParagraph {
+    margin-bottom: 1.875rem;
+  }
+  .cardFeaturedTeacher {
+    max-width: 90%;
+    margin-top: -7.5rem;
+    padding: 2.375rem 2.063rem 2.063rem;
+    & .cardFeaturedTeacherBadge {
+      margin-bottom: 1.25rem;
+    }
+  }
+}
+@media screen and (max-width: $breakpointSmForMw) {
+  .btn {
+    margin-right: 0;
+  }
+  .cardFeaturedTeacher {
+    max-width: 95%;
+    margin-top: -4.375rem;
+    padding: 2rem 1.563rem 1.75rem;
+    & .cardFeaturedTeacherBadge {
+      margin-bottom: 0.938rem;
+      padding: 0 0.938rem;
+    }
+  }
+}
