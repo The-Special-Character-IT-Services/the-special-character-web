@@ -16,7 +16,7 @@
   align-items: flex-start;
   & .timelineYear {
     margin-bottom: 2rem;
-    padding: 1rem 1.625rem;
+    padding: 1rem 1.6rem;
     border-style: solid;
     border-width: 1px;
     border-color: $Neutral300;
@@ -51,7 +51,7 @@
     }
   }
   .timelineYearTitle {
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.6rem;
   }
 }
 @media only screen and (max-width: $breakpointSmForMw) {
@@ -60,7 +60,7 @@
   }
   .timelineYearContent .timelineYear {
     margin-bottom: 1rem;
-    padding: 0.875rem 1.25rem;
+    padding: 0.8rem 1.25rem;
   }
   .timelineYearParagraph {
     max-width: 393px;

@@ -107,7 +107,7 @@ const Teachers = (props: Props) => {
               padding-bottom: 8.5rem;
             }
             .split-content {
-              margin-bottom: 1.875rem;
+              margin-bottom: 1.8rem;
             }
           }
           @media screen and (max-width: $breakpointSmForMw) {

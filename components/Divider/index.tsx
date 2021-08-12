@@ -23,7 +23,7 @@ const Divider = ({ isFooterTop, isFooterBottom }: Props) => {
             background-color: $Neutral300;
           }
           .footer-top {
-            margin-top: 3.375rem;
+            margin-top: 3.4rem;
             margin-bottom: 7.5rem;
             background-color: $Neutral100;
             opacity: 0.15;
@@ -36,7 +36,7 @@ const Divider = ({ isFooterTop, isFooterBottom }: Props) => {
           }
           @media screen and (max-width: $breakpointLg) {
             .footer-top {
-              margin-top: 3.12rem;
+              margin-top: 3.25rem;
               margin-bottom: 5rem;
             }
             .footer-bottom {
@@ -49,12 +49,12 @@ const Divider = ({ isFooterTop, isFooterBottom }: Props) => {
               margin-bottom: 3.75rem;
             }
             .footer-bottom {
-              margin-top: 4.813rem;
+              margin-top: 4.8rem;
             }
           }
           @media screen and (max-width: $breakpointSm) {
             .footer-top {
-              margin-bottom: 3.12rem;
+              margin-bottom: 3.25rem;
             }
             .footer-bottom {
               margin-top: 4rem;

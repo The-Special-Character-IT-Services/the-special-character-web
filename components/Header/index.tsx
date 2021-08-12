@@ -224,7 +224,7 @@ const Header = (props: Props) => {
                   }
                   & .header-navigation {
                     width: 100%;
-                    padding-left: 3.45rem;
+                    padding-left: 3.5rem;
                   }
                 }
               }

@@ -85,7 +85,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
             line-height: 1.444em;
           }
           .typography--class-h6 {
-            margin-bottom: 0.625rem;
+            margin-bottom: 0.6rem;
             color: $Neutral800;
             font-size: var(--fs-h6);
             line-height: 1.5em;
@@ -117,7 +117,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
           }
           .typography--class-blockquote {
             margin: 0 0 0.625rem 0;
-            padding: 4.375rem 4.75rem 4.375rem 7.875rem;
+            padding: 4.4rem 4.8rem 4.4rem 7.8rem;
             border-left: 11px solid $Secondary3;
             border-radius: 10px 20px 20px 10px;
             background-color: $Neutral100;
@@ -149,7 +149,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
               margin-bottom: 1.25rem;
             }
             .typography--class-blockquote {
-              padding: 3.625rem 4rem;
+              padding: 3.6rem 4rem;
             }
           }
           @media screen and (max-width: $breakpointMdForMw) {
@@ -163,15 +163,15 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
               line-height: 2em;
             }
             .typography--class-blockquote {
-              padding: 3rem 3.125rem;
+              padding: 3rem 3.2rem;
             }
           }
           @media screen and (max-width: $breakpointSmForMw) {
             .typography--class-h1 {
-              margin-bottom: 0.625rem;
+              margin-bottom: 0.6rem;
             }
             .typography--class-h2 {
-              margin-bottom: 0.625rem;
+              margin-bottom: 0.6rem;
             }
             .typography--class-blockquote {
               padding: 2.5rem 1.25rem;

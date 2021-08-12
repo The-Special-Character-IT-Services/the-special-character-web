@@ -32,8 +32,8 @@ const SubscriptionEmail = (props: Props) => {
             width: 100%;
             height: 38px;
             padding: 0.5rem 0.75rem;
-            margin-bottom: 0.625rem;
-            font-size: 0.875rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.8rem;
             line-height: 1.42857143;
             color: $gray-dark;
             vertical-align: middle;
