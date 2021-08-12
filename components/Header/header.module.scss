@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+.navLink {
+  line-height: 1.111em;
+  font-weight: 700;
+  color: $Neutral700 !important;
+  text-decoration: none !important;
+  position: relative;
+  &::after {
+    content: '';
+    transition: ease all 0.2s;
+    position: absolute;
+    z-index: 10;
+    width: 0;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    margin: auto;
+    height: 1px;
+    background-color: $Neutral700;
+  }
+  &:hover::after,
+  :focus::after {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: $breakpointLgForMw) {
+  .navLink {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: $breakpointMdForMw) {
+  .navLink {
+    font-size: 1.875rem;
+  }
+}
+@media screen and (max-width: $breakpointSmForMw) {
+  .navLink {
+    font-size: 1.75rem;
+  }
+}

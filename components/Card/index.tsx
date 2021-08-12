@@ -13,7 +13,7 @@ const Card = ({ variant, children, className, ...props }: Props) => {
   );
 };
 Card.propTypes = {
-  variant: PropTypes.oneOf(['card', 'cardHover']),
+  variant: PropTypes.oneOf(['card', 'cardHover','perkCard']),
 };
 
 Card.defaultProps = {

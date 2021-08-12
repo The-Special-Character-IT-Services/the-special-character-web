@@ -1,5 +1,6 @@
 import Button from '@components/Button';
 import Image from 'next/image';
+import Link from 'next/link';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
 import React from 'react';
@@ -30,7 +31,7 @@ const AboutEducation = (props: Props) => {
             <aside className="sideDiv">
               <div className="abtContent">
                 <Button className="buttonIcon" style={{ padding: 0 }}>
-                  <Image src="/vercel.svg" height={32} width={32} alt="icon1" />
+                  <Image src="/about1.svg" height={40} width={40} alt="icon1" />
                 </Button>
                 <div>
                   <Typography style={{ margin: 0 }} variant="h3">
@@ -44,7 +45,7 @@ const AboutEducation = (props: Props) => {
               </div>
               <div className="abtContent">
                 <Button className="buttonIcon" style={{ padding: 0 }}>
-                  <Image src="/vercel.svg" height={32} width={32} alt="icon2" />
+                  <Image src="/about2.svg" height={40} width={40} alt="icon2" />
                 </Button>
                 <div>
                   <Typography style={{ margin: 0 }} variant="h3">
@@ -58,7 +59,7 @@ const AboutEducation = (props: Props) => {
               </div>
               <div className="abtContent">
                 <Button className="buttonIcon" style={{ padding: 0 }}>
-                  <Image src="/vercel.svg" height={32} width={32} alt="icon3" />
+                  <Image src="/about3.svg" height={40} width={40} alt="icon3" />
                 </Button>
                 <div>
                   <Typography style={{ margin: 0 }} variant="h3">
@@ -72,15 +73,16 @@ const AboutEducation = (props: Props) => {
               </div>
             </aside>
           </div>
-          <Button className="secondary" size="small">
-            About Education
-          </Button>
+          <Link href="/about">
+            <Button className="secondary">About Education</Button>
+          </Link>
         </div>
       </section>
       <style jsx>{`
         @import '../../styles/variables.scss';
 
         .container {
+          margin-top: 2rem;
           & > .main {
             display: flex;
             align-items: center;
@@ -96,7 +98,7 @@ const AboutEducation = (props: Props) => {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
           }
           & .sideDiv {
             max-width: 519px;
@@ -133,6 +135,7 @@ const AboutEducation = (props: Props) => {
             flex-direction: column;
             align-items: center;
             text-align: center;
+            gap: 1rem;
           }
         }
       `}</style>

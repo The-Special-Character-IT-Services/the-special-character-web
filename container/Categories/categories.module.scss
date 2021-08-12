@@ -1,0 +1,120 @@
+@import '../../styles/variables.scss';
+.categories {
+  position: relative;
+  padding-top: 8.5rem;
+  padding-bottom: 11.5rem;
+  & > .container {
+    max-width: 1209px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    flex: 1;
+    text-align: center;
+    & > h2 {
+      font-family: auto;
+      margin-top: 0;
+      margin-bottom: 3rem;
+    }
+    & > .cardDiv {
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-column-gap: 1.625rem;
+      grid-row-gap: 1rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      & > .cardBox {
+        flex-direction: column;
+        margin-right: 0;
+        & button {
+          position: absolute;
+          top: 1.5rem;
+          right: 1.625rem;
+          padding: 1rem 1.5rem;
+          background-color: $Neutral100;
+          width: fit-content;
+          & p {
+            display: flex;
+            gap: 0.5rem;
+            & p {
+              margin: 0;
+              font-size: 0.875rem;
+              line-height: 1em;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+  & > .arrow {
+    left: 0;
+    right: 0;
+    bottom: -7.25rem;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+  }
+}
+@media screen and (max-width: $breakpointLg) {
+  .categories {
+    padding-top: 7rem;
+    & > .container {
+      flex-direction: column;
+      align-items: stretch;
+      & > .cardDiv {
+        max-width: 552px;
+        margin-right: auto;
+        margin-left: auto;
+        grid-row-gap: 3rem;
+        grid-template-columns: 1fr;
+      }
+    }
+    & > .arrow {
+      bottom: -6.25rem;
+      & img {
+        width: 65px;
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .categories {
+    padding-top: 5.5rem;
+    & > .container {
+      & > h2 {
+        margin-right: auto;
+        margin-bottom: 2.5rem;
+        margin-left: auto;
+      }
+      & > .cardDiv {
+        grid-row-gap: 2.5rem;
+      }
+    }
+    & > .arrow {
+      bottom: -5rem;
+      & img {
+        width: 55px;
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointSm) {
+  .categories {
+    padding-top: 4.375rem;
+    padding-bottom: 7rem;
+
+    & > .container {
+      padding-right: 1rem;
+      padding-left: 1rem;
+      & > h2 {
+        max-width: 240px;
+      }
+    }
+    & > .arrow {
+      & img {
+        width: 45px;
+      }
+    }
+  }
+}

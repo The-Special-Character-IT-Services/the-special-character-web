@@ -91,6 +91,10 @@ const Button = ({
             .btn {
               display: block;
               padding: 1.25rem 1.125rem;
+              width: 100%;
+              &.buttonIcon {
+                width: fit-content;
+              }
             }
           }
         `}
