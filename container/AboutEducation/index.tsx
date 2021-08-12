@@ -6,27 +6,6 @@ import React from 'react';
 
 interface Props {}
 
-const data = [
-  {
-    id: 1,
-    icon: '/vercel.svg',
-    heading: 'Industry expert teachers',
-    text: 'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor .',
-  },
-  {
-    id: 2,
-    icon: '/vercel.svg',
-    heading: 'Students community',
-    text: 'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor .',
-  },
-  {
-    id: 3,
-    icon: '/vercel.svg',
-    heading: 'Up-to-date course content',
-    text: 'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor .',
-  },
-];
-
 const AboutEducation = (props: Props) => {
   return (
     <>
