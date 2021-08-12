@@ -59,12 +59,10 @@ const Button = ({
             }
             &.buttonIcon {
               background-color: $icon;
-              min-height: 60px;
-              min-width: 60px;
-              padding: 0;
-              border-radius: 60px;
+              padding: 0.5rem;
               border: none;
               cursor: auto;
+              overflow: hidden;
 
               &:hover {
                 background-color: $icon;

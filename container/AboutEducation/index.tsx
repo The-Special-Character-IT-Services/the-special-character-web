@@ -30,11 +30,13 @@ const AboutEducation = (props: Props) => {
             />
             <aside className="sideDiv">
               <div className="abtContent">
-                <Button className="buttonIcon" style={{ padding: 0 }}>
-                  <Image src="/about1.svg" height={40} width={40} alt="icon1" />
+                <Button className="buttonIcon">
+                  <Image src="/about1.svg" height={60} width={60} alt="icon1" />
                 </Button>
                 <div>
-                  <Typography style={{ margin: 0 }} variant="h3">
+                  <Typography
+                    style={{ margin: 0, marginBottom: '0.5rem' }}
+                    variant="h3">
                     Industry expert teachers
                   </Typography>
                   <Typography>
@@ -44,11 +46,13 @@ const AboutEducation = (props: Props) => {
                 </div>
               </div>
               <div className="abtContent">
-                <Button className="buttonIcon" style={{ padding: 0 }}>
-                  <Image src="/about2.svg" height={40} width={40} alt="icon2" />
+                <Button className="buttonIcon">
+                  <Image src="/about2.svg" height={60} width={60} alt="icon2" />
                 </Button>
                 <div>
-                  <Typography style={{ margin: 0 }} variant="h3">
+                  <Typography
+                    style={{ margin: 0, marginBottom: '0.5rem' }}
+                    variant="h3">
                     Industry expert teachers
                   </Typography>
                   <Typography>
@@ -58,11 +62,13 @@ const AboutEducation = (props: Props) => {
                 </div>
               </div>
               <div className="abtContent">
-                <Button className="buttonIcon" style={{ padding: 0 }}>
-                  <Image src="/about3.svg" height={40} width={40} alt="icon3" />
+                <Button className="buttonIcon">
+                  <Image src="/about3.svg" height={60} width={60} alt="icon3" />
                 </Button>
                 <div>
-                  <Typography style={{ margin: 0 }} variant="h3">
+                  <Typography
+                    style={{ margin: 0, marginBottom: '0.5rem' }}
+                    variant="h3">
                     Industry expert teachers
                   </Typography>
                   <Typography>
