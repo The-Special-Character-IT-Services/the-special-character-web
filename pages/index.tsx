@@ -1,4 +1,5 @@
 import Banner from 'container/Banner';
+import Categories from 'container/Categories';
 import Courses from 'container/Courses';
 import Ratings from 'container/Ratings';
 
@@ -8,6 +9,7 @@ export default function Home() {
       <Banner />
       <Courses />
       <Ratings />
+      <Categories />
     </>
   );
 }
