@@ -1,0 +1,188 @@
+@import '../../styles/variables.scss';
+.footer {
+  padding-top: 72px;
+  padding-bottom: 0px;
+  border-top: 1px solid #becad7;
+  background-color: #1e3d60;
+  & > .container {
+    max-width: 1209px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 24px;
+    padding-left: 24px;
+    flex: 1;
+    & > .contentTop {
+      display: flex;
+      justify-content: space-between;
+      & p {
+        max-width: 468px;
+        margin-bottom: 0px;
+        color: #becad7;
+      }
+    }
+    & > .contentMiddle {
+      display: flex;
+      margin-bottom: -26px;
+      justify-content: space-between;
+      & > .divLeft {
+        max-width: 396px;
+        margin-right: 30px;
+        flex: 1;
+        & > .upDiv {
+          margin-bottom: 32px;
+          & > h2 {
+            margin-bottom: 12px;
+            color: #fff;
+            font-size: 24px;
+          }
+          & > p {
+            margin: 0;
+            color: #becad7;
+          }
+        }
+      }
+      & > .divRight {
+        display: flex;
+        width: 40%;
+        max-width: 659px;
+        flex-direction: column;
+        & > .title {
+          color: #fff;
+        }
+        & > .list {
+          list-style: none;
+          padding: 0;
+          & > .listItem {
+            margin-bottom: 26px;
+            line-height: 1em;
+            & a {
+              color: #becad7;
+            }
+          }
+        }
+      }
+    }
+    & > .contentBottom {
+      & > .footerTxt {
+      }
+      & > .socialIcons {
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointLg) {
+  .footer {
+    & > .container {
+      flex-direction: column;
+      align-items: stretch;
+      & > .contentTop {
+        flex-wrap: wrap;
+        & > a {
+          margin-right: 30px;
+          margin-bottom: 20px;
+        }
+      }
+      & > .contentMiddle {
+        flex-direction: column;
+        & > .divLeft {
+          max-width: 600px;
+          margin-right: 0px;
+          margin-bottom: 60px;
+          & > .upDiv {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+
+            & > h2 {
+              margin-bottom: 10px;
+            }
+            & button {
+              margin-right: 25px;
+            }
+          }
+        }
+        & > .divRight {
+          max-width: 730px;
+        }
+      }
+      & > .contentBottom {
+        & > .footerTxt {
+        }
+        & > .socialIcons {
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .footer {
+    & > .container {
+      & > .contentTop {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: flex-start;
+        & > a {
+          margin-right: 0px;
+        }
+      }
+      & > .contentMiddle {
+        & > .divLeft {
+          & > .upDiv {
+            margin-bottom: 28px;
+            & > h2 {
+              font-size: 22px;
+            }
+            & button {
+              margin-right: 20px;
+            }
+          }
+        }
+        & > .divRight {
+        }
+      }
+      & > .contentBottom {
+        & > .footerTxt {
+        }
+        & > .socialIcons {
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointSm) {
+  .footer {
+    & > .container {
+      padding-right: 16px;
+      padding-left: 16px;
+
+      & > .contentTop {
+        & > a {
+          margin-bottom: 15px;
+        }
+      }
+      & > .contentMiddle {
+        & > .divLeft {
+          margin-bottom: 50px;
+          & > .upDiv {
+            flex-direction: column;
+            & > h2 {
+              font-size: 20px;
+            }
+
+            & button {
+              margin-bottom: 20px;
+            }
+          }
+        }
+        & > .divRight {
+        }
+      }
+      & > .contentBottom {
+        & > .footerTxt {
+        }
+        & > .socialIcons {
+        }
+      }
+    }
+  }
+} ;
