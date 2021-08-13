@@ -133,14 +133,14 @@ const Testimonials = (props: Props) => {
           @import './styles/variables.scss';
           .testimonials {
             overflow: hidden;
-            padding-top: 184px;
-            padding-bottom: 184px;
-            background-color: #f9fafb;
+            padding-top: 11.5rem;
+            padding-bottom: 11.5rem;
+            background-color: $Neutral200;
           }
           .container-default {
             max-width: 1209px;
             margin: 0 auto;
-            padding: 0 14px;
+            padding: 0 0.8rem;
           }
           .testimonials-wrapper {
             text-align: center;
@@ -148,21 +148,21 @@ const Testimonials = (props: Props) => {
 
           @media screen and (max-width: $breakpointLgForMw) {
             .testimonials {
-              padding-top: 147px;
-              padding-bottom: 147px;
+              padding-top: 9rem;
+              padding-bottom: 9rem;
             }
           }
 
           @media screen and (max-width: $breakpointMdForMw) {
             .testimonials {
-              padding-top: 118px;
-              padding-bottom: 118px;
+              padding-top: 7.25rem;
+              padding-bottom: 7.25rem;
             }
           }
           @media screen and (max-width: $breakpointSmForMw) {
             .testimonials {
-              padding-top: 110px;
-              padding-bottom: 94px;
+              padding-top: 6.8rem;
+              padding-bottom: 5.8rem;
             }
             .text-align {
               text-align: center;

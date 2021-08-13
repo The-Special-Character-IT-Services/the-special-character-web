@@ -27,8 +27,8 @@ const StarRating = ({ props, number, className }: Props) => {
         }
         .empty-star {
           svg {
-            height: 32px;
-            width: 32px;
+            height: 2rem;
+            width: 2rem;
           }
         }
         @media screen and (max-width: $breakpointSmForMw) {

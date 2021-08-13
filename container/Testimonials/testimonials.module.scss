@@ -1,12 +1,12 @@
 @import '../../styles/variables.scss';
 
 .title {
-  margin-bottom: 59px !important;
+  margin-bottom: 3.75rem !important;
   font-family: auto !important;
 }
 .testimonialCard {
   display: flex !important;
-  padding: 90px 56px 86px;
+  padding: 5.75rem 3.5rem 5.25rem;
   align-items: center;
   text-align: left;
 }
@@ -15,19 +15,19 @@
     width: 203px !important;
     min-height: 203px !important;
     min-width: 203px !important;
-    margin-right: 32px !important;
+    margin-right: 2rem !important;
     border-radius: 1000px !important;
   }
 }
 .testimonialStar {
-  margin-bottom: 22px;
+  margin-bottom: 1.4rem;
 }
 .testimonialParagraph {
-  margin-bottom: 22px;
+  margin-bottom: 1.4rem;
 }
 .testimonialName {
   margin-bottom: 10px;
-  color: #1e3d60;
+  color: $Neutral700;
   line-height: 1.111em;
   font-weight: 700;
 }
@@ -75,8 +75,8 @@
 }
 .rightArrow {
   right: 0;
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
   border-radius: 1000px;
   background-color: $Neutral100;
   box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
@@ -125,18 +125,18 @@
 }
 @media screen and (max-width: $breakpointLgForMw) {
   .title {
-    margin-bottom: 50px !important;
+    margin-bottom: 3rem !important;
   }
 }
 @media screen and (max-width: $breakpointMdForMw) {
   .title {
     max-width: 392px;
     margin-right: auto;
-    margin-bottom: 40px !important;
+    margin-bottom: 2.5rem !important;
     margin-left: auto;
   }
   .testimonialCard {
-    padding: 55px 46px 52px;
+    padding: 3.5rem 3.5rem 3.25rem;
     flex-direction: column;
     align-items: stretch;
     text-align: center;
@@ -147,12 +147,12 @@
       min-height: 169px !important;
       min-width: 169px !important;
       margin-right: auto !important;
-      margin-bottom: 40px !important;
+      margin-bottom: 2.5rem !important;
       margin-left: auto !important;
     }
   }
   .testimonialStar {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 }
 @media screen and (max-width: $breakpointSmForMw) {
@@ -160,7 +160,7 @@
     max-width: 306px;
   }
   .testimonialCard {
-    padding: 46px 25px 43px;
+    padding: 2.8rem 1.5rem 2.6rem;
   }
   .image {
     & img {
@@ -168,11 +168,11 @@
       width: 141px !important;
       min-height: 141px !important;
       min-width: 141px !important;
-      margin-bottom: 30px !important;
+      margin-bottom: 1.8rem !important;
     }
   }
   .testimonialStar {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
   }
   .testimonialRole {
     font-size: 1rem;
