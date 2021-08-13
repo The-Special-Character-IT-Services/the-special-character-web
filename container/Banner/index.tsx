@@ -4,7 +4,9 @@ import Typography from '@components/Typography';
 import { useRef } from 'react';
 import styles from './banner.module.scss';
 
-interface Props {}
+interface Props {
+  props: JSX.Element;
+}
 
 const Banner = (props: Props) => {
   return (
