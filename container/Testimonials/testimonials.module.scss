@@ -6,7 +6,7 @@
 }
 .testimonialCard {
   display: flex !important;
-  padding: 5.75rem 3.5rem 5.25rem;
+  padding: 3rem 2rem;
   align-items: center;
   text-align: left;
 }
@@ -120,7 +120,12 @@
 }
 @media screen and (min-width: $breakpointLg) {
   .testimonialCard {
-    min-width: 765px;
+    min-width: 640px;
+  }
+}
+@media screen and (min-width: $breakpointMd) {
+  .testimonialCard {
+    max-height: 379px;
   }
 }
 @media screen and (max-width: $breakpointLgForMw) {

@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.timelineParagraph {
+  margin-bottom: 36px;
+}
+@media screen and (max-width: $breakpointLgForMw) {
+}
+@media screen and (max-width: $breakpointMdForMw) {
+  .timelineParagraph {
+    max-width: 95%;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: $breakpointSmForMw) {
+}

@@ -9,7 +9,7 @@ interface Props {}
 
 const Perk = (props: Props) => {
   return (
-    <section id="Perks" className="bg-neutral-700 perks wf-section">
+    <section id="Perks" className="bg-neutral-700 perks">
       <div className="container-default">
         <div className="perks-wrapper">
           <Typography

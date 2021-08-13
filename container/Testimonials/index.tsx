@@ -29,7 +29,7 @@ const Testimonials = (props: Props) => {
     infinite: false,
     pauseOnHover: true,
     autoplay: true,
-    slidesToShow: 1.2,
+    slidesToShow: 1.5,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -38,9 +38,6 @@ const Testimonials = (props: Props) => {
         breakpoint: 1024,
         settings: {
           adaptiveHeight: false,
-          dots: false,
-          infinite: true,
-          speed: 500,
           slidesToShow: 1,
           slidesToScroll: 1,
           nextArrow: <NextArrow />,
@@ -51,8 +48,6 @@ const Testimonials = (props: Props) => {
         breakpoint: 768,
         settings: {
           dots: true,
-          infinite: true,
-          speed: 500,
           slidesToShow: 1,
           slidesToScroll: 1,
           nextArrow: false,
@@ -81,7 +76,7 @@ const Testimonials = (props: Props) => {
               />
               <div>
                 <StarRating
-                  number={3}
+                  number={5}
                   className={classNames(styles.testimonialStar)}
                 />
                 <div className="text-align">
@@ -104,7 +99,7 @@ const Testimonials = (props: Props) => {
                 height={203}
                 width={203}
                 className={styles.image}
-                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg"
+                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd486e01646f00559d_image-2-testimonials-education-x-template.jpg"
               />
               <div>
                 <StarRating
@@ -117,10 +112,37 @@ const Testimonials = (props: Props) => {
                     esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”
                   </Typography>
                   <Typography className={styles.testimonialName}>
-                    Katherine Cutts
+                    Daniel Smith
                   </Typography>
                   <Typography className={styles.testimonialRole}>
-                    Junior Designer at Facebook
+                    Mobile Developer at Google
+                  </Typography>
+                </div>
+              </div>
+            </Card>
+            <Card className={styles.testimonialCard}>
+              <Images
+                variant="avtar"
+                height={203}
+                width={203}
+                className={styles.image}
+                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bc486e0164b300559c_image-3-testimonials-education-x-template.jpg"
+              />
+              <div>
+                <StarRating
+                  number={4}
+                  className={classNames(styles.testimonialStar)}
+                />
+                <div className="text-align">
+                  <Typography className={styles.testimonialParagraph}>
+                    “Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”
+                  </Typography>
+                  <Typography className={styles.testimonialName}>
+                    Sophie Moore
+                  </Typography>
+                  <Typography className={styles.testimonialRole}>
+                    UX Designer at Amazon
                   </Typography>
                 </div>
               </div>

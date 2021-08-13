@@ -1,13 +1,11 @@
-import FAQs from '@container/FAQs';
-import Form from '@container/Form';
+import CoursesHeader from '@container/CoursesHeader';
 
 interface Props {}
 
 const Contact = (props: Props) => {
   return (
     <>
-      <Form />
-      <FAQs />
+      <CoursesHeader />
     </>
   );
 };
