@@ -31,11 +31,13 @@ const Footer = (props: Props) => {
             eiusmod tempor incididunt aliqua.
           </Typography>
         </div>
-        <Divider />
+        <Divider isFooterTop />
         <div className={styles.contentMiddle}>
           <div className={styles.divLeft}>
             <div className={styles.upDiv}>
-              <Button className="buttonIcon">
+              <Button
+                className="buttonIcon"
+                style={{ padding: '0', overflow: 'hidden' }}>
                 <Image
                   alt="Message Icon"
                   src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f5ea5d227324cf40fa52d_icon-newsletter-footer-education-x-template.svg"
@@ -43,49 +45,18 @@ const Footer = (props: Props) => {
                   height={72}
                 />
               </Button>
-
               <Typography variant="h2">Subscribe to our newsletter</Typography>
               <Typography>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmo.
               </Typography>
             </div>
-            <SubscriptionEmail />
           </div>
           <div className={styles.divRight}>
-            <Typography variant="bold" className={styles.title}>
-              Pages
-            </Typography>
-            <ul className={styles.list}>
-              <li className={styles.listItem}>
-                <Link href="/">
-                  <a>Home</a>
-                </Link>
-              </li>
-              <li className={styles.listItem}>
-                <Link href="/">
-                  <a>About</a>
-                </Link>
-              </li>
-              <li className={styles.listItem}>
-                <Link href="/">
-                  <a>Courses</a>
-                </Link>
-              </li>
-              <li className={styles.listItem}>
-                <Link href="/">
-                  <a>Teachers</a>
-                </Link>
-              </li>
-              <li className={styles.listItem}>
-                <Link href="/">
-                  <a>Contact</a>
-                </Link>
-              </li>
-            </ul>
+            <SubscriptionEmail />
           </div>
         </div>
-        <Divider className="footer-bottom" />
+        <Divider isFooterBottom />
         <div className={styles.contentBottom}>
           <div className={styles.footerTxt}>
             Copyright © Education X | Designed by <a href="">BRIX Templates</a>{' '}

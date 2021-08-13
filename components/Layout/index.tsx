@@ -1,3 +1,4 @@
+import Footer from '@components/Footer';
 import Header from '@components/Header';
 
 type Props = {
@@ -9,6 +10,7 @@ const Layout = ({ children }: Props) => {
     <>
       <Header />
       {children}
+      <Footer />
     </>
   );
 };

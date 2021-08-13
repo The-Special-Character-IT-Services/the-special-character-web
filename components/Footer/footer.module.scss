@@ -1,62 +1,61 @@
 @import '../../styles/variables.scss';
 .footer {
-  padding-top: 72px;
-  padding-bottom: 0px;
-  border-top: 1px solid #becad7;
-  background-color: #1e3d60;
+  padding-top: 4.5rem;
+  padding-bottom: 0;
+  border-top: 1px solid $Neutral400;
+  background-color: $Neutral700;
   & > .container {
     max-width: 1209px;
     margin-right: auto;
     margin-left: auto;
-    padding-right: 24px;
-    padding-left: 24px;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
     flex: 1;
     & > .contentTop {
       display: flex;
       justify-content: space-between;
       & p {
         max-width: 468px;
-        margin-bottom: 0px;
-        color: #becad7;
+        margin-bottom: 0;
+        color: $Neutral400;
       }
     }
     & > .contentMiddle {
       display: flex;
-      margin-bottom: -26px;
+      margin-bottom: -1.5rem;
       justify-content: space-between;
       & > .divLeft {
-        max-width: 396px;
-        margin-right: 30px;
-        flex: 1;
+        margin-right: 2rem;
         & > .upDiv {
-          margin-bottom: 32px;
+          margin-bottom: 2rem;
+          flex: 1;
           & > h2 {
-            margin-bottom: 12px;
-            color: #fff;
-            font-size: 24px;
+            margin-bottom: 0.75rem;
+            color: $Neutral100;
+            font-size: 1.5re;
           }
           & > p {
             margin: 0;
-            color: #becad7;
+            color: $Neutral400;
           }
         }
       }
       & > .divRight {
         display: flex;
-        width: 40%;
-        max-width: 659px;
         flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
         & > .title {
-          color: #fff;
+          color: $Neutral100;
         }
         & > .list {
           list-style: none;
           padding: 0;
           & > .listItem {
-            margin-bottom: 26px;
+            margin-bottom: 1.5rem;
             line-height: 1em;
             & a {
-              color: #becad7;
+              color: $Neutral400;
             }
           }
         }
@@ -64,6 +63,12 @@
     }
     & > .contentBottom {
       & > .footerTxt {
+        margin-right: 2rem;
+        padding-bottom: 1.5rem;
+        color: $Neutral300;
+        & > a {
+          text-decoration: underline;
+        }
       }
       & > .socialIcons {
       }
@@ -78,35 +83,36 @@
       & > .contentTop {
         flex-wrap: wrap;
         & > a {
-          margin-right: 30px;
-          margin-bottom: 20px;
+          margin-right: 2rem;
+          margin-bottom: 1.25rem;
         }
       }
       & > .contentMiddle {
         flex-direction: column;
         & > .divLeft {
           max-width: 600px;
-          margin-right: 0px;
-          margin-bottom: 60px;
+          margin-right: 0;
+          margin-bottom: 3.75rem;
           & > .upDiv {
             display: flex;
             align-items: flex-start;
             flex-direction: column;
-
             & > h2 {
-              margin-bottom: 10px;
-            }
-            & button {
-              margin-right: 25px;
+              margin-bottom: 0.5rem;
             }
           }
         }
         & > .divRight {
           max-width: 730px;
+
+          & button {
+            margin-right: 1.5rem;
+          }
         }
       }
       & > .contentBottom {
         & > .footerTxt {
+          margin-right: 0;
         }
         & > .socialIcons {
         }
@@ -122,27 +128,23 @@
         flex-direction: column;
         align-items: flex-start;
         & > a {
-          margin-right: 0px;
+          margin-right: 0;
         }
       }
       & > .contentMiddle {
         & > .divLeft {
           & > .upDiv {
-            margin-bottom: 28px;
+            margin-bottom: 1.75rem;
             & > h2 {
-              font-size: 22px;
-            }
-            & button {
-              margin-right: 20px;
+              font-size: 1.375rem;
             }
           }
-        }
-        & > .divRight {
+          & button {
+            margin-right: 1.25rem;
+          }
         }
       }
       & > .contentBottom {
-        & > .footerTxt {
-        }
         & > .socialIcons {
         }
       }
@@ -152,34 +154,26 @@
 @media screen and (max-width: $breakpointSm) {
   .footer {
     & > .container {
-      padding-right: 16px;
-      padding-left: 16px;
+      padding-right: 1rem;
+      padding-left: 1rem;
 
       & > .contentTop {
         & > a {
-          margin-bottom: 15px;
+          margin-bottom: 1rem;
         }
       }
       & > .contentMiddle {
         & > .divLeft {
-          margin-bottom: 50px;
+          margin-bottom: 3rem;
           & > .upDiv {
             flex-direction: column;
             & > h2 {
-              font-size: 20px;
-            }
-
-            & button {
-              margin-bottom: 20px;
+              font-size: 1.25rem;
             }
           }
         }
-        & > .divRight {
-        }
       }
       & > .contentBottom {
-        & > .footerTxt {
-        }
         & > .socialIcons {
         }
       }

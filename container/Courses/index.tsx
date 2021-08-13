@@ -67,6 +67,23 @@ const Courses = (props: Props) => {
           prevArrow: <PrevArrow />,
         },
       },
+      {
+        breakpoint: 576,
+        settings: {
+          adaptiveHeight: true,
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          cssEase: 'linear',
+          pauseOnHover: true,
+          nextArrow: false,
+          prevArrow: false,
+        },
+      },
     ],
   };
   return (
