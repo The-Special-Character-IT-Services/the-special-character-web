@@ -4,13 +4,26 @@
   display: flex;
   padding: 1rem;
   cursor: pointer;
+  margin-bottom: 1.5rem;
+  flex-direction: column;
   & > .buttonDiv {
-    max-width: 100px;
     padding: 0;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    & > h3 {
+      margin: 0;
+      color: $Neutral600;
+    }
     &:hover {
       opacity: 0.86;
     }
+    & .headTxt {
+      color: $Neutral800;
+    }
     & > .acBtn {
+      margin-right: 1rem;
       width: 3rem;
       height: 3rem;
       padding: 0 1.25rem;
@@ -58,23 +71,27 @@
   }
   & > .showDiv {
     padding: 0;
-    & > h3 {
-      margin: 0;
-      color: $Neutral600;
+    flex-direction: row;
+
+    & > .dummyDiv {
+      width: 3rem;
+      margin-right: 1rem;
     }
     & > .label {
       color: $Primary1;
     }
     & > .hideDiv {
+      flex: 1;
       display: none;
       padding: 0;
+      margin-top: 1rem;
     }
     & .active {
       display: block;
     }
   }
 }
-@media screen and (min-width: $breakpointLgForMw) {
+@media screen and (min-width: $breakpointLg) {
   .accordian {
     & .active {
       & > p {
@@ -83,7 +100,13 @@
     }
   }
 }
-
-.headTxt {
-  color: $Neutral800 !important;
+@media screen and (min-width: $breakpointMd) {
+  .accordian {
+    margin-bottom: 1.25rem;
+    & .active {
+      & > p {
+        padding-right: 4rem;
+      }
+    }
+  }
 }

@@ -9,7 +9,6 @@
   background-color: $Neutral100;
   display: flex;
   transition-duration: 300ms;
-  margin-right: 27px;
   & img {
     width: 100%;
     min-height: 100%;
@@ -24,9 +23,6 @@
     padding-bottom: 1rem;
     padding-left: 1rem;
     flex-direction: column;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0%;
     text-align: left;
   }
 }
