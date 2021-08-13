@@ -1,0 +1,182 @@
+@import '../../styles/variables.scss';
+
+.title {
+  margin-bottom: 59px !important;
+  font-family: auto !important;
+}
+.testimonialCard {
+  display: flex !important;
+  padding: 90px 56px 86px;
+  align-items: center;
+  text-align: left;
+}
+.image {
+  & img {
+    width: 203px !important;
+    min-height: 203px !important;
+    min-width: 203px !important;
+    margin-right: 32px !important;
+    border-radius: 1000px !important;
+  }
+}
+.testimonialStar {
+  margin-bottom: 22px;
+}
+.testimonialParagraph {
+  margin-bottom: 22px;
+}
+.testimonialName {
+  margin-bottom: 10px;
+  color: #1e3d60;
+  line-height: 1.111em;
+  font-weight: 700;
+}
+.testimonialRole {
+  line-height: 1.111em;
+}
+.leftArrow {
+  left: 0;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 62.5rem;
+  background-color: $Neutral100;
+  box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
+  transition: background-color 300ms ease, box-shadow 300ms ease,
+    color 300ms ease, transform 300ms ease;
+  transform-style: preserve-3d;
+  z-index: 3;
+  right: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  cursor: pointer;
+  overflow: hidden;
+  & > .leftIcon {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    & svg {
+      fill: $Neutral700;
+    }
+  }
+  &:hover {
+    background-color: $Primary1;
+    & > .leftIcon {
+      & svg {
+        fill: $Neutral100;
+      }
+    }
+  }
+}
+.rightArrow {
+  right: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 1000px;
+  background-color: $Neutral100;
+  box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
+  transition: background-color 300ms ease, box-shadow 300ms ease,
+    color 300ms ease, transform 300ms ease;
+  transform-style: preserve-3d;
+  z-index: 3;
+  left: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  cursor: pointer;
+  overflow: hidden;
+  & > .rightIcon {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    & svg {
+      fill: $Neutral700;
+    }
+  }
+  &:hover {
+    background-color: $Primary1;
+    & > .rightIcon {
+      & svg {
+        fill: $Neutral100;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpointXl) {
+  .testimonialCard {
+    max-width: 900px;
+  }
+}
+@media screen and (min-width: $breakpointLg) {
+  .testimonialCard {
+    min-width: 765px;
+  }
+}
+@media screen and (max-width: $breakpointLgForMw) {
+  .title {
+    margin-bottom: 50px !important;
+  }
+}
+@media screen and (max-width: $breakpointMdForMw) {
+  .title {
+    max-width: 392px;
+    margin-right: auto;
+    margin-bottom: 40px !important;
+    margin-left: auto;
+  }
+  .testimonialCard {
+    padding: 55px 46px 52px;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .image {
+    & img {
+      width: 169px !important;
+      min-height: 169px !important;
+      min-width: 169px !important;
+      margin-right: auto !important;
+      margin-bottom: 40px !important;
+      margin-left: auto !important;
+    }
+  }
+  .testimonialStar {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: $breakpointSmForMw) {
+  .title {
+    max-width: 306px;
+  }
+  .testimonialCard {
+    padding: 46px 25px 43px;
+  }
+  .image {
+    & img {
+      padding: 0 !important;
+      width: 141px !important;
+      min-height: 141px !important;
+      min-width: 141px !important;
+      margin-bottom: 30px !important;
+    }
+  }
+  .testimonialStar {
+    margin-bottom: 15px;
+  }
+  .testimonialRole {
+    font-size: 1rem;
+    line-height: 1.2em;
+    margin: 0;
+  }
+}
