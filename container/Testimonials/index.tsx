@@ -35,7 +35,7 @@ const Testimonials = (props: Props) => {
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 992,
+        breakpoint: 1024,
         settings: {
           adaptiveHeight: false,
           dots: false,
