@@ -1,0 +1,102 @@
+@import '../../styles/variables.scss';
+.success {
+  padding: 11.5rem 0;
+  background-color: $Neutral200;
+  & > .containerHead {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    margin-bottom: 3.5rem;
+    text-align: center;
+    font-family: auto;
+    & > .head {
+      margin: 0;
+    }
+  }
+  & > .container {
+    max-width: 1209px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    & > .achievement {
+      max-width: 297px;
+      text-align: center;
+      & > .title {
+        margin-bottom: 1.5rem;
+        font-family: $newsReaderFont;
+        color: $Secondary3;
+        font-size: 3.4rem;
+        line-height: 1.037em;
+        font-weight: 600;
+        font-family: auto;
+      }
+      & > .caption {
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointLg) {
+  .success {
+    padding: 9.2rem 0;
+    & > .containerHead {
+      margin-bottom: 3rem;
+    }
+    & > .container {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      align-items: center;
+      & > .achievement {
+        & > .title {
+          margin-bottom: 0.6rem;
+          font-size: 2.8rem;
+        }
+        & > .caption {
+          margin-bottom: 0.4rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .success {
+    padding: 7.4rem 0;
+    & > .containerHead {
+      margin-bottom: 2.5rem;
+    }
+    & > .container {
+      & > .achievement {
+        & > .title {
+          margin-bottom: 0.5rem;
+          font-size: 2.4rem;
+        }
+        & > .caption {
+          margin-bottom: 0.25rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointSm) {
+  .success {
+    padding-top: 94px;
+    padding-bottom: 94px;
+    & > .containerHead {
+      padding: 0 1rem;
+    }
+    & > .container {
+      padding: 0 1rem;
+      & > .achievement {
+        & > .title {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}

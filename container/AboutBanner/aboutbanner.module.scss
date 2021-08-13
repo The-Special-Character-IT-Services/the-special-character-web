@@ -1,0 +1,165 @@
+@import '../../styles/variables.scss';
+.aboutBanner {
+  position: relative;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  & > .container {
+    max-width: 1209px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    & > .leftDiv {
+      max-width: 505px;
+      margin-right: 2rem;
+      & > .head {
+        font-family: auto;
+        margin-top: 0;
+      }
+    }
+    & > .rightDiv {
+      max-width: 434px;
+      margin-top: 1rem;
+      & > .button2 {
+        display: none;
+      }
+    }
+  }
+  & > .circleDiv {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    overflow: hidden;
+    & > .circle1 {
+      position: absolute;
+      top: -15.5rem;
+      right: -12rem;
+      width: 429px;
+      min-height: 429px;
+      min-width: 429px;
+      border-radius: 1000px;
+      background-color: #fcdf69;
+      z-index: -1;
+    }
+    & > .circle2 {
+      left: -8.25rem;
+      bottom: -18rem;
+      min-height: 462px;
+      min-width: 462px;
+      border-radius: 100%;
+      background-color: $Secondary3;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+
+  & > .arrow {
+    left: 0;
+    right: 0;
+    bottom: -7rem;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+  }
+}
+@media screen and (max-width: $breakpointLg) {
+  .aboutBanner {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    & > .container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      & > .leftDiv {
+        margin-right: 0;
+        margin-bottom: 0;
+        & > .button1 {
+          display: none;
+        }
+      }
+      & > .rightDiv {
+        max-width: 41rem;
+        margin-top: 0;
+        & > .button2 {
+          display: inline-block;
+        }
+      }
+    }
+    & > .circleDiv {
+      & > .circle1 {
+        top: -19rem;
+        right: -15rem;
+      }
+      & > .circle2 {
+        left: -12.5rem;
+        bottom: -18rem;
+      }
+    }
+    & > .arrow {
+      bottom: -6.25rem;
+      & img {
+        width: 65px;
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .aboutBanner {
+    padding-top: 8.25rem;
+    padding-bottom: 8.25rem;
+    & > .circleDiv {
+      & > .circle1 {
+        top: -312px;
+        right: -233px;
+      }
+      & > .circle2 {
+        left: -17rem;
+        bottom: -17rem;
+      }
+    }
+    & > .arrow {
+      bottom: -5rem;
+      & img {
+        width: 55px;
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointSm) {
+  .aboutBanner {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+    & > .container {
+      padding-right: 1rem;
+      padding-left: 1rem;
+
+      & > .rightDiv {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    & > .circleDiv {
+      & > .circle1 {
+        top: -21rem;
+        right: -20rem;
+      }
+      & > .circle2 {
+        left: -21rem;
+        bottom: -21rem;
+      }
+    }
+    & > .arrow {
+      bottom: -5rem;
+      & img {
+        width: 45px;
+      }
+    }
+  }
+} ;
