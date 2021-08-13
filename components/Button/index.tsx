@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 interface Props {
-  className: 'primary' | 'secondary' | 'buttonIcon' | String;
+  className: 'primary' | 'secondary' | 'buttonIcon' | 'socialIcon' | String;
   isDisabled?: Boolean;
   children: JSX.Element;
   isLoading?: Boolean;
@@ -66,6 +66,17 @@ const Button = ({
 
               &:hover {
                 background-color: $icon;
+                transform: scale(1);
+              }
+            }
+            &.socialIcon {
+              background-color: $Neutral400;
+              padding: 0.3rem;
+              color: $Neutral100;
+              cursor: pointer;
+              overflow: hidden;
+              &:hover {
+                background-color: $Primary1;
                 transform: scale(1);
               }
             }
