@@ -24,14 +24,16 @@ const Accordian = ({ children, className, label, ...props }: Props) => {
       role="button"
       onClick={toggleAcc}
       {...props}>
-      <div className={styles.showDiv}>
+      <div className={styles.buttonDiv}>
         <button className={styles.acBtn} id="toggle" ref={toggleRef} />
+      </div>
+      <div className={styles.showDiv}>
         <Typography variant="h3" id="headTxt">
           {label}
         </Typography>
-      </div>
-      <div className={styles.hideDiv} ref={childRef}>
-        {children}
+        <div className={styles.hideDiv} ref={childRef}>
+          {children}
+        </div>
       </div>
     </Card>
   );

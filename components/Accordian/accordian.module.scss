@@ -2,12 +2,10 @@
 
 .accordian {
   display: flex;
-  flex-direction: column;
   padding: 1rem;
   cursor: pointer;
-  & > .showDiv {
-    display: flex;
-    flex-direction: row;
+  & > .buttonDiv {
+    max-width: 100px;
     padding: 0;
     &:hover {
       opacity: 0.86;
@@ -19,7 +17,6 @@
       border: none;
       background-color: $Neutral300;
       border-radius: 1.5rem;
-      margin-top: 1rem;
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -58,54 +55,35 @@
         transition: 300ms;
       }
     }
+  }
+  & > .showDiv {
+    padding: 0;
     & > h3 {
       margin: 0;
-      padding: 1rem;
       color: $Neutral600;
     }
     & > .label {
       color: $Primary1;
     }
-  }
-  & > .hideDiv {
-    display: none;
-    padding: 0;
-  }
-  & .active {
-    display: flex;
-
-    & > p {
-      margin-left: 1rem;
+    & > .hideDiv {
+      display: none;
+      padding: 0;
+    }
+    & .active {
+      display: block;
     }
   }
 }
 @media screen and (min-width: $breakpointLgForMw) {
   .accordian {
-    & > .active {
+    & .active {
       & > p {
         padding-right: 4rem;
       }
     }
   }
 }
-@media screen and (min-width: $breakpointMdForMw) {
-  .accordian {
-    & > .active {
-      & > p {
-        margin-left: 3rem;
-      }
-    }
-  }
-}
-@media screen and (min-width: $breakpointSmForMw) {
-  .accordian {
-    & > .active {
-      & > p {
-        margin-left: 2rem;
-      }
-    }
-  }
-}
+
 .headTxt {
   color: $Neutral800 !important;
 }
