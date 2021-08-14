@@ -2,10 +2,9 @@
 
 .courses {
   overflow: hidden;
-  padding-top: 12.875rem;
-  padding-bottom: 12.875rem;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
   background-color: $Neutral200;
-
   & > .container {
     display: flex;
     flex-direction: column;
@@ -16,6 +15,8 @@
     padding-left: 1.5rem;
     flex: 1;
     text-align: center;
+    overflow: hidden;
+
     & > .head {
       margin-top: 0;
       margin-bottom: 3.375rem;
@@ -23,17 +24,23 @@
     }
 
     & > .cardDiv {
-      width: 100%;
       position: relative;
-      left: 0;
-      right: 0;
       overflow: visible;
-      height: 100%;
       & .faculty {
         display: flex;
         flex: 1;
         gap: 1rem;
         align-items: center;
+      }
+      & .para {
+        word-break: break-all;
+      }
+      & .cardHead {
+        margin: 0.5rem 0;
+      }
+      & .paraDiv {
+        padding: 1rem;
+        text-align: start;
       }
       & .price {
         position: absolute;

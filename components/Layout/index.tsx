@@ -1,5 +1,5 @@
 import Footer from '@components/Footer';
-import Header from '@components/Header';
+import HeaderNav from '@components/HeaderNav';
 
 type Props = {
   children: JSX.Element;
@@ -8,7 +8,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <Header />
+      <HeaderNav />
       {children}
       <Footer />
     </>

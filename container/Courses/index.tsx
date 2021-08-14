@@ -36,7 +36,7 @@ const Courses = (props: Props) => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -55,7 +55,7 @@ const Courses = (props: Props) => {
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 600,
         settings: {
           adaptiveHeight: true,
           dots: false,
@@ -105,9 +105,11 @@ const Courses = (props: Props) => {
                 <Button className="secondary">7hr 24min</Button>
                 <Button>$99.00USD</Button>
               </div>
-              <div>
-                <Typography variant="h3">Mobile App Development</Typography>
-                <Typography>
+              <div className={styles.paraDiv}>
+                <Typography variant="h3" className={styles.cardHead}>
+                  Mobile App Development
+                </Typography>
+                <Typography className={styles.para}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Voluptatibus cum et repellat reprehenderit iure at.
                 </Typography>
@@ -121,7 +123,7 @@ const Courses = (props: Props) => {
                   <Typography variant="bold">Mike Warren</Typography>
                 </div>
               </div>
-            </Card>{' '}
+            </Card>
             <Card variant="cardHover">
               <Image
                 alt="card"
@@ -133,9 +135,11 @@ const Courses = (props: Props) => {
                 <Button className="secondary">7hr 24min</Button>
                 <Button>$99.00USD</Button>
               </div>
-              <div>
-                <Typography variant="h3">Mobile App Development</Typography>
-                <Typography>
+              <div className={styles.paraDiv}>
+                <Typography variant="h3" className={styles.cardHead}>
+                  Mobile App Development
+                </Typography>
+                <Typography className={styles.para}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Voluptatibus cum et repellat reprehenderit iure at.
                 </Typography>
@@ -149,7 +153,7 @@ const Courses = (props: Props) => {
                   <Typography variant="bold">Mike Warren</Typography>
                 </div>
               </div>
-            </Card>{' '}
+            </Card>
             <Card variant="cardHover">
               <Image
                 alt="card"
@@ -161,9 +165,11 @@ const Courses = (props: Props) => {
                 <Button className="secondary">7hr 24min</Button>
                 <Button>$99.00USD</Button>
               </div>
-              <div>
-                <Typography variant="h3">Mobile App Development</Typography>
-                <Typography>
+              <div className={styles.paraDiv}>
+                <Typography variant="h3" className={styles.cardHead}>
+                  Mobile App Development
+                </Typography>
+                <Typography className={styles.para}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Voluptatibus cum et repellat reprehenderit iure at.
                 </Typography>
@@ -177,7 +183,7 @@ const Courses = (props: Props) => {
                   <Typography variant="bold">Mike Warren</Typography>
                 </div>
               </div>
-            </Card>{' '}
+            </Card>
             <Card variant="cardHover">
               <Image
                 alt="card"
@@ -189,9 +195,11 @@ const Courses = (props: Props) => {
                 <Button className="secondary">7hr 24min</Button>
                 <Button>$99.00USD</Button>
               </div>
-              <div>
-                <Typography variant="h3">Mobile App Development</Typography>
-                <Typography>
+              <div className={styles.paraDiv}>
+                <Typography variant="h3" className={styles.cardHead}>
+                  Mobile App Development
+                </Typography>
+                <Typography className={styles.para}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Voluptatibus cum et repellat reprehenderit iure at.
                 </Typography>
@@ -205,40 +213,12 @@ const Courses = (props: Props) => {
                   <Typography variant="bold">Mike Warren</Typography>
                 </div>
               </div>
-            </Card>{' '}
-            <Card variant="cardHover">
-              <Image
-                alt="card"
-                src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2bd223dde86aadbf10e5_image-2-courses-education-x-template-p-500.jpeg"
-                height={318}
-                width={567}
-              />
-              <div className={styles.price}>
-                <Button className="secondary">7hr 24min</Button>
-                <Button>$99.00USD</Button>
-              </div>
-              <div>
-                <Typography variant="h3">Mobile App Development</Typography>
-                <Typography>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptatibus cum et repellat reprehenderit iure at.
-                </Typography>
-                <div className={styles.faculty}>
-                  <Images
-                    className="avtar"
-                    src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd486e01646f00559d_image-2-testimonials-education-x-template.jpg"
-                    height={48}
-                    width={48}
-                  />
-                  <Typography variant="bold">Mike Warren</Typography>
-                </div>
-              </div>
-            </Card>{' '}
+            </Card>
           </Slider>
         </div>
 
         <div>
-          <Button style={{ marginTop: '3.5rem' }}>Explore all courses</Button>
+          <Button style={{ marginTop: '3rem' }}>Explore all courses</Button>
         </div>
       </div>
     </section>

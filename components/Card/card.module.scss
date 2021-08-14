@@ -15,16 +15,6 @@
     object-fit: cover;
     transition-duration: 300ms;
   }
-
-  & > div {
-    display: flex;
-    padding-top: 0.5rem;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    flex-direction: column;
-    text-align: left;
-  }
 }
 .cardHover:hover {
   cursor: pointer;
@@ -32,7 +22,6 @@
   & img {
     transform: scale(1.1);
   }
-
   & h3 {
     color: $Primary1;
   }
@@ -51,28 +40,7 @@
     color: $Neutral300;
   }
 }
-@media screen and (min-width: $breakpointLg) {
-  .card,
-  .cardHover {
-    & > div {
-      padding-top: 1.5rem;
-      padding-right: 2rem;
-      padding-bottom: 2rem;
-      padding-left: 2rem;
-    }
-  }
-}
-@media screen and (min-width: $breakpointSm) {
-  .card,
-  .cardHover {
-    & > div {
-      padding-top: 1rem;
-      padding-right: 1.5rem;
-      padding-bottom: 1.5rem;
-      padding-left: 1.5rem;
-    }
-  }
-}
+
 @media screen and (max-width: $breakpointLgForMw) {
   .perkCard {
     display: flex;
