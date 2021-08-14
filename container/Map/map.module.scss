@@ -1,14 +1,14 @@
 @import '../../styles/variables.scss';
 
 .paragraph {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .cardOffice {
   transition: border-color 300ms ease;
-  border: 1px solid #e7eaee;
+  border: 1px solid $Neutral300;
   max-width: 303px;
-  margin-right: 20px;
-  padding: 38px 32px 40px;
+  margin-right: 1.25rem;
+  padding: 2.5rem 2rem 2.5rem;
   display: block;
 }
 .cardOfficeIcon {
@@ -18,29 +18,29 @@
   border-radius: 1000px;
 }
 .officeTitle {
-  margin-bottom: 14px;
+  margin-bottom: 1rem;
   margin-top: 0;
 }
 .officeLink {
-  margin-bottom: 15px;
-  color: #62778f !important;
-  font-size: 16px;
+  margin-bottom: 1rem;
+  color: $Neutral600 !important;
+  font-size: 1rem;
   line-height: 1.125em;
   letter-spacing: -0.02em;
   text-decoration: none !important;
 }
 .officeAddress {
   max-width: 201px;
-  font-size: 15px;
+  font-size: 0.938rem;
   line-height: 1.6em;
 }
 .officeImage {
-  margin-top: -108px !important;
+  margin-top: -6.75rem !important;
 }
 @media screen and (max-width: $breakpointLgForMw) {
   .cardOffice {
     max-width: 576px;
-    margin-right: 0px;
+    margin-right: 0;
   }
   .officeAddress {
     max-width: none;
@@ -48,22 +48,22 @@
 }
 @media screen and (max-width: $breakpointMdForMw) {
   .cardOffice {
-    padding-top: 28px;
-    padding-bottom: 30px;
+    padding-top: 1.75rem;
+    padding-bottom: 2rem;
   }
   .officeImage {
-    margin-top: -65px !important;
+    margin-top: -4rem !important;
   }
 }
 @media screen and (max-width: $breakpointSmForMw) {
   .cardOffice {
-    padding-right: 25px;
-    padding-left: 25px;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
   }
   .officeTitle {
-    margin-bottom: 10px;
+    margin-bottom: 0.75rem;
   }
   .officeImage {
-    margin-top: -33px !important;
+    margin-top: -2rem !important;
   }
 }

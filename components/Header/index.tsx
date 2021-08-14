@@ -66,9 +66,9 @@ const Header = (props: Props) => {
               <Typography
                 variant="a"
                 href="/courses"
-                className={pathname === '/courses' ? styles.active : null}
+                className={pathname === '/blog' ? styles.active : null}
                 aria-current="page">
-                Courses
+                Blog
               </Typography>
             </li>
             <li className={classnames('nav-item-wrapper', styles.navLink)}>

@@ -63,24 +63,24 @@ const Map = (props: Props) => {
         {`
           @import './styles/variables.scss';
           .map {
-            padding-top: 184px;
-            padding-bottom: 184px;
+            padding-top: 11.5rem;
+            padding-bottom: 11.5rem;
           }
           .offices {
-            margin-bottom: 62px;
+            margin-bottom: 4rem;
             text-align: center;
             margin-right: auto;
             margin-left: auto;
-            padding-right: 24px;
-            padding-left: 24px;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
             max-width: 568px;
           }
           .container-default {
             max-width: 1209px;
             margin-right: auto;
             margin-left: auto;
-            padding-right: 24px;
-            padding-left: 24px;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
           }
           .office-card-wrapper {
             position: relative;
@@ -103,15 +103,15 @@ const Map = (props: Props) => {
             min-width: 119px;
             border-radius: 1000px;
             position: absolute;
-            background-color: #064ea4;
+            background-color: $Primary1;
           }
           @media screen and (max-width: $breakpointLgForMw) {
             .map {
-              padding-top: 147px;
-              padding-bottom: 147px;
+              padding-top: 9rem;
+              padding-bottom: 9rem;
             }
             .offices {
-              margin-bottom: 60px;
+              margin-bottom: 3.75rem;
             }
             .office-card-wrapper {
               flex-direction: column;
@@ -120,11 +120,11 @@ const Map = (props: Props) => {
           }
           @media screen and (max-width: $breakpointMdForMw) {
             .map {
-              padding-top: 118px;
-              padding-bottom: 118px;
+              padding-top: 7.5rem;
+              padding-bottom: 7.5rem;
             }
             .offices {
-              margin-bottom: 50px;
+              margin-bottom: 3rem;
             }
             .bg-primary-1 {
               right: -66px;
@@ -132,15 +132,15 @@ const Map = (props: Props) => {
           }
           @media screen and (max-width: $breakpointSmForMw) {
             .map {
-              padding-top: 94px;
-              padding-bottom: 94px;
+              padding-top: 6rem;
+              padding-bottom: 6rem;
             }
             .offices {
-              margin-bottom: 40px;
+              margin-bottom: 2.5rem;
             }
             .container-default {
-              padding-right: 16px;
-              padding-left: 16px;
+              padding-right: 1rem;
+              padding-left: 1rem;
             }
             .bg-primary-1 {
               right: -77px;
