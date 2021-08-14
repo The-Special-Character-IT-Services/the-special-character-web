@@ -37,6 +37,9 @@ const NewsLetter = (props: Props) => {
           padding-left: 1.5rem;
         }
         .newsletter-wrapper {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
           position: relative;
           padding: 8.25rem 3.75rem 8.25rem 4.5rem;
           overflow: hidden;
@@ -75,6 +78,7 @@ const NewsLetter = (props: Props) => {
             padding-top: 7rem;
             padding-bottom: 7rem;
             text-align: center;
+            flex-direction: column;
           }
           .newsletter-form-block {
             max-width: 650px;

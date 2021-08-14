@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+
+.title {
+  margin-right: 20px;
+  margin-bottom: 0px;
+}
+.button {
+  margin-right: 28px;
+  display: flex !important;
+  overflow: hidden;
+
+  padding: 14px 24px !important;
+  align-items: center !important;
+  border: 1px solid #e7eaee !important;
+}
+.primary {
+  color: #1e3d60 !important;
+  background-color: #fff !important;
+  &:hover,
+  :focus {
+    background-color: #1e3d60 !important;
+    color: #fff !important;
+  }
+}
+.current {
+  background-color: #1e3d60 !important;
+  color: #fff !important;
+}
+@media screen and (max-width: $breakpointLgForMw) {
+  .title {
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: $breakpointMdForMw) {
+  .button {
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: $breakpointSmForMw) {
+  .button {
+    width: auto !important;
+    padding: 11px !important;
+  }
+}
