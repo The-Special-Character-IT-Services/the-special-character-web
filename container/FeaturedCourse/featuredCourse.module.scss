@@ -1,0 +1,126 @@
+@import '../../styles/variables.scss';
+
+.featuredCourse {
+  padding-top: 163px;
+  padding-bottom: 160px;
+  & > .container {
+    max-width: 1209px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 24px;
+    padding-left: 24px;
+    flex: 1;
+    text-align: center;
+    & > .head {
+      font-family: auto;
+      margin-top: 0;
+      margin-bottom: 2rem;
+    }
+    & > .cardMain {
+      & > .cardBox {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        text-align: left;
+        padding: 1rem;
+        & > .faculty {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          & > .price {
+            position: absolute;
+            left: 24px;
+            top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            & > .button,
+            .buttonWhite {
+              padding: 14px 24px;
+              &:hover {
+                opacity: 1;
+                transform: scale(1);
+                background-color: #064ea4;
+              }
+            }
+            & > .buttonWhite {
+              background-color: #fff;
+              color: #1e3d60;
+              &:hover {
+                background-color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointLg) {
+  .featuredCourse {
+    padding-top: 130px;
+    padding-bottom: 128px;
+    & > .container {
+      flex-direction: column;
+      align-items: stretch;
+      & > .cardMain {
+        & > .cardBox {
+          & > .faculty {
+            & > .price {
+              left: 20px;
+              top: 20px;
+              flex-direction: column;
+              align-items: stretch;
+              text-align: center;
+              & > .button {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .featuredCourse {
+    padding-top: 104px;
+    padding-bottom: 102px;
+    & > .container {
+      & > .cardMain {
+        flex-direction: column;
+        & > .cardBox {
+          & > .faculty {
+            & > .price {
+              & > .button {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointSm) {
+  .featuredCourse {
+    padding-top: 83px;
+    padding-bottom: 82px;
+    & > .container {
+      padding-right: 16px;
+      padding-left: 16px;
+      & > .cardMain {
+        & > .cardBox {
+          & > .faculty {
+            & > .price {
+              gap: 0.5rem;
+              & > .button,
+              .buttonWhite {
+                padding: 14px 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

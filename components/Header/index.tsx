@@ -25,7 +25,7 @@ const Header = ({
   ...props
 }: Props) => {
   return (
-    <div
+    <section
       className={classNames(styles.common, {
         [className]: !!className,
         isBlog: !!isBlog,
@@ -112,7 +112,7 @@ const Header = ({
           }
         }
       `}</style>
-    </div>
+    </section>
   );
 };
 
