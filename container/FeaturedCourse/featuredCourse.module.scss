@@ -1,14 +1,12 @@
 @import '../../styles/variables.scss';
 
 .featuredCourse {
-  padding-top: 163px;
-  padding-bottom: 160px;
+  padding: 10rem 0;
   & > .container {
     max-width: 1209px;
     margin-right: auto;
     margin-left: auto;
-    padding-right: 24px;
-    padding-left: 24px;
+    padding: 0 1.5rem;
     flex: 1;
     text-align: center;
     & > .head {
@@ -29,26 +27,26 @@
           gap: 1rem;
           & > .price {
             position: absolute;
-            left: 24px;
-            top: 24px;
+            left: 1.5rem;
+            top: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 0.5rem;
             & > .button,
             .buttonWhite {
-              padding: 14px 24px;
+              padding: 0.875rem 1.5rem;
               &:hover {
                 opacity: 1;
                 transform: scale(1);
-                background-color: #064ea4;
+                background-color: $Primary1;
               }
             }
             & > .buttonWhite {
-              background-color: #fff;
-              color: #1e3d60;
+              background-color: $Neutral100;
+              color: $Neutral700;
               &:hover {
-                background-color: #fff;
+                background-color: $Neutral100;
               }
             }
           }
@@ -59,8 +57,7 @@
 }
 @media screen and (max-width: $breakpointLg) {
   .featuredCourse {
-    padding-top: 130px;
-    padding-bottom: 128px;
+    padding: 8rem 0;
     & > .container {
       flex-direction: column;
       align-items: stretch;
@@ -68,13 +65,11 @@
         & > .cardBox {
           & > .faculty {
             & > .price {
-              left: 20px;
-              top: 20px;
+              left: 1.25rem;
+              top: 1.25rem;
               flex-direction: column;
               align-items: stretch;
               text-align: center;
-              & > .button {
-              }
             }
           }
         }
@@ -84,30 +79,19 @@
 }
 @media screen and (max-width: $breakpointMd) {
   .featuredCourse {
-    padding-top: 104px;
-    padding-bottom: 102px;
+    padding: 6.5rem 0;
     & > .container {
       & > .cardMain {
         flex-direction: column;
-        & > .cardBox {
-          & > .faculty {
-            & > .price {
-              & > .button {
-              }
-            }
-          }
-        }
       }
     }
   }
 }
 @media screen and (max-width: $breakpointSm) {
   .featuredCourse {
-    padding-top: 83px;
-    padding-bottom: 82px;
+    padding: 5rem 0;
     & > .container {
-      padding-right: 16px;
-      padding-left: 16px;
+      padding: 0 1rem;
       & > .cardMain {
         & > .cardBox {
           & > .faculty {
@@ -115,7 +99,7 @@
               gap: 0.5rem;
               & > .button,
               .buttonWhite {
-                padding: 14px 15px;
+                padding: 0.875rem;
               }
             }
           }
