@@ -1,5 +1,4 @@
 import Banner from 'container/Banner';
-import Blog from '@container/BlogSection';
 import Perk from '@container/Perk';
 import Teachers from '@container/Teachers';
 import Categories from 'container/Categories';
@@ -15,7 +14,6 @@ export default function Home() {
       <Teachers />
       <Ratings />
       <Categories />
-      <Blog />
     </>
   );
 }
