@@ -1,5 +1,6 @@
 import Header from '@components/Header';
 import Typography from '@components/Typography';
+import AllCourses from '@container/AllCourses';
 import FeaturedCourse from '@container/FeaturedCourse';
 
 interface Props {
@@ -16,6 +17,7 @@ const Courses = (props: Props) => {
         </Typography>
       </Header>
       <FeaturedCourse />
+      <AllCourses />
     </>
   );
 };

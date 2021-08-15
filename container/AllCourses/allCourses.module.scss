@@ -1,0 +1,175 @@
+@import '../../styles/variables.scss';
+
+.allCourses {
+  background-color: $Neutral200;
+  padding-top: 7rem;
+  padding-bottom: 11.5rem;
+  & > .container {
+    max-width: 1209px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 1.5rem;
+    flex: 1;
+    & > .header {
+      display: flex;
+      margin-bottom: 2.5rem;
+      justify-content: space-between;
+      align-items: center;
+      & > .headText {
+        margin: 0;
+        font-family: auto;
+      }
+      & > .categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        & > .buttonDefault,
+        .common {
+          padding: 1rem 1.5rem;
+          & > p {
+            font-size: 1rem;
+          }
+          &:hover {
+            opacity: 1;
+            transform: scale(1);
+            background-color: $Primary1;
+          }
+        }
+        & > .common {
+          background-color: $Neutral100;
+          color: $Neutral700;
+          &:hover {
+            background-color: $Neutral100;
+          }
+        }
+      }
+    }
+    & > .list {
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-column-gap: 1.5rem;
+      grid-row-gap: 3.5rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      & > .cardMain {
+        display: flex;
+        flex-direction: column;
+        & > .cardBox {
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+          text-align: left;
+          padding: 1rem;
+          & > .faculty {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            & > .price {
+              position: absolute;
+              left: 1.5rem;
+              top: 1.5rem;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 0.5rem;
+              & > .button,
+              .buttonWhite {
+                padding: 0.875rem 1.5rem;
+                &:hover {
+                  opacity: 1;
+                  transform: scale(1);
+                  background-color: $Primary1;
+                }
+              }
+              & > .buttonWhite {
+                background-color: $Neutral100;
+                color: $Neutral700;
+                &:hover {
+                  background-color: $Neutral100;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpointLg) {
+  .allCourses {
+    padding-top: 5.5rem;
+    padding-bottom: 9rem;
+    & > .container {
+      flex-direction: column;
+      align-items: stretch;
+      & > .header {
+        flex-direction: column;
+        text-align: center;
+        & > .headText {
+          margin-bottom: 2rem;
+        }
+      }
+      & > .list {
+        max-width: 720px;
+        margin-right: auto;
+        margin-left: auto;
+        grid-column-gap: 1.25rem;
+        grid-row-gap: 3rem;
+        grid-template-columns: 1fr;
+        & .price {
+          left: 1.25rem;
+          top: 1.25rem;
+          flex-direction: column;
+          align-items: stretch;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .allCourses {
+    padding-top: 4.75rem;
+    padding-bottom: 7rem;
+    & > .container {
+      & > .header {
+        margin-bottom: 2.5rem;
+        align-items: flex-start;
+      }
+      & > .list {
+        grid-row-gap: 2.5rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointSm) {
+  .allCourses {
+    padding-top: 3.75rem;
+    padding-bottom: 6rem;
+    & > .container {
+      padding: 0 1rem;
+      & > .header {
+        text-align: left;
+        & > .categories {
+          gap: 0.5rem;
+          & > .buttonDefault,
+          .common {
+            padding: 0.875rem;
+            width: auto;
+            & > p {
+              font-size: 0.875rem;
+            }
+          }
+        }
+      }
+      & .price {
+        gap: 0.5rem;
+        & > .button,
+        .buttonWhite {
+          padding: 0.875rem;
+        }
+      }
+    }
+  }
+}
