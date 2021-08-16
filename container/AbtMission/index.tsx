@@ -40,15 +40,17 @@ const AbtMission = (props: Props) => {
             </Typography>
           </aside>
           <Images src="/mission2.jpeg" height={600} width={580} />
-          <div className="circle" />
         </div>
       </section>
       <style jsx>{`
         @import '../../styles/variables.scss';
         .container {
+          max-width: 1440px;
+          margin: auto;
           padding: 6rem;
           & .main {
             display: flex;
+            position: relative;
             &.reverse {
               display: flex;
             }

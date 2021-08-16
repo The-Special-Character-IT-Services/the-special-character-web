@@ -12,14 +12,13 @@ interface Props {}
 const About = (props: Props) => {
   return (
     <>
-      <AbtMission />
-      <Values />
-      <Map />
       <AboutBanner />
       <Success />
       <AbtMission />
       <Values />
+      <AbtMission />
       <AboutTeachers />
+      <Map />
     </>
   );
 };

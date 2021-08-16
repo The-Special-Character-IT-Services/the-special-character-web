@@ -43,9 +43,8 @@ const BlogContainer = (props: Props) => {
               alt="blog post"
             />
             <div className={styles.blogCard}>
-              <Typography>April 20,2021</Typography>
               <Typography variant="h3">
-                How to design a simple, yet unique and memorable brand identity
+                5 marketing trends that you should be prepared for in 2022
               </Typography>
             </div>
           </Card>
@@ -57,9 +56,8 @@ const BlogContainer = (props: Props) => {
               alt="blog post"
             />
             <div className={styles.blogCard}>
-              <Typography>April 20,2021</Typography>
               <Typography variant="h3">
-                How to design a simple, yet unique and memorable brand identity
+                5 marketing trends that you should be prepared for in 2022
               </Typography>
             </div>
           </Card>
@@ -71,9 +69,8 @@ const BlogContainer = (props: Props) => {
               alt="blog post"
             />
             <div className={styles.blogCard}>
-              <Typography>April 20,2021</Typography>
               <Typography variant="h3">
-                How to design a simple, yet unique and memorable brand identity
+                5 marketing trends that you should be prepared for in 2022
               </Typography>
             </div>
           </Card>
