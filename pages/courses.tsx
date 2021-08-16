@@ -10,12 +10,15 @@ interface Props {
 const Courses = (props: Props) => {
   return (
     <>
-      <Header label="Courses" isCourse>
-        <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
-          excepturi, animi autem similique voluptas reiciendis.
-        </Typography>
-      </Header>
+      <Header
+        label="Courses"
+        caption="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
+          excepturi, animi autem similique voluptas reiciendis."
+        position={{
+          circle1: ['top', 'left', '#fcdf69'],
+          circle2: ['bottom', 'right', '#f99d77'],
+        }}
+      />
       <FeaturedCourse />
       <AllCourses />
     </>
