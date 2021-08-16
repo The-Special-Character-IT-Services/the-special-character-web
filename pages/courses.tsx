@@ -15,8 +15,8 @@ const Courses = (props: Props) => {
         caption="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
           excepturi, animi autem similique voluptas reiciendis."
         position={{
-          circle1: ['top', 'left', '#fcdf69'],
-          circle2: ['bottom', 'right', '#f99d77'],
+          circle1: ['top', 'right', '#fcdf69'],
+          circle2: ['bottom', 'left', '#f99d77'],
         }}
       />
       <FeaturedCourse />
