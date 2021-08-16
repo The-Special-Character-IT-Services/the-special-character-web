@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Newsreader:regular,500,600%7CKumbh+Sans:regular,700');
 @import './variables.scss';
 :root {
   --fs-body: 1.125rem;
@@ -45,7 +46,7 @@ body {
   margin: 0;
 }
 body {
-  font-family: $kumbhFont;
+  font-family: 'Kumbh Sans', sans-serif;
   color: $Neutral600;
   font-size: var(--fs-body);
   line-height: 1.667rem;

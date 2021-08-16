@@ -2,15 +2,17 @@ interface Props {
   isFooterTop: boolean;
   isFooterBottom: boolean;
 }
+import classNames from 'classnames';
 import cn from 'classnames';
 
-const Divider = ({ isFooterTop, isFooterBottom }: Props) => {
+const Divider = ({ isFooterTop, isFooterBottom, className }: Props) => {
   return (
     <>
       <div
         className={cn('divider', {
           ['footer-top']: !!isFooterTop,
           ['footer-bottom']: !!isFooterBottom,
+          [className]: !!className,
         })}
       />
       <style jsx>

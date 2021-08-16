@@ -9,6 +9,7 @@ import Categories from 'container/Categories';
 import Courses from 'container/Courses';
 import Ratings from 'container/Ratings';
 import Blog from '@container/Blog';
+import Testimonials from '@container/Testimonials';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Blog />
       <AboutEducation />
       <Categories />
+      <Testimonials />
     </>
   );
 }
