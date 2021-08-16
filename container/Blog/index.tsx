@@ -8,7 +8,7 @@ import styles from './blog.module.scss';
 
 interface Props {}
 
-const Blog = (props: Props) => {
+const BlogContainer = (props: Props) => {
   return (
     <section className={styles.container}>
       <div className={styles.main}>
@@ -83,4 +83,4 @@ const Blog = (props: Props) => {
   );
 };
 
-export default Blog;
+export default BlogContainer;
