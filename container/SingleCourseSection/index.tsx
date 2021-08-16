@@ -314,7 +314,7 @@ const SingleCourseSection = (props: Props) => {
           right: 0px;
           z-index: -2;
           min-height: 594px;
-          background-color: #1e3d60;
+          background-color: $Neutral700;
           position: absolute;
         }
         .course-bg-shape-wrapper {
@@ -333,7 +333,7 @@ const SingleCourseSection = (props: Props) => {
             min-height: 572px;
             min-width: 572px;
             border-radius: 1000px;
-            background-color: #f99d77;
+            background-color: $Secondary3;
           }
         }
         .course-sidebar {
@@ -376,12 +376,12 @@ const SingleCourseSection = (props: Props) => {
           align-items: center;
           border-style: solid;
           border-width: 1px;
-          border-color: #e7eaee;
+          border-color: $Neutral300;
           border-radius: 1000px;
-          background-color: #fff;
+          background-color: $Neutral100;
           transition: border-color 300ms ease, background-color 300ms ease,
             color 300ms ease, transform 300ms ease, -webkit-transform 300ms ease;
-          color: #1e3d60;
+          color: $Neutral700;
           font-size: 1rem;
           line-height: 1em;
           font-weight: 700;
@@ -390,7 +390,7 @@ const SingleCourseSection = (props: Props) => {
         .course-preview-filter {
           position: absolute;
           inset: 0;
-          background-color: #0c1d30;
+          background-color: $darkBlue;
           opacity: 0.6;
         }
         .course-preview-button {
@@ -404,14 +404,14 @@ const SingleCourseSection = (props: Props) => {
           justify-content: center;
           align-items: center;
           border-radius: 1000px;
-          background-color: #fff;
+          background-color: $Neutral100;
           box-shadow: 0 17px 67px 0 rgb(3 14 26 / 39%);
           transition-property: box-shadow;
         }
         .card {
           overflow: hidden;
           border-radius: 1.25rem;
-          background-color: #fff;
+          background-color: $Neutral100;
           box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
         }
         .get-course {

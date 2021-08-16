@@ -5,22 +5,22 @@
   margin: 0;
 }
 .courseTitle {
-  margin-bottom: 14px !important;
-  color: #fff !important;
+  margin-bottom: 1rem !important;
+  color: $Neutral100 !important;
 }
 .courseSummary {
   max-width: 648px;
-  margin-bottom: 50px !important;
-  color: #e7eaee !important;
+  margin-bottom: 3.25rem !important;
+  color: $Neutral300 !important;
 }
 .coursePreview {
-  margin-bottom: 58px;
+  margin-bottom: 3.75rem;
   position: relative;
 }
 .price {
-  margin-bottom: 17px;
-  color: #1e3d60;
-  font-size: 32px;
+  margin-bottom: 1rem;
+  color: $Neutral700;
+  font-size: 2rem;
   line-height: 1.063em;
   font-weight: 700;
 }
@@ -30,7 +30,7 @@
 .richText {
   max-width: 780px;
   margin-right: auto;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
   margin-left: auto;
 }
 .divider {
@@ -39,39 +39,39 @@
 
 @media screen and (max-width: $breakpointLgForMw) {
   .richText {
-    margin-bottom: 33px;
+    margin-bottom: 2rem;
   }
 }
 @media screen and (max-width: $breakpointMdForMw) {
   .courseTitle {
-    margin-bottom: 10px !important;
+    margin-bottom: 0.75rem !important;
   }
   .courseSummary {
-    margin-bottom: 40px !important;
+    margin-bottom: 2.5rem !important;
   }
   .previewIcon {
     width: 22%;
   }
   .price {
-    margin-bottom: 13px;
-    font-size: 28px;
+    margin-bottom: 0.75rem;
+    font-size: 1.75rem;
   }
   .richText {
-    margin-bottom: 28px;
+    margin-bottom: 1.75rem;
   }
 }
 @media screen and (max-width: $breakpointSmForMw) {
   .courseTitle {
-    margin-bottom: 6px !important;
+    margin-bottom: 0.5rem !important;
   }
   .courseSummary {
-    margin-bottom: 35px !important;
+    margin-bottom: 2.25rem !important;
   }
   .price {
-    margin-bottom: 10px;
-    font-size: 23px;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
   }
   .richText {
-    margin-bottom: 23px;
+    margin-bottom: 1.5rem;
   }
 }
