@@ -1,0 +1,57 @@
+@import '../../styles/variables.scss';
+
+.contactParagraph {
+  margin-bottom: 0;
+}
+.mb {
+  margin-bottom: 2.5rem !important;
+}
+.contactLink {
+  display: flex;
+  margin-right: 0;
+  width: 100%;
+  margin-bottom: 1.8rem;
+  padding: 2.8rem 1.8rem;
+  flex-direction: column;
+  transition: box-shadow 300ms ease, transform 300ms ease;
+  text-align: center;
+  transform-style: preserve-3d;
+  text-decoration: none;
+  color: $Neutral500;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: $Neutral100;
+  & img {
+    border-radius: 50%;
+  }
+}
+.linkText {
+  font-size: 1.25rem;
+  line-height: 1.25em;
+  margin: 0;
+}
+.address {
+  margin-bottom: 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+@media screen and (max-width: $breakpointLgForMw) {
+  .contactLink {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+@media screen and (max-width: $breakpointMdForMw) {
+  .contactLink {
+    margin-bottom: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+@media screen and (max-width: $breakpointSmForMw) {
+  .contactLink {
+    margin-bottom: 1.25rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}

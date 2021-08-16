@@ -36,7 +36,7 @@ const Teachers = (props: Props) => {
               height={1334}
             />
             <Card className={styles.cardFeaturedTeacher}>
-              <div class={styles.cardFeaturedTeacherBadge}>
+              <div className={styles.cardFeaturedTeacherBadge}>
                 Featured Teacher
               </div>
               <Typography

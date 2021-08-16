@@ -7,6 +7,7 @@ import Banner from 'container/Banner';
 import Categories from 'container/Categories';
 import Courses from 'container/Courses';
 import Ratings from 'container/Ratings';
+import Testimonials from '@container/Testimonials';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Teachers />
       <Ratings />
       <Categories />
+      <Testimonials />
     </>
   );
 }
