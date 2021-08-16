@@ -22,7 +22,7 @@ const Divider = ({ isFooterTop, isFooterBottom, className }: Props) => {
             height: 1px;
             width: 100%;
             opacity: 0.15;
-            background-color: $Neutral300;
+            background-color: $Neutral700;
           }
           .footer-top {
             margin-top: 3.4rem;
