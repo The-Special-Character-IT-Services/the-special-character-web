@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 interface Props {
-  className: 'primary' | 'secondary' | String;
+  className: 'primary' | 'secondary' | 'buttonIcon' | 'socialIcon' | String;
   isDisabled?: Boolean;
   children: JSX.Element;
   isLoading?: Boolean;
@@ -58,11 +58,27 @@ const Button = ({
               }
             }
             &.buttonIcon {
-              background-color: #e0edfb;
-              min-height: 80px;
-              min-width: 80px;
-              border-radius: 80px;
+              background-color: $icon;
+              padding: 0.5rem;
               border: none;
+              cursor: auto;
+              overflow: hidden;
+
+              &:hover {
+                background-color: $icon;
+                transform: scale(1);
+              }
+            }
+            &.socialIcon {
+              background-color: $Neutral400;
+              padding: 0.3rem;
+              color: $Neutral100;
+              cursor: pointer;
+              overflow: hidden;
+              &:hover {
+                background-color: $Primary1;
+                transform: scale(1);
+              }
             }
             &.disable {
               cursor: not-allowed;
@@ -85,6 +101,9 @@ const Button = ({
               display: block;
               padding: 1.25rem 1.125rem;
               width: 100%;
+              &.buttonIcon {
+                width: fit-content;
+              }
             }
           }
         `}
