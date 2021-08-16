@@ -2,7 +2,7 @@
 .container {
   max-width: 1209px;
   margin: auto;
-  padding: 1rem;
+  padding: 5rem 1rem;
   & .main {
     display: flex;
     justify-content: space-between;
@@ -11,8 +11,8 @@
   }
   & .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
     // grid-auto-columns: 1fr;
     // grid-template-columns: 1fr 1fr;
     // grid-template-rows: auto auto;
@@ -30,6 +30,12 @@
       & .sideCardDiv {
         max-height: 12rem;
         & .blogCard {
+          padding: 1rem 0rem 1rem 1rem;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          max-width: 296px;
+          padding: 31px 25px 31px 27px;
           p {
             margin: 0;
           }
@@ -39,26 +45,29 @@
         }
       }
     }
-    & .cardDiv {
-      position: relative;
-      flex-direction: column;
-      max-height: 36rem;
-      & .designbtn {
-        position: absolute;
-        flex-direction: row;
-        gap: 0.5rem;
-        top: 1.5rem;
-        right: 2rem;
-        display: flex;
-        padding: 1rem 1.5rem;
-        align-items: center;
-        border-radius: 10rem;
-        background-color: $Neutral100;
-        color: $Neutral700;
-        font-size: 1rem;
-        line-height: 1rem;
-        font-weight: 700;
-      }
+  }
+  & .cardDiv {
+    position: relative;
+    flex-direction: column;
+    max-height: 36rem;
+    & .blogCard {
+      padding: 1rem;
+    }
+    & .designbtn {
+      position: absolute;
+      flex-direction: row;
+      gap: 0.5rem;
+      top: 1.5rem;
+      right: 2rem;
+      display: flex;
+      padding: 1rem 1.5rem;
+      align-items: center;
+      border-radius: 10rem;
+      background-color: $Neutral100;
+      color: $Neutral700;
+      font-size: 1rem;
+      line-height: 1rem;
+      font-weight: 700;
     }
   }
 }
@@ -72,10 +81,14 @@
     .cards {
       grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
       & .sideDiv {
+        grid-gap: 2rem;
         & .sideCardDiv {
           max-height: 18rem;
           display: flex;
           flex-direction: column;
+          & .blogCard {
+            max-width: fit-content;
+          }
         }
       }
     }
