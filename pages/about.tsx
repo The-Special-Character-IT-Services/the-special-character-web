@@ -5,6 +5,7 @@ import AbtMission from '@container/AbtMission';
 import Map from '@container/Map';
 import Ratings from '@container/Ratings';
 import Success from '@container/Success';
+import TimelineSection from '@container/TimelineSection';
 import Values from '@container/Values';
 
 interface Props {}
@@ -18,6 +19,7 @@ const About = (props: Props) => {
       <Values />
       <AbtMission />
       <AboutTeachers />
+      <TimelineSection />
       <Map />
     </>
   );
