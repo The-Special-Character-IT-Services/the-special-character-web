@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { forwardRef } from 'react';
 
 interface Props {
   variant:
@@ -15,7 +16,7 @@ interface Props {
     | 'italic'
     | 'blockquote'
     | 'label';
-  children: JSX.Element;
+  children: JSX.Element | string;
   className: String;
   props?: Object;
 }
@@ -37,7 +38,7 @@ const variantsMapping = {
   label: 'label',
 };
 
-const Typography = ({ variant, children, className, ...props }: Props) => {
+const Typography = ({ variant, children, className, ...props }: Props, ref) => {
   const Component = variant ? variantsMapping[variant] : 'p';
   return (
     <Component
@@ -45,6 +46,7 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
         [`typography--class-${variant}`]: !!variant,
         [className]: !!className,
       })}
+      ref={ref}
       {...props}>
       {children}
       <style jsx>
@@ -183,4 +185,4 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
   );
 };
 
-export default Typography;
+export default forwardRef(Typography);

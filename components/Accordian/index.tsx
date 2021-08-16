@@ -5,16 +5,21 @@ import classNames from 'classnames';
 import { useRef } from 'react';
 import styles from './accordian.module.scss';
 
-interface Props {}
+interface Props {
+  children: JSX.Element;
+  className: string;
+  label: string;
+}
 
 const Accordian = ({ children, className, label, ...props }: Props) => {
-  const toggleRef = useRef();
-  const childRef = useRef();
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const childRef = useRef<HTMLInputElement>(null);
+  const headTxtRef = useRef<HTMLInputElement>(null);
 
   const toggleAcc = () => {
-    toggleRef.current.classList.toggle(styles.active);
-    childRef.current.classList.toggle(styles.active);
-    document.getElementById('headTxt').classList.toggle(styles.headTxt);
+    toggleRef?.current?.classList?.toggle(styles.active);
+    childRef?.current?.classList?.toggle(styles.active);
+    headTxtRef?.current?.classList.toggle(styles.headTxt);
   };
   return (
     <Card
@@ -26,7 +31,7 @@ const Accordian = ({ children, className, label, ...props }: Props) => {
       {...props}>
       <div className={styles.buttonDiv}>
         <button className={styles.acBtn} id="toggle" ref={toggleRef} />
-        <Typography variant="h3" id="headTxt">
+        <Typography variant="h3" ref={headTxtRef}>
           {label}
         </Typography>
       </div>
