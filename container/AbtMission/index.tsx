@@ -45,7 +45,6 @@ const AbtMission = (props: Props) => {
       <style jsx>{`
         @import '../../styles/variables.scss';
         .container {
-          max-width: 1500px;
           margin: auto;
           padding: 6rem;
           & .main {
@@ -68,7 +67,6 @@ const AbtMission = (props: Props) => {
             & .mission {
               padding: 0rem 2rem 2rem 2rem;
               max-width: 640px;
-              margin-top: 8rem;
 
               &.right {
                 max-width: 610px;
@@ -80,15 +78,21 @@ const AbtMission = (props: Props) => {
           }
         }
         @media screen and (min-width: $breakpointXl) {
-          .mission {
-            padding: 0rem 2rem 2rem 2rem;
-            max-width: 640px;
-            margin-top: 8rem;
-            &.right {
-              margin-left: 2rem;
-            }
-            &.left {
-              margin-right: 2rem;
+          .container {
+            max-width: 1440px;
+
+            & .mission {
+              padding: 0rem 2rem 2rem 2rem;
+              max-width: 640px;
+              line-height: 1.8;
+              &.right {
+                margin-left: 2rem;
+                margin-top: 5rem;
+              }
+              &.left {
+                margin-right: 2rem;
+                margin-top: 5rem;
+              }
             }
           }
         }

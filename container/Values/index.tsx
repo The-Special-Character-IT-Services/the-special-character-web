@@ -136,7 +136,7 @@ const Values = (props: Props) => {
             & .window {
               padding: 1rem;
               & .main {
-                grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
               }
             }
           }
