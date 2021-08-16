@@ -10,11 +10,11 @@ const AbtMission = (props: Props) => {
       <section className="container">
         <div className="main">
           <Images src="/mission.jpeg" height={600} width={580} />
-          <aside className="mission">
+          <aside className="mission right">
             <Typography variant="h2">
               The mission behind Education platform
             </Typography>
-            <Typography variant="largeP">
+            <Typography>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
               viverra praesent felis consequat pellentesque turpis et quisque
               platea. Eu, elit ut nunc ac mauris bibendum nulla placerat.
@@ -27,9 +27,9 @@ const AbtMission = (props: Props) => {
           <div className="circle" />
         </div>
         <div className="main reverse">
-          <aside className="mission">
+          <aside className="mission left">
             <Typography variant="h2">The story of our founders</Typography>
-            <Typography variant="largeP">
+            <Typography>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
               viverra praesent felis consequat pellentesque turpis et quisque
               platea. Eu, elit ut nunc ac mauris bibendum nulla placerat.
@@ -45,12 +45,13 @@ const AbtMission = (props: Props) => {
       <style jsx>{`
         @import '../../styles/variables.scss';
         .container {
-          max-width: 1440px;
+          max-width: 1500px;
           margin: auto;
           padding: 6rem;
           & .main {
             display: flex;
             position: relative;
+            margin-bottom: -3rem;
             &.reverse {
               display: flex;
             }
@@ -62,12 +63,32 @@ const AbtMission = (props: Props) => {
               border-radius: 100%;
               z-index: -1;
               right: 35%;
-              top: 70%;
+              top: 59%;
             }
             & .mission {
               padding: 0rem 2rem 2rem 2rem;
-              max-width: 650px;
-              margin-top: 4rem;
+              max-width: 640px;
+              margin-top: 8rem;
+
+              &.right {
+                max-width: 610px;
+              }
+              &.left {
+                max-width: 610px;
+              }
+            }
+          }
+        }
+        @media screen and (min-width: $breakpointXl) {
+          .mission {
+            padding: 0rem 2rem 2rem 2rem;
+            max-width: 640px;
+            margin-top: 8rem;
+            &.right {
+              margin-left: 2rem;
+            }
+            &.left {
+              margin-right: 2rem;
             }
           }
         }

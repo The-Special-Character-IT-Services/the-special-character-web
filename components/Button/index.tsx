@@ -59,7 +59,9 @@ const Button = ({
             }
             &.buttonIcon {
               background-color: $icon;
-              padding: 0.5rem 0.6rem;
+              min-height: 0.5rem;
+              min-width: 0.5rem;
+              padding: 0rem 0.1rem;
               border: none;
               cursor: auto;
               overflow: hidden;
