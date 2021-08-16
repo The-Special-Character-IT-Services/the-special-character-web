@@ -1,6 +1,7 @@
 import NewsLetter from '@container/NewsLetter';
 import Resources from '@container/Resources';
 import BlogContainer from '@container/Blog';
+import BlogFeatured from '@container/BlogFeatured';
 import Header from '@components/Header';
 
 interface Props {}
@@ -17,6 +18,7 @@ const Blog = (props: Props) => {
           circle2: ['bottom', 'left', '#064ea4'],
         }}
       />
+      <BlogFeatured />
       <BlogContainer />
       <NewsLetter />
       <Resources />
