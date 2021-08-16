@@ -33,14 +33,12 @@
             opacity: 1;
             transform: scale(1);
             background-color: $Primary1;
+            color: $Neutral100;
           }
         }
         & > .common {
           background-color: $Neutral100;
           color: $Neutral700;
-          &:hover {
-            background-color: $Neutral100;
-          }
         }
       }
     }
