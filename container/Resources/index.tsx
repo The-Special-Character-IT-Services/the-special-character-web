@@ -39,11 +39,68 @@ const Resources = (props: Props) => {
         <div className="blog-grid">
           <Card variant="cardHover" className={styles.cardResources}>
             <div className="image-wrapper">
-              <Image
-                width={471}
-                height={264}
-                src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg"
-              />
+              <div className="image">
+                <Image
+                  layout="fill"
+                  src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg"
+                />
+              </div>
+              <div className="card-post-category-wrapper">
+                <div className={styles.cardIcon}>
+                  <Image
+                    width={16}
+                    height={18}
+                    src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2199d24e83863a7b02da_icon-2-categories-education-x-template.svg"
+                  />
+                </div>
+                <Typography className={styles.iconTitle}>Design</Typography>
+              </div>
+            </div>
+            <div className="card-post-content">
+              <Typography className={styles.cardPostDate}>
+                April 20, 2021
+              </Typography>
+              <Typography variant="h3" className={classnames(styles.cardPost)}>
+                How to design a simple, yet unique and memorable brand identity
+              </Typography>
+            </div>
+          </Card>
+          <Card variant="cardHover" className={styles.cardResources}>
+            <div className="image-wrapper">
+              <div className="image">
+                <Image
+                  layout="fill"
+                  src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg"
+                />
+              </div>
+              <div className="card-post-category-wrapper">
+                <div className={styles.cardIcon}>
+                  <Image
+                    width={16}
+                    height={18}
+                    src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2199d24e83863a7b02da_icon-2-categories-education-x-template.svg"
+                  />
+                </div>
+                <Typography className={styles.iconTitle}>Design</Typography>
+              </div>
+            </div>
+            <div className="card-post-content">
+              <Typography className={styles.cardPostDate}>
+                April 20, 2021
+              </Typography>
+              <Typography variant="h3" className={classnames(styles.cardPost)}>
+                How to design a simple, yet unique and memorable brand identity
+              </Typography>
+            </div>
+          </Card>
+          <Card variant="cardHover" className={styles.cardResources}>
+            <div className="image-wrapper">
+              <div className="image">
+                <Image
+                  layout="fill"
+                  src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg"
+                />
+              </div>
               <div className="card-post-category-wrapper">
                 <div className={styles.cardIcon}>
                   <Image
@@ -110,6 +167,7 @@ const Resources = (props: Props) => {
           overflow: hidden;
           transform: translate(0px, 0px);
         }
+
         .card-post-category-wrapper {
           position: absolute;
           top: 25px;
@@ -129,6 +187,18 @@ const Resources = (props: Props) => {
           padding: 3rem 2rem 3.5rem;
         }
 
+        @media screen and (min-width: $breakpointLg) {
+          .image {
+            height: 264px;
+            width: 471px;
+          }
+        }
+        @media screen and (min-width: $breakpointXl) {
+          .image {
+            height: 317px;
+            width: 566px;
+          }
+        }
         @media screen and (max-width: $breakpointLgForMw) {
           .blog-section {
             padding-top: 8rem;
@@ -136,6 +206,10 @@ const Resources = (props: Props) => {
           }
           .top-content {
             flex-direction: column;
+          }
+          .image {
+            height: 193px;
+            width: 346px;
           }
         }
         @media screen and (max-width: $breakpointMdForMw) {
@@ -199,6 +273,10 @@ const Resources = (props: Props) => {
           }
           .card-post-content {
             padding: 2rem 1.5rem 2.5rem;
+          }
+          .image {
+            height: 161px;
+            width: 288px;
           }
         }
       `}</style>

@@ -19,7 +19,6 @@ const Blog = (props: Props) => {
         }}
       />
       <BlogFeatured />
-      <BlogContainer />
       <NewsLetter />
       <Resources />
     </>
