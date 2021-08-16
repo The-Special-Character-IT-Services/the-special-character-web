@@ -11,19 +11,19 @@ const HeaderNav = (props: Props) => {
     burgerRef.current.classList.toggle('open');
     menuRef.current.classList.toggle('right0');
   };
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY >= 60) {
-        headerRef.current.classList.add('fixedHeader');
-      } else {
-        headerRef.current.classList.remove('fixedHeader');
-      }
-    };
-    window.addEventListener('scroll', onScroll, false);
-    return () => {
-      window.removeEventListener('scroll', onScroll, false);
-    };
-  }, []);
+  //   useEffect(() => {
+  //     const onScroll = () => {
+  //       if (window.scrollY >= 60) {
+  //         headerRef.current.classList.add('fixedHeader');
+  //       } else {
+  //         headerRef.current.classList.remove('fixedHeader');
+  //       }
+  //     };
+  //     window.addEventListener('scroll', onScroll, false);
+  //     return () => {
+  //       window.removeEventListener('scroll', onScroll, false);
+  //     };
+  //   }, []);
   return (
     <header ref={headerRef} className="container-default">
       <nav role="navigation" className="nav-menu">
@@ -62,7 +62,7 @@ const HeaderNav = (props: Props) => {
             <li className="nav-item-wrapper">
               <Typography
                 variant="a"
-                href="/"
+                href="/courses"
                 className={styles.navLink}
                 aria-current="page">
                 Courses
@@ -71,7 +71,16 @@ const HeaderNav = (props: Props) => {
             <li className="nav-item-wrapper">
               <Typography
                 variant="a"
-                href="/"
+                href="/blog"
+                className={styles.navLink}
+                aria-current="page">
+                Blogs
+              </Typography>
+            </li>
+            <li className="nav-item-wrapper">
+              <Typography
+                variant="a"
+                href="/contact"
                 className={styles.navLink}
                 aria-current="page">
                 Contact

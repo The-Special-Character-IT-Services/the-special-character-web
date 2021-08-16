@@ -74,7 +74,7 @@ const Testimonials = (props: Props) => {
                 className={styles.image}
                 src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg"
               />
-              <div>
+              <div className="flex-grow">
                 <StarRating
                   number={5}
                   className={classNames(styles.testimonialStar)}
@@ -101,7 +101,7 @@ const Testimonials = (props: Props) => {
                 className={styles.image}
                 src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd486e01646f00559d_image-2-testimonials-education-x-template.jpg"
               />
-              <div>
+              <div className="flex-grow">
                 <StarRating
                   number={4}
                   className={classNames(styles.testimonialStar)}
@@ -128,7 +128,7 @@ const Testimonials = (props: Props) => {
                 className={styles.image}
                 src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bc486e0164b300559c_image-3-testimonials-education-x-template.jpg"
               />
-              <div>
+              <div className="flex-grow">
                 <StarRating
                   number={4}
                   className={classNames(styles.testimonialStar)}
@@ -167,7 +167,14 @@ const Testimonials = (props: Props) => {
           .testimonials-wrapper {
             text-align: center;
           }
-
+          .flex-grow {
+            flex: 1;
+          }
+          @media screen and (min-width: $breakpointMd) {
+            .flex-grow {
+              padding-top: 1.25rem;
+            }
+          }
           @media screen and (max-width: $breakpointLgForMw) {
             .testimonials {
               padding-top: 9rem;
