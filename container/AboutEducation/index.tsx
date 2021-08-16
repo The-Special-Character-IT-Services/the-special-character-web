@@ -79,7 +79,7 @@ const AboutEducation = (props: Props) => {
               </div>
             </aside>
           </div>
-          <Link passHref href="/about">
+          <Link passHref={true} href="/about">
             <Button className="secondary">About Education</Button>
           </Link>
         </div>

@@ -1,5 +1,4 @@
 import AbtMission from '@container/AbtMission';
-import Blog from '@container/Blog';
 import Values from '@container/Values';
 import React from 'react';
 
@@ -10,7 +9,6 @@ const About = (props: Props) => {
     <div>
       <AbtMission />
       <Values />
-      <Blog />
     </div>
   );
 };
