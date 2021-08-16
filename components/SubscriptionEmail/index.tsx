@@ -58,6 +58,9 @@ const SubscriptionEmail = ({ props, className, submitValue }: Props) => {
             line-height: 1.111em;
             &:hover {
               border-color: $Neutral400;
+              -webkit-transition-duration: 300ms;
+              transition-duration: 300ms;
+              outline: 0;
             }
           }
           .input.footer-newsletter {
