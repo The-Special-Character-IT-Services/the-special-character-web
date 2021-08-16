@@ -11,6 +11,7 @@
   text-align: left;
 }
 .image {
+  flex: 1;
   & img {
     width: 203px !important;
     min-height: 203px !important;

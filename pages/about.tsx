@@ -1,15 +1,16 @@
 import AbtMission from '@container/AbtMission';
+import Map from '@container/Map';
 import Values from '@container/Values';
-import React from 'react';
 
 interface Props {}
 
 const About = (props: Props) => {
   return (
-    <div>
+    <>
       <AbtMission />
       <Values />
-    </div>
+      <Map />
+    </>
   );
 };
 

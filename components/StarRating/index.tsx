@@ -33,7 +33,7 @@ const StarRating = ({ props, number, className }: Props) => {
         }
         @media screen and (max-width: $breakpointSmForMw) {
           .flex {
-            align-self: center;
+            justify-content: center;
           }
         }
       `}</style>
