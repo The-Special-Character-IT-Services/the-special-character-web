@@ -4,38 +4,29 @@ import classnames from 'classnames';
 import Button from '@components/Button';
 import Card from '@components/Card';
 import Image from 'next/image';
+import FeaturedCategory from '@components/FeaturedCategory';
 
 interface Props {}
 
 const Resources = (props: Props) => {
+  const btnName = [
+    {
+      name: 'All',
+    },
+    {
+      name: 'Development',
+    },
+    {
+      name: 'Design',
+    },
+    {
+      name: 'Marketing',
+    },
+  ];
   return (
     <section className="blog-section">
       <div className="container">
-        <div className="top-content">
-          <Typography
-            variant="h2"
-            className={classnames('commonHeading', styles.title)}>
-            Resources & News
-          </Typography>
-          <div className="category-wrapper">
-            <div className="category-content">
-              <div className="category-item">
-                <Button className={classnames(styles.button, styles.current)}>
-                  All
-                </Button>
-                <Button className={classnames(styles.button, styles.primary)}>
-                  Development
-                </Button>
-                <Button className={classnames(styles.button, styles.primary)}>
-                  Design
-                </Button>
-                <Button className={classnames(styles.button, styles.primary)}>
-                  Marketing
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <FeaturedCategory title="Resources & News" children={btnName} />
         <div className="blog-grid">
           <Card variant="cardHover" className={styles.cardResources}>
             <div className="image-wrapper">
@@ -136,24 +127,7 @@ const Resources = (props: Props) => {
           padding-right: 1.5rem;
           padding-left: 1.5rem;
         }
-        .top-content {
-          display: flex;
-          margin-bottom: 3rem;
-          justify-content: space-between;
-          align-items: center;
-        }
-        .category-wrapper {
-          padding: 1rem 1.25rem;
-          border-radius: 1000px;
-          background-color: $Neutral200;
-        }
-        .category-content {
-          display: flex;
-          justify-content: center;
-        }
-        .category-item {
-          display: flex;
-        }
+
         .blog-grid {
           display: grid;
           grid-auto-columns: 1fr;
@@ -204,9 +178,7 @@ const Resources = (props: Props) => {
             padding-top: 8rem;
             padding-bottom: 10rem;
           }
-          .top-content {
-            flex-direction: column;
-          }
+
           .image {
             height: 193px;
             width: 346px;
@@ -217,21 +189,7 @@ const Resources = (props: Props) => {
             padding-top: 6.5rem;
             padding-bottom: 8rem;
           }
-          .top-content {
-            margin-bottom: 2.5rem;
-          }
-          .category-wrapper {
-            padding-bottom: 0;
-            border-radius: 1.25rem;
-          }
-          .category-content {
-            flex-wrap: wrap;
-            justify-content: flex-start;
-          }
-          .category-item {
-            flex-wrap: wrap;
-            align-items: flex-start;
-          }
+
           .blog-grid {
             max-width: 567px;
             margin-right: auto;
@@ -256,13 +214,7 @@ const Resources = (props: Props) => {
             padding-right: 1rem;
             padding-left: 1rem;
           }
-          .top-content {
-            align-items: stretch;
-          }
-          .category-wrapper {
-            padding-right: 1rem;
-            padding-left: 1rem;
-          }
+
           .blog-grid {
             grid-row-gap: 2rem;
           }

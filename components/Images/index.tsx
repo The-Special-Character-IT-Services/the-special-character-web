@@ -7,7 +7,7 @@ const Images = ({ children, className, variant, alt, ...props }: Props) => {
     <>
       <div className={classNames(variant, className ? className : '')}>
         <Image alt={alt} {...props} />
-
+        {children}
         <style jsx>
           {`
             .image {

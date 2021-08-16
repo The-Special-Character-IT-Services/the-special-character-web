@@ -14,6 +14,7 @@ interface Props {
     | 'bold'
     | 'italic'
     | 'blockquote'
+    | 'title404'
     | 'label';
   children: JSX.Element;
   className: String;
@@ -35,6 +36,7 @@ const variantsMapping = {
   italic: 'em',
   blockquote: 'blockquote',
   label: 'label',
+  title404: 'h1',
 };
 
 const Typography = ({ variant, children, className, ...props }: Props) => {
@@ -140,6 +142,14 @@ const Typography = ({ variant, children, className, ...props }: Props) => {
             margin: 0;
             letter-spacing: 0.08em;
             font-family: sans-serif;
+          }
+          .typography--class-title404 {
+            color: $Neutral800;
+            font-size: var(--fs-title404);
+            line-height: 1em;
+            font-weight: 600;
+            text-align: right;
+            margin: 0;
           }
           @media screen and (max-width: $breakpointLgForMw) {
             .typography--class-h1 {
