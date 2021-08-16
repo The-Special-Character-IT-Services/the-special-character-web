@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+.paragraph {
+  margin-bottom: 0;
+}
+.mr0 {
+  margin-right: 0;
+}
+@media screen and (max-width: $breakpointLgForMw) {
+}
+@media screen and (max-width: $breakpointMdForMw) {
+}
+@media screen and (max-width: $breakpointSmForMw) {
+  .paragraph {
+    max-width: 402px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+
+.title {
+  position: relative;
+  z-index: 1;
+  max-width: 465px;
+  min-width: 405px;
+  margin-right: 1.25rem;
+  margin-bottom: 0;
+  color: $Neutral100 !important;
+}
+@media screen and (max-width: $breakpointLgForMw) {
+  .title {
+    min-width: auto;
+    margin-right: 0;
+    margin-bottom: 2.5rem !important;
+  }
+}
+@media screen and (max-width: $breakpointMdForMw) {
+  .title {
+    margin-bottom: 2rem !important;
+  }
+}
+@media screen and (max-width: $breakpointSmForMw) {
+  .color input:nth-last-child(1) {
+    background-color: $Neutral700;
+  }
+}

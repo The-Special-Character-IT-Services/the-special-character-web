@@ -1,10 +1,13 @@
 interface Props {}
+import classnames from 'classnames';
 
-const SubscriptionEmail = (props: Props) => {
+const SubscriptionEmail = ({ props, className, submitValue }: Props) => {
   return (
     <form
       id="wf-form-Footer-Newsletter-Form"
-      className="footer-newsletter-form">
+      className={classnames('footer-newsletter-form', {
+        [className]: !!className,
+      })}>
       <input
         type="email"
         name="email"
@@ -15,7 +18,7 @@ const SubscriptionEmail = (props: Props) => {
       />
       <input
         type="submit"
-        value="Submit"
+        value={submitValue ? submitValue : 'Submit'}
         className="button-primary footer-newsletter w-button"
       />
       <style jsx>
