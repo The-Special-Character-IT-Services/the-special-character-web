@@ -2,24 +2,34 @@
 
 .accordian {
   display: flex;
-  flex-direction: column;
   padding: 1rem;
   cursor: pointer;
-  & > .showDiv {
+  margin-bottom: 1.5rem;
+  flex-direction: column;
+  & > .buttonDiv {
+    padding: 0;
+    margin-right: 1rem;
     display: flex;
     flex-direction: row;
-    padding: 0;
+    align-items: center;
+    & > h3 {
+      margin: 0;
+      color: $Neutral600;
+    }
     &:hover {
       opacity: 0.86;
     }
+    & .headTxt {
+      color: $Neutral800;
+    }
     & > .acBtn {
+      margin-right: 1rem;
       width: 3rem;
       height: 3rem;
       padding: 0 1.25rem;
       border: none;
       background-color: $Neutral300;
       border-radius: 1.5rem;
-      margin-top: 1rem;
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -58,54 +68,45 @@
         transition: 300ms;
       }
     }
-    & > h3 {
-      margin: 0;
-      padding: 1rem;
-      color: $Neutral600;
+  }
+  & > .showDiv {
+    padding: 0;
+    flex-direction: row;
+
+    & > .dummyDiv {
+      width: 3rem;
+      margin-right: 1rem;
     }
     & > .label {
       color: $Primary1;
     }
-  }
-  & > .hideDiv {
-    display: none;
-    padding: 0;
-  }
-  & .active {
-    display: flex;
-
-    & > p {
-      margin-left: 1rem;
+    & > .hideDiv {
+      flex: 1;
+      display: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+    & .active {
+      display: block;
     }
   }
 }
-@media screen and (min-width: $breakpointLgForMw) {
+@media screen and (min-width: $breakpointLg) {
   .accordian {
-    & > .active {
+    & .active {
       & > p {
         padding-right: 4rem;
       }
     }
   }
 }
-@media screen and (min-width: $breakpointMdForMw) {
+@media screen and (min-width: $breakpointMd) {
   .accordian {
-    & > .active {
+    margin-bottom: 1.25rem;
+    & .active {
       & > p {
-        margin-left: 3rem;
+        padding-right: 4rem;
       }
     }
   }
-}
-@media screen and (min-width: $breakpointSmForMw) {
-  .accordian {
-    & > .active {
-      & > p {
-        margin-left: 2rem;
-      }
-    }
-  }
-}
-.headTxt {
-  color: $Neutral800 !important;
 }

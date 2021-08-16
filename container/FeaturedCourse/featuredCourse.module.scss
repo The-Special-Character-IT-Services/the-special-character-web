@@ -1,0 +1,110 @@
+@import '../../styles/variables.scss';
+
+.featuredCourse {
+  padding: 10rem 0;
+  & > .container {
+    max-width: 1209px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 1.5rem;
+    flex: 1;
+    text-align: center;
+    & > .head {
+      font-family: auto;
+      margin-top: 0;
+      margin-bottom: 2rem;
+    }
+    & > .cardMain {
+      & > .cardBox {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        text-align: left;
+        padding: 1rem;
+        & > .faculty {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          & > .price {
+            position: absolute;
+            left: 1.5rem;
+            top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            & > .button,
+            .buttonWhite {
+              padding: 0.875rem 1.5rem;
+              &:hover {
+                opacity: 1;
+                transform: scale(1);
+                background-color: $Primary1;
+              }
+            }
+            & > .buttonWhite {
+              background-color: $Neutral100;
+              color: $Neutral700;
+              &:hover {
+                background-color: $Neutral100;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointLg) {
+  .featuredCourse {
+    padding: 8rem 0;
+    & > .container {
+      flex-direction: column;
+      align-items: stretch;
+      & > .cardMain {
+        & > .cardBox {
+          & > .faculty {
+            & > .price {
+              left: 1.25rem;
+              top: 1.25rem;
+              flex-direction: column;
+              align-items: stretch;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .featuredCourse {
+    padding: 6.5rem 0;
+    & > .container {
+      & > .cardMain {
+        flex-direction: column;
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointSm) {
+  .featuredCourse {
+    padding: 5rem 0;
+    & > .container {
+      padding: 0 1rem;
+      & > .cardMain {
+        & > .cardBox {
+          & > .faculty {
+            & > .price {
+              gap: 0.5rem;
+              & > .button,
+              .buttonWhite {
+                padding: 0.875rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

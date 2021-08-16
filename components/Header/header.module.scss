@@ -1,52 +1,67 @@
 @import '../../styles/variables.scss';
-.navLink {
-  & a {
-    line-height: 1.111em;
-    font-weight: 700;
-    color: $Neutral700 !important;
-    text-decoration: none !important;
+.common {
+  position: relative;
+  padding: 8.25rem 0;
+  background-color: rgba(225, 237, 251, 0.4);
+  & > .container {
     position: relative;
-    &::after {
-      content: '';
-      transition: ease all 0.2s;
-      position: absolute;
-      z-index: 10;
-      width: 0;
-      left: 0;
-      right: 0;
-      bottom: -2px;
-      margin: auto;
-      height: 1px;
-      background-color: $Neutral700;
+    z-index: 1;
+    text-align: center;
+    max-width: 622px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 1.5rem;
+    & > .head {
+      font-family: auto;
     }
-    &.active::after {
-      width: 100%;
-    }
-    &:hover::after,
-    :focus::after {
-      width: 100%;
+  }
+  & > .arrow {
+    left: 0;
+    right: 0;
+    bottom: -7.25rem;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+  }
+  & > .circleDiv {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: $breakpointLg) {
+  .common {
+    padding: 6.5rem 0;
+    & > .arrow {
+      bottom: -6rem;
+      & > img {
+        width: 65px;
+      }
     }
   }
 }
-
-@media screen and (max-width: $breakpointLgForMw) {
-  .navLink {
-    & a {
-      font-size: 2rem;
+@media screen and (max-width: $breakpointMd) {
+  .common {
+    padding: 5.25rem 0;
+    & > .arrow {
+      bottom: -5rem;
+      & img {
+        width: 65px;
+      }
     }
   }
 }
-@media screen and (max-width: $breakpointMdForMw) {
-  .navLink {
-    & a {
-      font-size: 1.875rem;
-    }
-  }
-}
-@media screen and (max-width: $breakpointSmForMw) {
-  .navLink {
-    & a {
-      font-size: 1.75rem;
+@media screen and (max-width: $breakpointSm) {
+  .common {
+    padding: 4.25rem 0;
+    & > .arrow {
+      bottom: -3.5rem;
+      & img {
+        width: 45px;
+      }
     }
   }
 }

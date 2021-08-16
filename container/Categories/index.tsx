@@ -29,7 +29,7 @@ const Categories = (props: Props) => {
               />
               <Typography>12 courses</Typography>
             </Button>
-            <div>
+            <div className={styles.paraDiv}>
               <Typography variant="h3">Design</Typography>
               <Typography>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -41,8 +41,8 @@ const Categories = (props: Props) => {
             <Image
               alt="Design Category"
               src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f500fe9f6c983c68e88ef_image-1-courses-categories-education-x-template.svg"
-              height={318}
-              width={567}
+              height={311}
+              width={369}
             />
             <Button className="secondary">
               <Image
@@ -53,7 +53,7 @@ const Categories = (props: Props) => {
               />
               <Typography>12 courses</Typography>
             </Button>
-            <div>
+            <div className={styles.paraDiv}>
               <Typography variant="h3">Design</Typography>
               <Typography>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -65,8 +65,8 @@ const Categories = (props: Props) => {
             <Image
               alt="Design Category"
               src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f500fe9f6c983c68e88ef_image-1-courses-categories-education-x-template.svg"
-              height={318}
-              width={567}
+              height={311}
+              width={369}
             />
             <Button className="secondary">
               <Image
@@ -77,7 +77,7 @@ const Categories = (props: Props) => {
               />
               <Typography>12 courses</Typography>
             </Button>
-            <div>
+            <div className={styles.paraDiv}>
               <Typography variant="h3">Design</Typography>
               <Typography>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.

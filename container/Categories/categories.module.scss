@@ -26,6 +26,10 @@
       & > .cardBox {
         flex-direction: column;
         margin-right: 0;
+        & > .paraDiv {
+          text-align: start;
+          padding: 1rem;
+        }
         & button {
           position: absolute;
           top: 1.5rem;

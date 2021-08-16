@@ -1,0 +1,109 @@
+@import '../../styles/variables.scss';
+.aboutTeachers {
+  padding: 5rem 0;
+  min-height: 100vh;
+  & > .container {
+    max-width: 1209px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 1.5rem;
+    flex: 1;
+    & > .header {
+      display: flex;
+      margin-bottom: 3.5rem;
+      justify-content: space-between;
+      align-items: flex-end;
+      & > .leftHead {
+        max-width: 495px;
+        & > .title {
+          font-family: auto;
+        }
+      }
+    }
+    & > .cards {
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-column-gap: 1.5rem;
+      grid-row-gap: 2rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      & > .singleCard {
+        flex-direction: column;
+        & > .description {
+          & > .socialIcons {
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointLg) {
+  .aboutTeachers {
+    & > .container {
+      flex-direction: column;
+      align-items: stretch;
+      & > .header {
+        margin-bottom: 3rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        & > .leftHead {
+          margin-bottom: 2rem;
+        }
+      }
+      & > .cards {
+        grid-template-columns: 1fr 1fr;
+        & > .singleCard {
+          & > .description {
+            & > .socialIcons {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointMd) {
+  .aboutTeachers {
+    & > .container {
+      & > .header {
+        margin-bottom: 2.5rem;
+        & > .leftHead {
+          margin-bottom: 1.75rem;
+        }
+      }
+      & > .cards {
+        max-width: 503px;
+        margin-right: auto;
+        margin-left: auto;
+        grid-template-columns: 1fr;
+        & > .singleCard {
+          & > .description {
+            & > .socialIcons {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointSm) {
+  .aboutTeachers {
+    & > .container {
+      padding: 0 1rem;
+      & > .header {
+        align-items: stretch;
+        & > .leftHead {
+        }
+      }
+      & > .cards {
+        & > .singleCard {
+          & > .description {
+            & > .socialIcons {
+            }
+          }
+        }
+      }
+    }
+  }
+}

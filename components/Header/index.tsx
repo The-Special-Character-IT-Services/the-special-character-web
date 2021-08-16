@@ -1,241 +1,119 @@
 import Typography from '@components/Typography';
-import { useRef } from 'react';
+import classNames from 'classnames';
+import DownArrow from '../../public/svg/downArrow.svg';
+import PropTypes from 'prop-types';
 import styles from './header.module.scss';
-import { useRouter } from 'next/router';
-import classnames from 'classnames';
+import Image from 'next/image';
+interface Props {
+  className: string;
+  label: string;
+  children: JSX.Element;
+  props: object;
+  isBlog: Boolean;
+  isEvent: Boolean;
+  isCourse: Boolean;
+}
 
-interface Props {}
-const Header = (props: Props) => {
-  const { pathname } = useRouter();
-  const burgerRef = useRef(null);
-  const menuRef = useRef(null);
-  const headerRef = useRef(null);
-  const burgerClicked = () => {
-    burgerRef.current.classList.toggle('open');
-    menuRef.current.classList.toggle('right0');
-  };
-  //   useEffect(() => {
-  //     const onScroll = () => {
-  //       if (window.scrollY >= 60) {
-  //         headerRef.current.classList.add('fixedHeader');
-  //       } else {
-  //         headerRef.current.classList.remove('fixedHeader');
-  //       }
-  //     };
-  //     window.addEventListener('scroll', onScroll, false);
-  //     return () => {
-  //       window.removeEventListener('scroll', onScroll, false);
-  //     };
-  //   }, []);
+const Header = ({
+  isCourse,
+  isEvent,
+  isBlog,
+  variant,
+  children,
+  className,
+  label,
+  ...props
+}: Props) => {
   return (
-    <header ref={headerRef} className="container-default">
-      <nav role="navigation" className="nav-menu">
-        <a href="/" className="header-right">
-          <img
-            src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e0932cd6425299653b78f_logo-education-x-template.svg"
-            alt=""
-            className="header-logo"
-          />
-        </a>
-        <button ref={burgerRef} onClick={burgerClicked} className="hamburger">
-          <span className="span1" />
-          <span className="span2" />
-        </button>
-        <aside ref={menuRef} className="menu">
-          <a href="#!" onClick={burgerClicked} className=""></a>
-          <ul role="list" className="header-navigation">
-            <li className={classnames('nav-item-wrapper', styles.navLink)}>
-              <Typography
-                variant="a"
-                href="/"
-                className={pathname === '/' ? styles.active : null}
-                aria-current="page">
-                Home
-              </Typography>
-            </li>
-            <li className={classnames('nav-item-wrapper', styles.navLink)}>
-              <Typography
-                variant="a"
-                href="/about"
-                className={pathname === '/about' ? styles.active : null}
-                aria-current="page">
-                About
-              </Typography>
-            </li>
-            <li className={classnames('nav-item-wrapper', styles.navLink)}>
-              <Typography
-                variant="a"
-                href="/courses"
-                className={pathname === '/blog' ? styles.active : null}
-                aria-current="page">
-                Blog
-              </Typography>
-            </li>
-            <li className={classnames('nav-item-wrapper', styles.navLink)}>
-              <Typography
-                variant="a"
-                href="/contact"
-                className={pathname === '/contact' ? styles.active : null}
-                aria-current="page">
-                Contact
-              </Typography>
-            </li>
-          </ul>
-        </aside>
-      </nav>
-      <style jsx>
-        {`
-          @import './styles/variables.scss';
-          .container-default {
-            width: 100%;
-            transition: all ease 0.3s;
-            z-index: 50;
-            padding: 1.75rem 1.5rem;
-            background-color: $Neutral100;
-            & .nav-menu {
-              max-width: 1209px;
-              margin: 0 auto;
-              display: flex;
-              align-items: center;
-              background-color: $Neutral100;
-              justify-content: space-between;
-              & .header-right {
-                display: flex;
-              }
-              & .hamburger {
-                display: none;
-              }
-              & .menu {
-                width: auto;
-                display: block;
-                & .header-navigation {
-                  display: flex;
-                  margin: 0;
-                  padding-left: 0;
-                  justify-content: flex-end;
-                  list-style-type: none;
-                  & .nav-item-wrapper {
-                    margin-right: 2.5rem;
-                    margin-bottom: 0;
-                  }
-                }
-              }
-            }
+    <section
+      className={classNames(styles.common, {
+        [className]: !!className,
+        isBlog: !!isBlog,
+        isEvent: !!isEvent,
+      })}
+      {...props}>
+      <div className={styles.container}>
+        <Typography variant="h1" className={styles.head}>
+          {label}
+        </Typography>
+        {children}
+      </div>
+      <div className={styles.circleDiv}>
+        <div className="circle1" />
+        <div className="circle2" />
+      </div>
+      <div className={styles.arrow}>
+        <Image
+          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f6baa56bb661a7bbbf5eb_arrow-3-education-x-template.svg"
+          height={206}
+          width={77}
+          alt="Down Arrow"
+        />
+      </div>
+      <style jsx>{`
+        @import '../../styles/variables.scss';
+        .circle1 {
+          position: absolute;
+          top: ${isEvent && '-20rem'};
+          left: -20rem;
+          bottom: ${(isCourse || isBlog) && '-18.75rem'};
+          width: 572px;
+          min-height: 572px;
+          min-width: 572px;
+          border-radius: 1000px;
+          background-color: ${isBlog ? '#f99d77' : '#fcdf69'};
+        }
+        .circle2 {
+          bottom: ${isEvent && '-22rem'};
+          right: ${isEvent ? '-17.75rem' : '-17rem'};
+          top: ${(isCourse || isBlog) && '-21.25rem'};
+          width: 572px;
+          min-height: 572px;
+          min-width: 572px;
+          border-radius: 1000px;
+          background-color: ${isBlog ? '#064ea4' : '#f99d77'};
+          position: absolute;
+        }
+        @media screen and (max-width: $breakpointLg) {
+          .circle1 {
+            left: ${isEvent ? '-17rem' : '-22rem'};
+            bottom: ${(isCourse || isBlog) && '-15rem'};
+            width: 477px;
+            min-height: 477px;
+            min-width: 477px;
           }
-          .fixedHeader {
-            position: fixed;
-            box-shadow: 0px 1px 27px -3px rgb(0 0 0 / 20%);
+          .circle2 {
+            width: 477px;
+            min-height: 477px;
+            min-width: 477px;
           }
-          @media screen and (max-width: $breakpointLgForMw) {
-            .right0 {
-              width: 100% !important;
-            }
-            @mixin all-transition($time) {
-              transition: all $time;
-            }
-            .container-default {
-              & .nav-menu {
-                & .menu {
-                  width: 0;
-                  transform: translate3d(-8rem, 0, 0);
-                  animation-timing-function: 1s ease-in;
-                  box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.2);
-                  display: flex;
-                  font-weight: 100;
-                  height: 100%;
-                  z-index: 40;
-                  position: fixed;
-                  right: -8rem;
-                  top: 5.75rem;
-                  @include all-transition(0.3s);
-                  & > a {
-                    width: 60%;
-                    background-color: transparent;
-                    color: transparent;
-                  }
-                  & .header-navigation {
-                    box-shadow: 0px 1px 27px -3px rgb(0 0 0 / 20%);
-                    background-color: $Neutral200;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: flex-start;
-                    width: 100%;
-                    padding-left: 4rem;
-                    margin: 0;
-                    width: 40%;
-                    & .nav-item-wrapper {
-                      display: flex;
-                      margin-right: 0;
-                      padding: 1.25rem 0;
-                    }
-                  }
-                }
-                & .hamburger {
-                  display: block;
-                  float: right;
-                  width: 1.5rem;
-                  top: -5px;
-                  height: 1.5rem;
-                  position: relative;
-                  border: 0;
-                  cursor: pointer;
-                  background-color: transparent;
-                  & span {
-                    transition: all ease 0.3s;
-                    background-color: $Neutral800;
-                    width: 100%;
-                    height: 0.125rem;
-                    position: absolute;
-                    left: 0;
-                  }
-                  & .span1 {
-                    bottom: 0.25rem;
-                    width: 66.666667%;
-                  }
-                }
-                & .open {
-                  & span {
-                    transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);
-                    width: 100%;
-                    background-color: $Neutral800;
-                    height: 0.125rem;
-                    position: absolute;
-                    left: 0;
-                  }
-                  & .span1 {
-                    transform: matrix(0.7071, -0.7071, 0.7071, 0.7071, 0, -5);
-                    width: 100% !important;
-                  }
-                }
-              }
-            }
+        }
+        @media screen and (max-width: $breakpointMd) {
+          .circle1 {
+            left: ${isEvent ? '-18.5rem' : '-22rem'};
+            top: ${isEvent && '-21.5rem'};
+            bottom: ${(isCourse || isBlog) && '-21.5rem'};
           }
-          @media screen and (max-width: $breakpointMdForMw) {
-            .nav-item-wrapper {
-              padding: 13px 0;
-            }
+          .circle2 {
+            bottom: ${isEvent && '-21.5rem'};
+            right: ${isEvent ? '-21rem' : '-20rem'};
+            top: ${(isCourse || isBlog) && '-21rem'};
           }
-          @media screen and (max-width: $breakpointSmForMw) {
-            .container-default {
-              padding-right: 1rem;
-              padding-left: 1rem;
-              & .nav-menu {
-                & .menu {
-                  > a {
-                    width: 50%;
-                  }
-                  & .header-navigation {
-                    width: 100%;
-                    padding-left: 3.5rem;
-                  }
-                }
-              }
-            }
+        }
+        @media screen and (max-width: $breakpointSm) {
+          .circle1 {
+            left: ${isEvent ? '-23rem' : '-22.5rem'};
+            top: ${isEvent && '-22rem'};
           }
-        `}
-      </style>
-    </header>
+          .circle2 {
+            bottom: ${isEvent && '-24rem'};
+            top: ${(isCourse || isBlog) && '-22rem'};
+            right: ${isEvent ? '-20rem' : '-20rem'};
+          }
+        }
+      `}</style>
+    </section>
   );
 };
+
 export default Header;
