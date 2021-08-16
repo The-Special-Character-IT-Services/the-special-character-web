@@ -59,8 +59,11 @@ const Footer = (props: Props) => {
         <Divider isFooterBottom />
         <div className={styles.contentBottom}>
           <div className={styles.footerTxt}>
-            Copyright © Education X | Designed by <a href="">BRIX Templates</a>{' '}
-            - Powered by <a href=""> Webflow</a>
+            Copyright © Education X | Designed by{' '}
+            <a href="">The Special Character</a> - Powered by{' '}
+            <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
+              NextJS
+            </a>
           </div>
           <div className={styles.socialIcons}></div>
         </div>

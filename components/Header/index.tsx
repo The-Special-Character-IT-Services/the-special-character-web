@@ -7,40 +7,48 @@ import Image from 'next/image';
 interface Props {
   className: string;
   label: string;
-  children: JSX.Element;
+  caption: string;
   props: object;
-  isBlog: Boolean;
-  isEvent: Boolean;
-  isCourse: Boolean;
+  position: Object;
 }
 
 const Header = ({
-  isCourse,
-  isEvent,
-  isBlog,
   variant,
-  children,
+  caption,
   className,
   label,
+  position,
   ...props
 }: Props) => {
   return (
     <section
       className={classNames(styles.common, {
         [className]: !!className,
-        isBlog: !!isBlog,
-        isEvent: !!isEvent,
       })}
       {...props}>
       <div className={styles.container}>
         <Typography variant="h1" className={styles.head}>
           {label}
         </Typography>
-        {children}
+        <Typography>{caption}</Typography>
       </div>
       <div className={styles.circleDiv}>
-        <div className="circle1" />
-        <div className="circle2" />
+        <div
+          className="circle1"
+          style={{
+            [position.circle1[0]]: '-20rem',
+            [position.circle1[1]]: '-20rem',
+            backgroundColor: [position.circle1[2]],
+          }}
+        />
+        <div
+          className="circle2"
+          style={{
+            [position.circle2[0]]: '-20rem',
+            [position.circle2[1]]: '-20rem',
+            backgroundColor: [position.circle2[2]],
+          }}
+        />
       </div>
       <div className={styles.arrow}>
         <Image
@@ -54,30 +62,20 @@ const Header = ({
         @import '../../styles/variables.scss';
         .circle1 {
           position: absolute;
-          top: ${isEvent && '-20rem'};
-          left: -20rem;
-          bottom: ${(isCourse || isBlog) && '-18.75rem'};
           width: 572px;
           min-height: 572px;
           min-width: 572px;
           border-radius: 1000px;
-          background-color: ${isBlog ? '#f99d77' : '#fcdf69'};
         }
         .circle2 {
-          bottom: ${isEvent && '-22rem'};
-          right: ${isEvent ? '-17.75rem' : '-17rem'};
-          top: ${(isCourse || isBlog) && '-21.25rem'};
           width: 572px;
           min-height: 572px;
           min-width: 572px;
           border-radius: 1000px;
-          background-color: ${isBlog ? '#064ea4' : '#f99d77'};
           position: absolute;
         }
         @media screen and (max-width: $breakpointLg) {
           .circle1 {
-            left: ${isEvent ? '-17rem' : '-22rem'};
-            bottom: ${(isCourse || isBlog) && '-15rem'};
             width: 477px;
             min-height: 477px;
             min-width: 477px;
@@ -88,27 +86,13 @@ const Header = ({
             min-width: 477px;
           }
         }
-        @media screen and (max-width: $breakpointMd) {
-          .circle1 {
-            left: ${isEvent ? '-18.5rem' : '-22rem'};
-            top: ${isEvent && '-21.5rem'};
-            bottom: ${(isCourse || isBlog) && '-21.5rem'};
-          }
-          .circle2 {
-            bottom: ${isEvent && '-21.5rem'};
-            right: ${isEvent ? '-21rem' : '-20rem'};
-            top: ${(isCourse || isBlog) && '-21rem'};
-          }
-        }
+
         @media screen and (max-width: $breakpointSm) {
           .circle1 {
-            left: ${isEvent ? '-23rem' : '-22.5rem'};
-            top: ${isEvent && '-22rem'};
+            min-height: 377px;
           }
           .circle2 {
-            bottom: ${isEvent && '-24rem'};
-            top: ${(isCourse || isBlog) && '-22rem'};
-            right: ${isEvent ? '-20rem' : '-20rem'};
+            min-height: 377px;
           }
         }
       `}</style>
