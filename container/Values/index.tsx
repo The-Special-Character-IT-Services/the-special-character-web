@@ -24,7 +24,7 @@ const Values = (props: Props) => {
             <div className="cardSection">
               <div className="cardBtn">
                 <Button className="buttonIcon">
-                  <Image src="/bulb.svg" height={45} width={45} alt="none" />
+                  <Image src="/bulb.svg" height={50} width={50} alt="none" />
                 </Button>
                 <button className="but">01</button>
               </div>
@@ -42,7 +42,7 @@ const Values = (props: Props) => {
             <div className="cardSection">
               <div className="cardBtn">
                 <Button className="buttonIcon">
-                  <Image src="/correct.svg" height={45} width={45} alt="none" />
+                  <Image src="/correct.svg" height={50} width={50} alt="none" />
                 </Button>
                 <button className="but">02</button>
               </div>
@@ -60,7 +60,7 @@ const Values = (props: Props) => {
             <div className="cardSection">
               <div className="cardBtn">
                 <Button className="buttonIcon">
-                  <Image src="/world.svg" height={45} width={45} alt="none" />
+                  <Image src="/world.svg" height={50} width={50} alt="none" />
                 </Button>
                 <button className="but">03</button>
               </div>
@@ -78,7 +78,7 @@ const Values = (props: Props) => {
             <div className="cardSection">
               <div className="cardBtn">
                 <Button className="buttonIcon">
-                  <Image src="/search.svg" height={45} width={45} alt="none" />
+                  <Image src="/search.svg" height={50} width={50} alt="none" />
                 </Button>
                 <button className="but">04</button>
               </div>

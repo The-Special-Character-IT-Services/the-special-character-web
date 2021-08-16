@@ -7,8 +7,8 @@ interface Props {}
 const Blog = (props: Props) => {
   return (
     <>
-      <NewsLetter />
       <BlogContainer />
+      <NewsLetter />
       <Resources />
     </>
   );

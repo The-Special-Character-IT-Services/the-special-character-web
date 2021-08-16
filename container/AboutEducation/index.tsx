@@ -88,7 +88,7 @@ const AboutEducation = (props: Props) => {
         @import '../../styles/variables.scss';
 
         .container {
-          margin-top: 2rem;
+          padding: 5rem 0rem;
           & > .main {
             display: flex;
             align-items: center;
@@ -104,10 +104,16 @@ const AboutEducation = (props: Props) => {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
           }
           & .sideDiv {
             max-width: 519px;
+          }
+        }
+        @media screen and (min-width: $breakpointXl) {
+          .container {
+            & .content {
+              margin-bottom: 3rem;
+            }
           }
         }
         @media screen and (max-width: $breakpointXl) {
@@ -118,7 +124,7 @@ const AboutEducation = (props: Props) => {
               flex-direction: column;
             }
             & .sideDiv {
-              margin-top: 1rem;
+              margin-top: 3rem;
               max-width: 700px;
               & .abtContent {
                 margin-left: 0;
@@ -131,17 +137,22 @@ const AboutEducation = (props: Props) => {
             display: flex;
             align-items: start;
             margin-left: 3rem;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             gap: 1rem;
           }
         }
         @media screen and (max-width: $breakpointSm) {
-          .abtContent {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 1rem;
+          .container {
+            & .abtContent {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              margin-bottom: 2.5rem;
+              gap: 1rem;
+            }
+            & .content {
+            }
           }
         }
       `}</style>
