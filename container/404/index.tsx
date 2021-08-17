@@ -25,7 +25,7 @@ const ErrorContainer = (props: Props) => {
               </div>
             </div>
             <div className="er">
-              <Typography variant="h1">404</Typography>
+              <Typography variant="title404">404</Typography>
             </div>
           </div>
           <div className="circle1" />
