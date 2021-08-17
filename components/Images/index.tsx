@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 interface Props {
-  children?: JSX.Element;
+  children?: JSX.Element | any;
   className?: string;
   variant?: 'image' | 'avtar';
   alt?: string;

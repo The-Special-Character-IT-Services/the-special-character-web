@@ -7,9 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './footer.module.scss';
 
-interface Props {
-  props?: Object;
-}
+interface Props {}
 
 const Footer = (props: Props) => {
   return (

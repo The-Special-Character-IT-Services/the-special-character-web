@@ -11,9 +11,7 @@ import Slider from 'react-slick';
 import RightArrow from '../../public/svg/rightArrow.svg';
 import LeftArrow from '../../public/svg/leftArrow.svg';
 
-interface Props {
-  props: JSX.Element;
-}
+interface Props {}
 
 const Courses = (props: Props) => {
   const NextArrow = ({ onClick }) => (
