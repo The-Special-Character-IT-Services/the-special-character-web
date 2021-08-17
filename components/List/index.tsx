@@ -18,19 +18,20 @@ const List = ({
 }: Props) => {
   const Component = isNumberedList ? 'ol' : 'ul';
   return (
-    <Component
-      className={cn('commonParentList', { [className]: !!className })}
-      {...props}>
-      {listItem?.map(item => {
-        if (typeof item === 'string') {
-          return <li key={item}>{item}</li>;
-        }
-        if (typeof item === 'object' && item[keyProp] && item[valueProp]) {
-          return <li key={item[keyProp]}>{item[valueProp]}</li>;
-        }
-        throw new Error('Please pass key and value props');
-      })}
-    </Component>
+    <>
+      <Component
+        className={cn('commonParentList', { [className]: !!className })}
+        {...props}>
+        {listItem?.map(item => {
+          if (typeof item === 'string') {
+            return <li key={item}>{item}</li>;
+          }
+          if (typeof item === 'object' && item[keyProp] && item[valueProp]) {
+            return <li key={item[keyProp]}>{item[valueProp]}</li>;
+          }
+          throw new Error('Please pass key and value props');
+        })}
+      </Component>
       <style jsx>{`
         .commonParentList {
           margin-top: 0;
@@ -41,6 +42,7 @@ const List = ({
           }
         }
       `}</style>
+    </>
   );
 };
 
