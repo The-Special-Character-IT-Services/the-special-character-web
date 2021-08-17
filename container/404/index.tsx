@@ -18,12 +18,10 @@ const ErrorContainer = (props: Props) => {
                 The page you are looking for doesnt exist or has been moved.
               </Typography>
               <div className="btn">
-                <div className="exBtn">
-                  <Button>explore courses</Button>
-                </div>
-                <div className="exBtn">
-                  <Button className="secondary">go home</Button>
-                </div>
+                <Button style={{ marginRight: '1rem', marginBottom: '1rem' }}>
+                  explore courses
+                </Button>
+                <Button className="secondary">go home</Button>
               </div>
             </div>
             <div className="er">
@@ -51,10 +49,7 @@ const ErrorContainer = (props: Props) => {
                 max-width: 600px;
 
                 & .btn {
-                  display: flex;
-                  & .exBtn {
-                    margin-right: 1rem;
-                  }
+                  align-items: flex-start;
                 }
               }
               & .er {
@@ -104,6 +99,11 @@ const ErrorContainer = (props: Props) => {
               padding: 0rem 3rem;
               text-align: center;
               align-items: center;
+              & .errorTxt {
+                & .btn {
+                  display: block;
+                }
+              }
             }
           }
         }
@@ -114,9 +114,6 @@ const ErrorContainer = (props: Props) => {
               & .errorTxt {
                 & .btn {
                   flex-direction: column;
-                  & .exBtn {
-                    margin-bottom: 1rem;
-                  }
                 }
               }
             }

@@ -5,7 +5,9 @@ import Images from '@components/Images';
 import Typography from '@components/Typography';
 import React from 'react';
 
-interface Props {}
+interface Props {
+  props?: Object;
+}
 
 const AboutEducation = (props: Props) => {
   return (

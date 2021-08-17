@@ -35,9 +35,9 @@ const Button = ({
         className={classNames(!isDisabled && !isLoading, 'btn', 'primary', {
           disable: isDisabled || isLoading,
           [className]: !!className,
-          [style]: !!style,
         })}
         onClick={isDisabled || isLoading ? () => {} : onClick}
+        style={style}
         {...rest}>
         <Typography variant="btnText">{children}</Typography>
       </button>
