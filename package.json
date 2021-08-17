@@ -20,6 +20,7 @@
   "devDependencies": {
     "@styled-jsx/plugin-sass": "^3.0.0",
     "@types/react": "17.0.14",
+    "@types/react-slick": "^0.23.5",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "eslint": "7.31.0",
     "eslint-config-next": "11.0.1",

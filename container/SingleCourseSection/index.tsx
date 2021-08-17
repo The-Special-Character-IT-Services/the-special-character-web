@@ -141,12 +141,11 @@ const SingleCourseSection = (props: Props) => {
                     <Typography className={styles.marginRemove}>
                       Lifetime Access
                     </Typography>
-                    <Typography variant="bold"></Typography>
                   </div>
                 </div>
               </div>
             </div>
-            <FeaturedCategory children={btnName} />
+            {/* <FeaturedCategory children={btnName} /> */}
             <div>
               <Typography variant="h2" className="commonHeading">
                 About the course
@@ -295,7 +294,6 @@ const SingleCourseSection = (props: Props) => {
                     <Typography className={styles.marginRemove}>
                       Lifetime Access
                     </Typography>
-                    <Typography variant="bold"></Typography>
                   </div>
                 </div>
               </div>

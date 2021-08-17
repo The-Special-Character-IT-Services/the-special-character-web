@@ -13,7 +13,7 @@ interface Props {
     | any;
   isDisabled?: Boolean;
   style?: Object | any;
-  children: JSX.Element | string;
+  children: JSX.Element | string | any;
   isLoading?: Boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   rest?: Object;

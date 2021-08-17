@@ -22,6 +22,7 @@ interface Props {
   className?: any;
   href?: string;
   style?: Object;
+  htmlFor?: string;
 }
 
 const variantsMapping = {

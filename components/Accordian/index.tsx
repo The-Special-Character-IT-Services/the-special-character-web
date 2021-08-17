@@ -6,7 +6,7 @@ import { useRef } from 'react';
 import styles from './accordian.module.scss';
 
 interface Props {
-  children: JSX.Element;
+  children: string;
   className?: string | any;
   label: string;
 }
