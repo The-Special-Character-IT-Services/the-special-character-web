@@ -12,9 +12,10 @@ interface Props {
     | string
     | any;
   isDisabled?: Boolean;
-  children: string;
+  style?: Object | any;
+  children: JSX.Element | string;
   isLoading?: Boolean;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   rest?: Object;
 }
 
@@ -22,6 +23,7 @@ const Button = ({
   className,
   isDisabled,
   children,
+  style,
   isLoading,
   onClick,
   ...rest
@@ -33,6 +35,7 @@ const Button = ({
         className={classNames(!isDisabled && !isLoading, 'btn', 'primary', {
           disable: isDisabled || isLoading,
           [className]: !!className,
+          [style]: !!style,
         })}
         onClick={isDisabled || isLoading ? () => {} : onClick}
         {...rest}>

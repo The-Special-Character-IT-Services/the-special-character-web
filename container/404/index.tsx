@@ -13,8 +13,8 @@ const ErrorContainer = (props: Props) => {
             <div className="errorTxt">
               <Typography variant="largeP">Page not found</Typography>
               <Typography
-                variant="h2"
-                style={{ fontFamily: 'auto', fontSize: '50px', marginTop: 0 }}>
+                variant="h1"
+                style={{ fontFamily: 'auto', marginTop: 0 }}>
                 The page you are looking for doesnt exist or has been moved.
               </Typography>
               <div className="btn">
@@ -47,9 +47,9 @@ const ErrorContainer = (props: Props) => {
               display: flex;
               flex: 1;
               align-items: center;
-              justify-content: space-between;
               & .errorTxt {
                 max-width: 600px;
+
                 & .btn {
                   display: flex;
                   & .exBtn {
@@ -92,6 +92,7 @@ const ErrorContainer = (props: Props) => {
           .main {
             & .side {
               margin: 0rem 9.3rem 0rem 7.1rem;
+              justify-content: space-between;
             }
           }
         }
@@ -99,6 +100,7 @@ const ErrorContainer = (props: Props) => {
           .main {
             & .side {
               flex-direction: column-reverse;
+              margin: auto;
               padding: 0rem 3rem;
               text-align: center;
               align-items: center;
