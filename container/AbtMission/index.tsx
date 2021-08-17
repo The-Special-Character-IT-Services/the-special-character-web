@@ -9,8 +9,13 @@ const AbtMission = (props: Props) => {
     <>
       <section className="container">
         <div className="main">
-          <Images src="/mission.jpeg" height={600} width={580} />
-          <aside className="mission right">
+          <Images
+            src="/mission.jpeg"
+            height={600}
+            width={580}
+            alt="Our mission"
+          />
+          <aside className="mission">
             <Typography variant="h2">
               The mission behind Education platform
             </Typography>
@@ -39,7 +44,7 @@ const AbtMission = (props: Props) => {
               iaculis netus gravida.
             </Typography>
           </aside>
-          <Images src="/mission2.jpeg" height={600} width={580} />
+          <Images src="/mission2.jpeg" height={600} width={580} alt="Our mission" />
         </div>
       </section>
       <style jsx>{`

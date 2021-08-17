@@ -1,5 +1,9 @@
-interface Props {}
 import classnames from 'classnames';
+interface Props {
+  props?: Object;
+  className?: string | any;
+  submitValue?: string;
+}
 
 const SubscriptionEmail = ({ props, className, submitValue }: Props) => {
   return (

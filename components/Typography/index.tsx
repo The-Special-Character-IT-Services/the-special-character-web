@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { forwardRef } from 'react';
 
 interface Props {
-  variant:
+  variant?:
     | 'h1'
     | 'h2'
     | 'h3'
@@ -15,10 +15,13 @@ interface Props {
     | 'bold'
     | 'italic'
     | 'blockquote'
+    | 'title404'
+    | 'btnText'
     | 'label';
-  children: JSX.Element | string;
-  className: String;
-  props?: Object;
+  children: string;
+  className?: any;
+  href?: string;
+  style?: Object;
 }
 
 const variantsMapping = {
@@ -36,19 +39,21 @@ const variantsMapping = {
   italic: 'em',
   blockquote: 'blockquote',
   label: 'label',
+  title404: 'h1',
 };
 
-const Typography = ({ variant, children, className, ...props }: Props, ref) => {
-  const Component = variant ? variantsMapping[variant] : 'p';
+const Typography = ({ variant, className, ...props }: Props, ref: any) => {
+  const Component = (variant ? variantsMapping[variant] : 'p') as any;
   return (
-    <Component
-      className={cn({
-        [`typography--class-${variant}`]: !!variant,
-        [className]: !!className,
-      })}
-      ref={ref}
-      {...props}>
-      {children}
+    <>
+      <Component
+        className={cn({
+          [`typography--class-${variant}`]: !!variant,
+          [className]: !!className,
+        })}
+        ref={ref}
+        {...props}
+      />
       <style jsx>
         {`
           @import './styles/variables.scss';
@@ -143,6 +148,14 @@ const Typography = ({ variant, children, className, ...props }: Props, ref) => {
             letter-spacing: 0.08em;
             font-family: sans-serif;
           }
+          .typography--class-title404 {
+            color: $Neutral800;
+            font-size: var(--fs-title404);
+            line-height: 1em;
+            font-weight: 600;
+            text-align: right;
+            margin: 0;
+          }
           @media screen and (max-width: $breakpointLgForMw) {
             .typography--class-h1 {
               margin-bottom: 1.25rem;
@@ -181,7 +194,7 @@ const Typography = ({ variant, children, className, ...props }: Props, ref) => {
           }
         `}
       </style>
-    </Component>
+    </>
   );
 };
 

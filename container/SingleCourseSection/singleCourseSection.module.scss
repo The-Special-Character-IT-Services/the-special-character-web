@@ -1,0 +1,77 @@
+@import '../../styles/variables.scss';
+.courseCategoryText {
+  position: relative;
+  top: 2px;
+  margin: 0;
+}
+.courseTitle {
+  margin-bottom: 1rem !important;
+  color: $Neutral100 !important;
+}
+.courseSummary {
+  max-width: 648px;
+  margin-bottom: 3.25rem !important;
+  color: $Neutral300 !important;
+}
+.coursePreview {
+  margin-bottom: 3.75rem;
+  position: relative;
+}
+.price {
+  margin-bottom: 1rem;
+  color: $Neutral700;
+  font-size: 2rem;
+  line-height: 1.063em;
+  font-weight: 700;
+}
+.marginRemove {
+  margin: 0;
+}
+.richText {
+  max-width: 780px;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+  margin-left: auto;
+}
+.divider {
+  background-color: $Neutral700 !important;
+}
+
+@media screen and (max-width: $breakpointLgForMw) {
+  .richText {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: $breakpointMdForMw) {
+  .courseTitle {
+    margin-bottom: 0.75rem !important;
+  }
+  .courseSummary {
+    margin-bottom: 2.5rem !important;
+  }
+  .previewIcon {
+    width: 22%;
+  }
+  .price {
+    margin-bottom: 0.75rem;
+    font-size: 1.75rem;
+  }
+  .richText {
+    margin-bottom: 1.75rem;
+  }
+}
+@media screen and (max-width: $breakpointSmForMw) {
+  .courseTitle {
+    margin-bottom: 0.5rem !important;
+  }
+  .courseSummary {
+    margin-bottom: 2.25rem !important;
+  }
+  .price {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .richText {
+    margin-bottom: 1.5rem;
+  }
+}

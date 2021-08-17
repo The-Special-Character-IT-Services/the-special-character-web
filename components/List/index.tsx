@@ -1,10 +1,10 @@
 interface Props {
   isNumberedList?: boolean;
-  listItem: JSX.Element;
+  listItem: JSX.Element[];
   props?: Object;
-  className: 'commonParentList' | String;
-  keyProp: String;
-  valueProp: String;
+  className?: 'commonParentList' | string | any;
+  keyProp: JSX.IntrinsicAttributes;
+  valueProp: string;
 }
 import cn from 'classnames';
 
@@ -30,6 +30,7 @@ const List = ({
         }
         throw new Error('Please pass key and value props');
       })}
+    </Component>
       <style jsx>{`
         .commonParentList {
           margin-top: 0;
@@ -40,7 +41,6 @@ const List = ({
           }
         }
       `}</style>
-    </Component>
   );
 };
 
