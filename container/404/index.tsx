@@ -137,12 +137,12 @@ const ErrorContainer = (props: Props) => {
         @media screen and (max-width: $breakpointSm) {
           .main {
             & .circle1 {
-              top: -50%;
-              right: -70%;
+              top: -20rem;
+              right: -20rem;
             }
             & .circle2 {
-              left: -70%;
-              bottom: -50%;
+              left: -20rem;
+              bottom: -20rem;
             }
             & .side {
               padding: 0rem 2rem;
