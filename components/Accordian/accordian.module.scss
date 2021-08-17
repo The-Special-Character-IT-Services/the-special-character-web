@@ -72,6 +72,7 @@
   & > .showDiv {
     padding: 0;
     flex-direction: row;
+    display: flex;
 
     & > .dummyDiv {
       width: 3rem;

@@ -15,9 +15,9 @@ const StarRating = ({ props, number, className }: Props) => {
       })}>
       {[...Array(5).keys()].map(x => {
         if (x + 1 <= number) {
-          return <Star index={x} />;
+          return <Star key={x} index={x} />;
         }
-        return <EmptyStar className="empty-star" />;
+        return <EmptyStar key={x} className="empty-star" />;
       })}
       <style jsx>{`
         @import './styles/variables.scss';
