@@ -17,14 +17,18 @@ const FeaturedCourse = (props: Props) => {
           Featured Course
         </Typography>
         <Card variant="cardHover" className={styles.cardMain}>
-          <Image
-            alt="Featured image"
-            src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2cfe66189f214c09a0c3_image-4-courses-education-x-template.jpg"
-            height={319}
-            width={567}
-          />
+          <div className={styles.imageDiv}>
+            <Image
+              alt="Featured image"
+              src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2cfe66189f214c09a0c3_image-4-courses-education-x-template.jpg"
+              height={608}
+              width={1080}
+            />
+          </div>
           <div className={styles.cardBox}>
-            <Typography variant="h3">Brand & Identity Design</Typography>
+            <Typography variant="h3" className={styles.cardTitle}>
+              Brand & Identity Design
+            </Typography>
             <Typography>
               Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
               Diam phasellus vestibulum lorem sed risus ultricies.

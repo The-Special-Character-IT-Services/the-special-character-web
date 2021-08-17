@@ -4,11 +4,7 @@ import React from 'react';
 interface Props {}
 
 const Error404 = (props: Props) => {
-  return (
-    <div>
-      <ErrorContainer />
-    </div>
-  );
+  return <ErrorContainer />;
 };
 
 export default Error404;

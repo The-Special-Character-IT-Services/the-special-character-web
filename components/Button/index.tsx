@@ -1,13 +1,20 @@
 import Typography from '@components/Typography';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { MouseEventHandler } from 'react';
 
 interface Props {
-  className: 'primary' | 'secondary' | 'buttonIcon' | 'socialIcon' | String;
+  className?:
+    | 'primary'
+    | 'secondary'
+    | 'buttonIcon'
+    | 'socialIcon'
+    | string
+    | any;
   isDisabled?: Boolean;
-  children: JSX.Element;
+  children: string;
   isLoading?: Boolean;
-  onClick: Function;
+  onClick: MouseEventHandler<HTMLButtonElement>;
   rest?: Object;
 }
 
@@ -121,7 +128,6 @@ Button.propTypes = {
     'buttonIcon',
     'disable',
     'btn',
-    'small',
   ]),
 };
 

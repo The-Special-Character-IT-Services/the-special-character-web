@@ -15,12 +15,23 @@
       margin-bottom: 2rem;
     }
     & > .cardMain {
+      display: flex;
+      border-radius: 20px;
+
+      & > .imageDiv {
+        max-width: 567px;
+        display: flex;
+        flex: 0 0 auto;
+      }
       & > .cardBox {
         display: flex;
         flex-direction: column;
         align-items: baseline;
         text-align: left;
-        padding: 1rem;
+        padding: 4rem 3rem;
+        & > .cardTitle {
+          margin-top: 0;
+        }
         & > .faculty {
           display: flex;
           align-items: center;
@@ -35,11 +46,14 @@
             gap: 0.5rem;
             & > .button,
             .buttonWhite {
-              padding: 0.875rem 1.5rem;
+              padding: 1rem;
               &:hover {
                 opacity: 1;
                 transform: scale(1);
                 background-color: $Primary1;
+              }
+              & > p {
+                font-size: 14px;
               }
             }
             & > .buttonWhite {
@@ -62,6 +76,11 @@
       flex-direction: column;
       align-items: stretch;
       & > .cardMain {
+        flex-direction: column;
+        & > .imageDiv {
+          max-width: 100%;
+          display: contents;
+        }
         & > .cardBox {
           & > .faculty {
             & > .price {
@@ -82,7 +101,9 @@
     padding: 6.5rem 0;
     & > .container {
       & > .cardMain {
-        flex-direction: column;
+        & > .cardBox {
+          padding: 1rem;
+        }
       }
     }
   }
@@ -97,9 +118,11 @@
           & > .faculty {
             & > .price {
               gap: 0.5rem;
+              left: 1rem;
+              top: 1rem;
               & > .button,
               .buttonWhite {
-                padding: 0.875rem;
+                padding: 0.6rem;
               }
             }
           }

@@ -12,7 +12,9 @@ const ErrorContainer = (props: Props) => {
           <div className="side">
             <div className="errorTxt">
               <Typography variant="largeP">Page not found</Typography>
-              <Typography variant="h2">
+              <Typography
+                variant="h2"
+                style={{ fontFamily: 'auto', fontSize: '50px', marginTop: 0 }}>
                 The page you are looking for doesnt exist or has been moved.
               </Typography>
               <div className="btn">
@@ -39,16 +41,15 @@ const ErrorContainer = (props: Props) => {
             position: relative;
             overflow: hidden;
             display: flex;
-            min-height: 700px;
+            min-height: 37.5rem;
             overflow: hidden;
             & .side {
               display: flex;
+              flex: 1;
               align-items: center;
-              margin: auto;
-              justify-content: center;
+              justify-content: space-between;
               & .errorTxt {
-                margin-right: 1rem;
-                max-width: 583px;
+                max-width: 600px;
                 & .btn {
                   display: flex;
                   & .exBtn {
@@ -69,7 +70,7 @@ const ErrorContainer = (props: Props) => {
               position: absolute;
               top: -19%;
               z-index: -1;
-              right: -18rem;
+              right: -17%;
               min-height: 460px;
               min-width: 460px;
               border-radius: 100%;
@@ -87,8 +88,11 @@ const ErrorContainer = (props: Props) => {
             }
           }
         }
-        @media screen and (min-width: $breakpointXl) {
+        @media screen and (min-width: $breakpointLg) {
           .main {
+            & .side {
+              margin: 0rem 9.3rem 0rem 7.1rem;
+            }
           }
         }
         @media screen and (max-width: $breakpointLg) {

@@ -1,4 +1,5 @@
 import Typography from '@components/Typography';
+import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import styles from './header.module.scss';
 
@@ -27,13 +28,13 @@ const HeaderNav = (props: Props) => {
   return (
     <header ref={headerRef} className="container-default">
       <nav role="navigation" className="nav-menu">
-        <a href="/" className="header-right">
+        <Link href="/" passHref className="header-right">
           <img
             src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e0932cd6425299653b78f_logo-education-x-template.svg"
             alt=""
             className="header-logo"
           />
-        </a>
+        </Link>
         <button ref={burgerRef} onClick={burgerClicked} className="hamburger">
           <span className="span1" />
           <span className="span2" />
