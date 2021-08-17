@@ -11,27 +11,28 @@ interface Props {
 
 const FeaturedCategory = ({ children, props, title }: Props) => {
   return (
-    <div className="top-content">
-      {title && (
-        <Typography
-          variant="h2"
-          className={classnames('commonHeading', styles.title)}>
-          {title}
-        </Typography>
-      )}
+    <>
+      <div className="top-content">
+        {title && (
+          <Typography
+            variant="h2"
+            className={classnames('commonHeading', styles.title)}>
+            {title}
+          </Typography>
+        )}
 
-      <div className="category-wrapper">
-        <div className="category-content">
-          <div className="category-item">
-            {children.map(x => (
-              <Button className={classnames(styles.button, styles.primary)}>
-                {x.name}
-              </Button>
-            ))}
+        <div className="category-wrapper">
+          <div className="category-content">
+            <div className="category-item">
+              {children.map(x => (
+                <Button className={classnames(styles.button, styles.primary)}>
+                  {x.name}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
       <style jsx>{`
         @import './styles/variables.scss';
         .top-content {
@@ -84,6 +85,7 @@ const FeaturedCategory = ({ children, props, title }: Props) => {
           }
         }
       `}</style>
+    </>
   );
 };
 
