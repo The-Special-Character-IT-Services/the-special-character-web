@@ -1,7 +1,7 @@
 import Typography from '@components/Typography';
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './header.module.scss';
 import classnames from 'classnames';
 
@@ -12,9 +12,6 @@ const HeaderNav = (props: Props) => {
   const burgerRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLElement>(null);
   const { pathname } = useRouter();
-  useLayoutEffect(() => {
-    console.log(burgerRef);
-  });
   const burgerClicked = () => {
     if (burgerRef && burgerRef.current && menuRef && menuRef.current) {
       burgerRef.current.classList.toggle('open');
