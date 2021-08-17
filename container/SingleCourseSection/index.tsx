@@ -543,6 +543,15 @@ const SingleCourseSection = (props: Props) => {
           .text-align {
             text-align: center;
           }
+          .bg-course {
+            min-height: 500px;
+          }
+          .course-bg-shape-wrapper {
+            & .course-shape-1 {
+              top: -505px;
+              right: -361px;
+            }
+          }
         }
       `}</style>
     </section>
