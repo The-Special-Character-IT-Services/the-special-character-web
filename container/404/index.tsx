@@ -80,6 +80,19 @@ const ErrorContainer = (props: Props) => {
             }
           }
         }
+        @media screen and (min-width: $breakpointXl) {
+          .side {
+            max-width: 1209px;
+            margin: 0px auto;
+            justify-content: space-between;
+          }
+        }
+        @media screen and (max-width: $breakpointXl) {
+          .side {
+            justify-content: space-between;
+            margin: 0px 2rem;
+          }
+        }
         @media screen and (min-width: $breakpointLg) {
           .main {
             & .circle1 {
@@ -90,15 +103,14 @@ const ErrorContainer = (props: Props) => {
               left: -14%;
               bottom: -40%;
             }
-
-            & .side {
-              margin: 0rem 9.3rem 0rem 7.1rem;
-              justify-content: space-between;
-            }
           }
         }
         @media screen and (max-width: $breakpointLg) {
           .main {
+            & .side {
+              margin: 0rem 9.3rem 0rem 7.1rem;
+              justify-content: space-between;
+            }
             & .circle1 {
               top: -30%;
               right: -30%;
