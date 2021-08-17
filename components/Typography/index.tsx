@@ -18,7 +18,7 @@ interface Props {
     | 'title404'
     | 'btnText'
     | 'label';
-  children: string;
+  children: string | any;
   className?: any;
   href?: string;
   style?: Object;
