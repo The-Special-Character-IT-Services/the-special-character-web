@@ -1,8 +1,8 @@
 interface Props {
-  isFooterTop: boolean;
-  isFooterBottom: boolean;
+  isFooterTop?: boolean;
+  isFooterBottom?: boolean;
+  className?: string | any;
 }
-import classNames from 'classnames';
 import cn from 'classnames';
 
 const Divider = ({ isFooterTop, isFooterBottom, className }: Props) => {

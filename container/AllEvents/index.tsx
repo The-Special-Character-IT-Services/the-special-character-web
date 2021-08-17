@@ -5,9 +5,7 @@ import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './allEvents.module.scss';
 
-interface Props {
-  props: JSX.Element;
-}
+interface Props {}
 
 const AllEvents = (props: Props) => {
   return (

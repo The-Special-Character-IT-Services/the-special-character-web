@@ -1,6 +1,6 @@
 interface Props {}
 import Typography from '@components/Typography';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import courseStyle from '../Courses/courses.module.scss';
 import styles from './testimonials.module.scss';
 import Slider from 'react-slick';
@@ -62,7 +62,7 @@ const Testimonials = (props: Props) => {
         <div className="testimonials-wrapper">
           <Typography
             variant="h2"
-            className={classNames('commonHeading', styles.title)}>
+            className={classnames('commonHeading', styles.title)}>
             What our students say about us
           </Typography>
           <Slider {...settings}>
@@ -77,7 +77,7 @@ const Testimonials = (props: Props) => {
               <div className="flex-grow">
                 <StarRating
                   number={5}
-                  className={classNames(styles.testimonialStar)}
+                  className={classnames(styles.testimonialStar)}
                 />
                 <div className="text-align">
                   <Typography className={styles.testimonialParagraph}>
@@ -104,7 +104,7 @@ const Testimonials = (props: Props) => {
               <div className="flex-grow">
                 <StarRating
                   number={4}
-                  className={classNames(styles.testimonialStar)}
+                  className={classnames(styles.testimonialStar)}
                 />
                 <div className="text-align">
                   <Typography className={styles.testimonialParagraph}>
@@ -131,7 +131,7 @@ const Testimonials = (props: Props) => {
               <div className="flex-grow">
                 <StarRating
                   number={4}
-                  className={classNames(styles.testimonialStar)}
+                  className={classnames(styles.testimonialStar)}
                 />
                 <div className="text-align">
                   <Typography className={styles.testimonialParagraph}>

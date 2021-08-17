@@ -1,16 +1,22 @@
 import Typography from '@components/Typography';
+import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import styles from './header.module.scss';
+import classnames from 'classnames';
 
-interface Props {}
+interface Props {
+  props?: Object;
+}
 const HeaderNav = (props: Props) => {
-  const burgerRef = useRef(null);
-  const menuRef = useRef(null);
-  const headerRef = useRef(null);
+  const burgerRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLElement>(null);
+  const { pathname } = useRouter();
   const burgerClicked = () => {
-    burgerRef.current.classList.toggle('open');
-    menuRef.current.classList.toggle('right0');
+    if (burgerRef && burgerRef.current && menuRef && menuRef.current) {
+      burgerRef.current.classList.toggle('open');
+      menuRef.current.classList.toggle('right0');
+    }
   };
   //   useEffect(() => {
   //     const onScroll = () => {
@@ -26,63 +32,72 @@ const HeaderNav = (props: Props) => {
   //     };
   //   }, []);
   return (
-    <header ref={headerRef} className="container-default">
+    <header className="container-default">
       <nav role="navigation" className="nav-menu">
-        <Link href="/" passHref className="header-right">
+        <a href="/" className="header-right">
           <img
             src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e0932cd6425299653b78f_logo-education-x-template.svg"
             alt=""
             className="header-logo"
           />
-        </Link>
+        </a>
         <button ref={burgerRef} onClick={burgerClicked} className="hamburger">
           <span className="span1" />
           <span className="span2" />
         </button>
         <aside ref={menuRef} className="menu">
-          <a href="#!" onClick={burgerClicked} className=""></a>
+          <a href="#!" onClick={burgerClicked}></a>
           <ul role="list" className="header-navigation">
-            <li className="nav-item-wrapper">
+            <li className={classnames('nav-item-wrapper', styles.navLink)}>
               <Typography
                 variant="a"
                 href="/"
-                className={styles.navLink}
+                className={pathname === '/' ? styles.active : undefined}
                 aria-current="page">
                 Home
               </Typography>
             </li>
-            <li className="nav-item-wrapper">
+            <li className={classnames('nav-item-wrapper', styles.navLink)}>
               <Typography
                 variant="a"
-                href="/"
-                className={styles.navLink}
+                href="/about"
+                className={pathname === '/about' ? styles.active : undefined}
                 aria-current="page">
                 About
               </Typography>
             </li>
-            <li className="nav-item-wrapper">
+            <li className={classnames('nav-item-wrapper', styles.navLink)}>
               <Typography
                 variant="a"
                 href="/courses"
-                className={styles.navLink}
+                className={pathname === '/courses' ? styles.active : undefined}
                 aria-current="page">
                 Courses
               </Typography>
             </li>
-            <li className="nav-item-wrapper">
+            <li className={classnames('nav-item-wrapper', styles.navLink)}>
               <Typography
                 variant="a"
                 href="/blog"
-                className={styles.navLink}
+                className={pathname === '/blog' ? styles.active : undefined}
                 aria-current="page">
-                Blogs
+                Blog
               </Typography>
             </li>
-            <li className="nav-item-wrapper">
+            <li className={classnames('nav-item-wrapper', styles.navLink)}>
+              <Typography
+                variant="a"
+                href="/events"
+                className={pathname === '/events' ? styles.active : undefined}
+                aria-current="page">
+                Events
+              </Typography>
+            </li>
+            <li className={classnames('nav-item-wrapper', styles.navLink)}>
               <Typography
                 variant="a"
                 href="/contact"
-                className={styles.navLink}
+                className={pathname === '/contact' ? styles.active : undefined}
                 aria-current="page">
                 Contact
               </Typography>
@@ -116,13 +131,13 @@ const HeaderNav = (props: Props) => {
                 width: auto;
                 display: block;
                 & .header-navigation {
+                  gap: 2.5rem;
                   display: flex;
                   margin: 0;
                   padding-left: 0;
                   justify-content: flex-end;
                   list-style-type: none;
                   & .nav-item-wrapper {
-                    margin-right: 2.5rem;
                     margin-bottom: 0;
                   }
                 }
@@ -161,6 +176,7 @@ const HeaderNav = (props: Props) => {
                     color: transparent;
                   }
                   & .header-navigation {
+                    gap: 0;
                     box-shadow: 0px 1px 27px -3px rgb(0 0 0 / 20%);
                     background-color: $Neutral200;
                     display: flex;

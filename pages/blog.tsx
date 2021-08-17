@@ -10,16 +10,17 @@ const Blog = (props: Props) => {
   return (
     <>
       <Header
+        bgColor1="#f99d77"
+        bgColor2="#064ea4"
         label="Blog"
         caption="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
           excepturi, animi autem similique voluptas reiciendis."
         position={{
-          circle1: ['top', 'right', '#f99d77'],
-          circle2: ['bottom', 'left', '#064ea4'],
+          circle1: ['top', 'right'],
+          circle2: ['bottom', 'left'],
         }}
       />
       <BlogFeatured />
-      <BlogContainer />
       <NewsLetter />
       <Resources />
     </>

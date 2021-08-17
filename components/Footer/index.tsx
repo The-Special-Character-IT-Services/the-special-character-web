@@ -8,7 +8,7 @@ import Link from 'next/link';
 import styles from './footer.module.scss';
 
 interface Props {
-  props: JSX.Element;
+  props?: Object;
 }
 
 const Footer = (props: Props) => {

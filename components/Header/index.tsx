@@ -9,15 +9,18 @@ interface Props {
   label: string;
   caption: string;
   props: object;
-  position: Object;
+  position: any;
+  bgColor1: any;
+  bgColor2: any;
 }
 
 const Header = ({
-  variant,
   caption,
   className,
   label,
   position,
+  bgColor1,
+  bgColor2,
   ...props
 }: Props) => {
   return (
@@ -38,7 +41,7 @@ const Header = ({
           style={{
             [position.circle1[0]]: '-20rem',
             [position.circle1[1]]: '-20rem',
-            backgroundColor: [position.circle1[2]],
+            backgroundColor: bgColor1,
           }}
         />
         <div
@@ -46,7 +49,7 @@ const Header = ({
           style={{
             [position.circle2[0]]: '-20rem',
             [position.circle2[1]]: '-20rem',
-            backgroundColor: [position.circle2[2]],
+            backgroundColor: bgColor2,
           }}
         />
       </div>

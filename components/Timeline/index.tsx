@@ -1,41 +1,43 @@
 interface Props {
   props?: Object;
-  data: JSX.Element;
+  data: JSX.Element[];
 }
 import Typography from '@components/Typography';
 import styles from './timeline.module.scss';
 
 const Timeline = ({ data, ...props }: Props) => {
   return (
-    <div className="w-layout-grid timeline-grid">
-      {data?.map(item => {
-        if (typeof item === 'object') {
-          return (
-            <>
-              <div className="timeline-year-wrapper">
-                <div className={styles.timelineYearDot} />
-                <div className={styles.timelineYearContent}>
-                  <Typography className={styles.timelineYear}>
-                    {item?.year}
-                  </Typography>
-                  <div>
-                    <Typography
-                      variant="h3"
-                      className={styles.timelineYearTitle}>
-                      {item?.title}
+    <>
+      <div className="w-layout-grid timeline-grid">
+        {data?.map(item => {
+          if (typeof item === 'object') {
+            return (
+              <>
+                <div className="timeline-year-wrapper">
+                  <div className={styles.timelineYearDot} />
+                  <div className={styles.timelineYearContent}>
+                    <Typography className={styles.timelineYear}>
+                      {item?.year}
                     </Typography>
-                    <Typography className={styles.timelineYearParagraph}>
-                      {item?.description}
-                    </Typography>
+                    <div>
+                      <Typography
+                        variant="h3"
+                        className={styles.timelineYearTitle}>
+                        {item?.title}
+                      </Typography>
+                      <Typography className={styles.timelineYearParagraph}>
+                        {item?.description}
+                      </Typography>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="timeline-line"></div>
-            </>
-          );
-        }
-        throw new Error('Please pass the data as object');
-      })}
+                <div className="timeline-line"></div>
+              </>
+            );
+          }
+          throw new Error('Please pass the data as object');
+        })}
+      </div>
       <style jsx>
         {`
           @import './styles/variables.scss';
@@ -80,7 +82,7 @@ const Timeline = ({ data, ...props }: Props) => {
           }
         `}
       </style>
-    </div>
+    </>
   );
 };
 
