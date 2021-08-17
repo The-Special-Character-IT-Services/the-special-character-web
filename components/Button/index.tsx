@@ -1,13 +1,21 @@
 import Typography from '@components/Typography';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { MouseEventHandler } from 'react';
 
 interface Props {
-  className: 'primary' | 'secondary' | 'buttonIcon' | 'socialIcon' | String;
+  className?:
+    | 'primary'
+    | 'secondary'
+    | 'buttonIcon'
+    | 'socialIcon'
+    | string
+    | any;
   isDisabled?: Boolean;
-  children: JSX.Element;
+  style?: Object | any;
+  children: JSX.Element | string;
   isLoading?: Boolean;
-  onClick: Function;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   rest?: Object;
 }
 
@@ -15,6 +23,7 @@ const Button = ({
   className,
   isDisabled,
   children,
+  style,
   isLoading,
   onClick,
   ...rest
@@ -28,6 +37,7 @@ const Button = ({
           [className]: !!className,
         })}
         onClick={isDisabled || isLoading ? () => {} : onClick}
+        style={style}
         {...rest}>
         <Typography variant="btnText">{children}</Typography>
       </button>
@@ -59,7 +69,9 @@ const Button = ({
             }
             &.buttonIcon {
               background-color: $icon;
-              padding: 0.5rem 0.6rem;
+              min-height: 0.5rem;
+              min-width: 0.5rem;
+              padding: 0rem 0.1rem;
               border: none;
               cursor: auto;
               overflow: hidden;
@@ -119,7 +131,6 @@ Button.propTypes = {
     'buttonIcon',
     'disable',
     'btn',
-    'small',
   ]),
 };
 

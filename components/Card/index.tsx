@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 interface Props extends React.ButtonHTMLAttributes<HTMLDivElement> {
   children: JSX.Element | JSX.Element[];
   variant: string;
-  className: string;
+  className?: string | any;
 }
 
 const Card = ({ variant, children, className, ...props }: Props) => {

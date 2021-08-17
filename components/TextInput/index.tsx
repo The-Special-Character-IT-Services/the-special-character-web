@@ -5,7 +5,7 @@ import Typography from '@components/Typography';
 interface Props {
   name: string;
   label: string;
-  className?: string;
+  className?: string | any;
   isTextArea?: boolean;
 }
 

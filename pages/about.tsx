@@ -17,7 +17,6 @@ const About = (props: Props) => {
       <Success />
       <AbtMission />
       <Values />
-      <AbtMission />
       <AboutTeachers />
       <TimelineSection />
       <Map />

@@ -7,7 +7,7 @@ import styles from './accordian.module.scss';
 
 interface Props {
   children: JSX.Element;
-  className: string;
+  className?: string | any;
   label: string;
 }
 
