@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { forwardRef } from 'react';
 
 interface Props {
-  variant:
+  variant?:
     | 'h1'
     | 'h2'
     | 'h3'
@@ -16,10 +16,12 @@ interface Props {
     | 'italic'
     | 'blockquote'
     | 'title404'
+    | 'btnText'
     | 'label';
-  children: JSX.Element | string;
-  className: String;
-  props?: Object;
+  children: string;
+  className?: any;
+  href?: string;
+  style?: Object;
 }
 
 const variantsMapping = {
@@ -40,17 +42,18 @@ const variantsMapping = {
   title404: 'h1',
 };
 
-const Typography = ({ variant, children, className, ...props }: Props, ref) => {
-  const Component = variant ? variantsMapping[variant] : 'p';
+const Typography = ({ variant, className, ...props }: Props, ref: any) => {
+  const Component = (variant ? variantsMapping[variant] : 'p') as any;
   return (
-    <Component
-      className={cn({
-        [`typography--class-${variant}`]: !!variant,
-        [className]: !!className,
-      })}
-      ref={ref}
-      {...props}>
-      {children}
+    <>
+      <Component
+        className={cn({
+          [`typography--class-${variant}`]: !!variant,
+          [className]: !!className,
+        })}
+        ref={ref}
+        {...props}
+      />
       <style jsx>
         {`
           @import './styles/variables.scss';
@@ -191,7 +194,7 @@ const Typography = ({ variant, children, className, ...props }: Props, ref) => {
           }
         `}
       </style>
-    </Component>
+    </>
   );
 };
 

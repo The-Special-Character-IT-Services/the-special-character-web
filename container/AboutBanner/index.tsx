@@ -3,9 +3,7 @@ import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './aboutbanner.module.scss';
 
-interface Props {
-  props: JSX.Element;
-}
+interface Props {}
 
 const AboutBanner = (props: Props) => {
   return (

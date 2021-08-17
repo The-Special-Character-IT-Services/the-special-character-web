@@ -6,6 +6,7 @@ import classNames from 'classnames';
 interface Props {
   props?: Object;
   number: Number;
+  className?: string | any;
 }
 const StarRating = ({ props, number, className }: Props) => {
   return (

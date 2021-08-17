@@ -11,15 +11,19 @@ interface Props {}
 const Resources = (props: Props) => {
   const btnName = [
     {
+      id: 1,
       name: 'All',
     },
     {
+      id: 2,
       name: 'Development',
     },
     {
+      id: 3,
       name: 'Design',
     },
     {
+      id: 4,
       name: 'Marketing',
     },
   ];

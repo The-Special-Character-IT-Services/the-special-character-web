@@ -1,19 +1,25 @@
 import Typography from '@components/Typography';
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import styles from './header.module.scss';
 import classnames from 'classnames';
 
-interface Props {}
+interface Props {
+  props?: Object;
+}
 const HeaderNav = (props: Props) => {
-  const burgerRef = useRef(null);
-  const menuRef = useRef(null);
-  const headerRef = useRef(null);
+  const burgerRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLElement>(null);
   const { pathname } = useRouter();
+  useLayoutEffect(() => {
+    console.log(burgerRef);
+  });
   const burgerClicked = () => {
-    burgerRef.current.classList.toggle('open');
-    menuRef.current.classList.toggle('right0');
+    if (burgerRef && burgerRef.current && menuRef && menuRef.current) {
+      burgerRef.current.classList.toggle('open');
+      menuRef.current.classList.toggle('right0');
+    }
   };
   //   useEffect(() => {
   //     const onScroll = () => {
@@ -29,27 +35,27 @@ const HeaderNav = (props: Props) => {
   //     };
   //   }, []);
   return (
-    <header ref={headerRef} className="container-default">
+    <header className="container-default">
       <nav role="navigation" className="nav-menu">
-        <Link href="/" passHref className="header-right">
+        <a href="/" className="header-right">
           <img
             src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e0932cd6425299653b78f_logo-education-x-template.svg"
             alt=""
             className="header-logo"
           />
-        </Link>
+        </a>
         <button ref={burgerRef} onClick={burgerClicked} className="hamburger">
           <span className="span1" />
           <span className="span2" />
         </button>
         <aside ref={menuRef} className="menu">
-          <a href="#!" onClick={burgerClicked} className=""></a>
+          <a href="#!" onClick={burgerClicked}></a>
           <ul role="list" className="header-navigation">
             <li className={classnames('nav-item-wrapper', styles.navLink)}>
               <Typography
                 variant="a"
                 href="/"
-                className={pathname === '/' ? styles.active : null}
+                className={pathname === '/' ? styles.active : undefined}
                 aria-current="page">
                 Home
               </Typography>
@@ -58,7 +64,7 @@ const HeaderNav = (props: Props) => {
               <Typography
                 variant="a"
                 href="/about"
-                className={pathname === '/about' ? styles.active : null}
+                className={pathname === '/about' ? styles.active : undefined}
                 aria-current="page">
                 About
               </Typography>
@@ -67,7 +73,7 @@ const HeaderNav = (props: Props) => {
               <Typography
                 variant="a"
                 href="/courses"
-                className={pathname === '/courses' ? styles.active : null}
+                className={pathname === '/courses' ? styles.active : undefined}
                 aria-current="page">
                 Courses
               </Typography>
@@ -76,7 +82,7 @@ const HeaderNav = (props: Props) => {
               <Typography
                 variant="a"
                 href="/blog"
-                className={pathname === '/blog' ? styles.active : null}
+                className={pathname === '/blog' ? styles.active : undefined}
                 aria-current="page">
                 Blog
               </Typography>
@@ -85,7 +91,7 @@ const HeaderNav = (props: Props) => {
               <Typography
                 variant="a"
                 href="/events"
-                className={pathname === '/events' ? styles.active : null}
+                className={pathname === '/events' ? styles.active : undefined}
                 aria-current="page">
                 Events
               </Typography>
@@ -94,7 +100,7 @@ const HeaderNav = (props: Props) => {
               <Typography
                 variant="a"
                 href="/contact"
-                className={pathname === '/contact' ? styles.active : null}
+                className={pathname === '/contact' ? styles.active : undefined}
                 aria-current="page">
                 Contact
               </Typography>

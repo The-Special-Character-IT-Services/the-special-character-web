@@ -4,7 +4,9 @@ import classnames from 'classnames';
 import styles from './featuredCategory.module.scss';
 
 interface Props {
-  title: String;
+  title?: string;
+  children: JSX.Element[];
+  props?: Object;
 }
 
 const FeaturedCategory = ({ children, props, title }: Props) => {
@@ -17,17 +19,19 @@ const FeaturedCategory = ({ children, props, title }: Props) => {
           {title}
         </Typography>
       )}
+
       <div className="category-wrapper">
         <div className="category-content">
           <div className="category-item">
-            {children?.map(x => (
+            {children.map(x => (
               <Button className={classnames(styles.button, styles.primary)}>
-                {x?.name}
+                {x.name}
               </Button>
             ))}
           </div>
         </div>
       </div>
+    </div>
       <style jsx>{`
         @import './styles/variables.scss';
         .top-content {
@@ -80,7 +84,6 @@ const FeaturedCategory = ({ children, props, title }: Props) => {
           }
         }
       `}</style>
-    </div>
   );
 };
 

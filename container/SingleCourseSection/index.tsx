@@ -16,15 +16,19 @@ interface Props {}
 const SingleCourseSection = (props: Props) => {
   const btnName = [
     {
+      id: 1,
       name: 'About',
     },
     {
+      id: 2,
       name: 'Topics',
     },
     {
+      id: 3,
       name: 'Results',
     },
     {
+      id: 4,
       name: 'Reviews',
     },
   ];

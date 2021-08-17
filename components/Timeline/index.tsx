@@ -1,12 +1,13 @@
 interface Props {
   props?: Object;
-  data: JSX.Element;
+  data: JSX.Element[];
 }
 import Typography from '@components/Typography';
 import styles from './timeline.module.scss';
 
 const Timeline = ({ data, ...props }: Props) => {
   return (
+    <></>
     <div className="w-layout-grid timeline-grid">
       {data?.map(item => {
         if (typeof item === 'object') {
@@ -36,6 +37,7 @@ const Timeline = ({ data, ...props }: Props) => {
         }
         throw new Error('Please pass the data as object');
       })}
+    </div>
       <style jsx>
         {`
           @import './styles/variables.scss';
@@ -80,7 +82,6 @@ const Timeline = ({ data, ...props }: Props) => {
           }
         `}
       </style>
-    </div>
   );
 };
 
