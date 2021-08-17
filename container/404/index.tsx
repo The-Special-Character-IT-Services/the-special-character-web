@@ -13,8 +13,9 @@ const ErrorContainer = (props: Props) => {
             <div className="errorTxt">
               <Typography variant="largeP">Page not found</Typography>
               <Typography
-                variant="h1"
-                style={{ fontFamily: 'auto', marginTop: 0 }}>
+                variant="h2"
+                className="commonHeading"
+                style={{ marginTop: 0 }}>
                 The page you are looking for doesnt exist or has been moved.
               </Typography>
               <div className="btn">
@@ -25,7 +26,7 @@ const ErrorContainer = (props: Props) => {
               </div>
             </div>
             <div className="er">
-              <Typography variant="h1">404</Typography>
+              <Typography variant="title404">404</Typography>
             </div>
           </div>
           <div className="circle1" />
@@ -63,9 +64,7 @@ const ErrorContainer = (props: Props) => {
             }
             & .circle1 {
               position: absolute;
-              top: -19%;
               z-index: -1;
-              right: -17%;
               min-height: 460px;
               min-width: 460px;
               border-radius: 100%;
@@ -73,9 +72,7 @@ const ErrorContainer = (props: Props) => {
             }
             & .circle2 {
               position: absolute;
-              left: -14%;
               z-index: -1;
-              bottom: -26%;
               min-height: 430px;
               min-width: 430px;
               border-radius: 100%;
@@ -83,16 +80,46 @@ const ErrorContainer = (props: Props) => {
             }
           }
         }
+        @media screen and (min-width: $breakpointXl) {
+          .side {
+            max-width: 1209px;
+            margin: 0px auto;
+            justify-content: space-between;
+          }
+        }
+        @media screen and (max-width: $breakpointXl) {
+          .side {
+            justify-content: space-between;
+            margin: 0px 2rem;
+          }
+        }
         @media screen and (min-width: $breakpointLg) {
           .main {
-            & .side {
-              margin: 0rem 9.3rem 0rem 7.1rem;
-              justify-content: space-between;
+            & .circle1 {
+              top: -20%;
+              right: -16%;
+            }
+            & .circle2 {
+              left: -14%;
+              bottom: -40%;
             }
           }
         }
         @media screen and (max-width: $breakpointLg) {
           .main {
+            & .side {
+              margin: 0rem 9.3rem 0rem 7.1rem;
+              justify-content: space-between;
+            }
+            & .circle1 {
+              top: -30%;
+              right: -30%;
+            }
+            & .circle2 {
+              left: -30%;
+              bottom: -30%;
+            }
+
             & .side {
               flex-direction: column-reverse;
               margin: auto;
@@ -109,6 +136,14 @@ const ErrorContainer = (props: Props) => {
         }
         @media screen and (max-width: $breakpointSm) {
           .main {
+            & .circle1 {
+              top: -20rem;
+              right: -20rem;
+            }
+            & .circle2 {
+              left: -20rem;
+              bottom: -20rem;
+            }
             & .side {
               padding: 0rem 2rem;
               & .errorTxt {
