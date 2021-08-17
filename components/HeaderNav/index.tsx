@@ -1,13 +1,16 @@
 import Typography from '@components/Typography';
+import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import styles from './header.module.scss';
+import classnames from 'classnames';
 
 interface Props {}
 const HeaderNav = (props: Props) => {
   const burgerRef = useRef(null);
   const menuRef = useRef(null);
   const headerRef = useRef(null);
+  const { pathname } = useRouter();
   const burgerClicked = () => {
     burgerRef.current.classList.toggle('open');
     menuRef.current.classList.toggle('right0');
@@ -42,47 +45,56 @@ const HeaderNav = (props: Props) => {
         <aside ref={menuRef} className="menu">
           <a href="#!" onClick={burgerClicked} className=""></a>
           <ul role="list" className="header-navigation">
-            <li className="nav-item-wrapper">
+            <li className={classnames('nav-item-wrapper', styles.navLink)}>
               <Typography
                 variant="a"
                 href="/"
-                className={styles.navLink}
+                className={pathname === '/' ? styles.active : null}
                 aria-current="page">
                 Home
               </Typography>
             </li>
-            <li className="nav-item-wrapper">
+            <li className={classnames('nav-item-wrapper', styles.navLink)}>
               <Typography
                 variant="a"
                 href="/about"
-                className={styles.navLink}
+                className={pathname === '/about' ? styles.active : null}
                 aria-current="page">
                 About
               </Typography>
             </li>
-            <li className="nav-item-wrapper">
+            <li className={classnames('nav-item-wrapper', styles.navLink)}>
               <Typography
                 variant="a"
                 href="/courses"
-                className={styles.navLink}
+                className={pathname === '/courses' ? styles.active : null}
                 aria-current="page">
                 Courses
               </Typography>
             </li>
-            <li className="nav-item-wrapper">
+            <li className={classnames('nav-item-wrapper', styles.navLink)}>
               <Typography
                 variant="a"
                 href="/blog"
-                className={styles.navLink}
+                className={pathname === '/blog' ? styles.active : null}
                 aria-current="page">
                 Blog
               </Typography>
             </li>
-            <li className="nav-item-wrapper">
+            <li className={classnames('nav-item-wrapper', styles.navLink)}>
+              <Typography
+                variant="a"
+                href="/events"
+                className={pathname === '/events' ? styles.active : null}
+                aria-current="page">
+                Events
+              </Typography>
+            </li>
+            <li className={classnames('nav-item-wrapper', styles.navLink)}>
               <Typography
                 variant="a"
                 href="/contact"
-                className={styles.navLink}
+                className={pathname === '/contact' ? styles.active : null}
                 aria-current="page">
                 Contact
               </Typography>
@@ -116,13 +128,13 @@ const HeaderNav = (props: Props) => {
                 width: auto;
                 display: block;
                 & .header-navigation {
+                  gap: 2.5rem;
                   display: flex;
                   margin: 0;
                   padding-left: 0;
                   justify-content: flex-end;
                   list-style-type: none;
                   & .nav-item-wrapper {
-                    margin-right: 2.5rem;
                     margin-bottom: 0;
                   }
                 }
@@ -161,6 +173,7 @@ const HeaderNav = (props: Props) => {
                     color: transparent;
                   }
                   & .header-navigation {
+                    gap: 0;
                     box-shadow: 0px 1px 27px -3px rgb(0 0 0 / 20%);
                     background-color: $Neutral200;
                     display: flex;

@@ -345,9 +345,8 @@ const SingleCourseSection = (props: Props) => {
           padding-bottom: 14.5rem;
         }
         .container {
-          max-width: 1209px;
-          margin-right: auto;
-          margin-left: auto;
+          max-width: 1257px;
+          margin: 0 auto;
           padding-right: 1.5rem;
           padding-left: 1.5rem;
         }
