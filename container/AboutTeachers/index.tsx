@@ -8,11 +8,7 @@ import Twitter from '../../public/svg/twitter.svg';
 import Linkedin from '../../public/svg/linkedin.svg';
 import styles from './aboutTeachers.module.scss';
 
-interface Props {
-  props: JSX.Element;
-}
-
-const AboutTeachers = (props: Props) => {
+const AboutTeachers = () => {
   return (
     <section className={styles.aboutTeachers}>
       <div className={styles.container}>

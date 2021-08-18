@@ -3,11 +3,8 @@ import Card from '@components/Card';
 import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './categories.module.scss';
-interface Props {
-  props: JSX.Element;
-}
 
-const Categories = (props: Props) => {
+const Categories = () => {
   return (
     <section className={styles.categories}>
       <div className={styles.container}>

@@ -6,22 +6,18 @@ import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './allCourses.module.scss';
 
-interface Props {
-  props: JSX.Element;
-}
-
-const AllCourses = (props: Props) => {
+const AllCourses = () => {
   return (
     <section className={styles.allCourses}>
       <div className={styles.container}>
-        <FeaturedCategory title="All Courses">
+        {/* <FeaturedCategory title="All Courses">
           {[
             { name: 'All' },
             { name: 'Development' },
             { name: 'Design' },
             { name: 'Marketing' },
           ]}
-        </FeaturedCategory>
+        </FeaturedCategory> */}
         <div className={styles.list}>
           <Card variant="cardHover" className={styles.cardMain}>
             <Image

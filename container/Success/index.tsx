@@ -1,10 +1,7 @@
 import Typography from '@components/Typography';
 import styles from './success.module.scss';
-interface Props {
-  props: JSX.Element;
-}
 
-const Success = (props: Props) => {
+const Success = () => {
   return (
     <section className={styles.success}>
       <div className={styles.containerHead}>

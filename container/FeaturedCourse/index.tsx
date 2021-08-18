@@ -5,11 +5,8 @@ import Image from 'next/image';
 import Images from '@components/Images';
 import Button from '@components/Button';
 
-interface Props {
-  props: JSX.Element;
-}
 
-const FeaturedCourse = (props: Props) => {
+const FeaturedCourse = () => {
   return (
     <section className={styles.featuredCourse}>
       <div className={styles.container}>
