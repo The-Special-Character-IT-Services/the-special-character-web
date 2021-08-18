@@ -36,8 +36,8 @@ const IndividualEvent = () => {
       <div className={styles.eventDesc}>
         <div className={styles.eventTime}>
           <div className={styles.date}>
-            <div className={styles.month}>JULY</div>
-            <div className={styles.day}>24</div>
+            <Typography className={styles.month}>JULY</Typography>
+            <Typography className={styles.day}>24</Typography>
           </div>
           <div className={styles.place}>
             <div className={styles.eventAbout}>

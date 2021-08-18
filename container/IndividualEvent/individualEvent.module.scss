@@ -50,6 +50,7 @@
       align-items: baseline;
       justify-content: space-between;
       & > .date {
+        text-align: center;
         & > .month {
           color: $Primary1;
           font-size: 1rem;

@@ -10,7 +10,9 @@ const UpcomingEvents = () => {
     <section className={styles.upcomingEvents}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <Typography variant="h2" className={styles.head}>Upcoming Events</Typography>
+          <Typography variant="h2" className={styles.head}>
+            Upcoming Events
+          </Typography>
           <Button className="secondary">View all Events</Button>
         </div>
         <div className={styles.list}>
@@ -45,7 +47,7 @@ const UpcomingEvents = () => {
                 <Typography variant="h3" className={styles.cardTitle}>
                   Brand & Identity Design
                 </Typography>
-                <Typography>
+                <Typography className={styles.para}>
                   Sed viverra ipsum nunc aliquet bibendum enim facilisis
                   gravida. Diam phasellus vestibulum lorem sed risus ultricies.
                 </Typography>
@@ -98,7 +100,7 @@ const UpcomingEvents = () => {
                 <Typography variant="h3" className={styles.cardTitle}>
                   Brand & Identity Design
                 </Typography>
-                <Typography>
+                <Typography className={styles.para}>
                   Sed viverra ipsum nunc aliquet bibendum enim facilisis
                   gravida. Diam phasellus vestibulum lorem sed risus ultricies.
                 </Typography>
