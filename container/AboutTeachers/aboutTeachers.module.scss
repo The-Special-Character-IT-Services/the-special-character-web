@@ -18,6 +18,9 @@
         & > .title {
           font-family: auto;
         }
+        & > .caption {
+          margin: 0;
+        }
       }
     }
     & > .cards {
@@ -30,7 +33,10 @@
       & > .singleCard {
         flex-direction: column;
         & > .description {
+          padding: 1rem;
           & > .socialIcons {
+            gap: 0.5rem;
+            display: flex;
           }
         }
       }

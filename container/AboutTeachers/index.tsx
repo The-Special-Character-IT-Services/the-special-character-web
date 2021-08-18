@@ -2,6 +2,10 @@ import Button from '@components/Button';
 import Card from '@components/Card';
 import Typography from '@components/Typography';
 import Image from 'next/image';
+import Facebook from '../../public/svg/facebook.svg';
+import Github from '../../public/svg/github.svg';
+import Twitter from '../../public/svg/twitter.svg';
+import Linkedin from '../../public/svg/linkedin.svg';
 import styles from './aboutTeachers.module.scss';
 
 interface Props {}
@@ -15,7 +19,7 @@ const AboutTeachers = () => {
             <Typography variant="h2" className={styles.title}>
               Our Teachers
             </Typography>
-            <Typography>
+            <Typography className={styles.caption}>
               Presenting Academy, the tech school of the future. We teach you
               the right skills to be prepared for tomorrow.
             </Typography>
@@ -35,7 +39,20 @@ const AboutTeachers = () => {
               <Typography>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               </Typography>
-              <div className={styles.socialIcons}></div>
+              <div className={styles.socialIcons}>
+                <Button className="socialIcon">
+                  <Facebook height={21} width={21} />
+                </Button>
+                <Button className="socialIcon">
+                  <Github height={21} width={21} />
+                </Button>
+                <Button className="socialIcon">
+                  <Linkedin height={21} width={21} fill="#fff" />
+                </Button>
+                <Button className="socialIcon">
+                  <Twitter height={21} width={21} fill="#fff" />
+                </Button>
+              </div>
             </div>
           </Card>
           <Card variant="cardHover" className={styles.singleCard}>
@@ -50,7 +67,20 @@ const AboutTeachers = () => {
               <Typography>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               </Typography>
-              <div className={styles.socialIcons}></div>
+              <div className={styles.socialIcons}>
+                <Button className="socialIcon">
+                  <Facebook height={21} width={21} />
+                </Button>
+                <Button className="socialIcon">
+                  <Github height={21} width={21} />
+                </Button>
+                <Button className="socialIcon">
+                  <Linkedin height={21} width={21} fill="#fff" />
+                </Button>
+                <Button className="socialIcon">
+                  <Twitter height={21} width={21} fill="#fff" />
+                </Button>
+              </div>
             </div>
           </Card>
           <Card variant="cardHover" className={styles.singleCard}>
@@ -65,7 +95,20 @@ const AboutTeachers = () => {
               <Typography>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               </Typography>
-              <div className={styles.socialIcons}></div>
+              <div className={styles.socialIcons}>
+                <Button className="socialIcon">
+                  <Facebook height={21} width={21} />
+                </Button>
+                <Button className="socialIcon">
+                  <Github height={21} width={21} />
+                </Button>
+                <Button className="socialIcon">
+                  <Linkedin height={21} width={21} fill="#fff" />
+                </Button>
+                <Button className="socialIcon">
+                  <Twitter height={21} width={21} fill="#fff" />
+                </Button>
+              </div>
             </div>
           </Card>
           <Card variant="cardHover" className={styles.singleCard}>
@@ -80,7 +123,20 @@ const AboutTeachers = () => {
               <Typography>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               </Typography>
-              <div className={styles.socialIcons}></div>
+              <div className={styles.socialIcons}>
+                <Button className="socialIcon">
+                  <Facebook height={21} width={21} />
+                </Button>
+                <Button className="socialIcon">
+                  <Github height={21} width={21} />
+                </Button>
+                <Button className="socialIcon">
+                  <Linkedin height={21} width={21} fill="#fff" />
+                </Button>
+                <Button className="socialIcon">
+                  <Twitter height={21} width={21} fill="#fff" />
+                </Button>
+              </div>
             </div>
           </Card>
           <Card variant="cardHover" className={styles.singleCard}>
@@ -95,7 +151,20 @@ const AboutTeachers = () => {
               <Typography>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               </Typography>
-              <div className={styles.socialIcons}></div>
+              <div className={styles.socialIcons}>
+                <Button className="socialIcon">
+                  <Facebook height={21} width={21} />
+                </Button>
+                <Button className="socialIcon">
+                  <Github height={21} width={21} />
+                </Button>
+                <Button className="socialIcon">
+                  <Linkedin height={21} width={21} fill="#fff" />
+                </Button>
+                <Button className="socialIcon">
+                  <Twitter height={21} width={21} fill="#fff" />
+                </Button>
+              </div>
             </div>
           </Card>
           <Card variant="cardHover" className={styles.singleCard}>
@@ -110,7 +179,20 @@ const AboutTeachers = () => {
               <Typography>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               </Typography>
-              <div className={styles.socialIcons}></div>
+              <div className={styles.socialIcons}>
+                <Button className="socialIcon">
+                  <Facebook height={21} width={21} />
+                </Button>
+                <Button className="socialIcon">
+                  <Github height={21} width={21} />
+                </Button>
+                <Button className="socialIcon">
+                  <Linkedin height={21} width={21} fill="#fff" />
+                </Button>
+                <Button className="socialIcon">
+                  <Twitter height={21} width={21} fill="#fff" />
+                </Button>
+              </div>
             </div>
           </Card>
         </div>

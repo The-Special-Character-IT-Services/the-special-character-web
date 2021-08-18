@@ -3,11 +3,7 @@ import Card from '@components/Card';
 import Typography from '@components/Typography';
 import styles from './ratings.module.scss';
 
-interface Props {
-  props: JSX.Element;
-}
-
-const Ratings = (props: Props) => {
+const Ratings = () => {
   return (
     <section className={styles.ratings}>
       <div className={styles.container}>

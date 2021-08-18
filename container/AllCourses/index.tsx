@@ -1,5 +1,6 @@
 import Button from '@components/Button';
 import Card from '@components/Card';
+import FeaturedCategory from '@components/FeaturedCategory';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
 import Image from 'next/image';
@@ -11,17 +12,14 @@ const AllCourses = () => {
   return (
     <section className={styles.allCourses}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <Typography variant="h2" className={styles.headText}>
-            All Courses
-          </Typography>
-          <div className={styles.categories}>
-            <Button className={styles.buttonDefault}>All</Button>
-            <Button className={styles.common}>Development</Button>
-            <Button className={styles.common}>Design</Button>
-            <Button className={styles.common}>Marketing</Button>
-          </div>
-        </div>
+        {/* <FeaturedCategory title="All Courses">
+          {[
+            { name: 'All' },
+            { name: 'Development' },
+            { name: 'Design' },
+            { name: 'Marketing' },
+          ]}
+        </FeaturedCategory> */}
         <div className={styles.list}>
           <Card variant="cardHover" className={styles.cardMain}>
             <Image

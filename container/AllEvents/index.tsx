@@ -1,5 +1,6 @@
 import Button from '@components/Button';
 import Card from '@components/Card';
+import FeaturedCategory from '@components/FeaturedCategory';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
 import Image from 'next/image';
@@ -11,6 +12,14 @@ const AllEvents = (props: Props) => {
   return (
     <section className={styles.allEvents}>
       <div className={styles.container}>
+        <FeaturedCategory title="All Events">
+          {[
+            { name: 'All' },
+            { name: 'Development' },
+            { name: 'Design' },
+            { name: 'Marketing' },
+          ]}
+        </FeaturedCategory>
         <div className={styles.list}>
           <Card variant="cardHover" className={styles.cardMain}>
             <div className={styles.imageDiv}>
