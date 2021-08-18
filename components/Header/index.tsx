@@ -4,29 +4,22 @@ import DownArrow from '../../public/svg/downArrow.svg';
 import PropTypes from 'prop-types';
 import styles from './header.module.scss';
 import Image from 'next/image';
-interface Props {
-  className: string;
+import { HTMLAttributes } from 'react';
+interface Props extends HTMLAttributes<HTMLElement> {
+  className?: string;
   label: string;
   caption: string;
-  props: object;
-  position: any;
-  bgColor1: any;
-  bgColor2: any;
+  position: {
+    circle1: [string, string, string];
+    circle2: [string, string, string];
+  };
 }
 
-const Header = ({
-  caption,
-  className,
-  label,
-  position,
-  bgColor1,
-  bgColor2,
-  ...props
-}: Props) => {
+const Header = ({ caption, className, label, position, ...props }: Props) => {
   return (
     <section
       className={classNames(styles.common, {
-        [className]: !!className,
+        [className || '']: !!className,
       })}
       {...props}>
       <div className={styles.container}>
@@ -41,7 +34,7 @@ const Header = ({
           style={{
             [position.circle1[0]]: '-20rem',
             [position.circle1[1]]: '-20rem',
-            backgroundColor: bgColor1,
+            backgroundColor: position.circle1[2],
           }}
         />
         <div
@@ -49,7 +42,7 @@ const Header = ({
           style={{
             [position.circle2[0]]: '-20rem',
             [position.circle2[1]]: '-20rem',
-            backgroundColor: bgColor2,
+            backgroundColor: position.circle2[2],
           }}
         />
       </div>

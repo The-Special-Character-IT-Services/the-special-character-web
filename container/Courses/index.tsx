@@ -6,39 +6,51 @@ import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './courses.module.scss';
-import React from 'react';
-import Slider from 'react-slick';
+import { Component } from 'react';
+import { default as Slider, Settings, CustomArrowProps } from 'react-slick';
 import RightArrow from '../../public/svg/rightArrow.svg';
 import LeftArrow from '../../public/svg/leftArrow.svg';
 
 interface Props {}
 
-const Courses = (props: Props) => {
-  const NextArrow = ({ onClick }) => (
-    <div className={styles.rightArrow} role="button" onClick={onClick}>
-      <div className={styles.rightIcon}>
-        <RightArrow />
+const Courses = () => {
+  function NextArrow(props: CustomArrowProps): JSX.Element {
+    const { onClick } = props;
+    return (
+      <div className={styles.rightArrow} role="button" onClick={onClick}>
+        <div className={styles.rightIcon}>
+          <RightArrow />
+        </div>
       </div>
-    </div>
-  );
-  const PrevArrow = ({ onClick }) => (
-    <div className={styles.leftArrow} role="button" onClick={onClick}>
-      <div className={styles.leftIcon}>
-        <LeftArrow />
+    );
+  }
+  function PrevArrow(props: CustomArrowProps): JSX.Element {
+    const { onClick } = props;
+    return (
+      <div className={styles.leftArrow} role="button" onClick={onClick}>
+        <div className={styles.leftIcon}>
+          <LeftArrow />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 
-  const settings = {
+  const settings: Settings = {
     adaptiveHeight: true,
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+
     responsive: [
+      {
+        breakpoint: 5000,
+        settings: {
+          nextArrow: <NextArrow />,
+          prevArrow: <PrevArrow />,
+        },
+      },
       {
         breakpoint: 1024,
         settings: {
@@ -61,8 +73,6 @@ const Courses = (props: Props) => {
           speed: 500,
           slidesToShow: 1,
           slidesToScroll: 1,
-          nextArrow: <NextArrow />,
-          prevArrow: <PrevArrow />,
         },
       },
       {
@@ -78,8 +88,6 @@ const Courses = (props: Props) => {
           autoplaySpeed: 2000,
           cssEase: 'linear',
           pauseOnHover: true,
-          nextArrow: false,
-          prevArrow: false,
         },
       },
     ],

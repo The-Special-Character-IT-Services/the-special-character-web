@@ -5,11 +5,9 @@ import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './allCourses.module.scss';
 
-interface Props {
-  props: JSX.Element;
-}
+interface Props {}
 
-const AllCourses = (props: Props) => {
+const AllCourses = () => {
   return (
     <section className={styles.allCourses}>
       <div className={styles.container}>
