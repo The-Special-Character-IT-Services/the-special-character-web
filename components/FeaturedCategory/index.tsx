@@ -3,9 +3,12 @@ import Typography from '@components/Typography';
 import classnames from 'classnames';
 import styles from './featuredCategory.module.scss';
 
+type ButtonList = {
+  name: string;
+};
 interface Props {
   title?: string;
-  children: JSX.Element[];
+  children: ButtonList[];
   props?: Object;
 }
 
@@ -20,7 +23,6 @@ const FeaturedCategory = ({ children, props, title }: Props) => {
             {title}
           </Typography>
         )}
-
         <div className="category-wrapper">
           <div className="category-content">
             <div className="category-item">

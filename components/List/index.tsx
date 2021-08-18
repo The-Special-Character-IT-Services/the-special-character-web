@@ -1,9 +1,11 @@
+type ListItem = {
+  item: string;
+};
 interface Props {
   isNumberedList?: boolean;
-  listItem: JSX.Element[];
-  props?: Object;
+  listItem: ListItem[];
   className?: 'commonParentList' | string | any;
-  keyProp: JSX.IntrinsicAttributes;
+  keyProp: any;
   valueProp: string;
 }
 import cn from 'classnames';

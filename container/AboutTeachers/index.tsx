@@ -4,11 +4,9 @@ import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './aboutTeachers.module.scss';
 
-interface Props {
-  props: JSX.Element;
-}
+interface Props {}
 
-const AboutTeachers = (props: Props) => {
+const AboutTeachers = () => {
   return (
     <section className={styles.aboutTeachers}>
       <div className={styles.container}>
