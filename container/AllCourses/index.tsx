@@ -6,6 +6,8 @@ import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './allCourses.module.scss';
 
+interface Props {}
+
 const AllCourses = () => {
   return (
     <section className={styles.allCourses}>

@@ -3,7 +3,7 @@ import Typography from '@components/Typography';
 import classnames from 'classnames';
 import courseStyle from '../Courses/courses.module.scss';
 import styles from './testimonials.module.scss';
-import Slider from 'react-slick';
+import { default as Slider, Settings, CustomArrowProps } from 'react-slick';
 import RightArrow from '../../public/svg/rightArrow.svg';
 import LeftArrow from '../../public/svg/leftArrow.svg';
 import Card from '@components/Card';
@@ -11,29 +11,40 @@ import Images from '@components/Images';
 import StarRating from '@components/StarRating';
 
 const Testimonials = (props: Props) => {
-  const NextArrow = ({ onClick }) => (
-    <div className={styles.rightArrow} role="button" onClick={onClick}>
-      <div className={styles.rightIcon}>
-        <RightArrow />
+  function NextArrow(props: CustomArrowProps): JSX.Element {
+    const { onClick } = props;
+    return (
+      <div className={styles.rightArrow} role="button" onClick={onClick}>
+        <div className={styles.rightIcon}>
+          <RightArrow />
+        </div>
       </div>
-    </div>
-  );
-  const PrevArrow = ({ onClick }) => (
-    <div className={styles.leftArrow} role="button" onClick={onClick}>
-      <div className={styles.leftIcon}>
-        <LeftArrow />
+    );
+  }
+  function PrevArrow(props: CustomArrowProps): JSX.Element {
+    const { onClick } = props;
+    return (
+      <div className={styles.leftArrow} role="button" onClick={onClick}>
+        <div className={styles.leftIcon}>
+          <LeftArrow />
+        </div>
       </div>
-    </div>
-  );
-  const settings = {
+    );
+  }
+  const settings: Settings = {
     infinite: false,
     pauseOnHover: true,
     autoplay: true,
     slidesToShow: 1.5,
     slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
     responsive: [
+      {
+        breakpoint: 5000,
+        settings: {
+          nextArrow: <NextArrow />,
+          prevArrow: <PrevArrow />,
+        },
+      },
       {
         breakpoint: 1024,
         settings: {
@@ -50,8 +61,6 @@ const Testimonials = (props: Props) => {
           dots: true,
           slidesToShow: 1,
           slidesToScroll: 1,
-          nextArrow: false,
-          prevArrow: false,
         },
       },
     ],

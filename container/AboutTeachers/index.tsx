@@ -8,6 +8,8 @@ import Twitter from '../../public/svg/twitter.svg';
 import Linkedin from '../../public/svg/linkedin.svg';
 import styles from './aboutTeachers.module.scss';
 
+interface Props {}
+
 const AboutTeachers = () => {
   return (
     <section className={styles.aboutTeachers}>

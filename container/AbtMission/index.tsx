@@ -1,3 +1,4 @@
+import Button from '@components/Button';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
 import React from 'react';
@@ -15,7 +16,7 @@ const AbtMission = (props: Props) => {
             width={580}
             alt="Our mission"
           />
-          <aside className="mission">
+          <aside className="mission right">
             <Typography variant="h2">
               The mission behind Education platform
             </Typography>
@@ -43,8 +44,14 @@ const AbtMission = (props: Props) => {
               Tortor varius a bibendum nisl et tellus. Aliquet elit senectus
               iaculis netus gravida.
             </Typography>
+            <Button className="socialIcon">o</Button>
           </aside>
-          <Images src="/mission2.jpeg" height={600} width={580} alt="Our mission" />
+          <Images
+            src="/mission2.jpeg"
+            height={600}
+            width={580}
+            alt="Our mission"
+          />
         </div>
       </section>
       <style jsx>{`

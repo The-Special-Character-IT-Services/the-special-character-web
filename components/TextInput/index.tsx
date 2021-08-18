@@ -4,7 +4,10 @@ import Typography from '@components/Typography';
 
 interface Props {
   name: string;
+  id: string;
+  type?: string;
   label: string;
+  placeholder: string;
   className?: string | any;
   isTextArea?: boolean;
   placeholder: string;
@@ -14,6 +17,8 @@ interface Props {
 
 const TextInput = ({
   name,
+  id,
+  type,
   placeholder,
   label,
   className,
@@ -24,11 +29,15 @@ const TextInput = ({
 
   return (
     <div className="input-wrapper">
-      <Typography variant="label" htmlFor={name}>
+      <Typography
+        variant="label"
+        // htmlFor={name}
+      >
         {label}
       </Typography>
       <Component
         id={name}
+        type={type}
         className={cn('contactInput', {
           textArea: isTextArea,
           [className]: !!className,

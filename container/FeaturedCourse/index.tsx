@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Images from '@components/Images';
 import Button from '@components/Button';
 
+interface Props {}
 
 const FeaturedCourse = () => {
   return (

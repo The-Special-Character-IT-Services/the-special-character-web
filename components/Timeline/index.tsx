@@ -1,6 +1,12 @@
+type TimeLine = {
+  year: number;
+  title: string;
+  description: string;
+};
+
 interface Props {
   props?: Object;
-  data: JSX.Element[];
+  data: TimeLine[];
 }
 import Typography from '@components/Typography';
 import styles from './timeline.module.scss';
@@ -9,7 +15,7 @@ const Timeline = ({ data, ...props }: Props) => {
   return (
     <>
       <div className="w-layout-grid timeline-grid">
-        {data?.map(item => {
+        {data.map(item => {
           if (typeof item === 'object') {
             return (
               <>

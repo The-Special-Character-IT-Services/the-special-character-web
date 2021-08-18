@@ -1,5 +1,6 @@
 import Typography from '@components/Typography';
 import styles from './success.module.scss';
+interface Props {}
 
 const Success = () => {
   return (

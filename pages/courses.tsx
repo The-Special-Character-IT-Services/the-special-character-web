@@ -11,14 +11,12 @@ const Courses = (props: Props) => {
   return (
     <>
       <Header
-        bgColor1="#fcdf69"
-        bgColor2="#f99d77"
         label="Courses"
         caption="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
           excepturi, animi autem similique voluptas reiciendis."
         position={{
-          circle1: ['top', 'right'],
-          circle2: ['bottom', 'left'],
+          circle1: ['top', 'right', '#fcdf69'],
+          circle2: ['bottom', 'left', '#f99d77'],
         }}
       />
       <FeaturedCourse />

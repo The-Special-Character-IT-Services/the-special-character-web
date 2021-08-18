@@ -4,6 +4,8 @@ import Typography from '@components/Typography';
 import { useRef } from 'react';
 import styles from './banner.module.scss';
 
+interface Props {}
+
 const Banner = () => {
   return (
     <section className="banner">
