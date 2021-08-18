@@ -10,9 +10,6 @@ interface Props {
   placeholder: string;
   className?: string | any;
   isTextArea?: boolean;
-  placeholder: string;
-  id?: string;
-  type?: string;
 }
 
 const TextInput = ({
