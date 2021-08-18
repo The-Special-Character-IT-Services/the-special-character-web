@@ -4,11 +4,8 @@ import FeaturedCategory from '@components/FeaturedCategory';
 import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './upcomingEvents.module.scss';
-interface Props {
-  props: JSX.Element;
-}
 
-const UpcomingEvents = (props: Props) => {
+const UpcomingEvents = () => {
   return (
     <section className={styles.upcomingEvents}>
       <div className={styles.container}>

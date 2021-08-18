@@ -6,11 +6,7 @@ import Image from 'next/image';
 import Marketing from '../../public/svg/Marketing.svg';
 import styles from './individualEvent.module.scss';
 
-interface Props {
-  props: JSX.Element;
-}
-
-const IndividualEvent = (props: Props) => {
+const IndividualEvent = () => {
   const array = [
     {
       id: 1,
