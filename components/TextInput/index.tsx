@@ -5,6 +5,7 @@ import Typography from '@components/Typography';
 interface Props {
   name: string;
   label: string;
+  placeholder: string;
   className?: string | any;
   isTextArea?: boolean;
 }
@@ -21,7 +22,10 @@ const TextInput = ({
 
   return (
     <div className="input-wrapper">
-      <Typography variant="label" htmlFor={name}>
+      <Typography
+        variant="label"
+        // htmlFor={name}
+      >
         {label}
       </Typography>
       <Component

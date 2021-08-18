@@ -13,7 +13,7 @@ interface Props {
     | any;
   isDisabled?: Boolean;
   style?: Object | any;
-  children: JSX.Element | string;
+  children: JSX.Element | string | any;
   isLoading?: Boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   rest?: Object;
@@ -83,7 +83,7 @@ const Button = ({
             }
             &.socialIcon {
               background-color: $Neutral400;
-              padding: 0.3rem;
+              padding: 0.3rem 0.4rem;
               color: $Neutral100;
               cursor: pointer;
               overflow: hidden;
