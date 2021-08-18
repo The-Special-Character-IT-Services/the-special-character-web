@@ -44,7 +44,6 @@ const AbtMission = (props: Props) => {
               Tortor varius a bibendum nisl et tellus. Aliquet elit senectus
               iaculis netus gravida.
             </Typography>
-            <Button className="socialIcon">o</Button>
           </aside>
           <Images
             src="/mission2.jpeg"
