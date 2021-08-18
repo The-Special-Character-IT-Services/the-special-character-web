@@ -34,14 +34,14 @@ const Form = (props: Props) => {
                     label="Name"
                     id="Name"
                     name="Name"
-                    placeholder="Full Name"
+                    placeholder="Ex. Elon Musk"
                     type="text"
                   />
                   <TextInput
                     label="Email Address"
                     id="Email"
                     name="Email"
-                    placeholder="elon.musk@tesla.com"
+                    placeholder="Ex.elon.musk@tesla.com"
                     type="email"
                   />
                   <TextInput
@@ -112,7 +112,7 @@ const Form = (props: Props) => {
               <Card
                 variant="cardHover"
                 className={classnames(styles.contactLink, styles.address)}>
-                <a href="#!" className="contact-link">
+                <a href="/about/#Map" className="contact-link">
                   <div className="image-wrapper">
                     <Image
                       height={60}
@@ -141,7 +141,7 @@ const Form = (props: Props) => {
           padding-bottom: 11.5rem;
         }
         .container {
-          max-width: 1209px;
+          max-width: 1257px;
           margin-right: auto;
           margin-left: auto;
           padding-right: 1.5rem;

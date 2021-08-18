@@ -2,41 +2,41 @@
 
 .featuredCourse {
   padding: 10rem 0;
-  & > .container {
+  & .container {
     max-width: 1209px;
     margin-right: auto;
     margin-left: auto;
     padding: 0 1.5rem;
     flex: 1;
     text-align: center;
-    & > .head {
+    & .head {
       font-family: auto;
       margin-top: 0;
       margin-bottom: 2rem;
     }
-    & > .cardMain {
+    & .cardMain {
       display: flex;
       border-radius: 20px;
 
-      & > .imageDiv {
+      & .imageDiv {
         max-width: 567px;
         display: flex;
         flex: 0 0 auto;
       }
-      & > .cardBox {
+      & .cardBox {
         display: flex;
         flex-direction: column;
         align-items: baseline;
         text-align: left;
         padding: 4rem 3rem;
-        & > .cardTitle {
+        & .cardTitle {
           margin-top: 0;
         }
-        & > .faculty {
+        & .faculty {
           display: flex;
           align-items: center;
           gap: 1rem;
-          & > .price {
+          & .price {
             position: absolute;
             left: 1.5rem;
             top: 1.5rem;
@@ -44,7 +44,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 0.5rem;
-            & > .button,
+            & .button,
             .buttonWhite {
               padding: 1rem;
               &:hover {
@@ -52,11 +52,11 @@
                 transform: scale(1);
                 background-color: $Primary1;
               }
-              & > p {
+              & p {
                 font-size: 14px;
               }
             }
-            & > .buttonWhite {
+            & .buttonWhite {
               background-color: $Neutral100;
               color: $Neutral700;
               &:hover {
@@ -72,18 +72,18 @@
 @media screen and (max-width: $breakpointLg) {
   .featuredCourse {
     padding: 8rem 0;
-    & > .container {
+    & .container {
       flex-direction: column;
       align-items: stretch;
-      & > .cardMain {
+      & .cardMain {
         flex-direction: column;
-        & > .imageDiv {
+        & .imageDiv {
           max-width: 100%;
           display: contents;
         }
-        & > .cardBox {
-          & > .faculty {
-            & > .price {
+        & .cardBox {
+          & .faculty {
+            & .price {
               left: 1.25rem;
               top: 1.25rem;
               flex-direction: column;
@@ -99,9 +99,9 @@
 @media screen and (max-width: $breakpointMd) {
   .featuredCourse {
     padding: 6.5rem 0;
-    & > .container {
-      & > .cardMain {
-        & > .cardBox {
+    & .container {
+      & .cardMain {
+        & .cardBox {
           padding: 1rem;
         }
       }
@@ -111,16 +111,16 @@
 @media screen and (max-width: $breakpointSm) {
   .featuredCourse {
     padding: 5rem 0;
-    & > .container {
+    & .container {
       padding: 0 1rem;
-      & > .cardMain {
-        & > .cardBox {
-          & > .faculty {
-            & > .price {
+      & .cardMain {
+        & .cardBox {
+          & .faculty {
+            & .price {
               gap: 0.5rem;
               left: 1rem;
               top: 1rem;
-              & > .button,
+              & .button,
               .buttonWhite {
                 padding: 0.6rem;
               }

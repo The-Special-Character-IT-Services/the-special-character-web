@@ -1,62 +1,62 @@
 @import '../../styles/variables.scss';
 .allEvents {
   padding: 11.5rem 0;
-  & > .container {
+  & .container {
     max-width: 1209px;
     margin-right: auto;
     margin-left: auto;
     padding: 0 1.5rem;
     flex: 1;
-    & > .list {
+    & .list {
       display: grid;
       grid-auto-columns: 1fr;
       grid-column-gap: 1rem;
       grid-row-gap: 3rem;
       grid-template-rows: auto;
-      & > .cardMain {
+      & .cardMain {
         display: flex;
         border-radius: 1.25rem;
 
-        & > .imageDiv {
+        & .imageDiv {
           max-width: 567px;
           display: flex;
           flex: 0 0 auto;
         }
-        & > .cardBox {
+        & .cardBox {
           display: flex;
           text-align: left;
           padding: 4rem 3rem;
           justify-content: space-between;
 
-          & > .box {
+          & .box {
             display: flex;
             flex-direction: column;
             align-items: baseline;
             margin-right: 1rem;
 
-            & > .cardTitle {
+            & .cardTitle {
               margin-top: 0;
             }
-            & > .time {
+            & .time {
               width: 100%;
               display: flex;
               align-items: flex-end;
 
-              & > .contentTopLeft {
+              & .contentTopLeft {
                 display: flex;
-                align-items: end;
+                align-items: flex-start;
                 gap: 0.5rem;
-                & > .eventDay {
+                & .eventDay {
                   font-weight: 700;
                   flex-wrap: wrap;
                   display: flex;
                 }
               }
-              & > .mobileWrapper {
+              & .mobileWrapper {
                 display: none;
               }
             }
-            & > .category {
+            & .category {
               position: absolute;
               left: 1.5rem;
               top: 1.5rem;
@@ -64,11 +64,11 @@
               justify-content: space-between;
               align-items: center;
               gap: 1rem;
-              & > .buttonWhite {
+              & .buttonWhite {
                 background-color: $Neutral100;
                 color: $Neutral700;
                 padding: 1rem;
-                & > p {
+                & p {
                   display: flex;
                   gap: 5px;
                 }
@@ -80,9 +80,9 @@
               }
             }
           }
-          & > .mobileWrapper {
+          & .mobileWrapper {
             text-align: center;
-            & > .month {
+            & .month {
               margin-bottom: 1rem;
               color: $Primary1;
               font-size: 0.875rem;
@@ -91,7 +91,7 @@
               letter-spacing: 0.06em;
               text-transform: uppercase;
             }
-            & > .date {
+            & .date {
               color: $Neutral700;
               font-size: 3rem;
               line-height: 1em;
@@ -107,22 +107,22 @@
 @media screen and (max-width: $breakpointLg) {
   .allEvents {
     padding: 9rem 0;
-    & > .container {
+    & .container {
       flex-direction: column;
       align-items: stretch;
-      & > .list {
+      & .list {
         max-width: 800px;
         margin-right: auto;
         margin-left: auto;
-        & > .cardMain {
+        & .cardMain {
           flex-direction: column;
-          & > .imageDiv {
+          & .imageDiv {
             max-width: 100%;
             display: contents;
           }
-          & > .cardBox {
-            & > .box {
-              & > .category {
+          & .cardBox {
+            & .box {
+              & .category {
                 left: 1.25rem;
                 top: 1.25rem;
                 flex-direction: column;
@@ -139,29 +139,29 @@
 @media screen and (max-width: $breakpointMd) {
   .allEvents {
     padding: 7rem 0;
-    & > .container {
-      & > .list {
+    & .container {
+      & .list {
         grid-row-gap: 2.5rem;
-        & > .cardMain {
-          & > .cardBox {
+        & .cardMain {
+          & .cardBox {
             padding: 2.5rem 2rem 3rem;
             justify-content: space-evenly;
 
-            & > .box {
-              & > .time {
+            & .box {
+              & .time {
                 margin-bottom: 1.25rem;
                 align-items: flex-start;
                 justify-content: space-between;
 
-                & > .contentTopLeft {
+                & .contentTopLeft {
                   flex-direction: column;
                   align-items: flex-start;
                 }
-                & > .mobileWrapper {
+                & .mobileWrapper {
                   display: flex;
                   flex-direction: column;
                   align-items: center;
-                  & > .month {
+                  & .month {
                     margin-bottom: 1rem;
                     color: $Primary1;
                     font-size: 0.875rem;
@@ -170,7 +170,7 @@
                     letter-spacing: 0.06em;
                     text-transform: uppercase;
                   }
-                  & > .date {
+                  & .date {
                     color: $Neutral700;
                     font-size: 3rem;
                     line-height: 1em;
@@ -179,7 +179,7 @@
                 }
               }
             }
-            & > .mobileWrapper {
+            & .mobileWrapper {
               display: none;
             }
           }
@@ -191,34 +191,34 @@
 @media screen and (max-width: $breakpointSm) {
   .allEvents {
     padding: 6rem 0;
-    & > .container {
+    & .container {
       padding: 0 1rem;
-      & > .list {
-        & > .cardMain {
-          & > .cardBox {
+      & .list {
+        & .cardMain {
+          & .cardBox {
             padding: 2rem 1.25rem 2.5rem;
-            & > .box {
+            & .box {
               margin-right: 0;
-              & > .category {
-                & > .buttonWhite {
+              & .category {
+                & .buttonWhite {
                   padding: 0.8rem;
-                  & > p {
+                  & p {
                     font-size: 0.875rem;
                   }
                 }
               }
-              & > .time {
+              & .time {
                 margin-bottom: 1rem;
                 flex-direction: row;
                 justify-content: space-between;
-                & > .contentTopLeft {
+                & .contentTopLeft {
                   margin-right: 1rem;
                 }
-                & > .mobileWrapper {
-                  & > .date {
+                & .mobileWrapper {
+                  & .date {
                     font-size: 1.875rem;
                   }
-                  & > .month {
+                  & .month {
                     margin-bottom: 0.5rem;
                   }
                 }

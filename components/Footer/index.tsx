@@ -19,14 +19,9 @@ const Footer = (props: Props) => {
       <div className={styles.container}>
         <div className={styles.contentTop}>
           <Link href="/">
-            <a>
-              <Image
-                alt="logo"
-                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e14090c79b1d9ca3d08f8_logo-footer-education-x-template.svg"
-                width={226}
-                height={40}
-              />
-            </a>
+            <Typography variant="a" className={styles.logo}>
+              The Special Character
+            </Typography>
           </Link>
           <Typography>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

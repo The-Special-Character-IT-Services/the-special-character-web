@@ -10,6 +10,7 @@ import Divider from '@components/Divider';
 import Accordian from '@components/Accordian';
 import Card from '@components/Card';
 import StarRating from '@components/StarRating';
+import router from 'next/router';
 
 interface Props {}
 
@@ -32,6 +33,9 @@ const SingleCourseSection = (props: Props) => {
       name: 'Reviews',
     },
   ];
+  const goToContact = () => {
+    router.push('/contact');
+  };
   return (
     <section className="course">
       <div className="container">
@@ -81,7 +85,7 @@ const SingleCourseSection = (props: Props) => {
                   Lorem ipsum dolor sit amet, dolor consectetur adipiscing elit
                   purus vivera.
                 </Typography>
-                <Button>Enroll Now</Button>
+                <Button onClick={goToContact}>Enroll Now</Button>
               </div>
               <div className="card-get-course-features-grid">
                 <div className="card-get-course-feature-wrapper">
@@ -163,7 +167,7 @@ const SingleCourseSection = (props: Props) => {
               </Typography>
             </div>
             <Divider className={styles.divider} isFooterTop />
-            <div>
+            <div className="full-width">
               <Typography variant="h2" className="commonHeading">
                 What will you learn
               </Typography>
@@ -235,7 +239,7 @@ const SingleCourseSection = (props: Props) => {
                 Lorem ipsum dolor sit amet, dolor consectetur adipiscing elit
                 purus vivera.
               </Typography>
-              <Button>Enroll Now</Button>
+              <Button onClick={goToContact}>Enroll Now</Button>
               <div className="mt1 card-get-course-features-grid">
                 <div className="card-get-course-feature-wrapper">
                   <div className="card-get-course-feature-icon">
@@ -307,6 +311,9 @@ const SingleCourseSection = (props: Props) => {
       </div>
       <style jsx>{`
         @import './styles/variables.scss';
+        .full-width {
+          width: 100%;
+        }
         .flex-grow {
           flex: 1;
         }

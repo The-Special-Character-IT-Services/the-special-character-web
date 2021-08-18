@@ -8,7 +8,7 @@ interface Props {}
 
 const Map = (props: Props) => {
   return (
-    <section className="map">
+    <section id="Map" className="map">
       <div className="offices">
         <Typography variant="h2" className="commonHeading">
           Our offices

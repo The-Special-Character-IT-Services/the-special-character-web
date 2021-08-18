@@ -57,7 +57,7 @@
 
               & > .contentTopLeft {
                 display: flex;
-                align-items: end;
+                align-items: flex-start;
                 gap: 0.5rem;
                 & > .eventDay {
                   font-weight: 700;

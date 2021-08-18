@@ -19,6 +19,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   & .sideCardDiv {
+    display: flex;
     max-height: 12rem;
     & .blogCard {
       padding: 1rem 0rem 1rem 1rem;
@@ -37,6 +38,7 @@
   }
 }
 .cardDiv {
+  display: flex;
   position: relative;
   flex-direction: column;
   max-height: 36rem;

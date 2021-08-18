@@ -28,7 +28,13 @@
     }
   }
 }
-
+.headerRight {
+  display: flex;
+  font-size: 2rem;
+  font-weight: 800;
+  text-decoration: none !important;
+  color: #1e3d60 !important;
+}
 @media screen and (max-width: $breakpointLgForMw) {
   .navLink {
     font-size: 2rem;

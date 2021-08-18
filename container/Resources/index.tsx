@@ -33,88 +33,103 @@ const Resources = (props: Props) => {
         <FeaturedCategory title="Resources & News" children={btnName} />
         <div className="blog-grid">
           <Card variant="cardHover" className={styles.cardResources}>
-            <div className="image-wrapper">
-              <div className="image">
-                <Image
-                  layout="fill"
-                  src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg"
-                />
-              </div>
-              <div className="card-post-category-wrapper">
-                <div className={styles.cardIcon}>
+            <a href="/blog/1">
+              <div className="image-wrapper">
+                <div className="image">
                   <Image
-                    width={16}
-                    height={18}
-                    src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2199d24e83863a7b02da_icon-2-categories-education-x-template.svg"
+                    layout="fill"
+                    src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg"
                   />
                 </div>
-                <Typography className={styles.iconTitle}>Design</Typography>
+                <div className="card-post-category-wrapper">
+                  <div className={styles.cardIcon}>
+                    <Image
+                      width={16}
+                      height={18}
+                      src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2199d24e83863a7b02da_icon-2-categories-education-x-template.svg"
+                    />
+                  </div>
+                  <Typography className={styles.iconTitle}>Design</Typography>
+                </div>
               </div>
-            </div>
-            <div className="card-post-content">
-              <Typography className={styles.cardPostDate}>
-                April 20, 2021
-              </Typography>
-              <Typography variant="h3" className={classnames(styles.cardPost)}>
-                How to design a simple, yet unique and memorable brand identity
-              </Typography>
-            </div>
+              <div className="card-post-content">
+                <Typography className={styles.cardPostDate}>
+                  April 20, 2021
+                </Typography>
+                <Typography
+                  variant="h3"
+                  className={classnames(styles.cardPost)}>
+                  How to design a simple, yet unique and memorable brand
+                  identity
+                </Typography>
+              </div>
+            </a>
           </Card>
           <Card variant="cardHover" className={styles.cardResources}>
-            <div className="image-wrapper">
-              <div className="image">
-                <Image
-                  layout="fill"
-                  src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg"
-                />
-              </div>
-              <div className="card-post-category-wrapper">
-                <div className={styles.cardIcon}>
+            <a href="/blog/1">
+              <div className="image-wrapper">
+                <div className="image">
                   <Image
-                    width={16}
-                    height={18}
-                    src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2199d24e83863a7b02da_icon-2-categories-education-x-template.svg"
+                    layout="fill"
+                    src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg"
                   />
                 </div>
-                <Typography className={styles.iconTitle}>Design</Typography>
+                <div className="card-post-category-wrapper">
+                  <div className={styles.cardIcon}>
+                    <Image
+                      width={16}
+                      height={18}
+                      src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2199d24e83863a7b02da_icon-2-categories-education-x-template.svg"
+                    />
+                  </div>
+                  <Typography className={styles.iconTitle}>Design</Typography>
+                </div>
               </div>
-            </div>
-            <div className="card-post-content">
-              <Typography className={styles.cardPostDate}>
-                April 20, 2021
-              </Typography>
-              <Typography variant="h3" className={classnames(styles.cardPost)}>
-                How to design a simple, yet unique and memorable brand identity
-              </Typography>
-            </div>
+              <div className="card-post-content">
+                <Typography className={styles.cardPostDate}>
+                  April 20, 2021
+                </Typography>
+                <Typography
+                  variant="h3"
+                  className={classnames(styles.cardPost)}>
+                  How to design a simple, yet unique and memorable brand
+                  identity
+                </Typography>
+              </div>
+            </a>
           </Card>
           <Card variant="cardHover" className={styles.cardResources}>
-            <div className="image-wrapper">
-              <div className="image">
-                <Image
-                  layout="fill"
-                  src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg"
-                />
-              </div>
-              <div className="card-post-category-wrapper">
-                <div className={styles.cardIcon}>
+            <a href="/blog/1">
+              <div className="image-wrapper">
+                <div className="image">
                   <Image
-                    width={16}
-                    height={18}
-                    src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2199d24e83863a7b02da_icon-2-categories-education-x-template.svg"
+                    layout="fill"
+                    src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f23fe55a94aa127fb47b2_image-6-blog-education-x-template.jpg"
                   />
                 </div>
-                <Typography className={styles.iconTitle}>Design</Typography>
+                <div className="card-post-category-wrapper">
+                  <div className={styles.cardIcon}>
+                    <Image
+                      width={16}
+                      height={18}
+                      src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2199d24e83863a7b02da_icon-2-categories-education-x-template.svg"
+                    />
+                  </div>
+                  <Typography className={styles.iconTitle}>Design</Typography>
+                </div>
               </div>
-            </div>
-            <div className="card-post-content">
-              <Typography className={styles.cardPostDate}>
-                April 20, 2021
-              </Typography>
-              <Typography variant="h3" className={classnames(styles.cardPost)}>
-                How to design a simple, yet unique and memorable brand identity
-              </Typography>
-            </div>
+              <div className="card-post-content">
+                <Typography className={styles.cardPostDate}>
+                  April 20, 2021
+                </Typography>
+                <Typography
+                  variant="h3"
+                  className={classnames(styles.cardPost)}>
+                  How to design a simple, yet unique and memorable brand
+                  identity
+                </Typography>
+              </div>
+            </a>
           </Card>
         </div>
       </div>

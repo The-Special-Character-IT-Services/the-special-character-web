@@ -1,12 +1,20 @@
 import Button from '@components/Button';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
+import Link from 'next/link';
 import { useRef } from 'react';
 import styles from './banner.module.scss';
+import router from 'next/router';
 
 interface Props {}
 
 const Banner = () => {
+  const goToCourse = () => {
+    router.push('/courses');
+  };
+  const goToPerk = () => {
+    router.push('/#Perks');
+  };
   return (
     <section className="banner">
       <div className="container">
@@ -19,8 +27,10 @@ const Banner = () => {
             right skills to be prepared for tomorrow.
           </Typography>
           <div className="btnDiv">
-            <Button>Explore Courses</Button>
-            <Button className="secondary">Learn More</Button>
+            <Button onClick={goToCourse}>Explore Courses</Button>
+            <Button className="secondary" onClick={goToPerk}>
+              Learn More
+            </Button>
           </div>
         </div>
         <Images

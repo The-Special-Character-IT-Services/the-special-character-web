@@ -3,11 +3,18 @@ import Card from '@components/Card';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
 import classnames from 'classnames';
+import router from 'next/router';
 import styles from './teachers.module.scss';
 
 interface Props {}
 
 const Teachers = (props: Props) => {
+  const goToTeachers = () => {
+    router.push('/about/#Teachers');
+  };
+  const goToContact = () => {
+    router.push('/contact');
+  };
   return (
     <section className="featured-teacher">
       <div className="container-default">
@@ -23,8 +30,12 @@ const Teachers = (props: Props) => {
               eiusmod tempor incididunt.
             </Typography>
             <div className="two-buttons">
-              <Button className={styles.btn}>Browse Teachers</Button>
-              <Button className={classnames('secondary', styles.btn)}>
+              <Button className={styles.btn} onClick={goToTeachers}>
+                Browse Teachers
+              </Button>
+              <Button
+                className={classnames('secondary', styles.btn)}
+                onClick={goToContact}>
                 Become a Teacher
               </Button>
             </div>

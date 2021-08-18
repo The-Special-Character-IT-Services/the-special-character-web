@@ -7,12 +7,16 @@ import Github from '../../public/svg/github.svg';
 import Twitter from '../../public/svg/twitter.svg';
 import Linkedin from '../../public/svg/linkedin.svg';
 import styles from './aboutTeachers.module.scss';
+import router from 'next/router';
 
 interface Props {}
 
 const AboutTeachers = () => {
+  const goToContact = () => {
+    router.push('/contact');
+  };
   return (
-    <section className={styles.aboutTeachers}>
+    <section id="Teachers" className={styles.aboutTeachers}>
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.leftHead}>
@@ -24,7 +28,7 @@ const AboutTeachers = () => {
               the right skills to be prepared for tomorrow.
             </Typography>
           </div>
-          <Button>Become a teacher</Button>
+          <Button onClick={goToContact}>Become a teacher</Button>
         </div>
         <div className={styles.cards}>
           <Card variant="cardHover" className={styles.singleCard}>

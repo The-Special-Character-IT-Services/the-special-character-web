@@ -36,15 +36,9 @@ const HeaderNav = (props: Props) => {
     <header className="container-default">
       <nav role="navigation" className="nav-menu">
         <Link href="/">
-          <a className="header-right">
-            <Image
-              src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e0932cd6425299653b78f_logo-education-x-template.svg"
-              alt="Logo"
-              width={205}
-              height={36}
-              className="header-logo"
-            />
-          </a>
+          <Typography variant="a" className={classnames(styles.headerRight)}>
+            The Special Character
+          </Typography>
         </Link>
         <button ref={burgerRef} onClick={burgerClicked} className="hamburger">
           <span className="span1" />
@@ -126,9 +120,6 @@ const HeaderNav = (props: Props) => {
               align-items: center;
               background-color: $Neutral100;
               justify-content: space-between;
-              & .header-right {
-                display: flex;
-              }
               & .hamburger {
                 display: none;
               }

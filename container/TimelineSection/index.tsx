@@ -1,6 +1,7 @@
 import Button from '@components/Button';
 import Timeline from '@components/Timeline';
 import Typography from '@components/Typography';
+import router from 'next/router';
 import styles from './timelineSection.module.scss';
 
 interface Props {}
@@ -32,6 +33,9 @@ const TimelineSection = (props: Props) => {
         'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor .',
     },
   ];
+  const goToContact = () => {
+    router.push('/contact');
+  };
   return (
     <section className="timeline">
       <div className="container-default">
@@ -45,7 +49,7 @@ const TimelineSection = (props: Props) => {
                 Presenting Academy, the tech school of the future. We teach you
                 the right skills to be prepared for tomorrow.
               </Typography>
-              <Button>Join Our Team</Button>
+              <Button onClick={goToContact}>Join Our Team</Button>
             </div>
           </div>
           <Timeline data={data} />

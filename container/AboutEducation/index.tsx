@@ -4,12 +4,16 @@ import Link from 'next/link';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
 import React from 'react';
+import router from 'next/router';
 
 interface Props {
   props?: Object;
 }
 
 const AboutEducation = (props: Props) => {
+  const goToAbout = () => {
+    router.push('/about');
+  };
   return (
     <>
       <section className="container">
@@ -81,9 +85,9 @@ const AboutEducation = (props: Props) => {
               </div>
             </aside>
           </div>
-          <Link passHref={true} href="/about">
-            <Button className="secondary">About Education</Button>
-          </Link>
+          <Button className="secondary" onClick={goToAbout}>
+            About Education
+          </Button>
         </div>
       </section>
       <style jsx>{`

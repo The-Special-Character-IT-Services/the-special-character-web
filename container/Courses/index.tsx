@@ -10,6 +10,8 @@ import { Component } from 'react';
 import { default as Slider, Settings, CustomArrowProps } from 'react-slick';
 import RightArrow from '../../public/svg/rightArrow.svg';
 import LeftArrow from '../../public/svg/leftArrow.svg';
+import Link from 'next/link';
+import router from 'next/router';
 
 interface Props {}
 
@@ -92,6 +94,9 @@ const Courses = () => {
       },
     ],
   };
+  const goToCourse = () => {
+    router.push('/courses');
+  };
   return (
     <section className={styles.courses}>
       <div className={styles.container}>
@@ -101,34 +106,36 @@ const Courses = () => {
         <div className={styles.cardDiv}>
           <Slider {...settings}>
             <Card variant="cardHover">
-              <Image
-                alt="card"
-                src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2bd223dde86aadbf10e5_image-2-courses-education-x-template-p-500.jpeg"
-                height={318}
-                width={567}
-              />
-              <div className={styles.price}>
-                <Button className="secondary">7hr 24min</Button>
-                <Button>$99.00USD</Button>
-              </div>
-              <div className={styles.paraDiv}>
-                <Typography variant="h3" className={styles.cardHead}>
-                  Mobile App Development
-                </Typography>
-                <Typography className={styles.para}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptatibus cum et repellat reprehenderit iure at.
-                </Typography>
-                <div className={styles.faculty}>
-                  <Images
-                    className="avtar"
-                    src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd486e01646f00559d_image-2-testimonials-education-x-template.jpg"
-                    height={48}
-                    width={48}
-                  />
-                  <Typography variant="bold">Mike Warren</Typography>
+              <a href="courses/1">
+                <Image
+                  alt="card"
+                  src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2bd223dde86aadbf10e5_image-2-courses-education-x-template-p-500.jpeg"
+                  height={318}
+                  width={567}
+                />
+                <div className={styles.price}>
+                  <Button className="secondary">7hr 24min</Button>
+                  <Button>$99.00USD</Button>
                 </div>
-              </div>
+                <div className={styles.paraDiv}>
+                  <Typography variant="h3" className={styles.cardHead}>
+                    Mobile App Development
+                  </Typography>
+                  <Typography className={styles.para}>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Voluptatibus cum et repellat reprehenderit iure at.
+                  </Typography>
+                  <div className={styles.faculty}>
+                    <Images
+                      className="avtar"
+                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd486e01646f00559d_image-2-testimonials-education-x-template.jpg"
+                      height={48}
+                      width={48}
+                    />
+                    <Typography variant="bold">Mike Warren</Typography>
+                  </div>
+                </div>
+              </a>
             </Card>
             <Card variant="cardHover">
               <Image
@@ -224,7 +231,9 @@ const Courses = () => {
         </div>
 
         <div>
-          <Button style={{ marginTop: '3rem' }}>Explore all courses</Button>
+          <Button style={{ marginTop: '3rem' }} onClick={goToCourse}>
+            Explore all courses
+          </Button>
         </div>
       </div>
     </section>

@@ -1,11 +1,15 @@
 import Button from '@components/Button';
 import Typography from '@components/Typography';
 import Image from 'next/image';
+import router from 'next/router';
 import styles from './aboutbanner.module.scss';
 
 interface Props {}
 
 const AboutBanner = (props: Props) => {
+  const goToContact = () => {
+    router.push('/contact');
+  };
   return (
     <section className={styles.aboutBanner}>
       <div className={styles.container}>
@@ -13,7 +17,9 @@ const AboutBanner = (props: Props) => {
           <Typography variant="h1" className={styles.head}>
             The big mission behind Education
           </Typography>
-          <Button className={styles.button1}>Join Our Team</Button>
+          <Button className={styles.button1} onClick={goToContact}>
+            Join Our Team
+          </Button>
         </div>
         <div className={styles.rightDiv}>
           <Typography>

@@ -11,76 +11,82 @@ const Categories = () => {
         <Typography variant="h2">Browse our courses by category</Typography>
         <div className={styles.cardDiv}>
           <Card variant="cardHover" className={styles.cardBox}>
-            <Image
-              alt="Design Category"
-              src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f500fe9f6c983c68e88ef_image-1-courses-categories-education-x-template.svg"
-              height={311}
-              width={369}
-            />
-            <Button className="secondary">
+            <a href="/courses/1">
               <Image
-                alt="Play"
-                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f4d1b6d6b05c4f9a7289c_icon-card-category-courses-education-x-template.svg"
-                height={12}
-                width={12}
+                alt="Design Category"
+                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f500fe9f6c983c68e88ef_image-1-courses-categories-education-x-template.svg"
+                height={311}
+                width={369}
               />
-              <Typography>12 courses</Typography>
-            </Button>
-            <div className={styles.paraDiv}>
-              <Typography variant="h3">Design</Typography>
-              <Typography>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatum laborum natus delectus est!
-              </Typography>
-            </div>
+              <Button className="secondary">
+                <Image
+                  alt="Play"
+                  src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f4d1b6d6b05c4f9a7289c_icon-card-category-courses-education-x-template.svg"
+                  height={12}
+                  width={12}
+                />
+                <Typography>12 courses</Typography>
+              </Button>
+              <div className={styles.paraDiv}>
+                <Typography variant="h3">Design</Typography>
+                <Typography>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatum laborum natus delectus est!
+                </Typography>
+              </div>
+            </a>
           </Card>
           <Card variant="cardHover" className={styles.cardBox}>
-            <Image
-              alt="Design Category"
-              src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f500fe9f6c983c68e88ef_image-1-courses-categories-education-x-template.svg"
-              height={311}
-              width={369}
-            />
-            <Button className="secondary">
+            <a href="/courses/1">
               <Image
-                alt="Play"
-                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f4d1b6d6b05c4f9a7289c_icon-card-category-courses-education-x-template.svg"
-                height={12}
-                width={12}
+                alt="Design Category"
+                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f500fe9f6c983c68e88ef_image-1-courses-categories-education-x-template.svg"
+                height={311}
+                width={369}
               />
-              <Typography>12 courses</Typography>
-            </Button>
-            <div className={styles.paraDiv}>
-              <Typography variant="h3">Design</Typography>
-              <Typography>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatum laborum natus delectus est!
-              </Typography>
-            </div>
+              <Button className="secondary">
+                <Image
+                  alt="Play"
+                  src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f4d1b6d6b05c4f9a7289c_icon-card-category-courses-education-x-template.svg"
+                  height={12}
+                  width={12}
+                />
+                <Typography>12 courses</Typography>
+              </Button>
+              <div className={styles.paraDiv}>
+                <Typography variant="h3">Design</Typography>
+                <Typography>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatum laborum natus delectus est!
+                </Typography>
+              </div>
+            </a>
           </Card>
           <Card variant="cardHover" className={styles.cardBox}>
-            <Image
-              alt="Design Category"
-              src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f500fe9f6c983c68e88ef_image-1-courses-categories-education-x-template.svg"
-              height={311}
-              width={369}
-            />
-            <Button className="secondary">
+            <a href="/courses/1">
               <Image
-                alt="Play"
-                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f4d1b6d6b05c4f9a7289c_icon-card-category-courses-education-x-template.svg"
-                height={12}
-                width={12}
+                alt="Design Category"
+                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f500fe9f6c983c68e88ef_image-1-courses-categories-education-x-template.svg"
+                height={311}
+                width={369}
               />
-              <Typography>12 courses</Typography>
-            </Button>
-            <div className={styles.paraDiv}>
-              <Typography variant="h3">Design</Typography>
-              <Typography>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatum laborum natus delectus est!
-              </Typography>
-            </div>
+              <Button className="secondary">
+                <Image
+                  alt="Play"
+                  src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f4d1b6d6b05c4f9a7289c_icon-card-category-courses-education-x-template.svg"
+                  height={12}
+                  width={12}
+                />
+                <Typography>12 courses</Typography>
+              </Button>
+              <div className={styles.paraDiv}>
+                <Typography variant="h3">Design</Typography>
+                <Typography>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatum laborum natus delectus est!
+                </Typography>
+              </div>
+            </a>
           </Card>
         </div>
       </div>

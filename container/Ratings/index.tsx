@@ -1,9 +1,13 @@
 import Button from '@components/Button';
 import Card from '@components/Card';
 import Typography from '@components/Typography';
+import router from 'next/router';
 import styles from './ratings.module.scss';
 
 const Ratings = () => {
+  const goToCourse = () => {
+    router.push('/courses');
+  };
   return (
     <section className={styles.ratings}>
       <div className={styles.container}>
@@ -15,7 +19,9 @@ const Ratings = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt.
           </Typography>
-          <Button className="secondary">Explore courses</Button>
+          <Button className="secondary" onClick={goToCourse}>
+            Explore courses
+          </Button>
         </div>
         <div className={styles.rightDiv}>
           <div className={styles.cards}>
