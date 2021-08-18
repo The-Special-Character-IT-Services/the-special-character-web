@@ -83,7 +83,9 @@ const Button = ({
             }
             &.socialIcon {
               background-color: $Neutral400;
-              padding: 0.3rem;
+              padding: 0.3rem 0.45rem;
+              max-height: fit-content;
+              max-width: fit-content;
               color: $Neutral100;
               cursor: pointer;
               overflow: hidden;
