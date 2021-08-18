@@ -1,3 +1,4 @@
+import BackToTop from '@components/BackToTop';
 import Footer from '@components/Footer';
 import HeaderNav from '@components/HeaderNav';
 
@@ -10,6 +11,7 @@ const Layout = ({ children }: Props) => {
     <>
       <HeaderNav />
       {children}
+      <BackToTop />
       <Footer />
     </>
   );

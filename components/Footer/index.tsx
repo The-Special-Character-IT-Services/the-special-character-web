@@ -68,16 +68,16 @@ const Footer = (props: Props) => {
             </a>
           </div>
           <div className={styles.socialIcons}>
-            <Button className="socialIcon">
+            <Button isFooter className="socialIcon">
               <Facebook height={21} width={21} />
             </Button>
-            <Button className="socialIcon">
+            <Button isFooter className="socialIcon">
               <Github height={21} width={21} />
             </Button>
-            <Button className="socialIcon">
+            <Button isFooter className="socialIcon">
               <Linkedin height={21} width={21} fill="#fff" />
             </Button>
-            <Button className="socialIcon">
+            <Button isFooter className="socialIcon">
               <Twitter height={21} width={21} fill="#fff" />
             </Button>
           </div>

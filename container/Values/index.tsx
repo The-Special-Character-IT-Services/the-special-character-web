@@ -35,6 +35,9 @@ const Values = (props: Props) => {
                   egestas non consequat pellentesque iaculis nunc, est, mollis.
                   Nulla.
                 </Typography>
+                <Button className="socialIcon">
+                  <Image src="/bulb.svg" height={90} width={90} alt="none" />
+                </Button>
               </div>
             </div>
           </Card>
@@ -99,7 +102,7 @@ const Values = (props: Props) => {
         .container {
           background-color: $Neutral700;
           & .window {
-            padding: 3rem 7rem;
+            padding: 4rem 7rem;
             max-width: 1260px;
             margin: auto;
             & .head {
@@ -134,7 +137,7 @@ const Values = (props: Props) => {
         @media screen and (max-width: $breakpointSm) {
           .container {
             & .window {
-              padding: 1rem;
+              padding: 3rem 1rem;
               & .main {
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
               }

@@ -15,6 +15,7 @@ interface Props {
   style?: Object | any;
   children: JSX.Element | string | any;
   isLoading?: Boolean;
+  isFooter?: Boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   rest?: Object;
 }
@@ -22,6 +23,7 @@ interface Props {
 const Button = ({
   className,
   isDisabled,
+  isFooter,
   children,
   style,
   isLoading,
@@ -34,6 +36,7 @@ const Button = ({
         type="button"
         className={classNames(!isDisabled && !isLoading, 'btn', 'primary', {
           disable: isDisabled || isLoading,
+          isFooter: !!isFooter,
           [className]: !!className,
         })}
         onClick={isDisabled || isLoading ? () => {} : onClick}
@@ -71,7 +74,7 @@ const Button = ({
               background-color: $icon;
               min-height: 0.5rem;
               min-width: 0.5rem;
-              padding: 0rem 0.1rem;
+              padding: 0.1rem 0.2rem 0rem 0.2rem;
               border: none;
               cursor: auto;
               overflow: hidden;
@@ -82,15 +85,16 @@ const Button = ({
               }
             }
             &.socialIcon {
-              background-color: $Neutral400;
-              padding: 0.3rem 0.45rem;
-              max-height: fit-content;
-              max-width: fit-content;
+              background-color: ${isFooter ? '#62778f' : '#becad7'};
+              padding: 0.35rem 0.34rem 0.3rem 0.349rem;
+              max-height: 2rem;
+              max-width: 2rem;
+              border-radius: 2rem;
               color: $Neutral100;
               cursor: pointer;
               overflow: hidden;
               &:hover {
-                background-color: $Primary1;
+                background-color: ${isFooter ? '#0f437f' : '#064ea4'};
                 transform: scale(1);
               }
             }
