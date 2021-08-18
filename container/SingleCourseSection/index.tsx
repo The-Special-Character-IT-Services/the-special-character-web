@@ -145,7 +145,7 @@ const SingleCourseSection = (props: Props) => {
                 </div>
               </div>
             </div>
-            {/* <FeaturedCategory children={btnName} /> */}
+            <FeaturedCategory children={btnName} />
             <div>
               <Typography variant="h2" className="commonHeading">
                 About the course

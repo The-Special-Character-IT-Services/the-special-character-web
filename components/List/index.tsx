@@ -1,11 +1,12 @@
 type ListItem = {
+  id: number;
   item: string;
 };
 interface Props {
   isNumberedList?: boolean;
-  listItem: ListItem[];
+  listItem: ListItem[] | string[];
   className?: 'commonParentList' | string | any;
-  keyProp: any;
+  keyProp: string;
   valueProp: string;
 }
 import cn from 'classnames';
@@ -24,12 +25,20 @@ const List = ({
       <Component
         className={cn('commonParentList', { [className]: !!className })}
         {...props}>
-        {listItem?.map(item => {
+        {listItem.map(item => {
           if (typeof item === 'string') {
             return <li key={item}>{item}</li>;
           }
-          if (typeof item === 'object' && item[keyProp] && item[valueProp]) {
-            return <li key={item[keyProp]}>{item[valueProp]}</li>;
+          if (
+            typeof item === 'object' &&
+            item[keyProp as keyof ListItem] &&
+            item[valueProp as keyof ListItem]
+          ) {
+            return (
+              <li key={`${item[keyProp as keyof ListItem]}`}>
+                {item[valueProp as keyof ListItem]}
+              </li>
+            );
           }
           throw new Error('Please pass key and value props');
         })}

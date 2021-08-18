@@ -9,17 +9,19 @@ import styles from './allCourses.module.scss';
 interface Props {}
 
 const AllCourses = () => {
+  const array = [
+    {
+      id: 1,
+      name: 'All',
+    },
+    { id: 2, name: 'Development' },
+    { id: 3, name: 'Design' },
+    { id: 4, name: 'Marketing' },
+  ];
   return (
     <section className={styles.allCourses}>
       <div className={styles.container}>
-        {/* <FeaturedCategory title="All Courses">
-          {[
-            { name: 'All' },
-            { name: 'Development' },
-            { name: 'Design' },
-            { name: 'Marketing' },
-          ]}
-        </FeaturedCategory> */}
+        <FeaturedCategory title="All Courses" children={array} />
         <div className={styles.list}>
           <Card variant="cardHover" className={styles.cardMain}>
             <Image

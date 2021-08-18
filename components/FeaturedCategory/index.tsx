@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import styles from './featuredCategory.module.scss';
 
 type ButtonList = {
+  id: number;
   name: string;
 };
 interface Props {
@@ -27,7 +28,9 @@ const FeaturedCategory = ({ children, props, title }: Props) => {
           <div className="category-content">
             <div className="category-item">
               {children.map(x => (
-                <Button className={classnames(styles.button, styles.primary)}>
+                <Button
+                  key={x.id}
+                  className={classnames(styles.button, styles.primary)}>
                   {x.name}
                 </Button>
               ))}
