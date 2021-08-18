@@ -65,15 +65,22 @@
       }
     }
     & > .contentBottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap-reverse;
+      align-items: center;
+      padding-bottom: 1.5rem;
       & > .footerTxt {
         margin-right: 2rem;
-        padding-bottom: 1.5rem;
+
         color: $Neutral300;
         & > a {
           text-decoration: underline;
         }
       }
       & > .socialIcons {
+        gap: 1rem;
+        display: flex;
       }
     }
   }
@@ -118,6 +125,7 @@
           margin-right: 0;
         }
         & > .socialIcons {
+          gap: 1rem;
         }
       }
     }
