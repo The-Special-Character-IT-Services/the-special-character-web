@@ -146,7 +146,7 @@ const HeaderNav = (props: Props) => {
           }
           @media screen and (max-width: $breakpointLgForMw) {
             .right0 {
-              width: 100% !important;
+              display: flex !important;
             }
             @mixin all-transition($time) {
               transition: all $time;
@@ -154,15 +154,15 @@ const HeaderNav = (props: Props) => {
             .container-default {
               & .nav-menu {
                 & .menu {
-                  width: 0;
+                  width: 100%;
                   transform: translate3d(-8rem, 0, 0);
                   animation-timing-function: 1s ease-in;
                   box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.2);
-                  display: flex;
+                  display: none;
                   font-weight: 100;
                   height: 100%;
                   z-index: 40;
-                  position: fixed;
+                  position: absolute;
                   right: -8rem;
                   top: 5.75rem;
                   @include all-transition(0.3s);

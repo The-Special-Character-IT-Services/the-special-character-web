@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Newsreader:regular,500,600%7CKumbh+Sans:regular,700');
 @import './variables.scss';
-body {
-  scroll-behavior: smooth;
-}
+
 :root {
   --fs-body: 1.125rem;
   --fs-h1: 3.75rem;
@@ -62,6 +60,7 @@ body {
   color: $Neutral600;
   font-size: var(--fs-body);
   line-height: 1.667rem;
+  scroll-behavior: smooth;
 }
 p {
   margin-bottom: 20px;
