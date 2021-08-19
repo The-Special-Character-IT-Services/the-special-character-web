@@ -9,13 +9,13 @@ const BackToTop = () => {
       top: 0,
     });
   };
-  const upBtnRef = useRef();
+  const upBtnRef = useRef<HTMLDivElement | any>();
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY >= window.innerHeight) {
-        upBtnRef.current.classList.remove('hideBtn');
+        upBtnRef?.current?.classList.remove('hideBtn');
       } else {
-        upBtnRef.current.classList.add('hideBtn');
+        upBtnRef?.current?.classList.add('hideBtn');
       }
     };
     window.addEventListener('scroll', onScroll, false);
@@ -50,12 +50,30 @@ const BackToTop = () => {
           margin: auto 0;
           overflow: hidden;
           transition-duration: 300ms;
+          animation-name: upBtn;
+          animation-duration: 2s;
           &:hover {
             background-color: $Neutral700;
           }
         }
+        @keyframes upBtn {
+          0% {
+            right: -5%;
+            bottom: -5%;
+          }
+
+          100% {
+            right: 3%;
+            bottom: 3%;
+          }
+        }
+
         .hideBtn {
-          display: none;
+          animation-name: upBtn;
+          animation-direction: reverse;
+          animation-duration: 0.01s;
+          right: -10%;
+          bottom: -10%;
         }
       `}</style>
     </>
