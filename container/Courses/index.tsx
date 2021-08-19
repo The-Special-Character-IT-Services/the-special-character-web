@@ -15,7 +15,7 @@ import router from 'next/router';
 
 interface Props {}
 
-const Courses = () => {
+const Courses = ({ data }: Props) => {
   function NextArrow(props: CustomArrowProps): JSX.Element {
     const { onClick } = props;
     return (
@@ -101,7 +101,7 @@ const Courses = () => {
     <section className={styles.courses}>
       <div className={styles.container}>
         <Typography variant="h2" className={styles.head}>
-          Browse our popular courses
+          {data.courseSectionDetails.title}
         </Typography>
         <div className={styles.cardDiv}>
           <Slider {...settings}>

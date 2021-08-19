@@ -6,9 +6,11 @@ import { useRef } from 'react';
 import styles from './banner.module.scss';
 import router from 'next/router';
 
-interface Props {}
+interface Props {
+  data: string[] | Object;
+}
 
-const Banner = () => {
+const Banner = ({ data }: Props) => {
   const goToCourse = () => {
     router.push('/courses');
   };
@@ -20,16 +22,13 @@ const Banner = () => {
       <div className="container">
         <div className="leftDiv">
           <Typography variant="h1" style={{ marginTop: 0, fontFamily: 'auto' }}>
-            Grow your skills, define your future
+            {data.bannerDetails.title}
           </Typography>
-          <Typography>
-            Presenting Academy, the tech school of the future. We teach you the
-            right skills to be prepared for tomorrow.
-          </Typography>
+          <Typography>{data.bannerDetails.description}</Typography>
           <div className="btnDiv">
-            <Button onClick={goToCourse}>Explore Courses</Button>
+            <Button onClick={goToCourse}>{data.explore.buttonText}</Button>
             <Button className="secondary" onClick={goToPerk}>
-              Learn More
+              {data.learn.buttonText}
             </Button>
           </div>
         </div>
