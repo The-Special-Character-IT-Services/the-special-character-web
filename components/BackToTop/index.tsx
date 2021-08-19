@@ -72,8 +72,8 @@ const BackToTop = () => {
           animation-name: upBtn;
           animation-direction: reverse;
           animation-duration: 0.01s;
-          right: -5%;
-          bottom: -5%;
+          right: -10%;
+          bottom: -10%;
         }
       `}</style>
     </>
