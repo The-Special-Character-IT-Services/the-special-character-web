@@ -32,7 +32,6 @@ const Testimonials = (props: Props) => {
     );
   }
   const settings: Settings = {
-    infinite: false,
     pauseOnHover: true,
     autoplay: true,
     slidesToShow: 1.5,

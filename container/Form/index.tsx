@@ -6,10 +6,15 @@ import Card from '@components/Card';
 import classnames from 'classnames';
 import Image from 'next/image';
 import { ErrorMessage, useFormik } from 'formik';
+import { useRouter, withRouter } from 'next/router';
 
 interface Props {}
 
 const Form = (props: Props) => {
+  const router = useRouter();
+  const {
+    query: { value },
+  } = router;
   return (
     <section className="form">
       <div className="container">
@@ -61,6 +66,7 @@ const Form = (props: Props) => {
                   <div className="text-input-col">
                     <TextInput
                       isTextArea
+                      value={value}
                       className={styles.mb}
                       label="Message"
                       id="Message"
@@ -342,4 +348,4 @@ const Form = (props: Props) => {
   );
 };
 
-export default Form;
+export default withRouter(Form);

@@ -60,8 +60,9 @@ const SubscriptionEmail = ({ props, className, submitValue }: Props) => {
             color: $Neutral800;
             font-size: 1.125rem;
             line-height: 1.111em;
-            &:hover {
-              border-color: $Neutral400;
+            &:hover,
+            :focus {
+              border: 3px solid $Neutral400;
               -webkit-transition-duration: 300ms;
               transition-duration: 300ms;
               outline: 0;

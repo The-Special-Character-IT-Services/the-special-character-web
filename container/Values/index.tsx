@@ -35,9 +35,6 @@ const Values = (props: Props) => {
                   egestas non consequat pellentesque iaculis nunc, est, mollis.
                   Nulla.
                 </Typography>
-                <Button className="socialIcon">
-                  <Image src="/bulb.svg" height={90} width={90} alt="none" />
-                </Button>
               </div>
             </div>
           </Card>
