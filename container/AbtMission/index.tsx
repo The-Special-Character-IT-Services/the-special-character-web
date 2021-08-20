@@ -3,9 +3,11 @@ import Images from '@components/Images';
 import Typography from '@components/Typography';
 import React from 'react';
 
-interface Props {}
+interface Props {
+  data?: string[] | Object;
+}
 
-const AbtMission = (props: Props) => {
+const AbtMission = ({ data }: Props) => {
   return (
     <>
       <section className="container">

@@ -8,9 +8,11 @@ import Image from 'next/image';
 import { ErrorMessage, useFormik } from 'formik';
 import { useRouter, withRouter } from 'next/router';
 
-interface Props {}
+interface Props {
+  data?: string[] | Object;
+}
 
-const Form = (props: Props) => {
+const Form = ({ data }: Props) => {
   const router = useRouter();
   const {
     query: { value },
@@ -21,11 +23,10 @@ const Form = (props: Props) => {
         <div className="contact-wrapper">
           <div className="contact-title-wrapper">
             <Typography variant="h1" className="commonHeading">
-              Get in touch!
+              {data.bannerHeading.title}
             </Typography>
             <Typography className={styles.contactParagraph}>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat
+              {data.bannerHeading.description}
             </Typography>
           </div>
           <div className="contact-content">
@@ -79,59 +80,27 @@ const Form = (props: Props) => {
               </div>
             </div>
             <div className="contact-links-wrapper">
-              <Card
-                variant="cardHover"
-                className={classnames(styles.contactLink)}>
-                <a
-                  href="mailto:sanfrancisco@education.com"
-                  className="contact-link">
-                  <div className="image-wrapper">
-                    <Image
-                      height={60}
-                      width={60}
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082f9645a3f760c9e688d89_icon-1-contact-education-x-template.svg"
-                    />
-                  </div>
-                  <Typography variant="label">Email</Typography>
-                  <Typography className={styles.linkText}>
-                    sanfrancisco@education.com
-                  </Typography>
-                </a>
-              </Card>
-              <Card
-                variant="cardHover"
-                className={classnames(styles.contactLink)}>
-                <a href="tel:+475-5856-1237" className="contact-link">
-                  <div className="image-wrapper">
-                    <Image
-                      height={60}
-                      width={60}
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082f9641320d136537b1c33_icon-2-contact-education-x-template.svg"
-                    />
-                  </div>
-                  <Typography variant="label">Phone</Typography>
-                  <Typography className={styles.linkText}>
-                    475-5856-1237
-                  </Typography>
-                </a>
-              </Card>
-              <Card
-                variant="cardHover"
-                className={classnames(styles.contactLink, styles.address)}>
-                <a href="/about/#Map" className="contact-link">
-                  <div className="image-wrapper">
-                    <Image
-                      height={60}
-                      width={60}
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082f9644615865bb39ee06a_icon-3-contact-education-x-template.svg"
-                    />
-                  </div>
-                  <Typography variant="label">Address</Typography>
-                  <Typography className={styles.linkText}>
-                    51 Osceola Ln, San Francisco, California(CA), 94124
-                  </Typography>
-                </a>
-              </Card>
+              {data.contactDetails.map(x => {
+                return (
+                  <Card
+                    variant="cardHover"
+                    className={classnames(styles.contactLink)}>
+                    <a className="contact-link">
+                      <div className="image-wrapper">
+                        <Image
+                          height={60}
+                          width={60}
+                          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082f9645a3f760c9e688d89_icon-1-contact-education-x-template.svg"
+                        />
+                      </div>
+                      <Typography variant="label">{x.title}</Typography>
+                      <Typography className={styles.linkText}>
+                        {x.description}
+                      </Typography>
+                    </a>
+                  </Card>
+                );
+              })}
             </div>
           </div>
           <div className="bg contact-shape-1" />
