@@ -49,7 +49,7 @@ const BackToTop = () => {
           transform: rotate(270deg);
           margin: auto 0;
           overflow: hidden;
-          transition-duration: 300ms;
+          transition-duration: 600ms;
           animation-name: upBtn;
           animation-duration: 2s;
           &:hover {
