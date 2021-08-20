@@ -16,6 +16,7 @@ const FeaturedCourse = ({ data }) => {
         <Typography variant="h2" className={styles.head}>
           {data.featuredCourse.title}
         </Typography>
+        {}
         <Card variant="cardHover">
           <a href="/courses/1" className={styles.cardMain}>
             <div className={styles.imageDiv}>
@@ -28,25 +29,9 @@ const FeaturedCourse = ({ data }) => {
             </div>
             <div className={styles.cardBox}>
               <Typography variant="h3" className={styles.cardTitle}>
-                Brand & Identity Design
+                {data.course.title}
               </Typography>
-              <Typography>
-                Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-                Diam phasellus vestibulum lorem sed risus ultricies.
-              </Typography>
-              <div className={styles.faculty}>
-                <Images
-                  variant="avtar"
-                  src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f1ff9fd9e0e1686d26497_image-3-profile-picture-small-teacher-education-x-template.jpg"
-                  height={48}
-                  width={48}
-                />
-                <div className={styles.price}>
-                  <Button className={styles.buttonWhite}>8hr 12m</Button>
-                  <Button className={styles.button}>$199.00 USD</Button>
-                </div>
-                <Typography variant="bold">Kathie Corl</Typography>
-              </div>
+              <Typography>{data.course.titleDescription}</Typography>
             </div>
           </a>
         </Card>

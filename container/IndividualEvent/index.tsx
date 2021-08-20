@@ -6,7 +6,9 @@ import Image from 'next/image';
 import Marketing from '../../public/svg/Marketing.svg';
 import styles from './individualEvent.module.scss';
 
-const IndividualEvent = () => {
+const IndividualEvent = ({ data }) => {
+  console.log(data);
+
   const array = [
     {
       id: 1,
@@ -48,9 +50,7 @@ const IndividualEvent = () => {
                   height={21}
                   width={21}
                 />
-                <Typography variant="bold">
-                  Sunday 5:00 pm - 6:00 pm EDT
-                </Typography>
+                <Typography variant="bold">{data.dateOfEvent}</Typography>
               </div>
               <div className={styles.secondDiv}>
                 <Image
@@ -67,38 +67,35 @@ const IndividualEvent = () => {
               </Button>
             </div>
             <Typography variant="h2" className={styles.title}>
-              Social Media Marketing Masterclass
+              {data.eventDetails.title}
             </Typography>
             <Typography className={styles.caption}>
-              Sunday 5:00 pm - 6:00 pm EDT Los Angeles, LA Marketing Social
-              Media Marketing Masterclass Lorem ipsum dolor sit amet,
-              consectetur dolorili adipiscing elit. Felis donec massa aliquam
-              id.
+              {data.eventDetails.description}
             </Typography>
-            <Button>Register Event</Button>
+            <Button>{data.register.buttonText}</Button>
           </div>
         </div>
         <div className={styles.container}>
           <Typography variant="h2" className={styles.title}>
-            Event Agenda
+            {data.eventAgenda.title}
           </Typography>
           <div className={styles.description}>
             <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porta
-              massa, eget natoque{' '}
-              <Typography variant="bold">tincidunt quis</Typography> .
-              Suspendisse vitae vestibulum scelerisque egestas. Volutpat,
+              {data.eventAgenda.description}
+              {/* <Typography variant="bold">tincidunt quis</Typography> . */}
+              {/* Suspendisse vitae vestibulum scelerisque egestas. Volutpat,
               adipiscing a elit platea amet et. At at metus egestas nunc eget.
-              Tempus sapien, augue laoreet morbi{' '}
-              <Typography variant="a"> habitasse leo</Typography> mauris arcu
+              Tempus sapien, augue laoreet morbi{' '} */}
+              {/* <Typography variant="a"> habitasse leo</Typography> mauris arcu
               amet. Sapien lectus auctor quis in ut morbi risus. Ornare aliquam
               phasellus consequat amet velit risus.
-            </Typography>
-            Ac, pellentesque proin{' '}
-            <Typography variant="bold">tincidunt lobortis sit</Typography>
-            velit velit dui eget. Massa, lectus orci auctor morbi. A nisl vitae,
+            </Typography> */}
+              {/* Ac, pellentesque proin{' '} */}
+              {/* <Typography variant="bold">tincidunt lobortis sit</Typography> */}
+              {/* velit velit dui eget. Massa, lectus orci auctor morbi. A nisl vitae,
             sagittis elementum placerat nullam id integer leo. Diam venenatis
-            amet diam odio <Typography variant="a">ultrices auctor</Typography>.
+            amet diam odio <Typography variant="a">ultrices auctor */}
+            </Typography>
             <List
               listItem={array}
               keyProp="id"
@@ -106,7 +103,7 @@ const IndividualEvent = () => {
               className={styles.listUL}
             />
           </div>
-          <Button>Register to event</Button>
+          <Button>{data.register.buttonText}</Button>
         </div>
       </div>
       <div className={styles.bgEvent} />
