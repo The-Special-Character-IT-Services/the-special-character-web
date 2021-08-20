@@ -10,7 +10,13 @@ import Card from '@components/Card';
 import Images from '@components/Images';
 import StarRating from '@components/StarRating';
 
-const Testimonials = (props: Props) => {
+interface Props {
+  data?: Object;
+}
+
+const Testimonials = ({ data }: Props) => {
+  console.log(data.testimonials);
+
   function NextArrow(props: CustomArrowProps): JSX.Element {
     const { onClick } = props;
     return (
@@ -71,37 +77,39 @@ const Testimonials = (props: Props) => {
           <Typography
             variant="h2"
             className={classnames('commonHeading', styles.title)}>
-            What our students say about us
+            {data.heading.title}
           </Typography>
           <Slider {...settings}>
-            <Card className={styles.testimonialCard}>
-              <Images
-                variant="avtar"
-                height={203}
-                width={203}
-                className={styles.image}
-                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg"
-              />
-              <div className="flex-grow">
-                <StarRating
-                  number={5}
-                  className={classnames(styles.testimonialStar)}
+            {data.testimonials.map(x => (
+              <Card key={x.id} className={styles.testimonialCard}>
+                <Images
+                  variant="avtar"
+                  height={203}
+                  width={203}
+                  className={styles.image}
+                  src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg"
                 />
-                <div className="text-align">
-                  <Typography className={styles.testimonialParagraph}>
-                    “Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint”
-                  </Typography>
-                  <Typography className={styles.testimonialName}>
-                    Katherine Cutts
-                  </Typography>
-                  <Typography className={styles.testimonialRole}>
-                    Junior Designer at Facebook
-                  </Typography>
+                <div className="flex-grow">
+                  <StarRating
+                    number={x.starRating}
+                    className={classnames(styles.testimonialStar)}
+                  />
+                  <div className="text-align">
+                    <Typography className={styles.testimonialParagraph}>
+                      {x.description}
+                    </Typography>
+                    <Typography className={styles.testimonialName}>
+                      {x.name}
+                    </Typography>
+                    <Typography className={styles.testimonialRole}>
+                      {x.jobTitle}
+                    </Typography>
+                  </div>
                 </div>
-              </div>
-            </Card>
-            <Card className={styles.testimonialCard}>
+              </Card>
+            ))}
+
+            {/* <Card className={styles.testimonialCard}>
               <Images
                 variant="avtar"
                 height={203}
@@ -154,7 +162,7 @@ const Testimonials = (props: Props) => {
                   </Typography>
                 </div>
               </div>
-            </Card>
+            </Card> */}
           </Slider>
         </div>
       </div>

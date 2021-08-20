@@ -19,6 +19,16 @@ export default function Home() {
   const { data: coursesData } = useRequest<string[]>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}popular-courses`,
   });
+  const { data: educationData } = useRequest<string[]>({
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}about-education`,
+  });
+  const { data: courseData } = useRequest<string[]>({
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}courses-category`,
+  });
+  const { data: testimonialData } = useRequest<string[]>({
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}testimonial-section`,
+  });
+
   return (
     <>
       {bannerData && <Banner data={bannerData} />}
@@ -27,9 +37,9 @@ export default function Home() {
       <Teachers />
       <Ratings />
       <Blog />
-      <AboutEducation />
-      <Categories />
-      <Testimonials />
+      {educationData && <AboutEducation data={educationData} />}
+      {courseData && <Categories data={courseData} />}
+      {testimonialData && <Testimonials data={testimonialData} />}
     </>
   );
 }

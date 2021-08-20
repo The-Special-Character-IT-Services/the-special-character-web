@@ -7,10 +7,10 @@ import React from 'react';
 import router from 'next/router';
 
 interface Props {
-  props?: Object;
+  data?: Object;
 }
 
-const AboutEducation = (props: Props) => {
+const AboutEducation = ({ data }: Props) => {
   const goToAbout = () => {
     router.push('/about');
   };
@@ -20,11 +20,10 @@ const AboutEducation = (props: Props) => {
         <div className="main">
           <div className="header">
             <Typography variant="h2" style={{ fontFamily: 'auto' }}>
-              About Education
+              {data?.heading?.title}
             </Typography>
             <Typography className="subtitle" style={{ textAlign: 'center' }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ab
-              dolores ratione ex dignissimos?
+              {data?.heading?.description}
             </Typography>
           </div>
           <div className="content">
@@ -35,58 +34,30 @@ const AboutEducation = (props: Props) => {
               alt="education"
             />
             <aside className="sideDiv">
-              <div className="abtContent">
-                <Button className="buttonIcon">
-                  <Image src="/about1.svg" height={60} width={60} alt="icon1" />
-                </Button>
-                <div>
-                  <Typography
-                    style={{ margin: 0, marginBottom: '0.5rem' }}
-                    variant="h3">
-                    Industry expert teachers
-                  </Typography>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Ipsum, consectetur.
-                  </Typography>
+              {data.educationList.map(x => (
+                <div key={x.id} className="abtContent">
+                  <Button className="buttonIcon">
+                    <Image
+                      src="/about1.svg"
+                      height={60}
+                      width={60}
+                      alt="icon1"
+                    />
+                  </Button>
+                  <div>
+                    <Typography
+                      style={{ margin: 0, marginBottom: '0.5rem' }}
+                      variant="h3">
+                      {x.title}
+                    </Typography>
+                    <Typography>{x.description}</Typography>
+                  </div>
                 </div>
-              </div>
-              <div className="abtContent">
-                <Button className="buttonIcon">
-                  <Image src="/about2.svg" height={60} width={60} alt="icon2" />
-                </Button>
-                <div>
-                  <Typography
-                    style={{ margin: 0, marginBottom: '0.5rem' }}
-                    variant="h3">
-                    Industry expert teachers
-                  </Typography>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Ipsum, consectetur.
-                  </Typography>
-                </div>
-              </div>
-              <div className="abtContent">
-                <Button className="buttonIcon">
-                  <Image src="/about3.svg" height={60} width={60} alt="icon3" />
-                </Button>
-                <div>
-                  <Typography
-                    style={{ margin: 0, marginBottom: '0.5rem' }}
-                    variant="h3">
-                    Industry expert teachers
-                  </Typography>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Ipsum, consectetur.
-                  </Typography>
-                </div>
-              </div>
+              ))}
             </aside>
           </div>
           <Button className="secondary" onClick={goToAbout}>
-            About Education
+            {data.aboutEducation.buttonText}
           </Button>
         </div>
       </section>
