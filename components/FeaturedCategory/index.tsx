@@ -5,7 +5,7 @@ import styles from './featuredCategory.module.scss';
 
 type ButtonList = {
   id: number;
-  name: string;
+  buttonText: string;
 };
 interface Props {
   title?: string;
@@ -31,7 +31,7 @@ const FeaturedCategory = ({ children, props, title }: Props) => {
                 <Button
                   key={x.id}
                   className={classnames(styles.button, styles.primary)}>
-                  {x.name}
+                  {x.buttonText}
                 </Button>
               ))}
             </div>

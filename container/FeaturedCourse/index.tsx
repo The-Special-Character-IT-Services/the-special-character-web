@@ -5,14 +5,16 @@ import Image from 'next/image';
 import Images from '@components/Images';
 import Button from '@components/Button';
 
-interface Props {}
+interface Props {
+  data?: string[] | Object;
+}
 
-const FeaturedCourse = () => {
+const FeaturedCourse = ({ data }) => {
   return (
     <section className={styles.featuredCourse}>
       <div className={styles.container}>
         <Typography variant="h2" className={styles.head}>
-          Featured Course
+          {data.featuredCourse.title}
         </Typography>
         <Card variant="cardHover">
           <a href="/courses/1" className={styles.cardMain}>

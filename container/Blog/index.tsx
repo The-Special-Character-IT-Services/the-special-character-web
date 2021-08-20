@@ -9,9 +9,10 @@ import styles from './blog.module.scss';
 
 interface Props {
   data?: string[] | Object;
+  isBlog?: Boolean;
 }
 
-const BlogContainer = ({ data }: Props) => {
+const BlogContainer = ({ data, isBlog }: Props) => {
   const goToBlog = () => {
     router.push('/blog');
   };
