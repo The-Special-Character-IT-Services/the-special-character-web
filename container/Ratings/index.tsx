@@ -4,7 +4,10 @@ import Typography from '@components/Typography';
 import router from 'next/router';
 import styles from './ratings.module.scss';
 
-const Ratings = () => {
+interface Props {
+  data?: string[] | Object;
+}
+const Ratings = ({ data }: Props) => {
   const goToCourse = () => {
     router.push('/courses');
   };
@@ -13,38 +16,37 @@ const Ratings = () => {
       <div className={styles.container}>
         <div className={styles.leftDiv}>
           <Typography variant="h2" className="commonHeading">
-            Grow your career today with the Education courses
+            {data.successHeading.title}
           </Typography>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt.
-          </Typography>
+          <Typography>{data.successHeading.description}</Typography>
           <Button className="secondary" onClick={goToCourse}>
-            Explore courses
+            {data.exploreCourse.buttonText}
           </Button>
         </div>
         <div className={styles.rightDiv}>
           <div className={styles.cards}>
-            <Card className={styles.box}>
-              <Typography className={styles.boxHead}>9/10</Typography>
-              <Typography className={styles.boxPara}>
-                Overall courses satisfaction score
-              </Typography>
-            </Card>
-            <Card className={styles.box}>
-              <Typography className={styles.boxHead}>96%</Typography>
-              <Typography className={styles.boxPara}>
-                Completition rate on all courses
-              </Typography>
-            </Card>
+            {data?.leftCards?.map(x => {
+              return (
+                <Card key={x.id} className={styles.box}>
+                  <Typography className={styles.boxHead}>{x.title}</Typography>
+                  <Typography className={styles.boxPara}>
+                    {x.description}
+                  </Typography>
+                </Card>
+              );
+            })}
           </div>
           <div className={styles.singleCard}>
-            <Card className={styles.box}>
-              <Typography className={styles.boxHead}>10K+</Typography>
-              <Typography className={styles.boxPara}>
-                Happy students worldwide
-              </Typography>
-            </Card>
+            {data.rightCards.map(x => {
+              return (
+                <Card key={x.id} className={styles.box}>
+                  <Typography className={styles.boxHead}>{x.title}</Typography>
+                  <Typography className={styles.boxPara}>
+                    {x.description}
+                  </Typography>
+                </Card>
+              );
+            })}
           </div>
           <div className={styles.middleCircle} />
         </div>

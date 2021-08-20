@@ -13,7 +13,9 @@ import LeftArrow from '../../public/svg/leftArrow.svg';
 import Link from 'next/link';
 import router from 'next/router';
 
-interface Props {}
+interface Props {
+  data: string[] | Object;
+}
 
 const Courses = ({ data }: Props) => {
   function NextArrow(props: CustomArrowProps): JSX.Element {
@@ -98,145 +100,56 @@ const Courses = ({ data }: Props) => {
     router.push('/courses');
   };
   return (
-    <section className={styles.courses}>
-      <div className={styles.container}>
-        <Typography variant="h2" className={styles.head}>
-          {data.courseSectionDetails.title}
-        </Typography>
-        <div className={styles.cardDiv}>
-          <Slider {...settings}>
-            <Card variant="cardHover">
-              <a href="courses/1">
-                <Image
-                  alt="card"
-                  src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2bd223dde86aadbf10e5_image-2-courses-education-x-template-p-500.jpeg"
-                  height={318}
-                  width={567}
-                />
-                <div className={styles.price}>
-                  <Button className="secondary">7hr 24min</Button>
-                  <Button>$99.00USD</Button>
-                </div>
-                <div className={styles.paraDiv}>
-                  <Typography variant="h3" className={styles.cardHead}>
-                    Mobile App Development
-                  </Typography>
-                  <Typography className={styles.para}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatibus cum et repellat reprehenderit iure at.
-                  </Typography>
-                  <div className={styles.faculty}>
-                    <Images
-                      className="avtar"
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd486e01646f00559d_image-2-testimonials-education-x-template.jpg"
-                      height={48}
-                      width={48}
-                    />
-                    <Typography variant="bold">Mike Warren</Typography>
-                  </div>
-                </div>
-              </a>
-            </Card>
-            <Card variant="cardHover">
-              <Image
-                alt="card"
-                src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2bd223dde86aadbf10e5_image-2-courses-education-x-template-p-500.jpeg"
-                height={318}
-                width={567}
-              />
-              <div className={styles.price}>
-                <Button className="secondary">7hr 24min</Button>
-                <Button>$99.00USD</Button>
-              </div>
-              <div className={styles.paraDiv}>
-                <Typography variant="h3" className={styles.cardHead}>
-                  Mobile App Development
-                </Typography>
-                <Typography className={styles.para}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptatibus cum et repellat reprehenderit iure at.
-                </Typography>
-                <div className={styles.faculty}>
-                  <Images
-                    className="avtar"
-                    src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd486e01646f00559d_image-2-testimonials-education-x-template.jpg"
-                    height={48}
-                    width={48}
-                  />
-                  <Typography variant="bold">Mike Warren</Typography>
-                </div>
-              </div>
-            </Card>
-            <Card variant="cardHover">
-              <Image
-                alt="card"
-                src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2bd223dde86aadbf10e5_image-2-courses-education-x-template-p-500.jpeg"
-                height={318}
-                width={567}
-              />
-              <div className={styles.price}>
-                <Button className="secondary">7hr 24min</Button>
-                <Button>$99.00USD</Button>
-              </div>
-              <div className={styles.paraDiv}>
-                <Typography variant="h3" className={styles.cardHead}>
-                  Mobile App Development
-                </Typography>
-                <Typography className={styles.para}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptatibus cum et repellat reprehenderit iure at.
-                </Typography>
-                <div className={styles.faculty}>
-                  <Images
-                    className="avtar"
-                    src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd486e01646f00559d_image-2-testimonials-education-x-template.jpg"
-                    height={48}
-                    width={48}
-                  />
-                  <Typography variant="bold">Mike Warren</Typography>
-                </div>
-              </div>
-            </Card>
-            <Card variant="cardHover">
-              <Image
-                alt="card"
-                src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2bd223dde86aadbf10e5_image-2-courses-education-x-template-p-500.jpeg"
-                height={318}
-                width={567}
-              />
-              <div className={styles.price}>
-                <Button className="secondary">7hr 24min</Button>
-                <Button>$99.00USD</Button>
-              </div>
-              <div className={styles.paraDiv}>
-                <Typography variant="h3" className={styles.cardHead}>
-                  Mobile App Development
-                </Typography>
-                <Typography className={styles.para}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptatibus cum et repellat reprehenderit iure at.
-                </Typography>
-                <div className={styles.faculty}>
-                  <Images
-                    className="avtar"
-                    src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd486e01646f00559d_image-2-testimonials-education-x-template.jpg"
-                    height={48}
-                    width={48}
-                  />
-                  <Typography variant="bold">Mike Warren</Typography>
-                </div>
-              </div>
-            </Card>
-          </Slider>
-        </div>
+    <>
+      <section className={styles.courses}>
+        <div className={styles.container}>
+          <Typography variant="h2" className={styles.head}>
+            {data.courseSectionDetails.title}
+          </Typography>
+          <div className={styles.cardDiv}>
+            <Slider {...settings}>
+              {data.courses.map(x => {
+                return (
+                  <Card variant="cardHover">
+                    <a href="courses/1">
+                      <Image
+                        alt="card"
+                        src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2bd223dde86aadbf10e5_image-2-courses-education-x-template-p-500.jpeg"
+                        height={318}
+                        width={567}
+                      />
+                      <div className={styles.paraDiv}>
+                        <Typography variant="h3" className={styles.cardHead}>
+                          {x.title}
+                        </Typography>
+                        <Typography className={styles.para}>
+                          {x.titleDescription}
+                        </Typography>
+                        {/* <div className={styles.faculty}>
+                        <Images
+                          className="avtar"
+                          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd486e01646f00559d_image-2-testimonials-education-x-template.jpg"
+                          height={48}
+                          width={48}
+                        />
+                        <Typography variant="bold">Mike Warren</Typography>
+                      </div> */}
+                      </div>
+                    </a>
+                  </Card>
+                );
+              })}
+            </Slider>
+          </div>
 
-        <div>
-          <Button style={{ marginTop: '3rem' }} onClick={goToCourse}>
-            Explore all courses
-          </Button>
+          <div>
+            <Button style={{ marginTop: '3rem' }} onClick={goToCourse}>
+              Explore all courses
+            </Button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

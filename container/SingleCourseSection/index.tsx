@@ -12,9 +12,11 @@ import Card from '@components/Card';
 import StarRating from '@components/StarRating';
 import router from 'next/router';
 
-interface Props {}
+interface Props {
+  data?: string[] | Object;
+}
 
-const SingleCourseSection = (props: Props) => {
+const SingleCourseSection = ({ data }: Props) => {
   const btnName = [
     {
       id: 1,
@@ -33,7 +35,7 @@ const SingleCourseSection = (props: Props) => {
       name: 'Reviews',
     },
   ];
-  const goToContact = () => {
+  const goToContact = ({ data }) => {
     router.push({
       pathname: '/contact',
       query: {
@@ -53,19 +55,22 @@ const SingleCourseSection = (props: Props) => {
                   width={16}
                   src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2199d24e83863a7b02da_icon-2-categories-education-x-template.svg"
                 />
-                <Typography className={styles.courseCategoryText}>
-                  Design
-                </Typography>
+                {data.tags.map(x => {
+                  return (
+                    <Typography className={styles.courseCategoryText}>
+                      {x.title}
+                    </Typography>
+                  );
+                })}
               </div>
             </div>
             <Typography
               variant="h1"
               className={classnames('commonHeading', styles.courseTitle)}>
-              Brand & Identity Design
+              {data.title}
             </Typography>
             <Typography className={styles.courseSummary}>
-              Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
-              Diam phasellus vestibulum lorem sed risus ultricies.
+              {data.titleDescription}
             </Typography>
             <Images
               className={styles.coursePreview}
@@ -82,93 +87,41 @@ const SingleCourseSection = (props: Props) => {
                 />
               </a>
             </Images>
-
             <div className="card get-course mobile">
               <div className="card-get-course-content-top">
-                <Typography className={styles.price}>$ 199.00 USD</Typography>
-                <Typography>
-                  Lorem ipsum dolor sit amet, dolor consectetur adipiscing elit
-                  purus vivera.
-                </Typography>
-                <Button onClick={goToContact}>Enroll Now</Button>
+                <Typography
+                  className={styles.price}>{`$ ${data.price} USD`}</Typography>
+                <Button onClick={goToContact}>{data.enroll.buttonText}</Button>
               </div>
               <div className="card-get-course-features-grid">
-                <div className="card-get-course-feature-wrapper">
-                  <div className="card-get-course-feature-icon">
-                    <Image
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082193bcb8d6d565ee6e31f_icon-1-course-features-education-x-template.svg"
-                      width={29}
-                      height={29}
-                    />
-                  </div>
-                  <div className="card-get-course-feature-text-wrapper">
-                    <Typography className={styles.marginRemove}>
-                      Level:&nbsp;
-                    </Typography>
-                    <Typography variant="bold">Advanced</Typography>
-                  </div>
-                </div>
-                <div className="card-get-course-feature-wrapper">
-                  <div className="card-get-course-feature-icon">
-                    <Image
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082193b1544f5209a682c41_icon-2-course-features-education-x-template.svg"
-                      width={29}
-                      height={29}
-                    />
-                  </div>
-                  <div className="card-get-course-feature-text-wrapper">
-                    <Typography className={styles.marginRemove}>
-                      Duration:&nbsp;
-                    </Typography>
-                    <Typography variant="bold">8hr 12m</Typography>
-                  </div>
-                </div>
-                <div className="card-get-course-feature-wrapper">
-                  <div className="card-get-course-feature-icon">
-                    <Image
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082193aa9614127acec7400_icon-3-course-features-education-x-template.svg"
-                      width={29}
-                      height={29}
-                    />
-                  </div>
-                  <div className="card-get-course-feature-text-wrapper">
-                    <Typography className={styles.marginRemove}>
-                      Lessons:&nbsp;
-                    </Typography>
-                    <Typography variant="bold">80</Typography>
-                  </div>
-                </div>
-                <div className="card-get-course-feature-wrapper">
-                  <div className="card-get-course-feature-icon">
-                    <Image
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082193b44f40254cdf961a8_icon-4-course-features-education-x-template.svg"
-                      width={29}
-                      height={29}
-                    />
-                  </div>
-                  <div className="card-get-course-feature-text-wrapper">
-                    <Typography className={styles.marginRemove}>
-                      Lifetime Access
-                    </Typography>
-                  </div>
-                </div>
+                {data.courseMinimalDetails.map(x => {
+                  return (
+                    <div className="card-get-course-feature-wrapper">
+                      <div className="card-get-course-feature-icon">
+                        <Image
+                          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082193bcb8d6d565ee6e31f_icon-1-course-features-education-x-template.svg"
+                          width={29}
+                          height={29}
+                        />
+                      </div>
+                      <div className="card-get-course-feature-text-wrapper">
+                        <Typography className={styles.marginRemove}>
+                          {x.title}&nbsp;
+                        </Typography>
+                        <Typography variant="bold">{x.description}</Typography>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <FeaturedCategory children={btnName} />
             <div>
               <Typography variant="h2" className="commonHeading">
-                About the course
+                {data.aboutCourse.title}
               </Typography>
               <Typography className={styles.richText}>
-                Lorem ipsum dolor sit amet, consectetur dolorili adipiscing
-                elit. Felis donec massa aliquam id.Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Purus viverra praesent felis
-                consequat pellentesque turpis et quisque platea. Eu, elit ut
-                nunc ac mauris bibendum nulla placerat. Sagittis sit eu sit
-                massa sapien, risus diam. In lorem eu sed euismod laoreet urna,
-                feugiat et. Euismod sem purus rutrum in. Tortor varius a
-                bibendum nisl et tellus. Aliquet elit senectus iaculis netus
-                gravida.
+                {data.aboutCourse.description}
               </Typography>
             </div>
             <Divider className={styles.divider} isFooterTop />
@@ -176,27 +129,17 @@ const SingleCourseSection = (props: Props) => {
               <Typography variant="h2" className="commonHeading">
                 What will you learn
               </Typography>
-              <Accordian label="Introduction" children="Some dummy intro" />
-              <Accordian
-                label="Hooks"
-                children="Some dummy description about hooks"
-              />
+              {data.curriculum.map(x => {
+                return <Accordian label={x.title} children={x.description} />;
+              })}
             </div>
             <Divider className={styles.divider} isFooterTop />
             <div>
               <Typography variant="h2" className="commonHeading">
-                Results after course completion
+                {data.result.title}
               </Typography>
               <Typography className={styles.richText}>
-                Eget aliquet nibh praesent tristique magna sit amet purus.
-                Consequat id porta nibh venenatis cras sed felis. Nisl rhoncus
-                mattis rhoncus urna neque viverra justo nec. Habitant morbi
-                tristique senectus et netus et malesuada fames ac. Et tortor
-                consequat id porta nibh venenatis cras sed felis.
-              </Typography>
-              <Typography className={styles.richText}>
-                Mi sit amet mauris commodo quis. Eget arcu dictum varius duis at
-                consectetur lorem.Venenatis cras sed felis eget velit aliquet.
+                {data.result.description}
               </Typography>
             </div>
             <Divider className={styles.divider} isFooterTop />
@@ -205,106 +148,71 @@ const SingleCourseSection = (props: Props) => {
                 What our students say
               </Typography>
               <div className="review-grid">
-                <Card className={testimonialStyle.testimonialCard}>
-                  <Images
-                    variant="avtar"
-                    height={203}
-                    width={203}
-                    className={testimonialStyle.image}
-                    src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bc486e0164b300559c_image-3-testimonials-education-x-template.jpg"
-                  />
-                  <div className="flex-grow">
-                    <StarRating
-                      number={4}
-                      className={classnames(testimonialStyle.testimonialStar)}
-                    />
-                    <div className="text-align">
-                      <Typography
-                        className={testimonialStyle.testimonialParagraph}>
-                        “Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint”
-                      </Typography>
-                      <Typography className={testimonialStyle.testimonialName}>
-                        Sophie Moore
-                      </Typography>
-                      <Typography className={testimonialStyle.testimonialRole}>
-                        UX Designer at Amazon
-                      </Typography>
-                    </div>
-                  </div>
-                </Card>
+                {data.feedback.map(x => {
+                  return (
+                    <Card className={testimonialStyle.testimonialCard}>
+                      <Images
+                        variant="avtar"
+                        height={203}
+                        width={203}
+                        className={testimonialStyle.image}
+                        src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bc486e0164b300559c_image-3-testimonials-education-x-template.jpg"
+                      />
+                      <div className="flex-grow">
+                        <StarRating
+                          number={x.ratings}
+                          className={classnames(
+                            testimonialStyle.testimonialStar
+                          )}
+                        />
+                        <div className="text-align">
+                          <Typography
+                            className={testimonialStyle.testimonialParagraph}>
+                            {x.description}
+                          </Typography>
+                          <Typography
+                            className={testimonialStyle.testimonialName}>
+                            {x.name}
+                          </Typography>
+                          <Typography
+                            className={testimonialStyle.testimonialRole}>
+                            {x.jobTitle}
+                          </Typography>
+                        </div>
+                      </div>
+                    </Card>
+                  );
+                })}
               </div>
             </div>
           </div>
           <div className="course-sidebar">
             <div className="card get-course">
-              <Typography className={styles.price}>$ 199.00 USD</Typography>
-              <Typography>
-                Lorem ipsum dolor sit amet, dolor consectetur adipiscing elit
-                purus vivera.
+              <Typography className={styles.price}>
+                {`$ ${data.price} USD`}
               </Typography>
+              <Typography>{data.titleDescription}</Typography>
               <Button onClick={goToContact}>Enroll Now</Button>
               <div className="mt1 card-get-course-features-grid">
-                <div className="card-get-course-feature-wrapper">
-                  <div className="card-get-course-feature-icon">
-                    <Image
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082193bcb8d6d565ee6e31f_icon-1-course-features-education-x-template.svg"
-                      width={29}
-                      height={29}
-                    />
-                  </div>
-                  <div className="card-get-course-feature-text-wrapper">
-                    <Typography className={styles.marginRemove}>
-                      Level:&nbsp;
-                    </Typography>
-                    <Typography variant="bold">Advanced</Typography>
-                  </div>
-                </div>
-                <div className="card-get-course-feature-wrapper">
-                  <div className="card-get-course-feature-icon">
-                    <Image
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082193b1544f5209a682c41_icon-2-course-features-education-x-template.svg"
-                      width={29}
-                      height={29}
-                    />
-                  </div>
-                  <div className="card-get-course-feature-text-wrapper">
-                    <Typography className={styles.marginRemove}>
-                      Duration:&nbsp;
-                    </Typography>
-                    <Typography variant="bold">8hr 12m</Typography>
-                  </div>
-                </div>
-                <div className="card-get-course-feature-wrapper">
-                  <div className="card-get-course-feature-icon">
-                    <Image
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082193aa9614127acec7400_icon-3-course-features-education-x-template.svg"
-                      width={29}
-                      height={29}
-                    />
-                  </div>
-                  <div className="card-get-course-feature-text-wrapper">
-                    <Typography className={styles.marginRemove}>
-                      Lessons:&nbsp;
-                    </Typography>
-                    <Typography variant="bold">80</Typography>
-                  </div>
-                </div>
-                <div className="card-get-course-feature-wrapper">
-                  <div className="card-get-course-feature-icon">
-                    <Image
-                      src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082193b44f40254cdf961a8_icon-4-course-features-education-x-template.svg"
-                      width={29}
-                      height={29}
-                    />
-                  </div>
-                  <div className="card-get-course-feature-text-wrapper">
-                    <Typography className={styles.marginRemove}>
-                      Lifetime Access
-                    </Typography>
-                  </div>
-                </div>
+                {data.courseMinimalDetails.map(x => {
+                  return (
+                    <div className="card-get-course-feature-wrapper">
+                      <div className="card-get-course-feature-icon">
+                        <Image
+                          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082193bcb8d6d565ee6e31f_icon-1-course-features-education-x-template.svg"
+                          width={29}
+                          height={29}
+                        />
+                      </div>
+                      <div className="card-get-course-feature-text-wrapper">
+                        <Typography className={styles.marginRemove}>
+                          {x.title}&nbsp;
+                        </Typography>
+                        <Typography variant="bold">{x.description}</Typography>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

@@ -7,18 +7,20 @@ import router from 'next/router';
 import React from 'react';
 import styles from './blog.module.scss';
 
-interface Props {}
+interface Props {
+  data?: string[] | Object;
+}
 
-const BlogContainer = (props: Props) => {
+const BlogContainer = ({ data }: Props) => {
   const goToBlog = () => {
     router.push('/blog');
   };
   return (
     <section className={styles.container}>
       <div className={styles.main}>
-        <Typography variant="h2">Resources & News</Typography>
+        <Typography variant="h2">{data.blogHeading.title}</Typography>
         <Button className="secondary" onClick={goToBlog}>
-          Browse Blog
+          {data.browseBlog.buttonText}
         </Button>
       </div>
       <div className={styles.cards}>

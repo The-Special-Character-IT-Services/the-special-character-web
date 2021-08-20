@@ -19,14 +19,26 @@ export default function Home() {
   const { data: coursesData } = useRequest<string[]>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}popular-courses`,
   });
+  const { data: reasonData } = useRequest<string[]>({
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}why-our-course`,
+  });
+  const { data: teachersData } = useRequest<string[]>({
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}featured-teacher`,
+  });
+  const { data: successData } = useRequest<string[]>({
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}success`,
+  });
+  const { data: blogData } = useRequest<string[]>({
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}blog-section`,
+  });
   return (
     <>
       {bannerData && <Banner data={bannerData} />}
       {coursesData && <Courses data={coursesData} />}
-      <Perk />
-      <Teachers />
-      <Ratings />
-      <Blog />
+      {reasonData && <Perk data={reasonData} />}
+      {teachersData && <Teachers data={teachersData} />}
+      {successData && <Ratings data={successData} />}
+      {blogData && <Blog data={blogData} />}
       <AboutEducation />
       <Categories />
       <Testimonials />

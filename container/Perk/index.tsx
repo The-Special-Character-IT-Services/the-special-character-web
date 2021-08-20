@@ -5,9 +5,11 @@ import card from '@components/Card/card.module.scss';
 import styles from './perk.module.scss';
 import Image from 'next/image';
 
-interface Props {}
+interface Props {
+  data?: string[] | Object;
+}
 
-const Perk = (props: Props) => {
+const Perk = ({ data }: Props) => {
   return (
     <section id="Perks" className="bg-neutral-700 perks">
       <div className="container-default">
@@ -15,69 +17,35 @@ const Perk = (props: Props) => {
           <Typography
             variant="h2"
             className={classnames(styles.titlePerks, 'commonHeading')}>
-            Why learn with our courses?
+            {data.heading.title}
           </Typography>
           <div className="perks-grid">
-            <Card variant="perkCard">
-              <Image
-                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e21e810beff7a8011b340_image-1-perks-education-x-template.svg"
-                alt="Perk Image"
-                height={233}
-                width={233}
-                className={card.imagePerk}
-              />
-              <div className="perkContent">
-                <Typography
-                  variant="h3"
-                  className={classnames(card.subTitlePerk, 'commonHeading')}>
-                  1. Learn
-                </Typography>
-                <Typography className={classnames(card.paragraphPerk)}>
-                  Lorem ipsum dolor sit amet, consectetur dolorili adipiscing
-                  elit. Felis donec massa aliqua.
-                </Typography>
-              </div>
-            </Card>
-            <Card variant="perkCard">
-              <Image
-                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e21e8936529d4f0ebfe91_image-2-perks-education-x-template.svg"
-                alt="Perk Image"
-                className={card.imagePerk}
-                height={233}
-                width={233}
-              />
-              <div className="perkContent">
-                <Typography
-                  variant="h3"
-                  className={classnames(card.subTitlePerk, 'commonHeading')}>
-                  2. Graduate
-                </Typography>
-                <Typography className={classnames(card.paragraphPerk)}>
-                  Lorem ipsum dolor sit amet, consectetur dolorili adipiscing
-                  elit. Felis donec massa aliqua.
-                </Typography>
-              </div>
-            </Card>
-            <Card variant="perkCard">
-              <Image
-                src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e21e8c0c9f4644adea00a_image-3-perks-education-x-template.svg"
-                alt="Perk Image"
-                className={card.imagePerk}
-                height={233}
-                width={233}
-              />
-              <div className="perkContent">
-                <Typography
-                  variant="h3"
-                  className={classnames(card.subTitlePerk, 'commonHeading')}>
-                  3. Work
-                </Typography>
-                <Typography className={classnames(card.paragraphPerk)}>
-                  Lorem ipsum dolor sit amet, consectetur dolorili adipiscing
-                  elit. Felis donec massa aliqua.
-                </Typography>
-              </div>
-            </Card>
+            {data.cards.map(x => {
+              return (
+                <Card variant="perkCard">
+                  <Image
+                    src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e21e810beff7a8011b340_image-1-perks-education-x-template.svg"
+                    alt="Perk Image"
+                    height={233}
+                    width={233}
+                    className={card.imagePerk}
+                  />
+                  <div className="perkContent">
+                    <Typography
+                      variant="h3"
+                      className={classnames(
+                        card.subTitlePerk,
+                        'commonHeading'
+                      )}>
+                      {x.title}
+                    </Typography>
+                    <Typography className={classnames(card.paragraphPerk)}>
+                      {x.description}
+                    </Typography>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>
