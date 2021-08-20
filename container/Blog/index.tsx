@@ -8,10 +8,10 @@ import React from 'react';
 import styles from './blog.module.scss';
 
 interface Props {
-  isBlog?: Boolean;
+  data?: string[] | Object;
 }
 
-const BlogContainer = ({ isBlog }) => {
+const BlogContainer = ({ data }: Props) => {
   const goToBlog = () => {
     router.push('/blog');
   };
@@ -22,7 +22,7 @@ const BlogContainer = ({ isBlog }) => {
           <div className={styles.main}>
             <Typography variant="h2">Resources & News</Typography>
             <Button className="secondary" onClick={goToBlog}>
-              Browse Blog
+              {data.browseBlog.buttonText}
             </Button>
           </div>
         )}

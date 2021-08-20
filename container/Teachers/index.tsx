@@ -6,9 +6,11 @@ import classnames from 'classnames';
 import router from 'next/router';
 import styles from './teachers.module.scss';
 
-interface Props {}
+interface Props {
+  data: string[] | Object;
+}
 
-const Teachers = (props: Props) => {
+const Teachers = ({ data }: Props) => {
   const goToTeachers = () => {
     router.push('/about/#Teachers');
   };
@@ -23,20 +25,19 @@ const Teachers = (props: Props) => {
             <Typography
               variant="h2"
               className={classnames('commonHeading', styles.classH2)}>
-              Courses taught by industry leaders around the world
+              {data.heading.title}
             </Typography>
             <Typography className={styles.featuredTeacherParagraph}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt.
+              {data.heading.description}
             </Typography>
             <div className="two-buttons">
               <Button className={styles.btn} onClick={goToTeachers}>
-                Browse Teachers
+                {data.browse.buttonText}
               </Button>
               <Button
                 className={classnames('secondary', styles.btn)}
                 onClick={goToContact}>
-                Become a Teacher
+                {data.becomeTeacher.buttonText}
               </Button>
             </div>
           </div>
@@ -56,14 +57,14 @@ const Teachers = (props: Props) => {
                   'commonHeading',
                   styles.cardFeaturedTeacherTitle
                 )}>
-                “Teaching on Education platform has been an amazing experience”
+                {data.teacherQuote}
               </Typography>
               <div className={styles.cardFeaturedTeacherAbout}>
                 <Typography className={styles.cardFeaturedTeacherName}>
-                  Sophie Moore
+                  {data.featuredTeacherName}
                 </Typography>
                 <Typography className={styles.cardFeaturedTeacherRole}>
-                  Marketing Lead at Facebook
+                  {data.teacherJobTitle}
                 </Typography>
               </div>
             </Card>
