@@ -37,7 +37,7 @@ const AboutTeachers = ({ data }: Props) => {
               <Card variant="cardHover" className={styles.singleCard}>
                 <Image
                   alt="John Carter"
-                  src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f20a1af14fe2620952c2a_image-6-profile-picture-teacher-education-x-template-p-500.jpeg"
+                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.image.url}`}
                   width={349}
                   height={330}
                 />
@@ -45,17 +45,19 @@ const AboutTeachers = ({ data }: Props) => {
                   <Typography variant="h3">{x.title}</Typography>
                   <Typography>{x.description}</Typography>
                   <div className={styles.socialIcons}>
-                    <Button className="socialIcon">
-                      <Facebook height={21} width={21} />
-                    </Button>
+                    {x.socialIcon.map(icon => {
+                      return (
+                        <Button className="socialIcon">
+                          <Icon
+                            src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${icon.url}`}
+                            height={21}
+                            width={21}
+                          />
+                        </Button>
+                      );
+                    })}
                     <Button className="socialIcon">
                       <Github height={21} width={21} />
-                    </Button>
-                    <Button className="socialIcon">
-                      <Linkedin height={21} width={21} fill="#fff" />
-                    </Button>
-                    <Button className="socialIcon">
-                      <Twitter height={21} width={21} fill="#fff" />
                     </Button>
                   </div>
                 </div>

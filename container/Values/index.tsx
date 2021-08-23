@@ -26,7 +26,7 @@ const Values = ({ data }: Props) => {
                   <div className="cardBtn">
                     <Button className="buttonIcon">
                       <Image
-                        src="/bulb.svg"
+                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.icon.url}`}
                         height={60}
                         width={60}
                         alt="none"
