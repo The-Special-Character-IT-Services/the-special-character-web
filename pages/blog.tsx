@@ -8,13 +8,13 @@ interface Props {}
 
 const Blog = (props: Props) => {
   const { data: blogBanner } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}blog-banner`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/blog-banner`,
   });
   const { data: newsData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}blog-subscription`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/blog-subscription`,
   });
   const { data: allBlogData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}all-blogs`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/all-blogs`,
   });
   return (
     <>

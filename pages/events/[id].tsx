@@ -6,9 +6,9 @@ interface Props {
   props: JSX.Element;
 }
 
-const individualEvent = (props: Props) => {
+const IndividualEventPage = (props: Props) => {
   const { data: individualEventData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}events/1`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/events/1`,
   });
   return (
     <>
@@ -18,4 +18,4 @@ const individualEvent = (props: Props) => {
   );
 };
 
-export default individualEvent;
+export default IndividualEventPage;
