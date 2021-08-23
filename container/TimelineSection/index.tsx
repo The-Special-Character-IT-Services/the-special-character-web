@@ -4,16 +4,43 @@ import Typography from '@components/Typography';
 import router from 'next/router';
 import styles from './timelineSection.module.scss';
 
+interface AboutHistoryType {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  heading: Heading;
+  buttonText: ButtonText;
+  timeline?: TimelineEntity[] | null;
+  localizations?: null[] | null;
+}
+export interface Heading {
+  id: number;
+  title: string;
+  description: string;
+}
+export interface ButtonText {
+  id: number;
+  buttonText: string;
+  link?: null;
+}
+export interface TimelineEntity {
+  id: number;
+  numberOfSuccess?: null;
+  title: string;
+  description: string;
+  number: string;
+}
+
 interface Props {
-  data?: string[] | Object;
+  data?: AboutHistoryType;
 }
 
 const TimelineSection = ({ data }: Props) => {
   const goToContact = () => {
     router.push('/contact');
   };
-  console.log(data.timeline);
-
   return (
     <section className="timeline">
       <div className="container-default">
@@ -21,17 +48,17 @@ const TimelineSection = ({ data }: Props) => {
           <div className="timeline-left">
             <div className="timeline-main-content">
               <Typography variant="h2" className="commonHeading">
-                {data.heading.title}
+                {data?.heading?.title}
               </Typography>
               <Typography className={styles.timelineParagraph}>
-                {data.heading.description}
+                {data?.heading?.description}
               </Typography>
               <Button onClick={goToContact}>
-                {data.buttonText.buttonText}
+                {data?.buttonText?.buttonText}
               </Button>
             </div>
           </div>
-          <Timeline array={data.timeline} />
+          <Timeline array={data?.timeline} />
         </div>
       </div>
       <style jsx>{`
