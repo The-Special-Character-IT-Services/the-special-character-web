@@ -28,7 +28,7 @@ const Map = ({ data }: Props) => {
                   className={styles.cardOfficeIcon}
                   height={64}
                   width={64}
-                  src="https://assets.website-files.com/607de2d8e8911e32707a3efe/60807b6df1d27e55abdefd53_icon-1-offices-education-x-template.svg"
+                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.icon.url}`}
                 />
                 <div className="card-office-content">
                   <Typography
@@ -60,7 +60,7 @@ const Map = ({ data }: Props) => {
         <Image
           width={1460}
           height={680}
-          src="/images/mapOffice.jpg"
+          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data.mapImage.url}`}
           className={styles.officeImage}
         />
       </div>
