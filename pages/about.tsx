@@ -13,25 +13,25 @@ interface Props {}
 
 const About = (props: Props) => {
   const { data: bannerData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}about-banner`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-banner`,
   });
   const { data: successData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}about-success`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-success`,
   });
   const { data: missionData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}about-mission`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-mission`,
   });
   const { data: valuesData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}about-values`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-values`,
   });
   const { data: teacherData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}about-teacher`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-teacher`,
   });
   const { data: historyData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}about-history`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-history`,
   });
   const { data: officeData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}about-offices`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-offices`,
   });
   return (
     <>

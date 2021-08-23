@@ -14,22 +14,22 @@ import useRequest from 'hooks/useRequest';
 
 export default function Home() {
   const { data: bannerData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}home-banner`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/home-banner`,
   });
   const { data: coursesData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}popular-courses`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/popular-courses`,
   });
   const { data: reasonData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}why-our-course`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/why-our-course`,
   });
   const { data: teachersData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}featured-teacher`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/featured-teacher`,
   });
   const { data: successData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}success`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/success`,
   });
   const { data: blogData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}blog-section`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/blog-section`,
   });
   return (
     <>

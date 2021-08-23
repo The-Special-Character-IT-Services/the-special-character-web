@@ -33,7 +33,7 @@ const Banner = ({ data }: Props) => {
           </div>
         </div>
         <Images
-          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e15d7c0c9f4037bde6f44_image-home-hero-education-x-template-p-800.jpeg"
+          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data.bannerImage.url}`}
           height={692}
           width={546}
           alt="Banner"
