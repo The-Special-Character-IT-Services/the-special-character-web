@@ -30,7 +30,7 @@ const Categories = ({ data }: Props) => {
                     height={12}
                     width={12}
                   />
-                  <Typography>{x.iconButton.title}</Typography>
+                  <Typography>{x?.iconButton?.title}</Typography>
                 </Button>
                 <div className={styles.paraDiv}>
                   <Typography variant="h3">{x.title}</Typography>

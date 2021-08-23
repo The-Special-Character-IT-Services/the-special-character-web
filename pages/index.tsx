@@ -20,13 +20,13 @@ export default function Home() {
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/popular-courses`,
   });
   const { data: educationData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}about-education`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-education`,
   });
   const { data: courseData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}courses-category`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/courses-category`,
   });
   const { data: testimonialData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}testimonial-section`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonial-section`,
   });
 
   const { data: reasonData } = useRequest<string[]>({

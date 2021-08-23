@@ -27,7 +27,7 @@ const IndividualEvent = ({ data }) => {
       <div className={styles.imgDiv}>
         <Images
           alt="Event Description"
-          src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/6081bcda0eb70e6127b5b859_image-4-events-education-x-template-p-1600.jpeg"
+          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.eventImage?.url}`}
           height={900}
           width={1600}
           className={styles.img}
@@ -59,7 +59,7 @@ const IndividualEvent = ({ data }) => {
                   height={20}
                   width={17}
                 />
-                <Typography variant="bold">Los Angeles, LA</Typography>
+                <Typography variant="bold">{data?.location}</Typography>
               </div>
               <Button className={styles.button}>
                 <Marketing className={styles.marketing} />

@@ -8,7 +8,7 @@ interface Props {
 
 const events = (props: Props) => {
   const { data: eventData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}event-page`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/event-page`,
   });
 
   return (

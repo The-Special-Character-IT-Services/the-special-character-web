@@ -10,10 +10,10 @@ interface Props {
 
 const Courses = (props: Props) => {
   const { data: courseBanner } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}course-banner`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/course-banner`,
   });
   const { data: allCourseData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}all-courses`,
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/all-courses`,
   });
   return (
     <>
