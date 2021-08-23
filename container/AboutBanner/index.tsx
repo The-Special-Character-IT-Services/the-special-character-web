@@ -4,7 +4,7 @@ import Image from 'next/image';
 import router from 'next/router';
 import styles from './aboutbanner.module.scss';
 
-export interface AboutBannerType {
+interface AboutBannerType {
   id: number;
   locale: string;
   published_at: string;
