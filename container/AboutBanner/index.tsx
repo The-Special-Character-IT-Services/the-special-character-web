@@ -4,8 +4,29 @@ import Image from 'next/image';
 import router from 'next/router';
 import styles from './aboutbanner.module.scss';
 
+export interface AboutBannerType {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  header: Header;
+  buttonText: ButtonText;
+  localizations?: null[] | null;
+}
+export interface Header {
+  id: number;
+  title: string;
+  description: string;
+}
+export interface ButtonText {
+  id: number;
+  buttonText: string;
+  link?: null;
+}
+
 interface Props {
-  data?: string[] | Object;
+  data?: AboutBannerType;
 }
 
 const AboutBanner = ({ data }: Props) => {
@@ -17,16 +38,16 @@ const AboutBanner = ({ data }: Props) => {
       <div className={styles.container}>
         <div className={styles.leftDiv}>
           <Typography variant="h1" className={styles.head}>
-            {data.header.title}
+            {data?.header?.title}
           </Typography>
           <Button className={styles.button1} onClick={goToContact}>
-            {data.buttonText.buttonText}
+            {data?.buttonText?.buttonText}
           </Button>
         </div>
         <div className={styles.rightDiv}>
-          <Typography>{data.header.description}</Typography>
+          <Typography>{data?.header?.description}</Typography>
           <Button className={styles.button2} onClick={goToContact}>
-            {data.buttonText.buttonText}
+            {data?.buttonText?.buttonText}
           </Button>
         </div>
       </div>

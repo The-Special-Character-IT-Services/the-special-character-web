@@ -23,7 +23,7 @@ const Timeline = ({ array, ...props }: Props) => {
                   <div className={styles.timelineYearDot} />
                   <div className={styles.timelineYearContent}>
                     <Typography className={styles.timelineYear}>
-                      {item?.number}
+                      {item?.year}
                     </Typography>
                     <div>
                       <Typography
