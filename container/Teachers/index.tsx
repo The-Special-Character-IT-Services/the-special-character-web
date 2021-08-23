@@ -43,7 +43,7 @@ const Teachers = ({ data }: Props) => {
           </div>
           <div className="featured-teacher-content">
             <Images
-              src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e240b3c46c0182718cf14_image-featured-teacher-education-x-template.jpg"
+              src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data.teacherImage.url}`}
               width={1076}
               height={1334}
             />
