@@ -1,21 +1,21 @@
 type TimeLine = {
-  year: number;
+  number: number;
   title: string;
   description: string;
 };
 
 interface Props {
   props?: Object;
-  data: TimeLine[];
+  array: TimeLine[];
 }
 import Typography from '@components/Typography';
 import styles from './timeline.module.scss';
 
-const Timeline = ({ data, ...props }: Props) => {
+const Timeline = ({ array, ...props }: Props) => {
   return (
     <>
       <div className="w-layout-grid timeline-grid">
-        {data.map(item => {
+        {array?.map(item => {
           if (typeof item === 'object') {
             return (
               <>
@@ -23,7 +23,7 @@ const Timeline = ({ data, ...props }: Props) => {
                   <div className={styles.timelineYearDot} />
                   <div className={styles.timelineYearContent}>
                     <Typography className={styles.timelineYear}>
-                      {item?.year}
+                      {item?.number}
                     </Typography>
                     <div>
                       <Typography
@@ -41,7 +41,7 @@ const Timeline = ({ data, ...props }: Props) => {
               </>
             );
           }
-          throw new Error('Please pass the data as object');
+          throw new Error('Please pass the array as object');
         })}
       </div>
       <style jsx>

@@ -9,9 +9,11 @@ import Linkedin from '../../public/svg/linkedin.svg';
 import styles from './aboutTeachers.module.scss';
 import router from 'next/router';
 
-interface Props {}
+interface Props {
+  data?: string[] | Object;
+}
 
-const AboutTeachers = () => {
+const AboutTeachers = ({ data }: Props) => {
   const goToContact = () => {
     router.push('/contact');
   };
@@ -21,184 +23,44 @@ const AboutTeachers = () => {
         <div className={styles.header}>
           <div className={styles.leftHead}>
             <Typography variant="h2" className={styles.title}>
-              Our Teachers
+              {data.heading.title}
             </Typography>
             <Typography className={styles.caption}>
-              Presenting Academy, the tech school of the future. We teach you
-              the right skills to be prepared for tomorrow.
+              {data.heading.description}
             </Typography>
           </div>
-          <Button onClick={goToContact}>Become a teacher</Button>
+          <Button onClick={goToContact}>{data.buttonText.buttonText}</Button>
         </div>
         <div className={styles.cards}>
-          <Card variant="cardHover" className={styles.singleCard}>
-            <Image
-              alt="John Carter"
-              src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f20a1af14fe2620952c2a_image-6-profile-picture-teacher-education-x-template-p-500.jpeg"
-              width={349}
-              height={330}
-            />
-            <div className={styles.description}>
-              <Typography variant="h3">John Carter</Typography>
-              <Typography>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              </Typography>
-              <div className={styles.socialIcons}>
-                <Button className="socialIcon">
-                  <Facebook height={21} width={21} />
-                </Button>
-                <Button className="socialIcon">
-                  <Github height={21} width={21} />
-                </Button>
-                <Button className="socialIcon">
-                  <Linkedin height={21} width={21} fill="#fff" />
-                </Button>
-                <Button className="socialIcon">
-                  <Twitter height={21} width={21} fill="#fff" />
-                </Button>
-              </div>
-            </div>
-          </Card>
-          <Card variant="cardHover" className={styles.singleCard}>
-            <Image
-              alt="Sophie Moore"
-              src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f205f3ef6fbf524b7dcc3_image-5-profile-picture-teacher-education-x-template-p-500.jpeg"
-              width={349}
-              height={330}
-            />
-            <div className={styles.description}>
-              <Typography variant="h3">Sophie Moore</Typography>
-              <Typography>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              </Typography>
-              <div className={styles.socialIcons}>
-                <Button className="socialIcon">
-                  <Facebook height={21} width={21} />
-                </Button>
-                <Button className="socialIcon">
-                  <Github height={21} width={21} />
-                </Button>
-                <Button className="socialIcon">
-                  <Linkedin height={21} width={21} fill="#fff" />
-                </Button>
-                <Button className="socialIcon">
-                  <Twitter height={21} width={21} fill="#fff" />
-                </Button>
-              </div>
-            </div>
-          </Card>
-          <Card variant="cardHover" className={styles.singleCard}>
-            <Image
-              alt="Matt Cannon"
-              src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f201ef3141ee6222a3e89_image-4-profile-picture-teacher-education-x-template-p-500.jpeg"
-              width={349}
-              height={330}
-            />
-            <div className={styles.description}>
-              <Typography variant="h3">Matt Cannon</Typography>
-              <Typography>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              </Typography>
-              <div className={styles.socialIcons}>
-                <Button className="socialIcon">
-                  <Facebook height={21} width={21} />
-                </Button>
-                <Button className="socialIcon">
-                  <Github height={21} width={21} />
-                </Button>
-                <Button className="socialIcon">
-                  <Linkedin height={21} width={21} fill="#fff" />
-                </Button>
-                <Button className="socialIcon">
-                  <Twitter height={21} width={21} fill="#fff" />
-                </Button>
-              </div>
-            </div>
-          </Card>
-          <Card variant="cardHover" className={styles.singleCard}>
-            <Image
-              alt="John Carter"
-              src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f20a1af14fe2620952c2a_image-6-profile-picture-teacher-education-x-template-p-500.jpeg"
-              width={349}
-              height={330}
-            />
-            <div className={styles.description}>
-              <Typography variant="h3">John Carter</Typography>
-              <Typography>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              </Typography>
-              <div className={styles.socialIcons}>
-                <Button className="socialIcon">
-                  <Facebook height={21} width={21} />
-                </Button>
-                <Button className="socialIcon">
-                  <Github height={21} width={21} />
-                </Button>
-                <Button className="socialIcon">
-                  <Linkedin height={21} width={21} fill="#fff" />
-                </Button>
-                <Button className="socialIcon">
-                  <Twitter height={21} width={21} fill="#fff" />
-                </Button>
-              </div>
-            </div>
-          </Card>
-          <Card variant="cardHover" className={styles.singleCard}>
-            <Image
-              alt="Sophie Moore"
-              src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f205f3ef6fbf524b7dcc3_image-5-profile-picture-teacher-education-x-template-p-500.jpeg"
-              width={349}
-              height={330}
-            />
-            <div className={styles.description}>
-              <Typography variant="h3">Sophie Moore</Typography>
-              <Typography>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              </Typography>
-              <div className={styles.socialIcons}>
-                <Button className="socialIcon">
-                  <Facebook height={21} width={21} />
-                </Button>
-                <Button className="socialIcon">
-                  <Github height={21} width={21} />
-                </Button>
-                <Button className="socialIcon">
-                  <Linkedin height={21} width={21} fill="#fff" />
-                </Button>
-                <Button className="socialIcon">
-                  <Twitter height={21} width={21} fill="#fff" />
-                </Button>
-              </div>
-            </div>
-          </Card>
-          <Card variant="cardHover" className={styles.singleCard}>
-            <Image
-              alt="Matt Cannon"
-              src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f201ef3141ee6222a3e89_image-4-profile-picture-teacher-education-x-template-p-500.jpeg"
-              width={349}
-              height={330}
-            />
-            <div className={styles.description}>
-              <Typography variant="h3">Matt Cannon</Typography>
-              <Typography>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              </Typography>
-              <div className={styles.socialIcons}>
-                <Button className="socialIcon">
-                  <Facebook height={21} width={21} />
-                </Button>
-                <Button className="socialIcon">
-                  <Github height={21} width={21} />
-                </Button>
-                <Button className="socialIcon">
-                  <Linkedin height={21} width={21} fill="#fff" />
-                </Button>
-                <Button className="socialIcon">
-                  <Twitter height={21} width={21} fill="#fff" />
-                </Button>
-              </div>
-            </div>
-          </Card>
+          {data.teacherCard.map(x => {
+            return (
+              <Card variant="cardHover" className={styles.singleCard}>
+                <Image
+                  alt="John Carter"
+                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.image.url}`}
+                  width={349}
+                  height={330}
+                />
+                <div className={styles.description}>
+                  <Typography variant="h3">{x.title}</Typography>
+                  <Typography>{x.description}</Typography>
+                  <div className={styles.socialIcons}>
+                    {x.socialIcon.map(icon => {
+                      return (
+                        <Button className="socialIcon">
+                          <Image
+                            src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${icon.url}`}
+                            height={21}
+                            width={21}
+                          />
+                        </Button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

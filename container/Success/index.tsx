@@ -1,43 +1,29 @@
 import Typography from '@components/Typography';
 import styles from './success.module.scss';
-interface Props {}
+interface Props {
+  data?: string[] | Object;
+}
 
-const Success = () => {
+const Success = ({ data }: Props) => {
   return (
     <section className={styles.success}>
       <div className={styles.containerHead}>
         <Typography variant="h2" className={styles.head}>
-          A few numbers that we are proud of
+          {data.heading.title}
         </Typography>
       </div>
       <div className={styles.container}>
-        <div className={styles.achievement}>
-          <div className={styles.title}>100,000+</div>
-          <Typography variant="h3" className={styles.caption}>
-            Students
-          </Typography>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing.
-          </Typography>
-        </div>
-        <div className={styles.achievement}>
-          <div className={styles.title}>5,000+</div>
-          <Typography variant="h3" className={styles.caption}>
-            Five-star reviews
-          </Typography>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing.
-          </Typography>
-        </div>
-        <div className={styles.achievement}>
-          <div className={styles.title}>75,000+</div>
-          <Typography variant="h3" className={styles.caption}>
-            Students community
-          </Typography>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing.
-          </Typography>
-        </div>
+        {data.success.map(x => {
+          return (
+            <div className={styles.achievement}>
+              <Typography className={styles.title}>{`${x.number}+`}</Typography>
+              <Typography variant="h3" className={styles.caption}>
+                {x.title}
+              </Typography>
+              <Typography>{x.description}</Typography>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

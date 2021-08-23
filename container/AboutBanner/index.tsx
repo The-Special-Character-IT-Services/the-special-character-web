@@ -4,9 +4,32 @@ import Image from 'next/image';
 import router from 'next/router';
 import styles from './aboutbanner.module.scss';
 
-interface Props {}
+interface AboutBannerType {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  header: Header;
+  buttonText: ButtonText;
+  localizations?: null[] | null;
+}
+export interface Header {
+  id: number;
+  title: string;
+  description: string;
+}
+export interface ButtonText {
+  id: number;
+  buttonText: string;
+  link?: null;
+}
 
-const AboutBanner = (props: Props) => {
+interface Props {
+  data?: AboutBannerType;
+}
+
+const AboutBanner = ({ data }: Props) => {
   const goToContact = () => {
     router.push('/contact');
   };
@@ -15,19 +38,17 @@ const AboutBanner = (props: Props) => {
       <div className={styles.container}>
         <div className={styles.leftDiv}>
           <Typography variant="h1" className={styles.head}>
-            The big mission behind Education
+            {data?.header?.title}
           </Typography>
           <Button className={styles.button1} onClick={goToContact}>
-            Join Our Team
+            {data?.buttonText?.buttonText}
           </Button>
         </div>
         <div className={styles.rightDiv}>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium
-            pulvinar ac molestie cursus malesuada enim. Massa nec tellus, elit
-            tellus, erat faucibus aenean. Nunc, lacus, dignissim nec sit.
-          </Typography>
-          <Button className={styles.button2}>Join Our Team</Button>
+          <Typography>{data?.header?.description}</Typography>
+          <Button className={styles.button2} onClick={goToContact}>
+            {data?.buttonText?.buttonText}
+          </Button>
         </div>
       </div>
       <div className={styles.circleDiv}>
