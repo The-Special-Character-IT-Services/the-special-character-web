@@ -7,7 +7,7 @@ import styles from './newsLetter.module.scss';
 
 interface Props {}
 
-const NewsLetter = (props: Props) => {
+const NewsLetter = ({ data }: Props) => {
   return (
     <section className="newsletter">
       <div className="container">
@@ -15,11 +15,11 @@ const NewsLetter = (props: Props) => {
           <Typography
             variant="h2"
             className={classnames('commonHeading', styles.title)}>
-            Subscribe to our weekly newsletter today!
+            {data.heading.title}
           </Typography>
           <div className="newsletter-form-block">
             <SubscriptionEmail
-              submitValue="Subscribe"
+              submitValue={data.buttonText.buttonText}
               className={styles.color}
             />
           </div>

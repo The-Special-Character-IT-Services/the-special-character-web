@@ -8,7 +8,7 @@ import FeaturedCategory from '@components/FeaturedCategory';
 
 interface Props {}
 
-const Resources = (props: Props) => {
+const Resources = ({ data }: Props) => {
   const btnName = [
     {
       id: 1,
@@ -30,7 +30,9 @@ const Resources = (props: Props) => {
   return (
     <section className="blog-section">
       <div className="container">
-        <FeaturedCategory title="Resources & News" children={btnName} />
+        <FeaturedCategory title={data.heading.title}>
+          {data.categoryButton}
+        </FeaturedCategory>
         <div className="blog-grid">
           <Card variant="cardHover" className={styles.cardResources}>
             <a href="/blog/1">
