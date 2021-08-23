@@ -4,38 +4,16 @@ import Typography from '@components/Typography';
 import router from 'next/router';
 import styles from './timelineSection.module.scss';
 
-interface Props {}
+interface Props {
+  data?: string[] | Object;
+}
 
-const TimelineSection = (props: Props) => {
-  const data = [
-    {
-      year: 2020,
-      title: 'Launched course #500',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor .',
-    },
-    {
-      year: 2021,
-      title: 'Launched course #501',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor .',
-    },
-    {
-      year: 2022,
-      title: 'Launched course #503',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor .',
-    },
-    {
-      year: 2023,
-      title: 'Launched course #504',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id dolor .',
-    },
-  ];
+const TimelineSection = ({ data }: Props) => {
   const goToContact = () => {
     router.push('/contact');
   };
+  console.log(data.timeline);
+
   return (
     <section className="timeline">
       <div className="container-default">
@@ -43,16 +21,17 @@ const TimelineSection = (props: Props) => {
           <div className="timeline-left">
             <div className="timeline-main-content">
               <Typography variant="h2" className="commonHeading">
-                Our company history
+                {data.heading.title}
               </Typography>
               <Typography className={styles.timelineParagraph}>
-                Presenting Academy, the tech school of the future. We teach you
-                the right skills to be prepared for tomorrow.
+                {data.heading.description}
               </Typography>
-              <Button onClick={goToContact}>Join Our Team</Button>
+              <Button onClick={goToContact}>
+                {data.buttonText.buttonText}
+              </Button>
             </div>
           </div>
-          <Timeline data={data} />
+          <Timeline array={data.timeline} />
         </div>
       </div>
       <style jsx>{`

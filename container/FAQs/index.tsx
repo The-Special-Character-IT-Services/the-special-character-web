@@ -1,41 +1,31 @@
 import Accordian from '@components/Accordian';
 import Typography from '@components/Typography';
 import styles from './faqs.module.scss';
-interface Props {}
+interface Props {
+  data?: string[] | Object;
+}
 
-const FAQs = (props: Props) => {
+const FAQs = ({ data }: Props) => {
   return (
     <section className="faqs">
       <div className="container-small">
         <Typography variant="h2" className="commonHeading">
-          Frequently Asked Questions.
+          {data.faqsHeading.title}
         </Typography>
         <Typography className={styles.paragraph}>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat.
+          {data.faqsHeading.description}
         </Typography>
       </div>
       <div className="container-medium">
-        <Accordian
-          className={styles.mr0}
-          label="Do you offer discounts for students?"
-          children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
-        />
-        <Accordian
-          className={styles.mr0}
-          label="Do you offer discounts for students?"
-          children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
-        />
-        <Accordian
-          className={styles.mr0}
-          label="Do you offer discounts for students?"
-          children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
-        />
-        <Accordian
-          className={styles.mr0}
-          label="Do you offer discounts for students?"
-          children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
-        />
+        {data.faqsAccordian.map(x => {
+          return (
+            <Accordian
+              className={styles.mr0}
+              label={x.title}
+              children={x.description}
+            />
+          );
+        })}
       </div>
       <style jsx>{`
         @import './styles/variables.scss';

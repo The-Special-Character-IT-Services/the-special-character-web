@@ -4,53 +4,58 @@ import Typography from '@components/Typography';
 import styles from './map.module.scss';
 import classnames from 'classnames';
 
-interface Props {}
+interface Props {
+  data?: string[] | Object;
+}
 
-const Map = (props: Props) => {
+const Map = ({ data }: Props) => {
   return (
     <section id="Map" className="map">
       <div className="offices">
         <Typography variant="h2" className="commonHeading">
-          Our offices
+          {data.heading.title}
         </Typography>
         <Typography className={styles.paragraph}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt.
+          {data.heading.description}
         </Typography>
       </div>
       <div className="container-default">
         <div className="office-card-wrapper">
-          <Card className={styles.cardOffice}>
-            <Image
-              className={styles.cardOfficeIcon}
-              height={64}
-              width={64}
-              src="https://assets.website-files.com/607de2d8e8911e32707a3efe/60807b6df1d27e55abdefd53_icon-1-offices-education-x-template.svg"
-            />
-            <div className="card-office-content">
-              <Typography
-                variant="h3"
-                className={classnames(styles.officeTitle)}>
-                India
-              </Typography>
-              <Typography
-                variant="a"
-                href="mailto:sanfrancisco@education.com"
-                className={styles.officeLink}>
-                sanfrancisco@education.com
-              </Typography>
-              <Typography
-                variant="a"
-                href="tel:+1415-550-2433"
-                className={styles.officeLink}>
-                +1 (415) 550 - 2433
-              </Typography>
-              <Typography className={styles.officeAddress}>
-                51 Osceola Ln, San Francisco, California(CA), 94124
-              </Typography>
-            </div>
-            <div className="bg-primary-1" />
-          </Card>
+          {data.officeCard.map(x => {
+            return (
+              <Card className={styles.cardOffice}>
+                <Image
+                  className={styles.cardOfficeIcon}
+                  height={64}
+                  width={64}
+                  src="https://assets.website-files.com/607de2d8e8911e32707a3efe/60807b6df1d27e55abdefd53_icon-1-offices-education-x-template.svg"
+                />
+                <div className="card-office-content">
+                  <Typography
+                    variant="h3"
+                    className={classnames(styles.officeTitle)}>
+                    {x.country}
+                  </Typography>
+                  <Typography
+                    variant="a"
+                    href={x.mailLink}
+                    className={styles.officeLink}>
+                    {x.mail}
+                  </Typography>
+                  <Typography
+                    variant="a"
+                    href={x.phoneLink}
+                    className={styles.officeLink}>
+                    {x.phone}
+                  </Typography>
+                  <Typography className={styles.officeAddress}>
+                    {x.address}
+                  </Typography>
+                </div>
+                <div className="bg-primary-1" />
+              </Card>
+            );
+          })}
         </div>
         <Image
           width={1460}
