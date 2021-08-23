@@ -111,10 +111,10 @@ const Courses = ({ data }: Props) => {
               {data.courses.map(x => {
                 return (
                   <Card variant="cardHover">
-                    <a href="courses/1">
+                    <a href={`courses/${x.id}`}>
                       <Image
                         alt="card"
-                        src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2bd223dde86aadbf10e5_image-2-courses-education-x-template-p-500.jpeg"
+                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.courseImage.url}`}
                         height={318}
                         width={567}
                       />
@@ -125,15 +125,6 @@ const Courses = ({ data }: Props) => {
                         <Typography className={styles.para}>
                           {x.titleDescription}
                         </Typography>
-                        {/* <div className={styles.faculty}>
-                        <Images
-                          className="avtar"
-                          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd486e01646f00559d_image-2-testimonials-education-x-template.jpg"
-                          height={48}
-                          width={48}
-                        />
-                        <Typography variant="bold">Mike Warren</Typography>
-                      </div> */}
                       </div>
                     </a>
                   </Card>

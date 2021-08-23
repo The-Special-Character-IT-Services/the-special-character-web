@@ -4,8 +4,92 @@ import Typography from '@components/Typography';
 import styles from './map.module.scss';
 import classnames from 'classnames';
 
+export interface AboutOfficesType {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  heading: Heading;
+  officeCard?: OfficeCardEntity[] | null;
+  mapImage: MapImage;
+  localizations?: null[] | null;
+}
+export interface Heading {
+  id: number;
+  title: string;
+  description: string;
+}
+export interface OfficeCardEntity {
+  id: number;
+  title?: null;
+  mail: string;
+  mailLink: string;
+  phone: string;
+  phoneLink: string;
+  address: string;
+  addressLink: string;
+  country: string;
+  icon: Icon;
+}
+export interface Icon {
+  id: number;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
+  formats?: null;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl?: null;
+  provider: string;
+  provider_metadata?: null;
+  created_at: string;
+  updated_at: string;
+}
+export interface MapImage {
+  id: number;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
+  formats: Formats;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl?: null;
+  provider: string;
+  provider_metadata?: null;
+  created_at: string;
+  updated_at: string;
+}
+export interface Formats {
+  large: LargeOrSmallOrMediumOrThumbnail;
+  small: LargeOrSmallOrMediumOrThumbnail;
+  medium: LargeOrSmallOrMediumOrThumbnail;
+  thumbnail: LargeOrSmallOrMediumOrThumbnail;
+}
+export interface LargeOrSmallOrMediumOrThumbnail {
+  ext: string;
+  url: string;
+  hash: string;
+  mime: string;
+  name: string;
+  path?: null;
+  size: number;
+  width: number;
+  height: number;
+}
+
 interface Props {
-  data?: string[] | Object;
+  data?: AboutOfficesType;
 }
 
 const Map = ({ data }: Props) => {
@@ -13,22 +97,22 @@ const Map = ({ data }: Props) => {
     <section id="Map" className="map">
       <div className="offices">
         <Typography variant="h2" className="commonHeading">
-          {data.heading.title}
+          {data?.heading?.title}
         </Typography>
         <Typography className={styles.paragraph}>
-          {data.heading.description}
+          {data?.heading?.description}
         </Typography>
       </div>
       <div className="container-default">
         <div className="office-card-wrapper">
-          {data.officeCard.map(x => {
+          {data?.officeCard?.map(x => {
             return (
               <Card className={styles.cardOffice}>
                 <Image
                   className={styles.cardOfficeIcon}
                   height={64}
                   width={64}
-                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.icon.url}`}
+                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
                 />
                 <div className="card-office-content">
                   <Typography
@@ -38,18 +122,18 @@ const Map = ({ data }: Props) => {
                   </Typography>
                   <Typography
                     variant="a"
-                    href={x.mailLink}
+                    href={x?.mailLink}
                     className={styles.officeLink}>
-                    {x.mail}
+                    {x?.mail}
                   </Typography>
                   <Typography
                     variant="a"
-                    href={x.phoneLink}
+                    href={x?.phoneLink}
                     className={styles.officeLink}>
-                    {x.phone}
+                    {x?.phone}
                   </Typography>
                   <Typography className={styles.officeAddress}>
-                    {x.address}
+                    {x?.address}
                   </Typography>
                 </div>
                 <div className="bg-primary-1" />
@@ -60,7 +144,7 @@ const Map = ({ data }: Props) => {
         <Image
           width={1460}
           height={680}
-          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data.mapImage.url}`}
+          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.mapImage?.url}`}
           className={styles.officeImage}
         />
       </div>

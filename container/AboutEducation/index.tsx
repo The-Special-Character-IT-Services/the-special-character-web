@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
-import React from 'react';
 import router from 'next/router';
 
 interface Props {

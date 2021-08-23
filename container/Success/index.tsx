@@ -1,7 +1,31 @@
 import Typography from '@components/Typography';
 import styles from './success.module.scss';
+
+export interface AboutSuccessType {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  heading: Heading;
+  success?: SuccessEntity[] | null;
+  localizations?: null[] | null;
+}
+export interface Heading {
+  id: number;
+  title: string;
+  description?: null;
+}
+export interface SuccessEntity {
+  id: number;
+  numberOfSuccess?: null;
+  title: string;
+  description: string;
+  number: string;
+}
+
 interface Props {
-  data?: string[] | Object;
+  data?: AboutSuccessType;
 }
 
 const Success = ({ data }: Props) => {
