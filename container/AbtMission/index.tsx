@@ -1,4 +1,5 @@
 import Button from '@components/Button';
+import classNames from 'classnames';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
 import React from 'react';
@@ -11,72 +12,47 @@ const AbtMission = ({ data }: Props) => {
   return (
     <>
       <section className="container">
-        <div className="main">
-          <Images
-            src="/mission.jpeg"
-            height={600}
-            width={580}
-            alt="Our mission"
-          />
-          <aside className="mission right">
-            <Typography variant="h2">
-              The mission behind Education platform
-            </Typography>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
-              viverra praesent felis consequat pellentesque turpis et quisque
-              platea. Eu, elit ut nunc ac mauris bibendum nulla placerat.
-              Sagittis sit eu sit massa sapien, risus diam. In lorem eu sed
-              euismod laoreet urna, feugiat et. Euismod sem purus rutrum in.
-              Tortor varius a bibendum nisl et tellus. Aliquet elit senectus
-              iaculis netus gravida.
-            </Typography>
-          </aside>
-          <div className="circle" />
-        </div>
-        <div className="main reverse">
-          <aside className="mission left">
-            <Typography variant="h2">The story of our founders</Typography>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
-              viverra praesent felis consequat pellentesque turpis et quisque
-              platea. Eu, elit ut nunc ac mauris bibendum nulla placerat.
-              Sagittis sit eu sit massa sapien, risus diam. In lorem eu sed
-              euismod laoreet urna, feugiat et. Euismod sem purus rutrum in.
-              Tortor varius a bibendum nisl et tellus. Aliquet elit senectus
-              iaculis netus gravida.
-            </Typography>
-          </aside>
-          <Images
-            src="/mission2.jpeg"
-            height={600}
-            width={580}
-            alt="Our mission"
-          />
-        </div>
+        {data.mission.map((x, i) => {
+          return (
+            <div
+              className={classNames('main', { reverse: i % 2 !== 0 })}
+              key={i}>
+              <Images
+                src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.image.url}`}
+                height={600}
+                width={580}
+                alt="Our mission"
+              />
+              <aside className="mission right">
+                <Typography variant="h2">{x.title}</Typography>
+                <Typography>{x.description}</Typography>
+              </aside>
+            </div>
+          );
+        })}
+        <div className="circle" />
       </section>
       <style jsx>{`
         @import '../../styles/variables.scss';
         .container {
           margin: auto;
           padding: 6rem;
+          position: relative;
+          & .circle {
+            position: absolute;
+            min-width: 450px;
+            min-height: 450px;
+            background-color: $Secondary2;
+            border-radius: 100%;
+            z-index: -1;
+            right: 35%;
+            top: 35%;
+          }
+
           & .main {
             display: flex;
             position: relative;
-            margin-bottom: -3rem;
-            &.reverse {
-              display: flex;
-            }
-            & .circle {
-              position: absolute;
-              min-width: 450px;
-              min-height: 450px;
-              background-color: $Secondary2;
-              border-radius: 100%;
-              z-index: -1;
-              right: 35%;
-              top: 59%;
-            }
+
             & .mission {
               padding: 0rem 2rem 2rem 2rem;
               max-width: 640px;
@@ -87,6 +63,9 @@ const AbtMission = ({ data }: Props) => {
               &.left {
                 max-width: 610px;
               }
+            }
+            &.reverse {
+              flex-direction: row-reverse;
             }
           }
         }
@@ -112,6 +91,9 @@ const AbtMission = ({ data }: Props) => {
         @media screen and (max-width: $breakpointXl) {
           .container {
             padding: 2rem;
+            & .circle {
+              display: none;
+            }
             & .main {
               display: flex;
               flex-direction: column;
@@ -120,9 +102,7 @@ const AbtMission = ({ data }: Props) => {
               &.reverse {
                 flex-direction: column-reverse;
               }
-              & .circle {
-                display: none;
-              }
+
               & .mission {
                 margin-top: 0rem;
                 margin-bottom: 3rem;
