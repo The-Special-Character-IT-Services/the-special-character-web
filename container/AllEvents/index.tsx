@@ -15,20 +15,20 @@ const AllEvents = ({ data }: Props) => {
   const array = [
     {
       id: 1,
-      name: 'All',
+      buttonText: 'All',
     },
-    { id: 2, name: 'Development' },
-    { id: 3, name: 'Design' },
-    { id: 4, name: 'Marketing' },
+    { id: 2, buttonText: 'Development' },
+    { id: 3, buttonText: 'Design' },
+    { id: 4, buttonText: 'Marketing' },
   ];
   return (
     <section className={styles.allEvents}>
       <div className={styles.container}>
-        <FeaturedCategory title={data.allEventHeading.title}>
-          {data.categoryButton}
-        </FeaturedCategory>
+        <FeaturedCategory
+          title={data?.allEventHeading?.title}
+          children={array}></FeaturedCategory>
         <div className={styles.list}>
-          {data.events.map(x => {
+          {data?.events?.map(x => {
             return (
               <Card key={x.id} variant="cardHover">
                 <a href="/events/1" className={styles.cardMain}>

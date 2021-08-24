@@ -8,23 +8,43 @@ import styles from './allCourses.module.scss';
 import { AllCourseType } from 'types';
 
 interface Props {
-  data?: AllCourseType;
+  data: AllCourseType;
 }
 
 const AllCourses = ({ data }: Props) => {
+  const array = [
+    {
+      id: 1,
+      buttonText: 'All',
+    },
+    {
+      id: 2,
+      buttonText: 'Development',
+    },
+    {
+      id: 3,
+      buttonText: 'Design',
+    },
+  ];
+  if (!data) {
+    return null;
+  }
   return (
     <section className={styles.allCourses}>
       <div className={styles.container}>
-        <FeaturedCategory title={data.heading.title}>
-          {data.categoryButtons}
-        </FeaturedCategory>
+        {data.categoryButtons && (
+          <FeaturedCategory
+            title={data.heading.title}
+            children={data.categoryButtons}
+          />
+        )}
         <div className={styles.list}>
           {data.courses.map(x => (
             <Card key={x.id} variant="cardHover" className={styles.cardMain}>
               <a href="/courses/1">
                 <Image
                   alt="Featured image"
-                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.courseImage?.url}`}
+                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.courseImage.url}`}
                   height={319}
                   width={567}
                 />

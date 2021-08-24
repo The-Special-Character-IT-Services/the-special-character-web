@@ -12,20 +12,20 @@ const AbtMission = ({ data }: Props) => {
   return (
     <>
       <section className="container">
-        {data.mission.map((x, i) => {
+        {data?.mission?.map((x, i) => {
           return (
             <div
               className={classNames('main', { reverse: i % 2 !== 0 })}
               key={i}>
               <Images
-                src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.image.url}`}
+                src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}
                 height={600}
                 width={580}
                 alt="Our mission"
               />
               <aside className="mission right">
-                <Typography variant="h2">{x.title}</Typography>
-                <Typography>{x.description}</Typography>
+                <Typography variant="h2">{x?.title}</Typography>
+                <Typography>{x?.description}</Typography>
               </aside>
             </div>
           );

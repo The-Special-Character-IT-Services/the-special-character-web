@@ -18,10 +18,10 @@ const Perk = ({ data }: Props) => {
           <Typography
             variant="h2"
             className={classnames(styles.titlePerks, 'commonHeading')}>
-            {data.heading.title}
+            {data?.heading?.title}
           </Typography>
           <div className="perks-grid">
-            {data.cards.map(x => {
+            {data?.cards?.map(x => {
               return (
                 <Card variant="perkCard">
                   <Image

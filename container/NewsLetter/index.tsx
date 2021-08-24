@@ -4,8 +4,11 @@ import Typography from '@components/Typography';
 import Image from 'next/image';
 import classnames from 'classnames';
 import styles from './newsLetter.module.scss';
+import { SubscriptionType } from 'types';
 
-interface Props {}
+interface Props {
+  data?: SubscriptionType;
+}
 
 const NewsLetter = ({ data }: Props) => {
   return (
@@ -15,11 +18,11 @@ const NewsLetter = ({ data }: Props) => {
           <Typography
             variant="h2"
             className={classnames('commonHeading', styles.title)}>
-            {data.heading.title}
+            {data?.heading?.title}
           </Typography>
           <div className="newsletter-form-block">
             <SubscriptionEmail
-              submitValue={data.buttonText.buttonText}
+              submitValue={data?.buttonText?.buttonText}
               className={styles.color}
             />
           </div>

@@ -21,38 +21,38 @@ const AboutTeachers = ({ data }: Props) => {
         <div className={styles.header}>
           <div className={styles.leftHead}>
             <Typography variant="h2" className={styles.title}>
-              {data.heading.title}
+              {data?.heading?.title}
             </Typography>
             <Typography className={styles.caption}>
-              {data.heading.description}
+              {data?.heading?.description}
             </Typography>
           </div>
           <Button
             onClick={() => {
-              router.push(data.buttonText.link);
+              router.push(data?.buttonText?.link);
             }}>
-            {data.buttonText.buttonText}
+            {data?.buttonText?.buttonText}
           </Button>
         </div>
         <div className={styles.cards}>
-          {data.teacherCard.map(x => {
+          {data?.teacherCard?.map(x => {
             return (
               <Card variant="cardHover" className={styles.singleCard}>
                 <Image
                   alt="John Carter"
-                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.image.url}`}
+                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}
                   width={349}
                   height={330}
                 />
                 <div className={styles.description}>
-                  <Typography variant="h3">{x.title}</Typography>
-                  <Typography>{x.description}</Typography>
+                  <Typography variant="h3">{x?.title}</Typography>
+                  <Typography>{x?.description}</Typography>
                   <div className={styles.socialIcons}>
-                    {x.socialIcon.map(icon => {
+                    {x?.socialIcon?.map(icon => {
                       return (
                         <Button className="socialIcon">
                           <Image
-                            src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${icon.url}`}
+                            src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${icon?.url}`}
                             height={21}
                             width={21}
                           />

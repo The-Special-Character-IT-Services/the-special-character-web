@@ -1,6 +1,7 @@
 import Button from '@components/Button';
 import Typography from '@components/Typography';
 import classnames from 'classnames';
+import router from 'next/router';
 import styles from './featuredCategory.module.scss';
 
 type ButtonList = {
@@ -9,11 +10,10 @@ type ButtonList = {
 };
 interface Props {
   title?: string;
-  children: ButtonList[];
-  props?: Object;
+  children: ButtonList[] | null;
 }
 
-const FeaturedCategory = ({ children, props, title }: Props) => {
+const FeaturedCategory = ({ children, title }: Props) => {
   return (
     <>
       <div className="top-content">
@@ -27,7 +27,7 @@ const FeaturedCategory = ({ children, props, title }: Props) => {
         <div className="category-wrapper">
           <div className="category-content">
             <div className="category-item">
-              {children.map(x => (
+              {children?.map(x => (
                 <Button
                   key={x.id}
                   className={classnames(styles.button, styles.primary)}>
