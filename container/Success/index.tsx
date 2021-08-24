@@ -7,6 +7,9 @@ interface Props {
 }
 
 const Success = ({ data }: Props) => {
+  if (!data) {
+    return null;
+  }
   return (
     <section className={styles.success}>
       <div className={styles.containerHead}>
@@ -15,7 +18,7 @@ const Success = ({ data }: Props) => {
         </Typography>
       </div>
       <div className={styles.container}>
-        {data.success.map(x => {
+        {data?.success?.map(x => {
           return (
             <div className={styles.achievement}>
               <Typography className={styles.title}>{`${x.number}+`}</Typography>

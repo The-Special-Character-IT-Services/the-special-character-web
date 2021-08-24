@@ -35,11 +35,11 @@ const AllCourses = ({ data }: Props) => {
         {data.categoryButtons && (
           <FeaturedCategory
             title={data.heading.title}
-            children={data.categoryButtons}
+            children={data?.categoryButtons}
           />
         )}
         <div className={styles.list}>
-          {data.courses.map(x => (
+          {data?.courses?.map(x => (
             <Card key={x.id} variant="cardHover" className={styles.cardMain}>
               <a href="/courses/1">
                 <Image
