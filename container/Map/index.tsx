@@ -3,9 +3,10 @@ import Card from '@components/Card';
 import Typography from '@components/Typography';
 import styles from './map.module.scss';
 import classnames from 'classnames';
+import { AboutOfficesType } from 'types';
 
 interface Props {
-  data?: string[] | Object;
+  data?: AboutOfficesType;
 }
 
 const Map = ({ data }: Props) => {
@@ -13,22 +14,22 @@ const Map = ({ data }: Props) => {
     <section id="Map" className="map">
       <div className="offices">
         <Typography variant="h2" className="commonHeading">
-          {data.heading.title}
+          {data?.heading?.title}
         </Typography>
         <Typography className={styles.paragraph}>
-          {data.heading.description}
+          {data?.heading?.description}
         </Typography>
       </div>
       <div className="container-default">
         <div className="office-card-wrapper">
-          {data.officeCard.map(x => {
+          {data?.officeCard?.map(x => {
             return (
               <Card className={styles.cardOffice}>
                 <Image
                   className={styles.cardOfficeIcon}
                   height={64}
                   width={64}
-                  src="https://assets.website-files.com/607de2d8e8911e32707a3efe/60807b6df1d27e55abdefd53_icon-1-offices-education-x-template.svg"
+                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
                 />
                 <div className="card-office-content">
                   <Typography
@@ -38,18 +39,18 @@ const Map = ({ data }: Props) => {
                   </Typography>
                   <Typography
                     variant="a"
-                    href={x.mailLink}
+                    href={x?.mailLink}
                     className={styles.officeLink}>
-                    {x.mail}
+                    {x?.mail}
                   </Typography>
                   <Typography
                     variant="a"
-                    href={x.phoneLink}
+                    href={x?.phoneLink}
                     className={styles.officeLink}>
-                    {x.phone}
+                    {x?.phone}
                   </Typography>
                   <Typography className={styles.officeAddress}>
-                    {x.address}
+                    {x?.address}
                   </Typography>
                 </div>
                 <div className="bg-primary-1" />
@@ -60,7 +61,7 @@ const Map = ({ data }: Props) => {
         <Image
           width={1460}
           height={680}
-          src="/images/mapOffice.jpg"
+          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.mapImage?.url}`}
           className={styles.officeImage}
         />
       </div>

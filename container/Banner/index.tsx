@@ -5,18 +5,13 @@ import Link from 'next/link';
 import { useRef } from 'react';
 import styles from './banner.module.scss';
 import router from 'next/router';
+import { HomeBannerType } from 'types';
 
 interface Props {
-  data: string[] | Object;
+  data: HomeBannerType;
 }
 
 const Banner = ({ data }: Props) => {
-  const goToCourse = () => {
-    router.push('/courses');
-  };
-  const goToPerk = () => {
-    router.push('/#Perks');
-  };
   return (
     <section className="banner">
       <div className="container">
@@ -26,8 +21,17 @@ const Banner = ({ data }: Props) => {
           </Typography>
           <Typography>{data.bannerDetails.description}</Typography>
           <div className="btnDiv">
-            <Button onClick={goToCourse}>{data.explore.buttonText}</Button>
-            <Button className="secondary" onClick={goToPerk}>
+            <Button
+              onClick={() => {
+                router.push(data.explore.buttonText);
+              }}>
+              {data.explore.buttonText}
+            </Button>
+            <Button
+              className="secondary"
+              onClick={() => {
+                router.push(data.learn.link);
+              }}>
               {data.learn.buttonText}
             </Button>
           </div>

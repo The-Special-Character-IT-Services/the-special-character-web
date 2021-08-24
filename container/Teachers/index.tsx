@@ -4,19 +4,14 @@ import Images from '@components/Images';
 import Typography from '@components/Typography';
 import classnames from 'classnames';
 import router from 'next/router';
+import { FeaturedTeacherType } from 'types';
 import styles from './teachers.module.scss';
 
 interface Props {
-  data: string[] | Object;
+  data: FeaturedTeacherType;
 }
 
 const Teachers = ({ data }: Props) => {
-  const goToTeachers = () => {
-    router.push('/about/#Teachers');
-  };
-  const goToContact = () => {
-    router.push('/contact');
-  };
   return (
     <section className="featured-teacher">
       <div className="container-default">
@@ -31,19 +26,25 @@ const Teachers = ({ data }: Props) => {
               {data.heading.description}
             </Typography>
             <div className="two-buttons">
-              <Button className={styles.btn} onClick={goToTeachers}>
+              <Button
+                className={styles.btn}
+                onClick={() => {
+                  router.push(data.browse.link);
+                }}>
                 {data.browse.buttonText}
               </Button>
               <Button
                 className={classnames('secondary', styles.btn)}
-                onClick={goToContact}>
+                onClick={() => {
+                  router.push(data.becomeTeacher.link);
+                }}>
                 {data.becomeTeacher.buttonText}
               </Button>
             </div>
           </div>
           <div className="featured-teacher-content">
             <Images
-              src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e240b3c46c0182718cf14_image-featured-teacher-education-x-template.jpg"
+              src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data.teacherImage.url}`}
               width={1076}
               height={1334}
             />

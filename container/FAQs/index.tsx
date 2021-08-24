@@ -1,8 +1,10 @@
 import Accordian from '@components/Accordian';
 import Typography from '@components/Typography';
+import { ContactPageType } from 'types';
 import styles from './faqs.module.scss';
+
 interface Props {
-  data?: string[] | Object;
+  data?: ContactPageType;
 }
 
 const FAQs = ({ data }: Props) => {

@@ -2,10 +2,11 @@ import Button from '@components/Button';
 import Card from '@components/Card';
 import Typography from '@components/Typography';
 import Image from 'next/image';
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
+import { AboutValuesType } from 'types';
 
 interface Props {
-  data?: string[] | Object;
+  data?: AboutValuesType;
 }
 
 const Values = ({ data }: Props) => {

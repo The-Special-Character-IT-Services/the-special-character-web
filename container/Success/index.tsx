@@ -1,7 +1,9 @@
 import Typography from '@components/Typography';
+import { AboutSuccessType } from 'types';
 import styles from './success.module.scss';
+
 interface Props {
-  data?: string[] | Object;
+  data?: AboutSuccessType;
 }
 
 const Success = ({ data }: Props) => {

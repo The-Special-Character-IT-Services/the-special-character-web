@@ -4,9 +4,10 @@ import classnames from 'classnames';
 import card from '@components/Card/card.module.scss';
 import styles from './perk.module.scss';
 import Image from 'next/image';
+import { ReasonType } from 'types';
 
 interface Props {
-  data?: string[] | Object;
+  data?: ReasonType;
 }
 
 const Perk = ({ data }: Props) => {
@@ -24,7 +25,7 @@ const Perk = ({ data }: Props) => {
               return (
                 <Card variant="perkCard">
                   <Image
-                    src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607e21e810beff7a8011b340_image-1-perks-education-x-template.svg"
+                    src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.image.url}`}
                     alt="Perk Image"
                     height={233}
                     width={233}

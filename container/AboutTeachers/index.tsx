@@ -8,15 +8,13 @@ import Twitter from '../../public/svg/twitter.svg';
 import Linkedin from '../../public/svg/linkedin.svg';
 import styles from './aboutTeachers.module.scss';
 import router from 'next/router';
+import { AboutTeacherType } from 'types';
 
 interface Props {
-  data?: string[] | Object;
+  data?: AboutTeacherType;
 }
 
 const AboutTeachers = ({ data }: Props) => {
-  const goToContact = () => {
-    router.push('/contact');
-  };
   return (
     <section id="Teachers" className={styles.aboutTeachers}>
       <div className={styles.container}>
@@ -29,7 +27,12 @@ const AboutTeachers = ({ data }: Props) => {
               {data.heading.description}
             </Typography>
           </div>
-          <Button onClick={goToContact}>{data.buttonText.buttonText}</Button>
+          <Button
+            onClick={() => {
+              router.push(data.buttonText.link);
+            }}>
+            {data.buttonText.buttonText}
+          </Button>
         </div>
         <div className={styles.cards}>
           {data.teacherCard.map(x => {

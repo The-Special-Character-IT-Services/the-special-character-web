@@ -2,37 +2,14 @@ import Button from '@components/Button';
 import Typography from '@components/Typography';
 import Image from 'next/image';
 import router from 'next/router';
+import { AboutBannerType } from 'types';
 import styles from './aboutbanner.module.scss';
-
-interface AboutBannerType {
-  id: number;
-  locale: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
-  header: Header;
-  buttonText: ButtonText;
-  localizations?: null[] | null;
-}
-export interface Header {
-  id: number;
-  title: string;
-  description: string;
-}
-export interface ButtonText {
-  id: number;
-  buttonText: string;
-  link?: null;
-}
 
 interface Props {
   data?: AboutBannerType;
 }
 
 const AboutBanner = ({ data }: Props) => {
-  const goToContact = () => {
-    router.push('/contact');
-  };
   return (
     <section className={styles.aboutBanner}>
       <div className={styles.container}>
@@ -40,13 +17,21 @@ const AboutBanner = ({ data }: Props) => {
           <Typography variant="h1" className={styles.head}>
             {data?.header?.title}
           </Typography>
-          <Button className={styles.button1} onClick={goToContact}>
+          <Button
+            className={styles.button1}
+            onClick={() => {
+              router.push(data?.buttonText?.link);
+            }}>
             {data?.buttonText?.buttonText}
           </Button>
         </div>
         <div className={styles.rightDiv}>
           <Typography>{data?.header?.description}</Typography>
-          <Button className={styles.button2} onClick={goToContact}>
+          <Button
+            className={styles.button2}
+            onClick={() => {
+              router.push(data?.buttonText?.link);
+            }}>
             {data?.buttonText?.buttonText}
           </Button>
         </div>

@@ -7,9 +7,10 @@ import classnames from 'classnames';
 import Image from 'next/image';
 import { ErrorMessage, useFormik } from 'formik';
 import { useRouter, withRouter } from 'next/router';
+import { ContactPageType } from 'types';
 
 interface Props {
-  data?: string[] | Object;
+  data?: ContactPageType;
 }
 
 const Form = ({ data }: Props) => {
@@ -90,7 +91,7 @@ const Form = ({ data }: Props) => {
                         <Image
                           height={60}
                           width={60}
-                          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082f9645a3f760c9e688d89_icon-1-contact-education-x-template.svg"
+                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.image.url}`}
                         />
                       </div>
                       <Typography variant="label">{x.title}</Typography>

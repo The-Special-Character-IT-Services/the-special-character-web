@@ -2,10 +2,11 @@ import Button from '@components/Button';
 import Timeline from '@components/Timeline';
 import Typography from '@components/Typography';
 import router from 'next/router';
+import { AboutHistoryType } from 'types';
 import styles from './timelineSection.module.scss';
 
 interface Props {
-  data?: string[] | Object;
+  data?: AboutHistoryType;
 }
 
 const TimelineSection = ({ data }: Props) => {
@@ -20,17 +21,20 @@ const TimelineSection = ({ data }: Props) => {
           <div className="timeline-left">
             <div className="timeline-main-content">
               <Typography variant="h2" className="commonHeading">
-                {data.heading.title}
+                {data?.heading?.title}
               </Typography>
               <Typography className={styles.timelineParagraph}>
-                {data.heading.description}
+                {data?.heading?.description}
               </Typography>
-              <Button onClick={goToContact}>
-                {data.buttonText.buttonText}
+              <Button
+                onClick={() => {
+                  router.push(data?.buttonText?.link);
+                }}>
+                {data?.buttonText?.buttonText}
               </Button>
             </div>
           </div>
-          <Timeline array={data.timeline} />
+          <Timeline array={data?.timeline} />
         </div>
       </div>
       <style jsx>{`
