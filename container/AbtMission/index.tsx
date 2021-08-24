@@ -2,15 +2,13 @@ import Button from '@components/Button';
 import classNames from 'classnames';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
-import React, { useRef } from 'react';
+import React from 'react';
 
 interface Props {
   data?: string[] | Object;
 }
 
 const AbtMission = ({ data }: Props) => {
-  const missionRef = useRef('');
-  const circleRef = useRef('');
   return (
     <>
       <section className="container">
@@ -18,10 +16,7 @@ const AbtMission = ({ data }: Props) => {
           return (
             <div
               className={classNames('main', { reverse: i % 2 !== 0 })}
-              key={i}
-              ref={el => {
-                missionRef.current = el;
-              }}>
+              key={i}>
               <Images
                 src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.image.url}`}
                 height={600}
@@ -35,7 +30,7 @@ const AbtMission = ({ data }: Props) => {
             </div>
           );
         })}
-        <div className="circle" ref={el => (circleRef.current = el)} />
+        <div className="circle" />
       </section>
       <style jsx>{`
         @import '../../styles/variables.scss';
