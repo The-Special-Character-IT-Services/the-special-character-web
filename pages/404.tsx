@@ -1,5 +1,4 @@
 import ErrorContainer from '@container/404';
-import React from 'react';
 
 interface Props {}
 

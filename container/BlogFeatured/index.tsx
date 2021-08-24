@@ -1,7 +1,6 @@
 import Card from '@components/Card';
 import Typography from '@components/Typography';
 import Image from 'next/image';
-import React from 'react';
 import styles from './blogFeatured.module.scss';
 
 interface Props {}
