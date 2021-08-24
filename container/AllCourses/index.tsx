@@ -33,7 +33,10 @@ const AllCourses = ({ data }: Props) => {
     <section className={styles.allCourses}>
       <div className={styles.container}>
         {data.categoryButtons && (
-          <FeaturedCategory title={data.heading.title} children={array} />
+          <FeaturedCategory
+            title={data.heading.title}
+            children={data?.categoryButtons}
+          />
         )}
         <div className={styles.list}>
           {data?.courses?.map(x => (
