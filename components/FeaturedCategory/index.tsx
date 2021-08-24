@@ -10,7 +10,7 @@ type ButtonList = {
 };
 interface Props {
   title?: string;
-  children: ButtonList[];
+  children: ButtonList[] | null;
 }
 
 const FeaturedCategory = ({ children, title }: Props) => {

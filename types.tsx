@@ -594,8 +594,8 @@ export interface AllCourseType {
   created_at: string;
   updated_at: string;
   heading: AboutCourseOrResultOrHeading;
-  categoryButtons?: CategoryButtonsEntityOrEnroll | null;
-  courses?: CoursesEntity[] | null;
+  categoryButtons: CategoryButtonsEntityOrEnroll[];
+  courses: CoursesEntity[] | null;
   localizations?: null[] | null;
 }
 export interface AboutCourseOrResultOrHeading {
@@ -604,7 +604,7 @@ export interface AboutCourseOrResultOrHeading {
   description?: null;
 }
 export interface CategoryButtonsEntityOrEnroll {
-  id?: number;
+  id: number;
   buttonText?: string;
 }
 export interface CoursesEntity {
