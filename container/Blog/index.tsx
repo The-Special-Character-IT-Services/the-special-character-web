@@ -4,7 +4,6 @@ import Images from '@components/Images';
 import Typography from '@components/Typography';
 import Image from 'next/image';
 import router from 'next/router';
-import React from 'react';
 import styles from './blog.module.scss';
 
 interface Props {
