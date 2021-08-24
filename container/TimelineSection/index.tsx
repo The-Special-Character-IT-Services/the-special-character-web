@@ -10,6 +10,10 @@ interface Props {
 }
 
 const TimelineSection = ({ data }: Props) => {
+  const goToContact = () => {
+    router.push('/contact');
+  };
+
   return (
     <section className="timeline">
       <div className="container-default">

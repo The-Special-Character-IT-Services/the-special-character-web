@@ -4,9 +4,10 @@ import styles from './featuredCourse.module.scss';
 import Image from 'next/image';
 import Images from '@components/Images';
 import Button from '@components/Button';
+import { FeaturedCourseType } from 'types';
 
 interface Props {
-  data?: string[] | Object;
+  data?: FeaturedCourseType;
 }
 
 const FeaturedCourse = ({ data }) => {

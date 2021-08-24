@@ -5,9 +5,10 @@ import Images from '@components/Images';
 import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './allCourses.module.scss';
+import { AllCourseType } from 'types';
 
 interface Props {
-  data?: string[] | Object;
+  data?: AllCourseType;
 }
 
 const AllCourses = ({ data }: Props) => {
