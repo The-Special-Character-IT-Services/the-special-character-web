@@ -12,14 +12,26 @@ interface Props {
 }
 
 const AllCourses = ({ data }: Props) => {
+  const array = [
+    {
+      id: 1,
+      buttonText: 'All',
+    },
+    {
+      id: 2,
+      buttonText: 'Development',
+    },
+    {
+      id: 3,
+      buttonText: 'Design',
+    },
+  ];
   return (
     <section className={styles.allCourses}>
       <div className={styles.container}>
-        <FeaturedCategory title={data.heading.title}>
-          {data.categoryButtons}
-        </FeaturedCategory>
+        <FeaturedCategory title={data?.heading?.title} children={array} />
         <div className={styles.list}>
-          {data.courses.map(x => (
+          {data?.courses?.map(x => (
             <Card key={x.id} variant="cardHover" className={styles.cardMain}>
               <a href="/courses/1">
                 <Image
@@ -29,8 +41,8 @@ const AllCourses = ({ data }: Props) => {
                   width={567}
                 />
                 <div className={styles.cardBox}>
-                  <Typography variant="h3">{x.title}</Typography>
-                  <Typography>{x.titleDescription}</Typography>
+                  <Typography variant="h3">{x?.title}</Typography>
+                  <Typography>{x?.titleDescription}</Typography>
                 </div>
               </a>
             </Card>

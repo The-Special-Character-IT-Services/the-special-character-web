@@ -4,9 +4,10 @@ import Link from 'next/link';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
 import router from 'next/router';
+import { EducationType } from 'types';
 
 interface Props {
-  data?: Object;
+  data?: EducationType;
 }
 
 const AboutEducation = ({ data }: Props) => {
@@ -24,17 +25,17 @@ const AboutEducation = ({ data }: Props) => {
           </div>
           <div className="content">
             <Images
-              src="/abouteducation.jpeg"
+              src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.aboutImage?.url}`}
               width={600}
               height={600}
               alt="education"
             />
             <aside className="sideDiv">
-              {data.educationList.map(x => (
+              {data?.educationList?.map(x => (
                 <div key={x.id} className="abtContent">
                   <Button className="buttonIcon">
                     <Image
-                      src="/about1.svg"
+                      src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}
                       height={60}
                       width={60}
                       alt="icon1"
@@ -44,9 +45,9 @@ const AboutEducation = ({ data }: Props) => {
                     <Typography
                       style={{ margin: 0, marginBottom: '0.5rem' }}
                       variant="h3">
-                      {x.title}
+                      {x?.title}
                     </Typography>
-                    <Typography>{x.description}</Typography>
+                    <Typography>{x?.description}</Typography>
                   </div>
                 </div>
               ))}
@@ -55,9 +56,9 @@ const AboutEducation = ({ data }: Props) => {
           <Button
             className="secondary"
             onClick={() => {
-              router.push(data.aboutEducation.link);
+              router.push(data?.aboutEducation?.link);
             }}>
-            {data.aboutEducation.buttonText}
+            {data?.aboutEducation?.buttonText}
           </Button>
         </div>
       </section>

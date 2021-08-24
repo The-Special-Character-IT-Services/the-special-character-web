@@ -102,26 +102,26 @@ const Courses = ({ data }: Props) => {
       <section className={styles.courses}>
         <div className={styles.container}>
           <Typography variant="h2" className={styles.head}>
-            {data.courseSectionDetails.title}
+            {data?.courseSectionDetails?.title}
           </Typography>
           <div className={styles.cardDiv}>
             <Slider {...settings}>
-              {data.courses.map(x => {
+              {data?.courses?.map(x => {
                 return (
                   <Card variant="cardHover">
                     <a href={`courses/${x.id}`}>
                       <Image
                         alt="card"
-                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.courseImage.url}`}
+                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.courseImage?.url}`}
                         height={318}
                         width={567}
                       />
                       <div className={styles.paraDiv}>
                         <Typography variant="h3" className={styles.cardHead}>
-                          {x.title}
+                          {x?.title}
                         </Typography>
                         <Typography className={styles.para}>
-                          {x.titleDescription}
+                          {x?.titleDescription}
                         </Typography>
                       </div>
                     </a>
@@ -135,9 +135,9 @@ const Courses = ({ data }: Props) => {
             <Button
               style={{ marginTop: '3rem' }}
               onClick={() => {
-                router.push(data?.explore.link);
+                router.push(data?.explore?.link);
               }}>
-              {data?.explore.buttonText}
+              {data?.explore?.buttonText}
             </Button>
           </div>
         </div>

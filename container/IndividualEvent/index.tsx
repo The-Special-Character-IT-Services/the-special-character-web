@@ -79,7 +79,7 @@ interface Props {
   data?: IndividualEvent;
 }
 
-const IndividualEvent = ({ data }) => {
+const IndividualEvent = ({ data }: Props) => {
   const array = [
     {
       id: 1,
@@ -121,7 +121,7 @@ const IndividualEvent = ({ data }) => {
                   height={21}
                   width={21}
                 />
-                <Typography variant="bold">{data.dateOfEvent}</Typography>
+                <Typography variant="bold">{data?.dateOfEvent}</Typography>
               </div>
               <div className={styles.secondDiv}>
                 <Image
@@ -138,21 +138,21 @@ const IndividualEvent = ({ data }) => {
               </Button>
             </div>
             <Typography variant="h2" className={styles.title}>
-              {data.eventDetails.title}
+              {data?.eventDetails?.title}
             </Typography>
             <Typography className={styles.caption}>
-              {data.eventDetails.description}
+              {data?.eventDetails?.description}
             </Typography>
-            <Button>{data.register.buttonText}</Button>
+            <Button>{data?.register?.buttonText}</Button>
           </div>
         </div>
         <div className={styles.container}>
           <Typography variant="h2" className={styles.title}>
-            {data.eventAgenda.title}
+            {data?.eventAgenda?.title}
           </Typography>
           <div className={styles.description}>
             <Typography>
-              {data.eventAgenda.description}
+              {data?.eventAgenda?.description}
               {/* <Typography variant="bold">tincidunt quis</Typography> . */}
               {/* Suspendisse vitae vestibulum scelerisque egestas. Volutpat,
               adipiscing a elit platea amet et. At at metus egestas nunc eget.
@@ -174,7 +174,7 @@ const IndividualEvent = ({ data }) => {
               className={styles.listUL}
             />
           </div>
-          <Button>{data.register.buttonText}</Button>
+          <Button>{data?.register?.buttonText}</Button>
         </div>
       </div>
       <div className={styles.bgEvent} />

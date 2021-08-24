@@ -6,7 +6,7 @@ import Card from '@components/Card';
 import classnames from 'classnames';
 import Image from 'next/image';
 import { ErrorMessage, useFormik } from 'formik';
-import { useRouter, withRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { ContactPageType } from 'types';
 
 interface Props {
@@ -24,10 +24,10 @@ const Form = ({ data }: Props) => {
         <div className="contact-wrapper">
           <div className="contact-title-wrapper">
             <Typography variant="h1" className="commonHeading">
-              {data.bannerHeading.title}
+              {data?.bannerHeading?.title}
             </Typography>
             <Typography className={styles.contactParagraph}>
-              {data.bannerHeading.description}
+              {data?.bannerHeading?.description}
             </Typography>
           </div>
           <div className="contact-content">
@@ -81,7 +81,7 @@ const Form = ({ data }: Props) => {
               </div>
             </div>
             <div className="contact-links-wrapper">
-              {data.contactDetails.map(x => {
+              {data?.contactDetails?.map(x => {
                 return (
                   <Card
                     variant="cardHover"
@@ -91,12 +91,12 @@ const Form = ({ data }: Props) => {
                         <Image
                           height={60}
                           width={60}
-                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.image.url}`}
+                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}
                         />
                       </div>
-                      <Typography variant="label">{x.title}</Typography>
+                      <Typography variant="label">{x?.title}</Typography>
                       <Typography className={styles.linkText}>
-                        {x.description}
+                        {x?.description}
                       </Typography>
                     </a>
                   </Card>
@@ -318,4 +318,4 @@ const Form = ({ data }: Props) => {
   );
 };
 
-export default withRouter(Form);
+export default Form;

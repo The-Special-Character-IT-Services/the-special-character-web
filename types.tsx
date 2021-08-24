@@ -292,7 +292,7 @@ export interface Heading {
 export interface BrowseOrBecomeTeacher {
   id: number;
   buttonText: string;
-  link: string;
+  link?: string | any;
 }
 export interface TeacherImage {
   id: number;
@@ -333,7 +333,7 @@ export interface BannerDetails {
 export interface ExploreOrLearn {
   id: number;
   buttonText: string;
-  link: string;
+  link?: string | any;
 }
 export interface BannerImage {
   id: number;
@@ -373,7 +373,7 @@ export interface CourseSectionDetails {
 export interface Explore {
   id: number;
   buttonText: string;
-  link: string;
+  link?: string | any;
 }
 export interface CoursesEntity {
   id: number;
@@ -407,7 +407,7 @@ export interface TagsEntity {
 export interface Enroll {
   id: number;
   buttonText: string;
-  link?: null;
+  link?: string | any;
 }
 export interface CourseMinimalDetailsEntity {
   id: number;
@@ -532,11 +532,6 @@ export interface TagsEntity {
   description?: null;
   icon?: null;
 }
-export interface Enroll {
-  id: number;
-  buttonText: string;
-  link?: null;
-}
 export interface CourseMinimalDetailsEntity {
   id: number;
   title: string;
@@ -599,7 +594,7 @@ export interface AllCourseType {
   created_at: string;
   updated_at: string;
   heading: AboutCourseOrResultOrHeading;
-  categoryButtons?: CategoryButtonsEntityOrEnroll[] | null;
+  categoryButtons?: CategoryButtonsEntityOrEnroll | null;
   courses?: CoursesEntity[] | null;
   localizations?: null[] | null;
 }
@@ -609,9 +604,8 @@ export interface AboutCourseOrResultOrHeading {
   description?: null;
 }
 export interface CategoryButtonsEntityOrEnroll {
-  id: number;
-  buttonText: string;
-  link?: null;
+  id?: number;
+  buttonText?: string;
 }
 export interface CoursesEntity {
   id: number;
@@ -723,7 +717,7 @@ export interface AllEventHeading {
 export interface CategoryButtonEntityOrCategoryEntityOrRegister {
   id: number;
   buttonText: string;
-  link?: null;
+  link?: string | any;
 }
 export interface EventsEntity {
   id: number;
@@ -781,4 +775,73 @@ export interface LargeOrSmallOrMediumOrThumbnail {
   size: number;
   width: number;
   height: number;
+}
+export interface EducationType {
+  id: number;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  heading: Heading;
+  aboutEducation: AboutEducation;
+  educationList?: EducationListEntity[] | null;
+  aboutImage: AboutImage;
+}
+
+export interface AboutEducation {
+  id: number;
+  buttonText?: string;
+  link?: string | any;
+}
+export interface EducationListEntity {
+  id: number;
+  title: string;
+  description: string;
+  image: Image;
+}
+
+export interface AboutImage {
+  id: number;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
+  formats: Formats;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl?: null;
+  provider: string;
+  provider_metadata?: null;
+  created_at: string;
+  updated_at: string;
+}
+export interface CourseCategoryType {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  heading: Heading;
+  cardComponent?: CardComponentEntity[] | null;
+  localizations?: null[] | null;
+}
+
+export interface CardComponentEntity {
+  id: number;
+  title: string;
+  description: string;
+  image: Image;
+}
+export interface SubscriptionType {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  heading: Heading;
+  buttonText: ButtonText;
+  localizations?: null[] | null;
 }

@@ -14,16 +14,16 @@ interface Props {
 const BlogContainer = ({ data, isBlog }: Props) => {
   return (
     <>
-      <section className={styles.container}>
+      {/* <section className={styles.container}>
         {!isBlog && (
           <div className={styles.main}>
             <Typography variant="h2">Resources & News</Typography>
             <Button
               className="secondary"
               onClick={() => {
-                router.push(data.browseBlog.link);
+                router.push(data?.browseBlog?.link);
               }}>
-              {data.browseBlog.buttonText}
+              {data?.browseBlog?.buttonText}
             </Button>
           </div>
         )}
@@ -104,7 +104,7 @@ const BlogContainer = ({ data, isBlog }: Props) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {isBlog && (
         <style jsx>{`
           .cards {

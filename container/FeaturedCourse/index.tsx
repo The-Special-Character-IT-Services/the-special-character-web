@@ -10,12 +10,12 @@ interface Props {
   data?: FeaturedCourseType;
 }
 
-const FeaturedCourse = ({ data }) => {
+const FeaturedCourse = ({ data }: Props) => {
   return (
     <section className={styles.featuredCourse}>
       <div className={styles.container}>
         <Typography variant="h2" className={styles.head}>
-          {data.featuredCourse.title}
+          {data?.featuredCourse?.title}
         </Typography>
         {}
         <Card variant="cardHover">
@@ -30,9 +30,9 @@ const FeaturedCourse = ({ data }) => {
             </div>
             <div className={styles.cardBox}>
               <Typography variant="h3" className={styles.cardTitle}>
-                {data.course.title}
+                {data?.course?.title}
               </Typography>
-              <Typography>{data.course.titleDescription}</Typography>
+              <Typography>{data?.course?.titleDescription}</Typography>
             </div>
           </a>
         </Card>

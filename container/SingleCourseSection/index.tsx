@@ -35,11 +35,11 @@ const SingleCourseSection = ({ data }: Props) => {
       name: 'Reviews',
     },
   ];
-  const goToContact = ({ data }) => {
+  const goToContact = () => {
     router.push({
       pathname: '/contact',
       query: {
-        value: 'Some random title',
+        value: data.title,
       },
     });
   };
