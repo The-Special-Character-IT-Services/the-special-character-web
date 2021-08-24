@@ -79,7 +79,7 @@ const SingleCourseSection = ({ data }: Props) => {
               className={styles.coursePreview}
               height={405}
               width={720}
-              src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2cfe66189f214c09a0c3_image-4-courses-education-x-template.jpg">
+              src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.courseImage?.url}`}>
               <div className="course-preview-filter" />
               <a href="#!" className="course-preview-button">
                 <Image
