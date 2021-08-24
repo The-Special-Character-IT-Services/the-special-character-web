@@ -16,7 +16,7 @@ export interface Heading {
 }
 export interface ButtonText {
   id: number;
-  buttonText: string;
+  buttonText?: string;
   link?: string;
 }
 export interface TimelineEntity {
