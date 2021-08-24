@@ -8,9 +8,6 @@ interface Props {
   data?: string[] | Object;
 }
 const Ratings = ({ data }: Props) => {
-  const goToCourse = () => {
-    router.push('/courses');
-  };
   return (
     <section className={styles.ratings}>
       <div className={styles.container}>
@@ -19,7 +16,11 @@ const Ratings = ({ data }: Props) => {
             {data.successHeading.title}
           </Typography>
           <Typography>{data.successHeading.description}</Typography>
-          <Button className="secondary" onClick={goToCourse}>
+          <Button
+            className="secondary"
+            onClick={() => {
+              router.push(data.exploreCourse.link);
+            }}>
             {data.exploreCourse.buttonText}
           </Button>
         </div>

@@ -7,9 +7,10 @@ import classnames from 'classnames';
 import Image from 'next/image';
 import { ErrorMessage, useFormik } from 'formik';
 import { useRouter, withRouter } from 'next/router';
+import { ContactPageType } from 'types';
 
 interface Props {
-  data?: string[] | Object;
+  data?: ContactPageType;
 }
 
 const Form = ({ data }: Props) => {

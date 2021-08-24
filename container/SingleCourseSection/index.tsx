@@ -11,11 +11,11 @@ import Accordian from '@components/Accordian';
 import Card from '@components/Card';
 import StarRating from '@components/StarRating';
 import router from 'next/router';
+import { CourseType } from 'types';
 
 interface Props {
-  data?: string[] | Object;
+  data?: CourseType;
 }
-
 const SingleCourseSection = ({ data }: Props) => {
   const btnName = [
     {

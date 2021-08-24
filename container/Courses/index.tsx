@@ -12,9 +12,10 @@ import RightArrow from '../../public/svg/rightArrow.svg';
 import LeftArrow from '../../public/svg/leftArrow.svg';
 import Link from 'next/link';
 import router from 'next/router';
+import { PopularCoursesType } from 'types';
 
 interface Props {
-  data: string[] | Object;
+  data?: PopularCoursesType;
 }
 
 const Courses = ({ data }: Props) => {
@@ -96,9 +97,6 @@ const Courses = ({ data }: Props) => {
       },
     ],
   };
-  const goToCourse = () => {
-    router.push('/courses');
-  };
   return (
     <>
       <section className={styles.courses}>
@@ -134,8 +132,12 @@ const Courses = ({ data }: Props) => {
           </div>
 
           <div>
-            <Button style={{ marginTop: '3rem' }} onClick={goToCourse}>
-              Explore all courses
+            <Button
+              style={{ marginTop: '3rem' }}
+              onClick={() => {
+                router.push(data?.explore.link);
+              }}>
+              {data?.explore.buttonText}
             </Button>
           </div>
         </div>

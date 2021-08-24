@@ -4,19 +4,14 @@ import Images from '@components/Images';
 import Typography from '@components/Typography';
 import classnames from 'classnames';
 import router from 'next/router';
+import { FeaturedTeacherType } from 'types';
 import styles from './teachers.module.scss';
 
 interface Props {
-  data: string[] | Object;
+  data: FeaturedTeacherType;
 }
 
 const Teachers = ({ data }: Props) => {
-  const goToTeachers = () => {
-    router.push('/about/#Teachers');
-  };
-  const goToContact = () => {
-    router.push('/contact');
-  };
   return (
     <section className="featured-teacher">
       <div className="container-default">
@@ -31,12 +26,18 @@ const Teachers = ({ data }: Props) => {
               {data.heading.description}
             </Typography>
             <div className="two-buttons">
-              <Button className={styles.btn} onClick={goToTeachers}>
+              <Button
+                className={styles.btn}
+                onClick={() => {
+                  router.push(data.browse.link);
+                }}>
                 {data.browse.buttonText}
               </Button>
               <Button
                 className={classnames('secondary', styles.btn)}
-                onClick={goToContact}>
+                onClick={() => {
+                  router.push(data.becomeTeacher.link);
+                }}>
                 {data.becomeTeacher.buttonText}
               </Button>
             </div>

@@ -8,108 +8,13 @@ import Twitter from '../../public/svg/twitter.svg';
 import Linkedin from '../../public/svg/linkedin.svg';
 import styles from './aboutTeachers.module.scss';
 import router from 'next/router';
-
-export interface AboutTeacherType {
-  id: number;
-  locale: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
-  heading: Heading;
-  buttonText: ButtonText;
-  teacherCard?: TeacherCardEntity[] | null;
-  localizations?: null[] | null;
-}
-export interface Heading {
-  id: number;
-  title: string;
-  description: string;
-}
-export interface ButtonText {
-  id: number;
-  buttonText: string;
-  link?: null;
-}
-export interface TeacherCardEntity {
-  id: number;
-  title: string;
-  description: string;
-  image: Image;
-  socialIcon?: SocialIconEntity[] | null;
-}
-export interface Image {
-  id: number;
-  name: string;
-  alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
-  formats: Formats;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl?: null;
-  provider: string;
-  provider_metadata?: null;
-  created_at: string;
-  updated_at: string;
-}
-export interface Formats {
-  thumbnail: ThumbnailOrSmall;
-  small?: ThumbnailOrSmall1 | null;
-}
-export interface ThumbnailOrSmall {
-  ext: string;
-  url: string;
-  hash: string;
-  mime: string;
-  name: string;
-  path?: null;
-  size: number;
-  width: number;
-  height: number;
-}
-export interface ThumbnailOrSmall1 {
-  ext: string;
-  url: string;
-  hash: string;
-  mime: string;
-  name: string;
-  path?: null;
-  size: number;
-  width: number;
-  height: number;
-}
-export interface SocialIconEntity {
-  id: number;
-  name: string;
-  alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
-  formats?: null;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl?: null;
-  provider: string;
-  provider_metadata?: null;
-  created_at: string;
-  updated_at: string;
-}
+import { AboutTeacherType } from 'types';
 
 interface Props {
   data?: AboutTeacherType;
 }
 
 const AboutTeachers = ({ data }: Props) => {
-  const goToContact = () => {
-    router.push('/contact');
-  };
   return (
     <section id="Teachers" className={styles.aboutTeachers}>
       <div className={styles.container}>
@@ -122,7 +27,12 @@ const AboutTeachers = ({ data }: Props) => {
               {data.heading.description}
             </Typography>
           </div>
-          <Button onClick={goToContact}>{data.buttonText.buttonText}</Button>
+          <Button
+            onClick={() => {
+              router.push(data.buttonText.link);
+            }}>
+            {data.buttonText.buttonText}
+          </Button>
         </div>
         <div className={styles.cards}>
           {data.teacherCard.map(x => {

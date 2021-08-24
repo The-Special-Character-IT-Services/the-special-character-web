@@ -4,9 +4,10 @@ import classnames from 'classnames';
 import card from '@components/Card/card.module.scss';
 import styles from './perk.module.scss';
 import Image from 'next/image';
+import { ReasonType } from 'types';
 
 interface Props {
-  data?: string[] | Object;
+  data?: ReasonType;
 }
 
 const Perk = ({ data }: Props) => {

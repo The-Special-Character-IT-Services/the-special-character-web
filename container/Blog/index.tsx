@@ -13,16 +13,17 @@ interface Props {
 }
 
 const BlogContainer = ({ data, isBlog }: Props) => {
-  const goToBlog = () => {
-    router.push('/blog');
-  };
   return (
     <>
       <section className={styles.container}>
         {!isBlog && (
           <div className={styles.main}>
             <Typography variant="h2">Resources & News</Typography>
-            <Button className="secondary" onClick={goToBlog}>
+            <Button
+              className="secondary"
+              onClick={() => {
+                router.push(data.browseBlog.link);
+              }}>
               {data.browseBlog.buttonText}
             </Button>
           </div>
