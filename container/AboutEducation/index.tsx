@@ -10,9 +10,6 @@ interface Props {
 }
 
 const AboutEducation = ({ data }: Props) => {
-  const goToAbout = () => {
-    router.push('/about');
-  };
   return (
     <>
       <section className="container">
@@ -55,7 +52,11 @@ const AboutEducation = ({ data }: Props) => {
               ))}
             </aside>
           </div>
-          <Button className="secondary" onClick={goToAbout}>
+          <Button
+            className="secondary"
+            onClick={() => {
+              router.push(data.aboutEducation.link);
+            }}>
             {data.aboutEducation.buttonText}
           </Button>
         </div>
