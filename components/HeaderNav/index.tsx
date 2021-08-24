@@ -157,7 +157,6 @@ const HeaderNav = (props: Props) => {
                   width: 100%;
                   transform: translate3d(-8rem, 0, 0);
                   animation-timing-function: 1s ease-in;
-                  box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.2);
                   display: none;
                   font-weight: 100;
                   height: 100%;
