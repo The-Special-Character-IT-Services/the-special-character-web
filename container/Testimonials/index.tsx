@@ -15,7 +15,6 @@ interface Props {
 }
 
 const Testimonials = ({ data }: Props) => {
-  console.log(data.testimonials);
 
   function NextArrow(props: CustomArrowProps): JSX.Element {
     const { onClick } = props;

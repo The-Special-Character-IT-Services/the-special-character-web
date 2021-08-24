@@ -12,7 +12,6 @@ const TimelineSection = ({ data }: Props) => {
   const goToContact = () => {
     router.push('/contact');
   };
-  console.log(data.timeline);
 
   return (
     <section className="timeline">
