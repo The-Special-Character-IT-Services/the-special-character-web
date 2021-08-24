@@ -43,10 +43,9 @@ export interface ButtonText {
 }
 export interface TimelineEntity {
   id: number;
-  numberOfSuccess?: null;
   title: string;
   description: string;
-  number: string;
+  number: number;
 }
 export interface AboutBannerType {
   id: number;
@@ -844,4 +843,79 @@ export interface SubscriptionType {
   heading: Heading;
   buttonText: ButtonText;
   localizations?: null[] | null;
+}
+export interface SuccessTypes {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  successHeading: LeftCardsEntityOrRightCardsEntityOrSuccessHeading;
+  exploreCourse: ExploreCourse;
+  leftCards?: LeftCardsEntityOrRightCardsEntityOrSuccessHeading[] | null;
+  rightCards?: LeftCardsEntityOrRightCardsEntityOrSuccessHeading[] | null;
+  localizations?: null[] | null;
+}
+export interface LeftCardsEntityOrRightCardsEntityOrSuccessHeading {
+  id: number;
+  title: string;
+  description: string;
+}
+export interface ExploreCourse {
+  id: number;
+  buttonText: string;
+  link: string;
+}
+export interface TestimonialTypes {
+  id: number;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  heading: Heading;
+  testimonials?: TestimonialsEntity[] | null;
+}
+
+export interface TestimonialsEntity {
+  id: number;
+  starRating: number;
+  description: string;
+  name: string;
+  jobTitle: string;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  course?: null;
+  avatar: Avatar;
+}
+export interface Avatar {
+  id: number;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
+  formats: Formats;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl?: null;
+  provider: string;
+  provider_metadata?: null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface SmallOrThumbnail {
+  ext: string;
+  url: string;
+  hash: string;
+  mime: string;
+  name: string;
+  path?: null;
+  size: number;
+  width: number;
+  height: number;
 }

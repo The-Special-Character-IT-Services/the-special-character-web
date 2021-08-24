@@ -10,6 +10,9 @@ interface Props {
 }
 
 const Values = ({ data }: Props) => {
+  if (!data) {
+    return null;
+  }
   return (
     <section className="container">
       <div className="window">
@@ -20,7 +23,7 @@ const Values = ({ data }: Props) => {
           <Typography>{data.heading.description}</Typography>
         </div>
         <div className="main">
-          {data.card.map(x => {
+          {data?.card?.map(x => {
             return (
               <Card>
                 <div className="cardSection">

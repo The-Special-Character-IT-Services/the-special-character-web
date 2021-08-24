@@ -9,13 +9,13 @@ import LeftArrow from '../../public/svg/leftArrow.svg';
 import Card from '@components/Card';
 import Images from '@components/Images';
 import StarRating from '@components/StarRating';
+import { TestimonialTypes } from 'types';
 
 interface Props {
-  data?: Object;
+  data?: TestimonialTypes;
 }
 
 const Testimonials = ({ data }: Props) => {
-
   function NextArrow(props: CustomArrowProps): JSX.Element {
     const { onClick } = props;
     return (
@@ -69,6 +69,9 @@ const Testimonials = ({ data }: Props) => {
       },
     ],
   };
+  if (!data) {
+    return null;
+  }
   return (
     <section className="testimonials">
       <div className="container-default">
@@ -79,14 +82,14 @@ const Testimonials = ({ data }: Props) => {
             {data.heading.title}
           </Typography>
           <Slider {...settings}>
-            {data.testimonials.map(x => (
+            {data?.testimonials?.map(x => (
               <Card key={x.id} className={styles.testimonialCard}>
                 <Images
                   variant="avtar"
                   height={203}
                   width={203}
                   className={styles.image}
-                  src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bd45dc22493a193f7e_image-1-testimonials-education-x-template.jpg"
+                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.avatar.url}`}
                 />
                 <div className="flex-grow">
                   <StarRating

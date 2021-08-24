@@ -2,12 +2,16 @@ import Button from '@components/Button';
 import Card from '@components/Card';
 import Typography from '@components/Typography';
 import router from 'next/router';
+import { SuccessTypes } from 'types';
 import styles from './ratings.module.scss';
 
 interface Props {
-  data?: string[] | Object;
+  data?: SuccessTypes;
 }
 const Ratings = ({ data }: Props) => {
+  if (!data) {
+    return null;
+  }
   return (
     <section className={styles.ratings}>
       <div className={styles.container}>
@@ -38,7 +42,7 @@ const Ratings = ({ data }: Props) => {
             })}
           </div>
           <div className={styles.singleCard}>
-            {data.rightCards.map(x => {
+            {data?.rightCards?.map(x => {
               return (
                 <Card key={x.id} className={styles.box}>
                   <Typography className={styles.boxHead}>{x.title}</Typography>

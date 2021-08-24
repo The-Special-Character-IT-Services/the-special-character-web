@@ -34,7 +34,7 @@ const TimelineSection = ({ data }: Props) => {
               </Button>
             </div>
           </div>
-          <Timeline array={data?.timeline} />
+          {data?.timeline && <Timeline array={data?.timeline} />}
         </div>
       </div>
       <style jsx>{`

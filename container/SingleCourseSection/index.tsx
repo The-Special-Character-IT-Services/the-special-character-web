@@ -17,32 +17,35 @@ interface Props {
   data?: CourseType;
 }
 const SingleCourseSection = ({ data }: Props) => {
-  const btnName = [
+  const array = [
     {
       id: 1,
-      name: 'About',
+      buttonText: 'About',
     },
     {
       id: 2,
-      name: 'Topics',
+      buttonText: 'Topics',
     },
     {
       id: 3,
-      name: 'Results',
+      buttonText: 'Results',
     },
     {
       id: 4,
-      name: 'Reviews',
+      buttonText: 'Reviews',
     },
   ];
   const goToContact = () => {
     router.push({
       pathname: '/contact',
       query: {
-        value: data.title,
+        value: data?.title,
       },
     });
   };
+  if (!data) {
+    return null;
+  }
   return (
     <section className="course">
       <div className="container">
@@ -55,7 +58,7 @@ const SingleCourseSection = ({ data }: Props) => {
                   width={16}
                   src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2199d24e83863a7b02da_icon-2-categories-education-x-template.svg"
                 />
-                {data.tags.map(x => {
+                {data?.tags?.map(x => {
                   return (
                     <Typography className={styles.courseCategoryText}>
                       {x.title}
@@ -94,7 +97,7 @@ const SingleCourseSection = ({ data }: Props) => {
                 <Button onClick={goToContact}>{data.enroll.buttonText}</Button>
               </div>
               <div className="card-get-course-features-grid">
-                {data.courseMinimalDetails.map(x => {
+                {data?.courseMinimalDetails?.map(x => {
                   return (
                     <div className="card-get-course-feature-wrapper">
                       <div className="card-get-course-feature-icon">
@@ -115,7 +118,7 @@ const SingleCourseSection = ({ data }: Props) => {
                 })}
               </div>
             </div>
-            <FeaturedCategory children={btnName} />
+            <FeaturedCategory children={array} />
             <div>
               <Typography variant="h2" className="commonHeading">
                 {data.aboutCourse.title}
@@ -129,7 +132,7 @@ const SingleCourseSection = ({ data }: Props) => {
               <Typography variant="h2" className="commonHeading">
                 What will you learn
               </Typography>
-              {data.curriculum.map(x => {
+              {data?.curriculum?.map(x => {
                 return <Accordian label={x.title} children={x.description} />;
               })}
             </div>
@@ -148,7 +151,7 @@ const SingleCourseSection = ({ data }: Props) => {
                 What our students say
               </Typography>
               <div className="review-grid">
-                {data.feedback.map(x => {
+                {data?.feedback?.map(x => {
                   return (
                     <Card className={testimonialStyle.testimonialCard}>
                       <Images
@@ -194,7 +197,7 @@ const SingleCourseSection = ({ data }: Props) => {
               <Typography>{data.titleDescription}</Typography>
               <Button onClick={goToContact}>Enroll Now</Button>
               <div className="mt1 card-get-course-features-grid">
-                {data.courseMinimalDetails.map(x => {
+                {data?.courseMinimalDetails?.map(x => {
                   return (
                     <div className="card-get-course-feature-wrapper">
                       <div className="card-get-course-feature-icon">
