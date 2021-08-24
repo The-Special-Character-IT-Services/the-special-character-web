@@ -2,10 +2,10 @@ import Button from '@components/Button';
 import classNames from 'classnames';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
-import React from 'react';
+import { AboutMissionType } from 'types';
 
 interface Props {
-  data?: string[] | Object;
+  data?: AboutMissionType;
 }
 
 const AbtMission = ({ data }: Props) => {

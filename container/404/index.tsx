@@ -1,6 +1,5 @@
 import Button from '@components/Button';
 import Typography from '@components/Typography';
-import React from 'react';
 
 interface Props {}
 

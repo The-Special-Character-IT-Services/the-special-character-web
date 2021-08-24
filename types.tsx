@@ -9,6 +9,28 @@ export interface AboutHistoryType {
   timeline?: TimelineEntity[] | null;
   localizations?: null[] | null;
 }
+export interface LargeOrSmallOrMediumOrThumbnail1 {
+  ext: string;
+  url: string;
+  hash: string;
+  mime: string;
+  name: string;
+  path?: null;
+  size: number;
+  width: number;
+  height: number;
+}
+export interface LargeOrSmallOrMediumOrThumbnail2 {
+  ext: string;
+  url: string;
+  hash: string;
+  mime: string;
+  name: string;
+  path?: null;
+  size: number;
+  width: number;
+  height: number;
+}
 export interface Heading {
   id: number;
   title: string;
@@ -16,8 +38,8 @@ export interface Heading {
 }
 export interface ButtonText {
   id: number;
-  buttonText: string;
-  link?: string;
+  buttonText?: string;
+  link?: string | any;
 }
 export interface TimelineEntity {
   id: number;
@@ -454,4 +476,19 @@ export interface CourseType {
   feedback?: FeedbackEntity[] | null;
   courseImage: CourseImage;
   localizations?: null[] | null;
+}
+export interface AboutMissionType {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  mission?: MissionEntity[] | null;
+  localizations?: null[] | null;
+}
+export interface MissionEntity {
+  id: number;
+  title: string;
+  description: string;
+  image: Image;
 }
