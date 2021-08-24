@@ -5,94 +5,10 @@ import Images from '@components/Images';
 import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './allEvents.module.scss';
-
-export interface AllEvents {
-  id: number;
-  locale: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
-  heading: EventDetailsOrEventAgendaOrHeading;
-  allEventHeading: AllEventHeading;
-  categoryButton?: CategoryButtonEntityOrCategoryEntityOrRegister[] | null;
-  events?: EventsEntity[] | null;
-  localizations?: null[] | null;
-}
-export interface EventDetailsOrEventAgendaOrHeading {
-  id: number;
-  title: string;
-  description: string;
-}
-export interface AllEventHeading {
-  id: number;
-  title: string;
-  description?: null;
-}
-export interface CategoryButtonEntityOrCategoryEntityOrRegister {
-  id: number;
-  buttonText: string;
-  link?: null;
-}
-export interface EventsEntity {
-  id: number;
-  dateOfEvent: string;
-  locale: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
-  location: string;
-  minimalDetails?: MinimalDetailsEntity[] | null;
-  category?: CategoryButtonEntityOrCategoryEntityOrRegister[] | null;
-  eventDetails: EventDetailsOrEventAgendaOrHeading;
-  eventAgenda: EventDetailsOrEventAgendaOrHeading;
-  register: CategoryButtonEntityOrCategoryEntityOrRegister;
-  eventImage: EventImage;
-}
-export interface MinimalDetailsEntity {
-  id: number;
-  title: string;
-  description: string;
-  icon?: null;
-}
-export interface EventImage {
-  id: number;
-  name: string;
-  alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
-  formats: Formats;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl?: null;
-  provider: string;
-  provider_metadata?: null;
-  created_at: string;
-  updated_at: string;
-}
-export interface Formats {
-  large: LargeOrSmallOrMediumOrThumbnail;
-  small: LargeOrSmallOrMediumOrThumbnail;
-  medium: LargeOrSmallOrMediumOrThumbnail;
-  thumbnail: LargeOrSmallOrMediumOrThumbnail;
-}
-export interface LargeOrSmallOrMediumOrThumbnail {
-  ext: string;
-  url: string;
-  hash: string;
-  mime: string;
-  name: string;
-  path?: null;
-  size: number;
-  width: number;
-  height: number;
-}
+import { AllEventsType } from 'types';
 
 interface Props {
-  data?: AllEvents;
+  data?: AllEventsType;
 }
 
 const AllEvents = ({ data }: Props) => {
