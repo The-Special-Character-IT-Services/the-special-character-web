@@ -5,10 +5,10 @@ import Images from '@components/Images';
 import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './allCourses.module.scss';
-import { AllCourseType } from 'types';
+import { AllCourseTypes } from 'types';
 
 interface Props {
-  data: AllCourseType;
+  data: AllCourseTypes;
 }
 
 const AllCourses = ({ data }: Props) => {
@@ -33,10 +33,7 @@ const AllCourses = ({ data }: Props) => {
     <section className={styles.allCourses}>
       <div className={styles.container}>
         {data.categoryButtons && (
-          <FeaturedCategory
-            title={data.heading.title}
-            children={data?.categoryButtons}
-          />
+          <FeaturedCategory title={data.heading.title} children={data?.categoryButtons} />
         )}
         <div className={styles.list}>
           {data?.courses?.map(x => (

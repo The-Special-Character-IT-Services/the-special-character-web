@@ -4,10 +4,10 @@ import styles from './featuredCourse.module.scss';
 import Image from 'next/image';
 import Images from '@components/Images';
 import Button from '@components/Button';
-import { FeaturedCourseType } from 'types';
+import { CourseBannerTypes } from 'types';
 
 interface Props {
-  data?: FeaturedCourseType;
+  data?: CourseBannerTypes;
 }
 
 const FeaturedCourse = ({ data }: Props) => {

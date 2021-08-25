@@ -9,33 +9,42 @@ import Courses from 'container/Courses';
 import Ratings from 'container/Ratings';
 import Blog from '@container/Blog';
 import Testimonials from '@container/Testimonials';
-import useBanner from 'hooks/useBanner';
 import useRequest from 'hooks/useRequest';
+import {
+  CourseCategoryType,
+  EducationType,
+  FeaturedTeacherType,
+  HomeBannerType,
+  PopularCoursesType,
+  ReasonType,
+  SuccessTypes,
+  TestimonialTypes,
+} from 'types';
 
 export default function Home() {
-  const { data: bannerData } = useRequest<string[]>({
+  const { data: bannerData } = useRequest<HomeBannerType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/home-banner`,
   });
-  const { data: coursesData } = useRequest<string[]>({
+  const { data: coursesData } = useRequest<PopularCoursesType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/popular-courses`,
   });
-  const { data: educationData } = useRequest<string[]>({
+  const { data: educationData } = useRequest<EducationType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-education`,
   });
-  const { data: courseData } = useRequest<string[]>({
+  const { data: courseData } = useRequest<CourseCategoryType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/courses-category`,
   });
-  const { data: testimonialData } = useRequest<string[]>({
+  const { data: testimonialData } = useRequest<TestimonialTypes>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonial-section`,
   });
 
-  const { data: reasonData } = useRequest<string[]>({
+  const { data: reasonData } = useRequest<ReasonType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/why-our-course`,
   });
-  const { data: teachersData } = useRequest<string[]>({
+  const { data: teachersData } = useRequest<FeaturedTeacherType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/featured-teacher`,
   });
-  const { data: successData } = useRequest<string[]>({
+  const { data: successData } = useRequest<SuccessTypes>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/success`,
   });
   const { data: blogData } = useRequest<string[]>({
