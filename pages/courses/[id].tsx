@@ -1,12 +1,13 @@
 import SingleCourseSection from '@container/SingleCourseSection';
 import useRequest from 'hooks/useRequest';
+import { CourseType } from 'types';
 
 interface Props {}
 
 const SingleCourse = (props: Props) => {
   const id =
     typeof window !== 'undefined' ? window.location.pathname.slice(1) : '';
-  const { data } = useRequest<string[]>({
+  const { data } = useRequest<CourseType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/courses/1`,
     params: { id },
   });

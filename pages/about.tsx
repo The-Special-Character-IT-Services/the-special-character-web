@@ -8,29 +8,38 @@ import Success from '@container/Success';
 import TimelineSection from '@container/TimelineSection';
 import Values from '@container/Values';
 import useRequest from 'hooks/useRequest';
+import {
+  AboutBannerType,
+  AboutHistoryType,
+  AboutMissionType,
+  AboutOfficesType,
+  AboutSuccessType,
+  AboutTeacherType,
+  AboutValuesType,
+} from 'types';
 
 interface Props {}
 
 const About = (props: Props) => {
-  const { data: bannerData } = useRequest<string[]>({
+  const { data: bannerData } = useRequest<AboutBannerType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-banner`,
   });
-  const { data: successData } = useRequest<string[]>({
+  const { data: successData } = useRequest<AboutSuccessType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-success`,
   });
-  const { data: missionData } = useRequest<string[]>({
+  const { data: missionData } = useRequest<AboutMissionType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-mission`,
   });
-  const { data: valuesData } = useRequest<string[]>({
+  const { data: valuesData } = useRequest<AboutValuesType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-values`,
   });
-  const { data: teacherData } = useRequest<string[]>({
+  const { data: teacherData } = useRequest<AboutTeacherType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-teacher`,
   });
-  const { data: historyData } = useRequest<string[]>({
+  const { data: historyData } = useRequest<AboutHistoryType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-history`,
   });
-  const { data: officeData } = useRequest<string[]>({
+  const { data: officeData } = useRequest<AboutOfficesType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-offices`,
   });
   return (

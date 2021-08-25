@@ -1,13 +1,14 @@
 import Header from '@components/Header';
 import AllEvents from '@container/AllEvents';
 import useRequest from 'hooks/useRequest';
+import { AllEventsType } from 'types';
 
 interface Props {
   props: JSX.Element;
 }
 
-const events = (props: Props) => {
-  const { data: eventData } = useRequest<string[]>({
+const Events = (props: Props) => {
+  const { data: eventData } = useRequest<AllEventsType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/event-page`,
   });
 
@@ -30,4 +31,4 @@ const events = (props: Props) => {
   );
 };
 
-export default events;
+export default Events;
