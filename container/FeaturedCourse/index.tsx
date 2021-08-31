@@ -19,7 +19,7 @@ const FeaturedCourse = ({ data }: Props) => {
         </Typography>
         {}
         <Card variant="cardHover">
-          <a href="/courses/1" className={styles.cardMain}>
+          <a href={`/courses/${data.id}`} className={styles.cardMain}>
             <div className={styles.imageDiv}>
               <Image
                 alt="Featured image"

@@ -32,7 +32,7 @@ const AllEvents = ({ data }: Props) => {
           {data?.events?.map(x => {
             return (
               <Card key={x.id} variant="cardHover">
-                <a href="/events/1" className={styles.cardMain}>
+                <a href={`/events/${x.id}`} className={styles.cardMain}>
                   <div className={styles.imageDiv}>
                     <Image
                       alt="Featured image"

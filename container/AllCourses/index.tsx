@@ -41,7 +41,7 @@ const AllCourses = ({ data }: Props) => {
         <div className={styles.list}>
           {data?.courses?.map(x => (
             <Card key={x.id} variant="cardHover" className={styles.cardMain}>
-              <a href="/courses/1">
+              <a href={`/courses/${x.id}`}>
                 <Image
                   alt="Featured image"
                   src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.courseImage.url}`}

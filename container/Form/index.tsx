@@ -91,13 +91,15 @@ const Form = ({ data }: Props) => {
                         <Image
                           height={60}
                           width={60}
-                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}
+                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
                         />
                       </div>
-                      <Typography variant="label">{x?.title}</Typography>
-                      <Typography className={styles.linkText}>
-                        {x?.description}
-                      </Typography>
+                      <Typography variant="label">{x?.contactType}</Typography>
+                      <a href={x?.link} target="_blank">
+                        <Typography className={styles.linkText}>
+                          {x?.displayText}
+                        </Typography>
+                      </a>
                     </a>
                   </Card>
                 );

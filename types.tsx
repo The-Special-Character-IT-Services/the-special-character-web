@@ -271,9 +271,10 @@ export interface FaqsAccordianEntityOrBannerHeadingOrFaqsHeading {
 }
 export interface ContactDetailsEntity {
   id: number;
-  title: string;
-  description: string;
-  image: Image;
+  contactType: string;
+  displayText: string;
+  icon: Icon;
+  link: string;
 }
 export interface FeaturedTeacherType {
   id: number;
