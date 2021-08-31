@@ -118,7 +118,7 @@ const SingleCourseSection = ({ data }: Props) => {
                 })}
               </div>
             </div>
-            <FeaturedCategory children={array} />
+            <FeaturedCategory categoryList={array} />
             <div>
               <Typography variant="h2" className="commonHeading">
                 {data.aboutCourse.title}
