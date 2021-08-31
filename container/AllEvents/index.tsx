@@ -26,7 +26,8 @@ const AllEvents = ({ data }: Props) => {
       <div className={styles.container}>
         <FeaturedCategory
           title={data?.allEventHeading?.title}
-          children={array}></FeaturedCategory>
+          categoryList={data?.categoryButton ?? []}
+        />
         <div className={styles.list}>
           {data?.events?.map(x => {
             return (
