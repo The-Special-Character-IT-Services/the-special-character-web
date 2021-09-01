@@ -7,7 +7,7 @@ interface Props {}
 
 const Contact = (props: Props) => {
   const { data } = useRequest<ContactPageType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/contact-page`,
+    url: 'contact-page',
   });
   return (
     <>

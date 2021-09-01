@@ -1,7 +1,7 @@
 import useSWR, { SWRConfiguration, SWRResponse } from 'swr';
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
-const axiosInstace = axios.create({
+const axiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
   timeout: process.env.NEXT_PUBLIC_API_TIMEOUT,
   timeoutErrorMessage:
@@ -43,7 +43,7 @@ export default function useRequest<Data = unknown, Error = unknown>(
      * function is actually only called by `useSWR` when it isn't.
      */
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    () => axiosInstace(request!),
+    () => axiosInstance(request!),
     {
       ...config,
       initialData: initialData && {
