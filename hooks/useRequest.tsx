@@ -1,6 +1,13 @@
 import useSWR, { SWRConfiguration, SWRResponse } from 'swr';
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
+const axiosInstace = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
+  timeout: process.env.NEXT_PUBLIC_API_TIMEOUT,
+  timeoutErrorMessage:
+    'Request Timeout. Please Try again or check your connection...',
+});
+
 export type GetRequest = AxiosRequestConfig | null;
 
 interface Return<Data, Error>
@@ -36,7 +43,7 @@ export default function useRequest<Data = unknown, Error = unknown>(
      * function is actually only called by `useSWR` when it isn't.
      */
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    () => axios(request!),
+    () => axiosInstace(request!),
     {
       ...config,
       initialData: initialData && {

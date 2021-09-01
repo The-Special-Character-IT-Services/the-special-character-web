@@ -3,80 +3,12 @@ import Images from '@components/Images';
 import List from '@components/List';
 import Typography from '@components/Typography';
 import Image from 'next/image';
+import { IndividualEventTypes } from 'types';
 import Marketing from '../../public/svg/Marketing.svg';
 import styles from './individualEvent.module.scss';
 
-export interface IndividualEvent {
-  id: number;
-  dateOfEvent: string;
-  locale: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
-  location: string;
-  minimalDetails?: MinimalDetailsEntity[] | null;
-  category?: CategoryEntityOrRegister[] | null;
-  eventDetails: EventDetailsOrEventAgenda;
-  eventAgenda: EventDetailsOrEventAgenda;
-  register: CategoryEntityOrRegister;
-  eventImage: EventImage;
-  localizations?: null[] | null;
-}
-export interface MinimalDetailsEntity {
-  id: number;
-  title: string;
-  description: string;
-  icon?: null;
-}
-export interface CategoryEntityOrRegister {
-  id: number;
-  buttonText: string;
-  link?: null;
-}
-export interface EventDetailsOrEventAgenda {
-  id: number;
-  title: string;
-  description: string;
-}
-export interface EventImage {
-  id: number;
-  name: string;
-  alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
-  formats: Formats;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl?: null;
-  provider: string;
-  provider_metadata?: null;
-  created_at: string;
-  updated_at: string;
-}
-export interface Formats {
-  large: LargeOrSmallOrMediumOrThumbnail;
-  small: LargeOrSmallOrMediumOrThumbnail;
-  medium: LargeOrSmallOrMediumOrThumbnail;
-  thumbnail: LargeOrSmallOrMediumOrThumbnail;
-}
-export interface LargeOrSmallOrMediumOrThumbnail {
-  ext: string;
-  url: string;
-  hash: string;
-  mime: string;
-  name: string;
-  path?: null;
-  size: number;
-  width: number;
-  height: number;
-}
-
 interface Props {
-  data?: IndividualEvent;
+  data?: IndividualEventTypes;
 }
 
 const IndividualEvent = ({ data }: Props) => {

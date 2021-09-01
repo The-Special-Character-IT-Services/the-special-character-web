@@ -1,16 +1,16 @@
 import IndividualEvent from '@container/IndividualEvent';
 import UpcomingEvents from '@container/UpcomingEvents';
 import useRequest from 'hooks/useRequest';
+import { useRouter } from 'next/router';
+import { IndividualEventTypes } from 'types';
 
-interface Props {
-  props: JSX.Element;
-}
+interface Props {}
 
 const IndividualEventPage = (props: Props) => {
-  const id =
-    typeof window !== 'undefined' ? window.location.pathname.slice(1) : '';
-  const { data: individualEventData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/${id}`,
+  const router = useRouter();
+  const { id } = router.query;
+  const { data: individualEventData } = useRequest<IndividualEventTypes>({
+    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/events/${id}`,
   });
   return (
     <>

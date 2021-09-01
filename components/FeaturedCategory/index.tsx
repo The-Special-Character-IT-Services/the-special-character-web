@@ -10,10 +10,10 @@ type ButtonList = {
 };
 interface Props {
   title?: string;
-  children: ButtonList[] | null;
+  categoryList: ButtonList[];
 }
 
-const FeaturedCategory = ({ children, title }: Props) => {
+const FeaturedCategory = ({ categoryList, title }: Props) => {
   return (
     <>
       <div className="top-content">
@@ -27,7 +27,7 @@ const FeaturedCategory = ({ children, title }: Props) => {
         <div className="category-wrapper">
           <div className="category-content">
             <div className="category-item">
-              {children?.map(x => (
+              {categoryList?.map(x => (
                 <Button
                   key={x.id}
                   className={classnames(styles.button, styles.primary)}>

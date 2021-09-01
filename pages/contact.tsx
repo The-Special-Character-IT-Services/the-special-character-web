@@ -1,11 +1,12 @@
 import FAQs from '@container/FAQs';
 import Form from '@container/Form';
 import useRequest from 'hooks/useRequest';
+import { ContactPageType } from 'types';
 
 interface Props {}
 
 const Contact = (props: Props) => {
-  const { data } = useRequest<string[]>({
+  const { data } = useRequest<ContactPageType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/contact-page`,
   });
   return (

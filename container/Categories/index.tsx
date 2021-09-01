@@ -17,7 +17,7 @@ const Categories = ({ data }: Props) => {
         <div className={styles.cardDiv}>
           {data?.cardComponent?.map(x => (
             <Card key={x.id} variant="cardHover" className={styles.cardBox}>
-              <a href="/courses/1">
+              <a href={`/courses/${x.id}`}>
                 <Image
                   alt="Design Category"
                   src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}

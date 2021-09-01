@@ -3,14 +3,15 @@ import Resources from '@container/Resources';
 import BlogContainer from '@container/Blog';
 import Header from '@components/Header';
 import useRequest from 'hooks/useRequest';
+import { BlogBannerTypes, SubscriptionType } from 'types';
 
 interface Props {}
 
 const Blog = (props: Props) => {
-  const { data: blogBanner } = useRequest<string[]>({
+  const { data: blogBanner } = useRequest<BlogBannerTypes>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/blog-banner`,
   });
-  const { data: newsData } = useRequest<string[]>({
+  const { data: newsData } = useRequest<SubscriptionType>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/blog-subscription`,
   });
   const { data: allBlogData } = useRequest<string[]>({

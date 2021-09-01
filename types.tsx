@@ -57,6 +57,13 @@ export interface AboutBannerType {
   buttonText: ButtonText;
   localizations?: null[] | null;
 }
+
+export interface Header {
+  id: number;
+  title: string;
+  description: string;
+}
+
 export interface AboutTeacherType {
   id: number;
   locale: string;
@@ -264,9 +271,10 @@ export interface FaqsAccordianEntityOrBannerHeadingOrFaqsHeading {
 }
 export interface ContactDetailsEntity {
   id: number;
-  title: string;
-  description: string;
-  image: Image;
+  contactType: string;
+  displayText: string;
+  icon: Icon;
+  link: string;
 }
 export interface FeaturedTeacherType {
   id: number;
@@ -283,11 +291,7 @@ export interface FeaturedTeacherType {
   teacherImage: TeacherImage;
   localizations?: null[] | null;
 }
-export interface Heading {
-  id: number;
-  title: string;
-  description: string;
-}
+
 export interface BrowseOrBecomeTeacher {
   id: number;
   buttonText: string;
@@ -491,15 +495,15 @@ export interface MissionEntity {
   description: string;
   image: Image;
 }
-export interface FeaturedCourseType {
+export interface CourseBannerTypes {
   id: number;
   course: Course;
   locale: string;
   published_at: string;
   created_at: string;
   updated_at: string;
-  heading: CurriculumEntityOrHeading;
-  featuredCourse: AboutCourseOrResultOrFeaturedCourse;
+  heading: CurriculumEntityOrAboutCourseOrResultOrHeading;
+  featuredCourse: FeaturedCourse;
   localizations?: null[] | null;
 }
 export interface Course {
@@ -511,184 +515,69 @@ export interface Course {
   created_at: string;
   updated_at: string;
   price: string;
-  aboutCourse: AboutCourseOrResultOrFeaturedCourse;
-  result: AboutCourseOrResultOrFeaturedCourse;
+  aboutCourse: CurriculumEntityOrAboutCourseOrResultOrHeading;
+  result: CurriculumEntityOrAboutCourseOrResultOrHeading;
   tags?: TagsEntity[] | null;
   enroll: Enroll;
   courseMinimalDetails?: CourseMinimalDetailsEntity[] | null;
-  curriculum?: CurriculumEntityOrHeading[] | null;
-  feedback?: FeedbackEntity[] | null;
+  curriculum?: CurriculumEntityOrAboutCourseOrResultOrHeading[] | null;
+  feedback?: null[] | null;
   courseImage: CourseImage;
 }
-export interface AboutCourseOrResultOrFeaturedCourse {
-  id: number;
-  title: string;
-  description?: null;
-}
-export interface TagsEntity {
-  id: number;
-  title: string;
-  description?: null;
-  icon?: null;
-}
-export interface CourseMinimalDetailsEntity {
-  id: number;
-  title: string;
-  description: string;
-  icon?: null;
-}
-export interface CurriculumEntityOrHeading {
+export interface CurriculumEntityOrAboutCourseOrResultOrHeading {
   id: number;
   title: string;
   description: string;
 }
-export interface FeedbackEntity {
+
+export interface Enroll {
   id: number;
-  ratings: number;
-  name: string;
-  jobTitle: string;
-  description?: string | null;
-  avatar?: null;
+  buttonText: string;
+  link?: null | any;
 }
-export interface CourseImage {
+
+export interface FeaturedCourse {
   id: number;
-  name: string;
-  alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
-  formats: Formats;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl?: null;
-  provider: string;
-  provider_metadata?: null;
-  created_at: string;
-  updated_at: string;
+  title?: null;
+  description: string;
 }
-export interface Formats {
-  large: LargeOrSmallOrMediumOrThumbnail;
-  small: LargeOrSmallOrMediumOrThumbnail;
-  medium: LargeOrSmallOrMediumOrThumbnail;
-  thumbnail: LargeOrSmallOrMediumOrThumbnail;
-}
-export interface LargeOrSmallOrMediumOrThumbnail {
-  ext: string;
-  url: string;
-  hash: string;
-  mime: string;
-  name: string;
-  path?: null;
-  size: number;
-  width: number;
-  height: number;
-}
-export interface AllCourseType {
-  id: number;
-  locale: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
-  heading: AboutCourseOrResultOrHeading;
-  categoryButtons: CategoryButtonsEntityOrEnroll[];
-  courses: CoursesEntity[] | null;
-  localizations?: null[] | null;
-}
-export interface AboutCourseOrResultOrHeading {
-  id: number;
-  title: string;
-  description?: null;
-}
-export interface CategoryButtonsEntityOrEnroll {
-  id: number;
-  buttonText?: string;
-}
-export interface CoursesEntity {
-  id: number;
-  title: string;
-  titleDescription: string;
-  locale: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
-  price?: string | null;
-  aboutCourse: AboutCourseOrResultOrHeading;
-  result?: AboutCourseOrResultOrHeading1 | null;
-  tags?: (TagsEntity | null)[] | null;
-  enroll: CategoryButtonsEntityOrEnroll;
-  courseMinimalDetails?: (CourseMinimalDetailsEntity | null)[] | null;
-  curriculum?: (CurriculumEntity | null)[] | null;
-  feedback?: (FeedbackEntity | null)[] | null;
-  courseImage: CourseImage;
-}
+
 export interface AboutCourseOrResultOrHeading1 {
   id: number;
   title: string;
   description?: null;
 }
-export interface TagsEntity {
-  id: number;
-  title: string;
-  description?: null;
-  icon?: null;
-}
-export interface CourseMinimalDetailsEntity {
-  id: number;
-  title: string;
-  description: string;
-  icon?: null;
-}
+
 export interface CurriculumEntity {
   id: number;
   title: string;
   description: string;
 }
-export interface FeedbackEntity {
+export interface IndividualEventTypes {
   id: number;
-  ratings: number;
-  name: string;
-  jobTitle: string;
-  description?: string | null;
-  avatar?: null;
-}
-export interface CourseImage {
-  id: number;
-  name: string;
-  alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
-  formats: Formats;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl?: null;
-  provider: string;
-  provider_metadata?: null;
+  dateOfEvent: string;
+  locale: string;
+  published_at: string;
   created_at: string;
   updated_at: string;
+  location: string;
+  minimalDetails?: MinimalDetailsEntity[] | null;
+  category?: CategoryEntityOrRegister[] | null;
+  eventDetails: EventDetailsOrEventAgenda;
+  eventAgenda: EventDetailsOrEventAgenda;
+  register: CategoryEntityOrRegister;
+  eventImage: EventImage;
+  localizations?: null[] | null;
 }
-export interface Formats {
-  large: LargeOrSmallOrMediumOrThumbnail;
-  small: LargeOrSmallOrMediumOrThumbnail;
-  medium: LargeOrSmallOrMediumOrThumbnail;
-  thumbnail: LargeOrSmallOrMediumOrThumbnail;
+export interface EventDetailsOrEventAgenda {
+  id: number;
+  title: string;
+  description: string;
 }
-export interface LargeOrSmallOrMediumOrThumbnail {
-  ext: string;
-  url: string;
-  hash: string;
-  mime: string;
-  name: string;
-  path?: null;
-  size: number;
-  width: number;
-  height: number;
+export interface CategoryEntityOrRegister {
+  id: number;
+  buttonText: string;
+  link?: null;
 }
 
 export interface AllEventsType {
@@ -758,23 +647,7 @@ export interface EventImage {
   created_at: string;
   updated_at: string;
 }
-export interface Formats {
-  large: LargeOrSmallOrMediumOrThumbnail;
-  small: LargeOrSmallOrMediumOrThumbnail;
-  medium: LargeOrSmallOrMediumOrThumbnail;
-  thumbnail: LargeOrSmallOrMediumOrThumbnail;
-}
-export interface LargeOrSmallOrMediumOrThumbnail {
-  ext: string;
-  url: string;
-  hash: string;
-  mime: string;
-  name: string;
-  path?: null;
-  size: number;
-  width: number;
-  height: number;
-}
+
 export interface EducationType {
   id: number;
   published_at: string;
@@ -918,4 +791,30 @@ export interface SmallOrThumbnail {
   size: number;
   width: number;
   height: number;
+}
+export interface BlogBannerTypes {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  heading: Heading;
+  localizations?: null[] | null;
+}
+export interface AllCourseTypes {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  heading: Heading;
+  categoryButtons?: CategoryButtonsEntityOrEnroll[] | null;
+  courses?: CoursesEntity[] | null;
+  localizations?: null[] | null;
+}
+
+export interface CategoryButtonsEntityOrEnroll {
+  id: number;
+  buttonText: string;
+  link?: null;
 }

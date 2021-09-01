@@ -4,10 +4,10 @@ import styles from './featuredCourse.module.scss';
 import Image from 'next/image';
 import Images from '@components/Images';
 import Button from '@components/Button';
-import { FeaturedCourseType } from 'types';
+import { CourseBannerTypes } from 'types';
 
 interface Props {
-  data?: FeaturedCourseType;
+  data: CourseBannerTypes;
 }
 
 const FeaturedCourse = ({ data }: Props) => {
@@ -17,9 +17,8 @@ const FeaturedCourse = ({ data }: Props) => {
         <Typography variant="h2" className={styles.head}>
           {data?.featuredCourse?.title}
         </Typography>
-        {}
         <Card variant="cardHover">
-          <a href={`courses/${data?.course?.id}`} className={styles.cardMain}>
+          <a href={`/courses/${data?.id}`} className={styles.cardMain}>
             <div className={styles.imageDiv}>
               <Image
                 alt="Featured image"

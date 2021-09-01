@@ -3,16 +3,15 @@ import Typography from '@components/Typography';
 import AllCourses from '@container/AllCourses';
 import FeaturedCourse from '@container/FeaturedCourse';
 import useRequest from 'hooks/useRequest';
+import { AllCourseTypes, CourseBannerTypes } from 'types';
 
-interface Props {
-  props: JSX.Element;
-}
+interface Props {}
 
 const Courses = (props: Props) => {
-  const { data: courseBanner } = useRequest<string[]>({
+  const { data: courseBanner } = useRequest<CourseBannerTypes>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/course-banner`,
   });
-  const { data: allCourseData } = useRequest<string[]>({
+  const { data: allCourseData } = useRequest<AllCourseTypes>({
     url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/all-courses`,
   });
   return (

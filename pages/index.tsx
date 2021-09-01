@@ -9,48 +9,56 @@ import Courses from 'container/Courses';
 import Ratings from 'container/Ratings';
 import Blog from '@container/Blog';
 import Testimonials from '@container/Testimonials';
-import useBanner from 'hooks/useBanner';
 import useRequest from 'hooks/useRequest';
+import {
+  CourseCategoryType,
+  EducationType,
+  FeaturedTeacherType,
+  HomeBannerType,
+  PopularCoursesType,
+  ReasonType,
+  SuccessTypes,
+  TestimonialTypes,
+} from 'types';
 
 export default function Home() {
-  const { data: bannerData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/home-banner`,
+  const { data: bannerData } = useRequest<HomeBannerType>({
+    url: 'home-banner',
   });
-  const { data: coursesData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/popular-courses`,
+  const { data: coursesData } = useRequest<PopularCoursesType>({
+    url: 'popular-courses',
   });
-  const { data: educationData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-education`,
+  const { data: educationData } = useRequest<EducationType>({
+    url: 'about-education',
   });
-  const { data: courseData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/courses-category`,
+  const { data: courseData } = useRequest<CourseCategoryType>({
+    url: 'courses-category',
   });
-  const { data: testimonialData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonial-section`,
+  const { data: testimonialData } = useRequest<TestimonialTypes>({
+    url: 'testimonial-section',
   });
-
-  const { data: reasonData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/why-our-course`,
+  const { data: reasonData } = useRequest<ReasonType>({
+    url: 'why-our-course',
   });
-  const { data: teachersData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/featured-teacher`,
+  const { data: teachersData } = useRequest<FeaturedTeacherType>({
+    url: 'featured-teacher',
   });
-  const { data: successData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/success`,
+  const { data: successData } = useRequest<SuccessTypes>({
+    url: 'success',
   });
   const { data: blogData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/blog-section`,
+    url: 'blog-section',
   });
   return (
     <>
       {bannerData && <Banner data={bannerData} />}
       {coursesData && <Courses data={coursesData} />}
-      {educationData && <AboutEducation data={educationData} />}
-      {courseData && <Categories data={courseData} />}
-      {testimonialData && <Testimonials data={testimonialData} />}
       {reasonData && <Perk data={reasonData} />}
       {teachersData && <Teachers data={teachersData} />}
       {successData && <Ratings data={successData} />}
+      {educationData && <AboutEducation data={educationData} />}
+      {courseData && <Categories data={courseData} />}
+      {testimonialData && <Testimonials data={testimonialData} />}
       {blogData && <Blog data={blogData} />}
     </>
   );
