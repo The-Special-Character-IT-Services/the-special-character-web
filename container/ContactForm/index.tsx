@@ -154,7 +154,7 @@ const ContactForm = ({ data }: Props) => {
           align-items: center;
         }
         .w-form {
-          margin-bottom: 0;
+          margin-bottom: 1.3rem !important;
           width: 100%;
         }
 
@@ -208,7 +208,7 @@ const ContactForm = ({ data }: Props) => {
           border-radius: 1000px;
           background-color: $Secondary3;
         }
-        
+
         @media screen and (max-width: $breakpointLgForMw) {
           .form {
             padding-top: 5.75rem;
