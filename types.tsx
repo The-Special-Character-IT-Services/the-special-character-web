@@ -432,7 +432,7 @@ export interface CourseMinimalDetailsEntity {
   id: number;
   title: string;
   description: string;
-  icon?: null;
+  icon?: Icon;
 }
 export interface FeedbacksEntity {
   id: number;
