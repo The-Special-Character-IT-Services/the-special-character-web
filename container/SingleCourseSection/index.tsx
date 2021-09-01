@@ -104,7 +104,7 @@ const SingleCourseSection = ({ data }: Props) => {
                     <div className="card-get-course-feature-wrapper">
                       <div className="card-get-course-feature-icon">
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.icon.url}`}
+                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
                           width={29}
                           height={29}
                         />
@@ -206,7 +206,7 @@ const SingleCourseSection = ({ data }: Props) => {
                     <div className="card-get-course-feature-wrapper">
                       <div className="card-get-course-feature-icon">
                         <Image
-                          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082193bcb8d6d565ee6e31f_icon-1-course-features-education-x-template.svg"
+                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
                           width={29}
                           height={29}
                         />
