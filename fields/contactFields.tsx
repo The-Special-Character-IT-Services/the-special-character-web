@@ -1,4 +1,5 @@
 import TextInput from '@components/TextInput';
+import styles from '@container/ContactForm/contactForm.module.scss';
 
 export const contactFields = [
   {
@@ -53,6 +54,7 @@ export const contactFields = [
   },
   {
     name: 'message',
+    divClassName: `${styles.textInputCol}`,
     label: 'Message',
     placeholder: 'Write your message here...',
     component: TextInput,

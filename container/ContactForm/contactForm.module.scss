@@ -35,6 +35,14 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.contactForm {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2.5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
 @media screen and (max-width: $breakpointLgForMw) {
   .contactLink {
     padding-top: 2.5rem;
@@ -47,11 +55,19 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
+  .contactForm {
+    grid-template-columns: 1fr;
+  }
 }
 @media screen and (max-width: $breakpointSmForMw) {
   .contactLink {
     margin-bottom: 1.25rem;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
+  }
+}
+@media screen and (min-width: $breakpointMd) {
+  .textInputCol {
+    grid-column: 1/3;
   }
 }
