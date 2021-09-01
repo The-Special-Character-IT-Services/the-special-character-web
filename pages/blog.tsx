@@ -9,13 +9,13 @@ interface Props {}
 
 const Blog = (props: Props) => {
   const { data: blogBanner } = useRequest<BlogBannerTypes>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/blog-banner`,
+    url: 'blog-banner',
   });
   const { data: newsData } = useRequest<SubscriptionType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/blog-subscription`,
+    url: 'blog-subscription',
   });
   const { data: allBlogData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/all-blogs`,
+    url: 'all-blogs',
   });
   return (
     <>

@@ -52,17 +52,19 @@ const SingleCourseSection = ({ data }: Props) => {
         <div className="course-wrapper">
           <div className="course-content">
             <div className="course-category-item">
-              <div className="course-category">
-                <Image
-                  height={18}
-                  width={16}
-                  src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/607f2199d24e83863a7b02da_icon-2-categories-education-x-template.svg"
-                />
+              <div>
                 {data?.tags?.map(x => {
                   return (
-                    <Typography className={styles.courseCategoryText}>
-                      {x.title}
-                    </Typography>
+                    <a className="course-category" href={x?.link}>
+                      <Image
+                        height={18}
+                        width={16}
+                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
+                      />
+                      <Typography className={styles.courseCategoryText}>
+                        {x.title}
+                      </Typography>
+                    </a>
                   );
                 })}
               </div>
@@ -102,7 +104,7 @@ const SingleCourseSection = ({ data }: Props) => {
                     <div className="card-get-course-feature-wrapper">
                       <div className="card-get-course-feature-icon">
                         <Image
-                          src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6082193bcb8d6d565ee6e31f_icon-1-course-features-education-x-template.svg"
+                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.icon.url}`}
                           width={29}
                           height={29}
                         />
@@ -146,48 +148,50 @@ const SingleCourseSection = ({ data }: Props) => {
               </Typography>
             </div>
             <Divider className={styles.divider} isFooterTop />
-            <div>
-              <Typography variant="h2" className="commonHeading">
-                What our students say
-              </Typography>
-              <div className="review-grid">
-                {data?.feedback?.map(x => {
-                  return (
-                    <Card className={testimonialStyle.testimonialCard}>
-                      <Images
-                        variant="avtar"
-                        height={203}
-                        width={203}
-                        className={testimonialStyle.image}
-                        src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607ef1bc486e0164b300559c_image-3-testimonials-education-x-template.jpg"
-                      />
-                      <div className="flex-grow">
-                        <StarRating
-                          number={x.ratings}
-                          className={classnames(
-                            testimonialStyle.testimonialStar
-                          )}
+            {data?.feedbacks && (
+              <div>
+                <Typography variant="h2" className="commonHeading">
+                  What our students say
+                </Typography>
+                <div className="review-grid">
+                  {data?.feedbacks?.map(x => {
+                    return (
+                      <Card className={testimonialStyle.testimonialCard}>
+                        <Images
+                          variant="avtar"
+                          height={203}
+                          width={203}
+                          className={testimonialStyle.image}
+                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.avatar?.url}`}
                         />
-                        <div className="text-align">
-                          <Typography
-                            className={testimonialStyle.testimonialParagraph}>
-                            {x.description}
-                          </Typography>
-                          <Typography
-                            className={testimonialStyle.testimonialName}>
-                            {x.name}
-                          </Typography>
-                          <Typography
-                            className={testimonialStyle.testimonialRole}>
-                            {x.jobTitle}
-                          </Typography>
+                        <div className="flex-grow">
+                          <StarRating
+                            number={x.starRating}
+                            className={classnames(
+                              testimonialStyle.testimonialStar
+                            )}
+                          />
+                          <div className="text-align">
+                            <Typography
+                              className={testimonialStyle.testimonialParagraph}>
+                              {x.description}
+                            </Typography>
+                            <Typography
+                              className={testimonialStyle.testimonialName}>
+                              {x.name}
+                            </Typography>
+                            <Typography
+                              className={testimonialStyle.testimonialRole}>
+                              {x.jobTitle}
+                            </Typography>
+                          </div>
                         </div>
-                      </div>
-                    </Card>
-                  );
-                })}
+                      </Card>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            )}
           </div>
           <div className="course-sidebar">
             <div className="card get-course">
