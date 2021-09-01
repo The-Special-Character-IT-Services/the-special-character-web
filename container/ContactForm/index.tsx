@@ -1,4 +1,4 @@
-import styles from './form.module.scss';
+import styles from './contactForm.module.scss';
 import Typography from '@components/Typography';
 import TextInput from '@components/TextInput';
 import Button from '@components/Button';
@@ -8,12 +8,16 @@ import Image from 'next/image';
 import { ErrorMessage, useFormik } from 'formik';
 import { useRouter } from 'next/router';
 import { ContactPageType } from 'types';
+import Form from '@components/Form';
+import { contactFields, initialValues } from '../../fields/contactFields';
+
+const wait = time => new Promise(resolve => setTimeout(resolve, time));
 
 interface Props {
   data?: ContactPageType;
 }
 
-const Form = ({ data }: Props) => {
+const ContactForm = ({ data }: Props) => {
   const router = useRouter();
   const {
     query: { value },
@@ -33,69 +37,68 @@ const Form = ({ data }: Props) => {
           <div className="contact-content">
             <div className="card-contact">
               <div className="w-form">
-                <form
-                  id="Contact-Form"
-                  name="Contact-Form"
-                  className="contact-form">
+                <Form
+                  fields={contactFields}
+                  className={styles.contactForm}
+                  initialValues={initialValues}
+                  onSubmit={async values => {
+                    await wait(3000);
+                    console.log(values);
+                  }}></Form>
+                {/* <form name="Contact-Form" className="contact-form">
                   <TextInput
                     label="Name"
-                    id="Name"
-                    name="Name"
+                    name="name"
                     placeholder="Ex. Elon Musk"
                     type="text"
                   />
                   <TextInput
                     label="Email Address"
-                    id="Email"
                     name="Email"
                     placeholder="Ex.elon.musk@tesla.com"
                     type="email"
                   />
                   <TextInput
                     label="Phone Number"
-                    id="Phone"
                     name="Phone"
                     placeholder="475-5448-1543"
                     type="tel"
                   />
                   <TextInput
                     label="Subject"
-                    id="Subject"
                     name="Subject"
                     placeholder="Ex. Courses"
                     type="text"
                   />
-                  <div className="text-input-col">
-                    <TextInput
-                      isTextArea
-                      value={value}
-                      className={styles.mb}
-                      label="Message"
-                      id="Message"
-                      name="Message"
-                      placeholder="Write your message here..."
-                    />
-                    <Button>Submit</Button>
-                  </div>
-                </form>
+                  <TextInput
+                    isTextArea
+                    value={value}
+                    label="Message"
+                    name="Message"
+                    placeholder="Write your message here..."
+                  />
+                 
+                </form> */}
               </div>
             </div>
             <div className="contact-links-wrapper">
               {data?.contactDetails?.map(x => {
                 return (
                   <Card
+                    key={x.id}
                     variant="cardHover"
                     className={classnames(styles.contactLink)}>
                     <a className="contact-link">
                       <div className="image-wrapper">
                         <Image
+                          alt="social Media Icon"
                           height={60}
                           width={60}
                           src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
                         />
                       </div>
                       <Typography variant="label">{x?.contactType}</Typography>
-                      <a href={x?.link} target="_blank">
+                      <a href={x?.link} target="_blank" rel="noreferrer">
                         <Typography className={styles.linkText}>
                           {x?.displayText}
                         </Typography>
@@ -150,17 +153,10 @@ const Form = ({ data }: Props) => {
           align-items: center;
         }
         .w-form {
-          margin-bottom: 0;
+          margin-bottom: 1.3rem !important;
           width: 100%;
         }
-        .contact-form {
-          display: grid;
-          grid-auto-columns: 1fr;
-          grid-column-gap: 1.5rem;
-          grid-row-gap: 2.5rem;
-          grid-template-columns: 1fr 1fr;
-          grid-template-rows: auto auto;
-        }
+
         .contact-links-wrapper {
           display: flex;
           width: 100%;
@@ -211,11 +207,7 @@ const Form = ({ data }: Props) => {
           border-radius: 1000px;
           background-color: $Secondary3;
         }
-        @media screen and (min-width: $breakpointMd) {
-          .text-input-col {
-            grid-column: 1/3;
-          }
-        }
+
         @media screen and (max-width: $breakpointLgForMw) {
           .form {
             padding-top: 5.75rem;
@@ -262,9 +254,6 @@ const Form = ({ data }: Props) => {
             min-height: 980px;
             margin-bottom: 3.25rem;
             padding: 2.75rem 2rem 2.75rem;
-          }
-          .contact-form {
-            grid-template-columns: 1fr;
           }
           .bg.contact-shape-1 {
             left: -329px;
@@ -320,4 +309,4 @@ const Form = ({ data }: Props) => {
   );
 };
 
-export default Form;
+export default ContactForm;
