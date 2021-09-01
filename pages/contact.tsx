@@ -1,5 +1,5 @@
 import FAQs from '@container/FAQs';
-import Form from '@container/Form';
+import ContactForm from '@container/ContactForm';
 import useRequest from 'hooks/useRequest';
 import { ContactPageType } from 'types';
 
@@ -13,7 +13,7 @@ const Contact = (props: Props) => {
     <>
       {data && (
         <>
-          <Form data={data} />
+          <ContactForm data={data} />
           <FAQs data={data} />
         </>
       )}
