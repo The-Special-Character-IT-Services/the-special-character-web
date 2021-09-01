@@ -8,9 +8,10 @@ interface Props {
   type?: string;
   label: string;
   placeholder: string;
-  className?: string | any;
+  className?: string;
   isTextArea?: boolean;
   value?: string | any;
+  divClassName?: string;
 }
 
 const TextInput = ({
@@ -18,12 +19,16 @@ const TextInput = ({
   form: { touched, errors },
   id,
   isTextArea,
+  divClassName,
+  className,
   ...rest
 }: Props) => {
   const Component = isTextArea ? 'textarea' : 'input';
-
   return (
-    <div className="input-wrapper">
+    <div
+      className={cn('input-wrapper', {
+        [divClassName]: !!divClassName,
+      })}>
       <Typography variant="label" htmlFor={field.name}>
         {rest.label}
       </Typography>

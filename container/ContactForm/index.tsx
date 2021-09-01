@@ -37,12 +37,14 @@ const ContactForm = ({ data }: Props) => {
               <div className="w-form">
                 <Form
                   fields={contactFields}
-                  className="contact-form"
+                  className={styles.contactForm}
                   initialValues={initialValues}
                   onSubmit={values => {
                     console.log(values);
                   }}>
-                  <Button type="submit">Submit</Button>
+                  <div>
+                    <Button type="submit">Submit</Button>
+                  </div>
                 </Form>
                 {/* <form name="Contact-Form" className="contact-form">
                   <TextInput
@@ -155,14 +157,7 @@ const ContactForm = ({ data }: Props) => {
           margin-bottom: 0;
           width: 100%;
         }
-        .contact-form {
-          display: grid;
-          grid-auto-columns: 1fr;
-          grid-column-gap: 1.5rem;
-          grid-row-gap: 2.5rem;
-          grid-template-columns: 1fr 1fr;
-          grid-template-rows: auto auto;
-        }
+
         .contact-links-wrapper {
           display: flex;
           width: 100%;
@@ -213,11 +208,7 @@ const ContactForm = ({ data }: Props) => {
           border-radius: 1000px;
           background-color: $Secondary3;
         }
-        @media screen and (min-width: $breakpointMd) {
-          .text-input-col {
-            grid-column: 1/3;
-          }
-        }
+        
         @media screen and (max-width: $breakpointLgForMw) {
           .form {
             padding-top: 5.75rem;
@@ -264,9 +255,6 @@ const ContactForm = ({ data }: Props) => {
             min-height: 980px;
             margin-bottom: 3.25rem;
             padding: 2.75rem 2rem 2.75rem;
-          }
-          .contact-form {
-            grid-template-columns: 1fr;
           }
           .bg.contact-shape-1 {
             left: -329px;
