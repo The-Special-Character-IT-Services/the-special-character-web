@@ -22,25 +22,25 @@ interface Props {}
 
 const About = (props: Props) => {
   const { data: bannerData } = useRequest<AboutBannerType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-banner`,
+    url: 'about-banner',
   });
   const { data: successData } = useRequest<AboutSuccessType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-success`,
+    url: 'about-success',
   });
   const { data: missionData } = useRequest<AboutMissionType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-mission`,
+    url: 'about-mission',
   });
   const { data: valuesData } = useRequest<AboutValuesType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-values`,
+    url: 'about-values',
   });
   const { data: teacherData } = useRequest<AboutTeacherType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-teacher`,
+    url: 'about-teacher',
   });
   const { data: historyData } = useRequest<AboutHistoryType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-history`,
+    url: 'about-history',
   });
   const { data: officeData } = useRequest<AboutOfficesType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-offices`,
+    url: 'about-offices',
   });
   return (
     <>

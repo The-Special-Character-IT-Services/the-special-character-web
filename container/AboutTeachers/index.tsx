@@ -35,7 +35,7 @@ const AboutTeachers = ({ data }: Props) => {
           </Button>
         </div>
         <div className={styles.cards}>
-          {data?.teacherCard?.map(x => {
+          {data?.teachers?.map(x => {
             return (
               <Card variant="cardHover" className={styles.singleCard}>
                 <Image
@@ -45,14 +45,16 @@ const AboutTeachers = ({ data }: Props) => {
                   height={330}
                 />
                 <div className={styles.description}>
-                  <Typography variant="h3">{x?.title}</Typography>
+                  <Typography variant="h3">{`${x?.firstName} ${x?.lastName}`}</Typography>
                   <Typography>{x?.description}</Typography>
                   <div className={styles.socialIcons}>
-                    {x?.socialIcon?.map(icon => {
+                    {x?.socialMedia?.map(icon => {
                       return (
-                        <Button className="socialIcon">
+                        <Button
+                          onClick={() => router.push(`${icon.link}`)}
+                          className="socialIcon">
                           <Image
-                            src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${icon?.url}`}
+                            src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${icon?.icon.url}`}
                             height={21}
                             width={21}
                           />
