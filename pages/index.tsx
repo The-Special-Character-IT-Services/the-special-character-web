@@ -23,43 +23,42 @@ import {
 
 export default function Home() {
   const { data: bannerData } = useRequest<HomeBannerType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/home-banner`,
+    url: 'home-banner',
   });
   const { data: coursesData } = useRequest<PopularCoursesType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/popular-courses`,
+    url: 'popular-courses',
   });
   const { data: educationData } = useRequest<EducationType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/about-education`,
+    url: 'about-education',
   });
   const { data: courseData } = useRequest<CourseCategoryType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/courses-category`,
+    url: 'courses-category',
   });
   const { data: testimonialData } = useRequest<TestimonialTypes>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/testimonial-section`,
+    url: 'testimonial-section',
   });
-
   const { data: reasonData } = useRequest<ReasonType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/why-our-course`,
+    url: 'why-our-course',
   });
   const { data: teachersData } = useRequest<FeaturedTeacherType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/featured-teacher`,
+    url: 'featured-teacher',
   });
   const { data: successData } = useRequest<SuccessTypes>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/success`,
+    url: 'success',
   });
   const { data: blogData } = useRequest<string[]>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/blog-section`,
+    url: 'blog-section',
   });
   return (
     <>
       {bannerData && <Banner data={bannerData} />}
       {coursesData && <Courses data={coursesData} />}
-      {educationData && <AboutEducation data={educationData} />}
-      {courseData && <Categories data={courseData} />}
-      {testimonialData && <Testimonials data={testimonialData} />}
       {reasonData && <Perk data={reasonData} />}
       {teachersData && <Teachers data={teachersData} />}
       {successData && <Ratings data={successData} />}
+      {educationData && <AboutEducation data={educationData} />}
+      {courseData && <Categories data={courseData} />}
+      {testimonialData && <Testimonials data={testimonialData} />}
       {blogData && <Blog data={blogData} />}
     </>
   );
