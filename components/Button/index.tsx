@@ -101,10 +101,7 @@ const Button = ({
             &.disable {
               cursor: not-allowed;
               background-color: gray;
-              opacity: 0.5;
-              font-size: 13px;
               color: black;
-              padding: 10px 20px;
             }
           }
 

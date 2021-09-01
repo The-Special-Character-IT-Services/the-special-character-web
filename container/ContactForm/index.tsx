@@ -11,6 +11,8 @@ import { ContactPageType } from 'types';
 import Form from '@components/Form';
 import { contactFields, initialValues } from '../../fields/contactFields';
 
+const wait = time => new Promise(resolve => setTimeout(resolve, time));
+
 interface Props {
   data?: ContactPageType;
 }
@@ -39,13 +41,10 @@ const ContactForm = ({ data }: Props) => {
                   fields={contactFields}
                   className={styles.contactForm}
                   initialValues={initialValues}
-                  onSubmit={values => {
+                  onSubmit={async values => {
+                    await wait(3000);
                     console.log(values);
-                  }}>
-                  <div>
-                    <Button type="submit">Submit</Button>
-                  </div>
-                </Form>
+                  }}></Form>
                 {/* <form name="Contact-Form" className="contact-form">
                   <TextInput
                     label="Name"
