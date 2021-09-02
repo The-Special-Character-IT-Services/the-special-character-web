@@ -10,7 +10,8 @@
   transform-style: preserve-3d;
 }
 .cardIcon {
-  margin-right: 0.25rem;
+  display: flex;
+  gap: 0.5rem;
 }
 .iconTitle {
   margin-bottom: 0;

@@ -837,3 +837,39 @@ export interface CategoryButtonsEntityOrEnroll {
   buttonText: string;
   link?: null;
 }
+export interface AllBlogsType {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  heading: Heading;
+  categoryButton?: CategoryButtonEntity[] | null;
+  blogs?: BlogsEntity[] | null;
+  localizations?: null[] | null;
+}
+
+export interface CategoryButtonEntity {
+  id: number;
+  buttonText: string;
+  link?: null;
+}
+export interface BlogsEntity {
+  id: number;
+  title: string;
+  blog_author: number;
+  content: string;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  categories?: (CategoriesEntity | null)[] | null;
+  bannerImage: BannerImage;
+}
+export interface CategoriesEntity {
+  id: number;
+  title: string;
+  description?: null;
+  link?: null;
+  icon: Icon;
+}
