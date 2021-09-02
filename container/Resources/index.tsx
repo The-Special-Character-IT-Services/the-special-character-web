@@ -121,7 +121,7 @@ const Resources = ({ data }: Props) => {
           top: 25px;
           right: 32px;
           display: flex;
-          padding: 0.75rem 1.5rem;
+          padding: 1rem 1.5rem;
           align-items: center;
           border-radius: 1000px;
           background-color: $Neutral100;
