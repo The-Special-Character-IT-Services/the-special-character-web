@@ -7,6 +7,7 @@ import { IndividualEventTypes } from 'types';
 import Marketing from '../../public/svg/Marketing.svg';
 import styles from './individualEvent.module.scss';
 import format from 'date-fns/format';
+import Icons from '@components/Icons';
 
 interface Props {
   data?: IndividualEventTypes;
@@ -41,33 +42,22 @@ const IndividualEvent = ({ data }: Props) => {
           </div>
           <div className={styles.place}>
             <div className={styles.eventAbout}>
-              <div className={styles.firstDiv}>
-                {data?.minimalDetails?.map(x => {
-                  return (
-                    <>
-                      <Image
-                        alt="Calender"
-                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.icon.url}`}
-                        height={21}
-                        width={21}
-                      />
-                      <Typography variant="bold">{x.title}</Typography>
-                    </>
-                  );
-                })}
-              </div>
-              <div className={styles.secondDiv}>
-                <Image
-                  alt="Location"
-                  src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6081eb0877bb756f8ad439bb_icon-2-event-about-education-x-template.svg"
-                  height={20}
-                  width={17}
-                />
-                <Typography variant="bold">{data?.location}</Typography>
-              </div>
+              {data?.minimalDetails?.map(x => {
+                return (
+                  <div className={styles.firstDiv} key={x.id}>
+                    <Image
+                      alt="Calender"
+                      src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.icon.url}`}
+                      height={21}
+                      width={21}
+                    />
+                    <Typography variant="bold">{x.title}</Typography>
+                  </div>
+                );
+              })}
               <Button className={styles.button}>
-                <Marketing className={styles.marketing} />
-                Marketing
+                <Icons socialLink={data?.category} />
+                {data?.category.title}
               </Button>
             </div>
             <Typography variant="h2" className={styles.title}>
@@ -84,28 +74,7 @@ const IndividualEvent = ({ data }: Props) => {
             {data?.eventAgenda?.title}
           </Typography>
           <div className={styles.description}>
-            <Typography>
-              {data?.eventAgenda?.description}
-              {/* <Typography variant="bold">tincidunt quis</Typography> . */}
-              {/* Suspendisse vitae vestibulum scelerisque egestas. Volutpat,
-              adipiscing a elit platea amet et. At at metus egestas nunc eget.
-              Tempus sapien, augue laoreet morbi{' '} */}
-              {/* <Typography variant="a"> habitasse leo</Typography> mauris arcu
-              amet. Sapien lectus auctor quis in ut morbi risus. Ornare aliquam
-              phasellus consequat amet velit risus.
-            </Typography> */}
-              {/* Ac, pellentesque proin{' '} */}
-              {/* <Typography variant="bold">tincidunt lobortis sit</Typography> */}
-              {/* velit velit dui eget. Massa, lectus orci auctor morbi. A nisl vitae,
-            sagittis elementum placerat nullam id integer leo. Diam venenatis
-            amet diam odio <Typography variant="a">ultrices auctor */}
-            </Typography>
-            {/* <List
-              listItem={array}
-              keyProp="id"
-              valueProp="item"
-              className={styles.listUL}
-            /> */}
+            <Typography>{data?.eventAgenda?.description}</Typography>
           </div>
           <Button>{data?.register?.buttonText}</Button>
         </div>

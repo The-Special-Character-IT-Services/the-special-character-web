@@ -47,8 +47,8 @@
     & > .eventTime {
       display: flex;
       margin-bottom: 8rem;
-      align-items: baseline;
       justify-content: space-between;
+      align-items: baseline;
       & > .date {
         text-align: center;
         & > .month {
@@ -70,6 +70,7 @@
         & > .title {
           font-family: auto;
           max-width: 450px;
+          margin: 0;
           margin-bottom: 1rem;
         }
         & .caption {
@@ -80,7 +81,6 @@
           display: flex;
           margin-bottom: 0.5rem;
           justify-content: space-between;
-          align-items: center;
           & > .firstDiv,
           .secondDiv {
             position: relative;
@@ -111,14 +111,13 @@
             &:hover {
               border-color: $Primary1;
               background-color: $Primary1;
-
+              & svg {
+                & path {
+                  fill: $Neutral100;
+                }
+              }
               & > p {
                 color: $Neutral100;
-                & > .marketing {
-                  & > path {
-                    fill: $Neutral100;
-                  }
-                }
               }
             }
           }
