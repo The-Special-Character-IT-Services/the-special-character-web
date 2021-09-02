@@ -72,10 +72,10 @@ const SingleCourseSection = ({ data }: Props) => {
             <Typography
               variant="h1"
               className={classnames('commonHeading', styles.courseTitle)}>
-              {data.title}
+              {data?.title}
             </Typography>
             <Typography className={styles.courseSummary}>
-              {data.titleDescription}
+              {data?.titleDescription}
             </Typography>
             <Images
               className={styles.coursePreview}
@@ -95,8 +95,10 @@ const SingleCourseSection = ({ data }: Props) => {
             <div className="card get-course mobile">
               <div className="card-get-course-content-top">
                 <Typography
-                  className={styles.price}>{`$ ${data.price} USD`}</Typography>
-                <Button onClick={goToContact}>{data.enroll.buttonText}</Button>
+                  className={styles.price}>{`$ ${data?.price} USD`}</Typography>
+                <Button onClick={goToContact}>
+                  {data?.enroll?.buttonText}
+                </Button>
               </div>
               <div className="card-get-course-features-grid">
                 {data?.courseMinimalDetails?.map(x => {
@@ -123,10 +125,10 @@ const SingleCourseSection = ({ data }: Props) => {
             <FeaturedCategory categoryList={array} />
             <div>
               <Typography variant="h2" className="commonHeading">
-                {data.aboutCourse.title}
+                {data?.aboutCourse?.title}
               </Typography>
               <Typography className={styles.richText}>
-                {data.aboutCourse.description}
+                {data?.aboutCourse?.description}
               </Typography>
             </div>
             <Divider className={styles.divider} isFooterTop />
@@ -147,10 +149,10 @@ const SingleCourseSection = ({ data }: Props) => {
             <Divider className={styles.divider} isFooterTop />
             <div>
               <Typography variant="h2" className="commonHeading">
-                {data.result.title}
+                {data?.result?.title}
               </Typography>
               <Typography className={styles.richText}>
-                {data.result.description}
+                {data?.result?.description}
               </Typography>
             </div>
             <Divider className={styles.divider} isFooterTop />

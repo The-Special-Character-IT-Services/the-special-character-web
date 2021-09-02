@@ -10,7 +10,7 @@ const IndividualEventPage = (props: Props) => {
   const router = useRouter();
   const { id } = router.query;
   const { data: individualEventData } = useRequest<IndividualEventTypes>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/events/${id}`,
+    url: `events/${id}`,
   });
   return (
     <>

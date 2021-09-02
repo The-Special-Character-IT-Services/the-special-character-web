@@ -14,6 +14,9 @@ const Blog = (props: Props) => {
   const { data: newsData } = useRequest<SubscriptionType>({
     url: 'blog-subscription',
   });
+  const { data: blogData } = useRequest<SubscriptionType>({
+    url: 'blog-section',
+  });
   const { data: allBlogData } = useRequest<string[]>({
     url: 'all-blogs',
   });
@@ -29,7 +32,7 @@ const Blog = (props: Props) => {
           }}
         />
       )}
-      <BlogContainer isBlog />
+      {blogData && <BlogContainer isBlog data={blogData} />}
       {newsData && <NewsLetter data={newsData} />}
       {allBlogData && <Resources data={allBlogData} />}
     </>
