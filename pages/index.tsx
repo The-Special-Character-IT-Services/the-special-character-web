@@ -57,7 +57,7 @@ export default function Home() {
       {teachersData && <Teachers data={teachersData} />}
       {successData && <Ratings data={successData} />}
       {educationData && <AboutEducation data={educationData} />}
-      {courseData && <Categories data={courseData} />}
+      {/* {courseData && <Categories data={courseData} />} */}
       {testimonialData && <Testimonials data={testimonialData} />}
       {blogData && <Blog data={blogData} />}
     </>
