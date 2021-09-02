@@ -3,6 +3,7 @@
   position: relative;
   padding-top: 8.5rem;
   padding-bottom: 11.5rem;
+
   & .container {
     max-width: 1209px;
     margin-right: auto;
@@ -11,6 +12,10 @@
     padding-left: 1.5rem;
     flex: 1;
     text-align: center;
+    & .divider {
+      margin-top: -4.375rem;
+      margin-bottom: 4.375rem;
+    }
     & h2 {
       font-family: auto;
       margin-top: 0;
