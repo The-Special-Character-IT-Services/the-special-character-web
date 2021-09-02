@@ -1,17 +1,24 @@
 interface Props {
   isFooterTop?: boolean;
   isFooterBottom?: boolean;
+  isSectionDivider?: boolean;
   className?: string | any;
 }
 import cn from 'classnames';
 
-const Divider = ({ isFooterTop, isFooterBottom, className }: Props) => {
+const Divider = ({
+  isFooterTop,
+  isFooterBottom,
+  isSectionDivider,
+  className,
+}: Props) => {
   return (
     <>
       <div
         className={cn('divider', {
           ['footer-top']: !!isFooterTop,
           ['footer-bottom']: !!isFooterBottom,
+          ['section-divider']: !!isSectionDivider,
           [className]: !!className,
         })}
       />
@@ -35,6 +42,16 @@ const Divider = ({ isFooterTop, isFooterBottom, className }: Props) => {
             margin-bottom: 1.5rem;
             background-color: $Neutral100;
             opacity: 0.15;
+          }
+          .section-divider {
+            max-width: 1209px;
+            width: auto;
+            margin: 0 auto;
+          }
+          @media screen and (max-width: $breakpointXl) {
+            .section-divider {
+              margin: 0 1.5rem;
+            }
           }
           @media screen and (max-width: $breakpointLg) {
             .footer-top {

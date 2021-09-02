@@ -54,9 +54,9 @@ const BlogContainer = ({ data, isBlog }: Props) => {
                 </div>
               </a>
             </Card>
+
             <div className={styles.sideDiv}>
               {data.blogs.map(x => {
-                console.log(x.bannerImage.url, 'loop');
                 return (
                   <a
                     key={x?.id}
@@ -76,37 +76,6 @@ const BlogContainer = ({ data, isBlog }: Props) => {
                   </a>
                 );
               })}
-
-              {/* <a href="/blog/1">
-                <Card variant="cardHover" className={styles.sideCardDiv}>
-                  <Image
-                    src="/abouteducation.jpeg"
-                    height={152}
-                    width={270}
-                    alt="blog post"
-                  />
-                  <div className={styles.blogCard}>
-                    <Typography variant="h3">
-                      5 marketing trends that you should be prepared for in 2022
-                    </Typography>
-                  </div>
-                </Card>
-              </a>
-              <a href="/blog/1">
-                <Card variant="cardHover" className={styles.sideCardDiv}>
-                  <Image
-                    src="/abouteducation.jpeg"
-                    height={152}
-                    width={270}
-                    alt="blog post"
-                  />
-                  <div className={styles.blogCard}>
-                    <Typography variant="h3">
-                      5 marketing trends that you should be prepared for in 2022
-                    </Typography>
-                  </div>
-                </Card>
-              </a> */}
             </div>
           </div>
         </div>
