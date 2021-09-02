@@ -25,7 +25,7 @@ const Values = ({ data }: Props) => {
         <div className="main">
           {data?.card?.map(x => {
             return (
-              <Card>
+              <Card key={x.id}>
                 <div className="cardSection">
                   <div className="cardBtn">
                     <Button className="buttonIcon">

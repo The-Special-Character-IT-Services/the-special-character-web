@@ -20,7 +20,7 @@ const Success = ({ data }: Props) => {
       <div className={styles.container}>
         {data?.success?.map(x => {
           return (
-            <div className={styles.achievement}>
+            <div key={x.id} className={styles.achievement}>
               <Typography className={styles.title}>{`${x.number}+`}</Typography>
               <Typography variant="h3" className={styles.caption}>
                 {x.title}

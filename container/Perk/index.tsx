@@ -23,7 +23,7 @@ const Perk = ({ data }: Props) => {
           <div className="perks-grid">
             {data?.cards?.map(x => {
               return (
-                <Card variant="perkCard">
+                <Card key={x.id} variant="perkCard">
                   <Image
                     src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.image.url}`}
                     alt="Perk Image"
