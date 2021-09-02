@@ -37,7 +37,10 @@ const AboutTeachers = ({ data }: Props) => {
         <div className={styles.cards}>
           {data?.teachers?.map(x => {
             return (
-              <Card variant="cardHover" className={styles.singleCard}>
+              <Card
+                key={x.id}
+                variant="cardHover"
+                className={styles.singleCard}>
                 <Image
                   alt="John Carter"
                   src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}
@@ -51,6 +54,7 @@ const AboutTeachers = ({ data }: Props) => {
                     {x?.socialMedia?.map(icon => {
                       return (
                         <Button
+                          key={icon.id}
                           onClick={() => router.push(`${icon.link}`)}
                           className="socialIcon">
                           <Image

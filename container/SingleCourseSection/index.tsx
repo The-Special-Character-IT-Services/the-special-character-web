@@ -55,7 +55,7 @@ const SingleCourseSection = ({ data }: Props) => {
               <div>
                 {data?.tags?.map(x => {
                   return (
-                    <a className="course-category" href={x?.link}>
+                    <a key={x.id} className="course-category" href={x?.link}>
                       <Image
                         height={18}
                         width={16}
@@ -101,7 +101,7 @@ const SingleCourseSection = ({ data }: Props) => {
               <div className="card-get-course-features-grid">
                 {data?.courseMinimalDetails?.map(x => {
                   return (
-                    <div className="card-get-course-feature-wrapper">
+                    <div key={x.id} className="card-get-course-feature-wrapper">
                       <div className="card-get-course-feature-icon">
                         <Image
                           src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
@@ -135,7 +135,13 @@ const SingleCourseSection = ({ data }: Props) => {
                 What will you learn
               </Typography>
               {data?.curriculum?.map(x => {
-                return <Accordian label={x.title} children={x.description} />;
+                return (
+                  <Accordian
+                    key={x.id}
+                    label={x.title}
+                    children={x.description}
+                  />
+                );
               })}
             </div>
             <Divider className={styles.divider} isFooterTop />
@@ -156,7 +162,9 @@ const SingleCourseSection = ({ data }: Props) => {
                 <div className="review-grid">
                   {data?.feedbacks?.map(x => {
                     return (
-                      <Card className={testimonialStyle.testimonialCard}>
+                      <Card
+                        key={x.id}
+                        className={testimonialStyle.testimonialCard}>
                         <Images
                           variant="avtar"
                           height={203}
@@ -203,7 +211,7 @@ const SingleCourseSection = ({ data }: Props) => {
               <div className="mt1 card-get-course-features-grid">
                 {data?.courseMinimalDetails?.map(x => {
                   return (
-                    <div className="card-get-course-feature-wrapper">
+                    <div key={x.id} className="card-get-course-feature-wrapper">
                       <div className="card-get-course-feature-icon">
                         <Image
                           src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
