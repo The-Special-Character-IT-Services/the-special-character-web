@@ -5,6 +5,7 @@ import Typography from '@components/Typography';
 import Image from 'next/image';
 import router from 'next/router';
 import styles from './blog.module.scss';
+import format from 'date-fns/format';
 
 interface Props {
   data?: string[] | Object;
@@ -12,6 +13,8 @@ interface Props {
 }
 
 const BlogContainer = ({ data, isBlog }: Props) => {
+  console.log(data.blogs.length, 'blog length');
+
   return (
     <>
       <section className={styles.container}>
@@ -47,7 +50,9 @@ const BlogContainer = ({ data, isBlog }: Props) => {
                   Design
                 </div>
                 <div className={styles.blogCard}>
-                  <Typography>April 20,2021</Typography>
+                  <Typography>
+                    {format(new Date(data.updated_at), 'MMM dd YYY')}
+                  </Typography>
                   <Typography variant="h3">
                     {data?.featuredBlog?.title}
                   </Typography>
@@ -56,11 +61,13 @@ const BlogContainer = ({ data, isBlog }: Props) => {
             </Card>
 
             <div className={styles.sideDiv}>
-              {data.blogs.map(x => {
+              {data.blogs.map((x, i) => {
                 return (
                   <a
                     key={x?.id}
-                    className={styles.anchor}
+                    className={
+                      data.blogs.length <= 2 && i === 0 && styles.anchor
+                    }
                     href={`blogs/${x?.id}`}>
                     <Card variant="cardHover" className={styles.sideCardDiv}>
                       <Image
@@ -83,7 +90,7 @@ const BlogContainer = ({ data, isBlog }: Props) => {
       {isBlog && (
         <style jsx>{`
           .cards {
-            padding: 10rem 1rem;
+            padding: 10rem 0rem 0rem;
           }
         `}</style>
       )}

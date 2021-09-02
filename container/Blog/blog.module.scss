@@ -28,7 +28,7 @@
       grid-template-columns: 1fr;
       grid-template-rows: auto;
       & .anchor {
-        max-height: 5rem;
+        height: 1rem;
       }
       & .sideCardDiv {
         display: flex;
@@ -78,6 +78,13 @@
     }
   }
 }
+@media screen and (max-width: $breakpointMd) {
+  .sideDiv {
+    & .anchor {
+      min-height: 13rem;
+    }
+  }
+}
 @media screen and (max-width: $breakpointSm) {
   .container {
     & .main {
@@ -89,6 +96,9 @@
       grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
       & .sideDiv {
         grid-gap: 2rem;
+        & .anchor {
+          min-height: 18rem;
+        }
         & .sideCardDiv {
           min-height: 18rem;
           max-height: 18rem;
