@@ -1,0 +1,41 @@
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, memo } from 'react';
+import { axiosInstance } from '../../hooks/useRequest';
+import classNames from 'classnames';
+import styles from './icon.module.scss';
+
+interface Props {}
+
+const Icons = ({ socialLink, variant, className }) => {
+  const iconRef = useRef();
+
+  useEffect(() => {
+    const loadSvg = async () => {
+      const res = await axiosInstance.get(socialLink.icon.url, {
+        responseType: 'text',
+      });
+      while (iconRef.current.hasChildNodes()) {
+        iconRef.current.removeChild(iconRef.current.firstChild);
+      }
+      iconRef.current.insertAdjacentHTML('beforeend', res.data);
+    };
+
+    loadSvg();
+  }, [socialLink.icon.url]);
+  return (
+    <a
+      rel="noreferrer"
+      aria-label="button"
+      href={socialLink.url}
+      target="_blank"
+      role="button"
+      className={classNames(styles.categoryBtn, {
+        [className]: !!className,
+      })}
+      ref={iconRef}>
+      socialIcons
+    </a>
+  );
+};
+
+export default memo(Icons);
