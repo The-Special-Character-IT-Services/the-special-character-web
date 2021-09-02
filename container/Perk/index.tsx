@@ -25,7 +25,7 @@ const Perk = ({ data }: Props) => {
               return (
                 <Card variant="perkCard">
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.image.url}`}
+                    src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}
                     alt="Perk Image"
                     height={233}
                     width={233}
