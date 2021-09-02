@@ -108,7 +108,7 @@ const Courses = ({ data }: Props) => {
             <Slider {...settings}>
               {data?.courses?.map(x => {
                 return (
-                  <Card variant="cardHover">
+                  <Card key={x.id} variant="cardHover">
                     <a href={`courses/${x.id}`}>
                       <Image
                         alt="card"
