@@ -15,7 +15,6 @@ const Categories = ({ data }: Props) => {
     <>
       <section className={styles.categories}>
         <div className={styles.container}>
-          <Divider className={styles.divider} />
           <Typography variant="h2">{data?.heading?.title}</Typography>
           <div className={styles.cardDiv}>
             {data?.cardComponent?.map(x => (
