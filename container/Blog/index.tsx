@@ -12,13 +12,6 @@ interface Props {
 }
 
 const BlogContainer = ({ data, isBlog }: Props) => {
-  const blogLoop = data?.blogs?.map(x => {
-    if (data.featuredBlog.title === x.title) {
-      return data.blogs.splice(x.id - 1, x, x.id + 1);
-    }
-  });
-  console.log(blogLoop, 'blog array');
-
   return (
     <>
       <section className={styles.container}>
@@ -61,8 +54,9 @@ const BlogContainer = ({ data, isBlog }: Props) => {
                 </div>
               </a>
             </Card>
+
             <div className={styles.sideDiv}>
-              {blogLoop?.map(x => {
+              {data.blogs.map(x => {
                 return (
                   <a key={x?.id} href={`blogs/${x?.id}`}>
                     <Card variant="cardHover" className={styles.sideCardDiv}>
@@ -79,37 +73,6 @@ const BlogContainer = ({ data, isBlog }: Props) => {
                   </a>
                 );
               })}
-
-              {/* <a href="/blog/1">
-                <Card variant="cardHover" className={styles.sideCardDiv}>
-                  <Image
-                    src="/abouteducation.jpeg"
-                    height={152}
-                    width={270}
-                    alt="blog post"
-                  />
-                  <div className={styles.blogCard}>
-                    <Typography variant="h3">
-                      5 marketing trends that you should be prepared for in 2022
-                    </Typography>
-                  </div>
-                </Card>
-              </a>
-              <a href="/blog/1">
-                <Card variant="cardHover" className={styles.sideCardDiv}>
-                  <Image
-                    src="/abouteducation.jpeg"
-                    height={152}
-                    width={270}
-                    alt="blog post"
-                  />
-                  <div className={styles.blogCard}>
-                    <Typography variant="h3">
-                      5 marketing trends that you should be prepared for in 2022
-                    </Typography>
-                  </div>
-                </Card>
-              </a> */}
             </div>
           </div>
         </div>
