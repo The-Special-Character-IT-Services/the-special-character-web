@@ -7,6 +7,7 @@ import Image from 'next/image';
 import FeaturedCategory from '@components/FeaturedCategory';
 import { Fragment } from 'react';
 import { AllBlogsType } from 'types';
+import format from 'date-fns/format';
 
 interface Props {
   data?: AllBlogsType;
@@ -73,7 +74,7 @@ const Resources = ({ data }: Props) => {
                   </div>
                   <div className="card-post-content">
                     <Typography className={styles.cardPostDate}>
-                      {x.updated_at}
+                      {format(new Date(x.updated_at), 'dd-mm-yyyy')}
                     </Typography>
                     <Typography
                       variant="h3"
