@@ -32,7 +32,7 @@ const BlogContainer = ({ data, isBlog }: Props) => {
             <Card variant="cardHover">
               <a href={`blogs/${data.id}`} className={styles.cardDiv}>
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.featuredBlog?.bannerImage?.url}`}
+                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data.featuredBlog.bannerImage.url}`}
                   height={500}
                   width={500}
                   alt="blog post"
@@ -58,10 +58,13 @@ const BlogContainer = ({ data, isBlog }: Props) => {
             <div className={styles.sideDiv}>
               {data.blogs.map(x => {
                 return (
-                  <a key={x?.id} href={`blogs/${x?.id}`}>
+                  <a
+                    key={x?.id}
+                    className={styles.anchor}
+                    href={`blogs/${x?.id}`}>
                     <Card variant="cardHover" className={styles.sideCardDiv}>
                       <Image
-                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.bannerImage?.url}`}
+                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.bannerImage.url}`}
                         height={152}
                         width={270}
                         alt="blog post"

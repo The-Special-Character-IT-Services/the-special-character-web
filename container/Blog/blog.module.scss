@@ -27,8 +27,12 @@
       grid-row-gap: 2rem;
       grid-template-columns: 1fr;
       grid-template-rows: auto;
+      & .anchor {
+        max-height: 5rem;
+      }
       & .sideCardDiv {
         display: flex;
+        min-height: 12rem;
         max-height: 12rem;
         & .blogCard {
           padding: 1rem 0rem 1rem 1rem;
@@ -37,6 +41,7 @@
           width: 100%;
           max-width: 296px;
           padding: 31px 25px 31px 27px;
+
           p {
             margin: 0;
           }
@@ -85,6 +90,7 @@
       & .sideDiv {
         grid-gap: 2rem;
         & .sideCardDiv {
+          min-height: 18rem;
           max-height: 18rem;
           display: flex;
           flex-direction: column;
