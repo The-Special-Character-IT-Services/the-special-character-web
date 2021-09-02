@@ -6,25 +6,13 @@ import Image from 'next/image';
 import { IndividualEventTypes } from 'types';
 import Marketing from '../../public/svg/Marketing.svg';
 import styles from './individualEvent.module.scss';
+import format from 'date-fns/format';
 
 interface Props {
   data?: IndividualEventTypes;
 }
 
 const IndividualEvent = ({ data }: Props) => {
-  // const array = [
-  //   {
-  //     id: 1,
-  //     item: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dor',
-  //   },
-
-  //   { id: 2, item: 'Lorem ipsum dolor sit amet, consectetur adipiscing' },
-
-  //   {
-  //     id: 3,
-  //     item: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dor',
-  //   },
-  // ];
   return (
     <section className={styles.individualEvent}>
       <div className={styles.imgDiv}>
@@ -41,8 +29,15 @@ const IndividualEvent = ({ data }: Props) => {
       <div className={styles.eventDesc}>
         <div className={styles.eventTime}>
           <div className={styles.date}>
-            <Typography className={styles.month}>JULY</Typography>
-            <Typography className={styles.day}>24</Typography>
+            <Typography className={styles.month}>
+              {format(new Date(data.dateOfEvent), 'MMM')}
+            </Typography>
+            <Typography className={styles.day}>
+              {format(
+                new Date(data.dateOfEvent),
+                'dd                                                                              '
+              )}
+            </Typography>
           </div>
           <div className={styles.place}>
             <div className={styles.eventAbout}>
