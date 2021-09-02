@@ -12,9 +12,16 @@ interface Props {
 }
 
 const BlogContainer = ({ data, isBlog }: Props) => {
+  const blogLoop = data?.blogs?.map(x => {
+    if (data.featuredBlog.title === x.title) {
+      return data.blogs.splice(x.id - 1, x, x.id + 1);
+    }
+  });
+  console.log(blogLoop, 'blog array');
+
   return (
     <>
-      {/* <section className={styles.container}>
+      <section className={styles.container}>
         {!isBlog && (
           <div className={styles.main}>
             <Typography variant="h2">Resources & News</Typography>
@@ -30,9 +37,9 @@ const BlogContainer = ({ data, isBlog }: Props) => {
         <div className="cards">
           <div className={styles.cards}>
             <Card variant="cardHover">
-              <a href="/blog/1" className={styles.cardDiv}>
+              <a href={`blogs/${data.id}`} className={styles.cardDiv}>
                 <Image
-                  src="/abouteducation.jpeg"
+                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.featuredBlog?.bannerImage?.url}`}
                   height={500}
                   width={500}
                   alt="blog post"
@@ -49,14 +56,31 @@ const BlogContainer = ({ data, isBlog }: Props) => {
                 <div className={styles.blogCard}>
                   <Typography>April 20,2021</Typography>
                   <Typography variant="h3">
-                    How to design a simple, yet unique and memorable brand
-                    identity
+                    {data?.featuredBlog?.title}
                   </Typography>
                 </div>
               </a>
             </Card>
             <div className={styles.sideDiv}>
-              <a href="/blog/1">
+              {blogLoop?.map(x => {
+                return (
+                  <a key={x?.id} href={`blogs/${x?.id}`}>
+                    <Card variant="cardHover" className={styles.sideCardDiv}>
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.bannerImage?.url}`}
+                        height={152}
+                        width={270}
+                        alt="blog post"
+                      />
+                      <div className={styles.blogCard}>
+                        <Typography variant="h3">{x?.title}</Typography>
+                      </div>
+                    </Card>
+                  </a>
+                );
+              })}
+
+              {/* <a href="/blog/1">
                 <Card variant="cardHover" className={styles.sideCardDiv}>
                   <Image
                     src="/abouteducation.jpeg"
@@ -85,26 +109,11 @@ const BlogContainer = ({ data, isBlog }: Props) => {
                     </Typography>
                   </div>
                 </Card>
-              </a>
-              <a href="/blog/1">
-                <Card variant="cardHover" className={styles.sideCardDiv}>
-                  <Image
-                    src="/abouteducation.jpeg"
-                    height={152}
-                    width={270}
-                    alt="blog post"
-                  />
-                  <div className={styles.blogCard}>
-                    <Typography variant="h3">
-                      5 marketing trends that you should be prepared for in 2022
-                    </Typography>
-                  </div>
-                </Card>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
       {isBlog && (
         <style jsx>{`
           .cards {
