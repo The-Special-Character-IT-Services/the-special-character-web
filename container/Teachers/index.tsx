@@ -44,7 +44,7 @@ const Teachers = ({ data }: Props) => {
           </div>
           <div className="featured-teacher-content">
             <Images
-              src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data.teacherImage.url}`}
+              src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data.teacher.image.url}`}
               width={1076}
               height={1334}
             />
@@ -58,14 +58,14 @@ const Teachers = ({ data }: Props) => {
                   'commonHeading',
                   styles.cardFeaturedTeacherTitle
                 )}>
-                {data.teacherQuote}
+                {data.teacher.description}
               </Typography>
               <div className={styles.cardFeaturedTeacherAbout}>
                 <Typography className={styles.cardFeaturedTeacherName}>
-                  {data.featuredTeacherName}
+                  {`${data.teacher.firstName} ${data?.teacher?.lastName}`}
                 </Typography>
                 <Typography className={styles.cardFeaturedTeacherRole}>
-                  {data.teacherJobTitle}
+                  {data.teacher.jobTitle}
                 </Typography>
               </div>
             </Card>

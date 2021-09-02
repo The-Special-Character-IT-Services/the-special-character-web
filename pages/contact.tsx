@@ -1,5 +1,5 @@
 import FAQs from '@container/FAQs';
-import Form from '@container/Form';
+import ContactForm from '@container/ContactForm';
 import useRequest from 'hooks/useRequest';
 import { ContactPageType } from 'types';
 
@@ -7,13 +7,13 @@ interface Props {}
 
 const Contact = (props: Props) => {
   const { data } = useRequest<ContactPageType>({
-    url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/contact-page`,
+    url: 'contact-page',
   });
   return (
     <>
       {data && (
         <>
-          <Form data={data} />
+          <ContactForm data={data} />
           <FAQs data={data} />
         </>
       )}

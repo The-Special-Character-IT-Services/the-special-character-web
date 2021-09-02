@@ -8,39 +8,38 @@ interface Props {
   type?: string;
   label: string;
   placeholder: string;
-  className?: string | any;
+  className?: string;
   isTextArea?: boolean;
   value?: string | any;
+  divClassName?: string;
 }
 
 const TextInput = ({
-  name,
+  field,
+  form: { touched, errors },
   id,
-  type,
-  placeholder,
-  label,
-  className,
   isTextArea,
+  divClassName,
+  className,
   ...rest
 }: Props) => {
   const Component = isTextArea ? 'textarea' : 'input';
-
   return (
-    <div className="input-wrapper">
-      <Typography
-        variant="label"
-        // htmlFor={name}
-      >
-        {label}
+    <div
+      className={cn('input-wrapper', {
+        [divClassName]: !!divClassName,
+      })}>
+      <Typography variant="label" htmlFor={field.name}>
+        {rest.label}
       </Typography>
       <Component
-        id={name}
-        type={type}
+        id={field.name}
         className={cn('contactInput', {
           textArea: isTextArea,
-          [className]: !!className,
+          [rest.className]: !!rest.className,
+          error: !!touched[field.name] && errors[field.name],
         })}
-        placeholder={placeholder}
+        {...field}
         {...rest}
       />
       <style jsx>
@@ -80,6 +79,9 @@ const TextInput = ({
                 border-color: $Neutral400;
                 transition-duration: 300ms;
                 outline: 0;
+              }
+              &.error {
+                border-color: $danger;
               }
             }
           }

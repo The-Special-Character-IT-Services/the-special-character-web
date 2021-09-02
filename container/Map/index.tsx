@@ -24,7 +24,7 @@ const Map = ({ data }: Props) => {
         <div className="office-card-wrapper">
           {data?.officeCard?.map(x => {
             return (
-              <Card className={styles.cardOffice}>
+              <Card key={x.id} className={styles.cardOffice}>
                 <Image
                   className={styles.cardOfficeIcon}
                   height={64}

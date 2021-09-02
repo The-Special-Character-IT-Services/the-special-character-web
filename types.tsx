@@ -72,9 +72,24 @@ export interface AboutTeacherType {
   updated_at: string;
   heading: Heading;
   buttonText: ButtonText;
-  teacherCard?: TeacherCardEntity[] | null;
+  teachers?: TeachersEntity[] | null;
   localizations?: null[] | null;
 }
+
+export interface TeachersEntity {
+  id: number;
+  firstName: string;
+  lastName: string;
+  description: string;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  jobTitle: string;
+  socialMedia?: SocialMediaEntity[] | null;
+  image: Image;
+}
+
 export interface TeacherCardEntity {
   id: number;
   title: string;
@@ -171,25 +186,6 @@ export interface OfficeCardEntity {
   country: string;
   icon: Icon;
 }
-export interface Icon {
-  id: number;
-  name: string;
-  alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
-  formats?: null;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl?: null;
-  provider: string;
-  provider_metadata?: null;
-  created_at: string;
-  updated_at: string;
-}
 export interface MapImage {
   id: number;
   name: string;
@@ -276,6 +272,7 @@ export interface ContactDetailsEntity {
   icon: Icon;
   link: string;
 }
+
 export interface FeaturedTeacherType {
   id: number;
   teacherQuote: string;
@@ -285,26 +282,40 @@ export interface FeaturedTeacherType {
   published_at: string;
   created_at: string;
   updated_at: string;
+  teacher: Teacher;
   heading: Heading;
   browse: BrowseOrBecomeTeacher;
   becomeTeacher: BrowseOrBecomeTeacher;
-  teacherImage: TeacherImage;
   localizations?: null[] | null;
 }
-
-export interface BrowseOrBecomeTeacher {
+export interface Teacher {
   id: number;
-  buttonText: string;
-  link?: string | any;
+  firstName: string;
+  lastName: string;
+  description: string;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  jobTitle: string;
+  socialMedia?: SocialMediaEntity[] | null;
+  image: Image;
 }
-export interface TeacherImage {
+export interface SocialMediaEntity {
+  id: number;
+  title: string;
+  description?: null;
+  link: string;
+  icon: Icon;
+}
+export interface Icon {
   id: number;
   name: string;
   alternativeText: string;
   caption: string;
   width: number;
   height: number;
-  formats: Formats;
+  formats?: null;
   hash: string;
   ext: string;
   mime: string;
@@ -315,6 +326,11 @@ export interface TeacherImage {
   provider_metadata?: null;
   created_at: string;
   updated_at: string;
+}
+export interface BrowseOrBecomeTeacher {
+  id: number;
+  buttonText: string;
+  link?: string | any;
 }
 export interface HomeBannerType {
   id: number;
@@ -393,7 +409,7 @@ export interface CoursesEntity {
   enroll: Enroll;
   courseMinimalDetails?: CourseMinimalDetailsEntity[] | null;
   curriculum?: CurriculumEntityOrAboutCourseOrResult[] | null;
-  feedback?: (FeedbackEntity | null)[] | null;
+  feedback?: (FeedbacksEntity | null)[] | null;
   courseImage: CourseImage;
 }
 export interface CurriculumEntityOrAboutCourseOrResult {
@@ -404,8 +420,8 @@ export interface CurriculumEntityOrAboutCourseOrResult {
 export interface TagsEntity {
   id: number;
   title: string;
-  description?: null;
-  icon?: null;
+  icon?: Icon;
+  link?: string | any;
 }
 export interface Enroll {
   id: number;
@@ -416,15 +432,18 @@ export interface CourseMinimalDetailsEntity {
   id: number;
   title: string;
   description: string;
-  icon?: null;
+  icon?: Icon;
 }
-export interface FeedbackEntity {
+export interface FeedbacksEntity {
   id: number;
-  ratings: number;
+  starRating: number;
   name: string;
   jobTitle: string;
   description: string;
-  avatar?: null;
+  avatar?: Avatar;
+  created_at: string;
+  updated_at: string;
+  published_at: string;
 }
 export interface CourseImage {
   id: number;
@@ -476,7 +495,7 @@ export interface CourseType {
   enroll: Enroll;
   courseMinimalDetails?: CourseMinimalDetailsEntity[] | null;
   curriculum?: CurriculumEntityOrAboutCourseOrResult[] | null;
-  feedback?: FeedbackEntity[] | null;
+  feedbacks?: FeedbacksEntity[] | null;
   courseImage: CourseImage;
   localizations?: null[] | null;
 }
