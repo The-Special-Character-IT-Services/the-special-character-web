@@ -1,4 +1,5 @@
 import TextInput from '@components/TextInput';
+import { router } from '@container/ContactForm';
 import styles from '@container/ContactForm/contactForm.module.scss';
 
 export const contactFields = [
@@ -59,6 +60,9 @@ export const contactFields = [
     placeholder: 'Write your message here...',
     component: TextInput,
     isTextArea: true,
+    value: ({
+      query: { value },
+    } = router),
     validate: value => {
       if (!value) {
         return 'Please Enter Message.';

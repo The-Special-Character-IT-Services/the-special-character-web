@@ -16,12 +16,8 @@ const wait = time => new Promise(resolve => setTimeout(resolve, time));
 interface Props {
   data?: ContactPageType;
 }
-
+export const router = useRouter();
 const ContactForm = ({ data }: Props) => {
-  const router = useRouter();
-  const {
-    query: { value },
-  } = router;
   return (
     <section className="form">
       <div className="container">
