@@ -12,19 +12,19 @@ interface Props {
 }
 
 const IndividualEvent = ({ data }: Props) => {
-  const array = [
-    {
-      id: 1,
-      item: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dor',
-    },
+  // const array = [
+  //   {
+  //     id: 1,
+  //     item: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dor',
+  //   },
 
-    { id: 2, item: 'Lorem ipsum dolor sit amet, consectetur adipiscing' },
+  //   { id: 2, item: 'Lorem ipsum dolor sit amet, consectetur adipiscing' },
 
-    {
-      id: 3,
-      item: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dor',
-    },
-  ];
+  //   {
+  //     id: 3,
+  //     item: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dor',
+  //   },
+  // ];
   return (
     <section className={styles.individualEvent}>
       <div className={styles.imgDiv}>
@@ -47,13 +47,19 @@ const IndividualEvent = ({ data }: Props) => {
           <div className={styles.place}>
             <div className={styles.eventAbout}>
               <div className={styles.firstDiv}>
-                <Image
-                  alt="Calender"
-                  src="https://assets.website-files.com/607de2d8e8911e32707a3efe/6081eb083dfd5737a32ea899_icon-1-event-about-education-x-template.svg"
-                  height={21}
-                  width={21}
-                />
-                <Typography variant="bold">{data?.dateOfEvent}</Typography>
+                {data?.minimalDetails?.map(x => {
+                  return (
+                    <>
+                      <Image
+                        alt="Calender"
+                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.icon.url}`}
+                        height={21}
+                        width={21}
+                      />
+                      <Typography variant="bold">{x.title}</Typography>
+                    </>
+                  );
+                })}
               </div>
               <div className={styles.secondDiv}>
                 <Image
@@ -99,12 +105,12 @@ const IndividualEvent = ({ data }: Props) => {
             sagittis elementum placerat nullam id integer leo. Diam venenatis
             amet diam odio <Typography variant="a">ultrices auctor */}
             </Typography>
-            <List
+            {/* <List
               listItem={array}
               keyProp="id"
               valueProp="item"
               className={styles.listUL}
-            />
+            /> */}
           </div>
           <Button>{data?.register?.buttonText}</Button>
         </div>
