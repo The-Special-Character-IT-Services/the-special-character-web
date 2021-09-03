@@ -1,9 +1,4 @@
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-});
-
-module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'tsx', 'mdx'],
+module.exports = {
   reactStrictMode: true,
   images: {
     domains: [
@@ -12,4 +7,4 @@ module.exports = withMDX({
       'localhost',
     ],
   },
-});
+};
