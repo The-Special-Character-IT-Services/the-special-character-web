@@ -56,7 +56,11 @@ const IndividualEvent = ({ data }: Props) => {
                   </div>
                 );
               })}
-              <Button className={styles.button}>
+              <Button
+                className={styles.button}
+                onClick={() => {
+                  router.push(data?.category.link);
+                }}>
                 <Icons socialLink={data?.category} />
                 {data?.category.title}
               </Button>
@@ -67,7 +71,12 @@ const IndividualEvent = ({ data }: Props) => {
             <Typography className={styles.caption}>
               {data?.eventDetails?.description}
             </Typography>
-            <Button>{data?.register?.buttonText}</Button>
+            <Button
+              onClick={() => {
+                router.push(data?.register?.link);
+              }}>
+              {data?.register?.buttonText}
+            </Button>
           </div>
         </div>
         <div className={styles.container}>
@@ -79,7 +88,12 @@ const IndividualEvent = ({ data }: Props) => {
             dangerouslySetInnerHTML={{ __html: HTML }}
           />
 
-          <Button>{data?.register?.buttonText}</Button>
+          <Button
+            onClick={() => {
+              router.push(data?.register?.link);
+            }}>
+            {data?.register?.buttonText}
+          </Button>
         </div>
       </div>
       <div className={styles.bgEvent} />

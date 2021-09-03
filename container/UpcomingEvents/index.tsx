@@ -20,7 +20,13 @@ const UpcomingEvents = ({ data }: Props) => {
           <Typography variant="h2" className={styles.head}>
             {data.header.title}
           </Typography>
-          <Button className="secondary">{data.button.buttonText}</Button>
+          <Button
+            className="secondary"
+            onClick={() => {
+              router.push(data?.button?.link);
+            }}>
+            {data.button.buttonText}
+          </Button>
         </div>
         <div className={styles.list}>
           {data.events.map(x => {
@@ -69,7 +75,11 @@ const UpcomingEvents = ({ data }: Props) => {
                       {x.eventDetails.description}
                     </Typography>
                     <div className={styles.category}>
-                      <Button className={styles.buttonWhite}>
+                      <Button
+                        className={styles.buttonWhite}
+                        onClick={() => {
+                          router.push(x?.category?.link);
+                        }}>
                         <Icons socialLink={x?.category} />
                         {x?.category.title}
                       </Button>
