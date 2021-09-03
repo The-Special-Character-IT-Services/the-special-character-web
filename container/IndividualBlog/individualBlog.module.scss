@@ -142,20 +142,6 @@
         & .avatar {
           display: flex;
         }
-        & .button {
-          & > p {
-          }
-        }
-      }
-      & .avatarCard {
-        & .authInfo {
-        }
-        & .name {
-        }
-        & .mr {
-        }
-      }
-      & .divider {
       }
     }
   }
@@ -182,19 +168,10 @@
     }
     .blogSection {
       & .author {
-        & .info {
-          & .name {
-          }
-        }
-
         & .avatar {
           flex-direction: column;
           margin-top: 1rem;
           gap: 1rem;
-        }
-        & .button {
-          & > p {
-          }
         }
       }
       & .avatarCard {
@@ -205,12 +182,6 @@
             display: flex;
           }
         }
-        & .name {
-        }
-        & .mr {
-        }
-      }
-      & .divider {
       }
     }
   }
