@@ -38,6 +38,7 @@ const IndividualBlog = ({ data }: Props) => {
               alt="avtar"
               height={80}
               width={80}
+              className={styles.avtrImg}
             />
             <div className={styles.info}>
               <Typography
@@ -68,6 +69,7 @@ const IndividualBlog = ({ data }: Props) => {
             alt="author img"
             height={200}
             width={200}
+            className={styles.avtrImg}
           />
           <div className={styles.authInfo}>
             <Typography

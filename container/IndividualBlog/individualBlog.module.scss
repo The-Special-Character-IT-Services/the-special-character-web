@@ -55,6 +55,11 @@
 
       & .avatar {
         display: flex;
+        & .avtrImg {
+          & img {
+            border-radius: 50% !important;
+          }
+        }
       }
       & .button {
         margin-bottom: 0.5rem;
@@ -87,6 +92,11 @@
     }
     & .avatarCard {
       padding: 1rem;
+      & .avtrImg {
+        & img {
+          border-radius: 50% !important;
+        }
+      }
       & .authInfo {
         margin-left: 2rem;
       }
