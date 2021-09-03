@@ -14,6 +14,7 @@ interface Props {
 
 const BlogContainer = ({ data, isBlog }: Props) => {
   console.log(data.blogs.length, 'blog length');
+  const blogData = data.blogs.slice(0, 3);
 
   return (
     <>
@@ -61,7 +62,7 @@ const BlogContainer = ({ data, isBlog }: Props) => {
             </Card>
 
             <div className={styles.sideDiv}>
-              {data.blogs.map((x, i) => {
+              {blogData.map((x, i) => {
                 return (
                   <a
                     key={x?.id}
