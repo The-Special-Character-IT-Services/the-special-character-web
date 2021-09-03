@@ -46,40 +46,6 @@ const ContactForm = ({ data }: Props) => {
                     await wait(3000);
                     console.log(values);
                   }}></Form>
-                {/* <form name="Contact-Form" className="contact-form">
-                  <TextInput
-                    label="Name"
-                    name="name"
-                    placeholder="Ex. Elon Musk"
-                    type="text"
-                  />
-                  <TextInput
-                    label="Email Address"
-                    name="Email"
-                    placeholder="Ex.elon.musk@tesla.com"
-                    type="email"
-                  />
-                  <TextInput
-                    label="Phone Number"
-                    name="Phone"
-                    placeholder="475-5448-1543"
-                    type="tel"
-                  />
-                  <TextInput
-                    label="Subject"
-                    name="Subject"
-                    placeholder="Ex. Courses"
-                    type="text"
-                  />
-                  <TextInput
-                    isTextArea
-                    value={value}
-                    label="Message"
-                    name="Message"
-                    placeholder="Write your message here..."
-                  />
-                 
-                </form> */}
               </div>
             </div>
             <div className="contact-links-wrapper">

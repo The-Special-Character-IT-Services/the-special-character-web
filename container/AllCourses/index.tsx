@@ -12,20 +12,6 @@ interface Props {
 }
 
 const AllCourses = ({ data }: Props) => {
-  const array = [
-    {
-      id: 1,
-      buttonText: 'All',
-    },
-    {
-      id: 2,
-      buttonText: 'Development',
-    },
-    {
-      id: 3,
-      buttonText: 'Design',
-    },
-  ];
   if (!data) {
     return null;
   }

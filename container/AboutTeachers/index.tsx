@@ -2,10 +2,6 @@ import Button from '@components/Button';
 import Card from '@components/Card';
 import Typography from '@components/Typography';
 import Image from 'next/image';
-import Facebook from '../../public/svg/facebook.svg';
-import Github from '../../public/svg/github.svg';
-import Twitter from '../../public/svg/twitter.svg';
-import Linkedin from '../../public/svg/linkedin.svg';
 import styles from './aboutTeachers.module.scss';
 import router from 'next/router';
 import { AboutTeacherType } from 'types';
@@ -58,6 +54,7 @@ const AboutTeachers = ({ data }: Props) => {
                           onClick={() => router.push(`${icon.link}`)}
                           className="socialIcon">
                           <Image
+                            alt="Social Icon"
                             src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${icon?.icon.url}`}
                             height={21}
                             width={21}

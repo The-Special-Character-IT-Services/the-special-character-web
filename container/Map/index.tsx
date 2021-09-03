@@ -26,6 +26,7 @@ const Map = ({ data }: Props) => {
             return (
               <Card key={x.id} className={styles.cardOffice}>
                 <Image
+                  alt="Office Location"
                   className={styles.cardOfficeIcon}
                   height={64}
                   width={64}
@@ -49,7 +50,10 @@ const Map = ({ data }: Props) => {
                     className={styles.officeLink}>
                     {x?.phone}
                   </Typography>
-                  <Typography className={styles.officeAddress}>
+                  <Typography
+                    variant="a"
+                    href={x?.addressLink}
+                    className={styles.officeAddress}>
                     {x?.address}
                   </Typography>
                 </div>
@@ -59,6 +63,7 @@ const Map = ({ data }: Props) => {
           })}
         </div>
         <Image
+          alt='Office'
           width={1460}
           height={680}
           src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.mapImage?.url}`}
