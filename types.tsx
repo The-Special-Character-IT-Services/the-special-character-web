@@ -837,3 +837,140 @@ export interface CategoryButtonsEntityOrEnroll {
   buttonText: string;
   link?: null;
 }
+export interface AllBlogsType {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  heading: Heading;
+  categoryButton?: CategoryButtonEntity[] | null;
+  blogs?: BlogsEntity[] | null;
+  localizations?: null[] | null;
+}
+
+export interface CategoryButtonEntity {
+  id: number;
+  buttonText: string;
+  link?: null;
+}
+export interface BlogsEntity {
+  id: number;
+  title: string;
+  blog_author: number;
+  content: string;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  categories?: (CategoriesEntity | null)[] | null;
+  bannerImage: BannerImage;
+}
+export interface CategoriesEntity {
+  id: number;
+  title: string;
+  description?: null;
+  link?: null;
+  icon: Icon;
+}
+
+export interface UpcomingEventType {
+  id: number;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  header: Header;
+  button: RegisterOrButton;
+  events?: EventsEntity[] | null;
+}
+export interface Header {
+  id: number;
+  title: string;
+  description?: null;
+}
+export interface RegisterOrButton {
+  id: number;
+  buttonText: string;
+  link?: null;
+}
+export interface EventsEntity {
+  id: number;
+  dateOfEvent: string;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  location?: null;
+  minimalDetails?: MinimalDetailsEntityOrCategory[] | null;
+  eventDetails: EventDetailsOrEventAgenda;
+  register: RegisterOrButton;
+  eventAgenda: EventDetailsOrEventAgenda;
+  category: MinimalDetailsEntityOrCategory;
+  eventImage: EventImage;
+}
+export interface MinimalDetailsEntityOrCategory {
+  id: number;
+  title: string;
+  link?: null;
+  icon: Icon;
+}
+export interface Icon {
+  id: number;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
+  formats?: null;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl?: null;
+  provider: string;
+  provider_metadata?: null;
+  created_at: string;
+  updated_at: string;
+}
+export interface EventDetailsOrEventAgenda {
+  id: number;
+  title: string;
+  description: string;
+}
+export interface EventImage {
+  id: number;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
+  formats: Formats;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl?: null;
+  provider: string;
+  provider_metadata?: null;
+  created_at: string;
+  updated_at: string;
+}
+export interface Formats {
+  large: LargeOrSmallOrMediumOrThumbnail;
+  small: LargeOrSmallOrMediumOrThumbnail;
+  medium: LargeOrSmallOrMediumOrThumbnail;
+  thumbnail: LargeOrSmallOrMediumOrThumbnail;
+}
+export interface LargeOrSmallOrMediumOrThumbnail {
+  ext: string;
+  url: string;
+  hash: string;
+  mime: string;
+  name: string;
+  path?: null;
+  size: number;
+  width: number;
+  height: number;
+}

@@ -60,9 +60,6 @@ export const contactFields = [
     placeholder: 'Write your message here...',
     component: TextInput,
     isTextArea: true,
-    value: ({
-      query: { value },
-    } = router),
     validate: value => {
       if (!value) {
         return 'Please Enter Message.';

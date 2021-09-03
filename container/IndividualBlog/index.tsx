@@ -7,6 +7,7 @@ import styles from './individualBlog.module.scss';
 import Marketing from '../../public/svg/Marketing.svg';
 import Card from '@components/Card';
 import Image from 'next/image';
+import useMarkdown from '../../hooks/useMarkdown';
 
 interface Props {}
 

@@ -16,8 +16,10 @@ const wait = time => new Promise(resolve => setTimeout(resolve, time));
 interface Props {
   data?: ContactPageType;
 }
-export const router = useRouter();
+
 const ContactForm = ({ data }: Props) => {
+  const router = useRouter();
+
   return (
     <section className="form">
       <div className="container">
@@ -36,7 +38,10 @@ const ContactForm = ({ data }: Props) => {
                 <Form
                   fields={contactFields}
                   className={styles.contactForm}
-                  initialValues={initialValues}
+                  initialValues={{
+                    ...initialValues,
+                    message: router?.query?.value || '',
+                  }}
                   onSubmit={async values => {
                     await wait(3000);
                     console.log(values);
