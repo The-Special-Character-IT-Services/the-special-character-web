@@ -498,6 +498,12 @@ export interface CourseType {
   feedbacks?: FeedbacksEntity[] | null;
   courseImage: CourseImage;
   localizations?: null[] | null;
+  sectionButtons?: SectionButtonsEntity[] | null;
+}
+export interface SectionButtonsEntity {
+  id: number;
+  buttonText: string;
+  link: string | any;
 }
 export interface AboutMissionType {
   id: number;
@@ -552,7 +558,7 @@ export interface CurriculumEntityOrAboutCourseOrResultOrHeading {
 export interface Enroll {
   id: number;
   buttonText: string;
-  link?: null | any;
+  link?: string | any;
 }
 
 export interface FeaturedCourse {
@@ -596,7 +602,7 @@ export interface EventDetailsOrEventAgenda {
 export interface CategoryEntityOrRegister {
   id: number;
   buttonText: string;
-  link?: null;
+  link?: string | any;
 }
 
 export interface AllEventsType {

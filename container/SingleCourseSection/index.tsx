@@ -17,24 +17,6 @@ interface Props {
   data?: CourseType;
 }
 const SingleCourseSection = ({ data }: Props) => {
-  const array = [
-    {
-      id: 1,
-      buttonText: 'About',
-    },
-    {
-      id: 2,
-      buttonText: 'Topics',
-    },
-    {
-      id: 3,
-      buttonText: 'Results',
-    },
-    {
-      id: 4,
-      buttonText: 'Reviews',
-    },
-  ];
   const goToContact = () => {
     router.push({
       pathname: '/contact',
@@ -122,7 +104,7 @@ const SingleCourseSection = ({ data }: Props) => {
                 })}
               </div>
             </div>
-            <FeaturedCategory categoryList={array} />
+            <FeaturedCategory categoryList={data?.sectionButtons} />
             <div>
               <Typography variant="h2" className="commonHeading">
                 {data?.aboutCourse?.title}

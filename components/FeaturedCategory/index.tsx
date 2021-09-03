@@ -7,6 +7,7 @@ import styles from './featuredCategory.module.scss';
 type ButtonList = {
   id: number;
   buttonText: string;
+  link: string | any;
 };
 interface Props {
   title?: string;
@@ -30,6 +31,7 @@ const FeaturedCategory = ({ categoryList, title }: Props) => {
               {categoryList?.map(x => (
                 <Button
                   key={x.id}
+                  onClick={() => router.push(x?.link)}
                   className={classnames(styles.button, styles.primary)}>
                   {x.buttonText}
                 </Button>
