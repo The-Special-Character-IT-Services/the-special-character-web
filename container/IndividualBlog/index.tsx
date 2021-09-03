@@ -7,11 +7,13 @@ import styles from './individualBlog.module.scss';
 import Marketing from '../../public/svg/Marketing.svg';
 import Card from '@components/Card';
 import Image from 'next/image';
-import useMarkdown from '../../hooks/useMarkdown';
+import useMarkdown from 'hooks/useMarkdown';
 
 interface Props {}
 
 const IndividualBlog = ({ data }: Props) => {
+  const { HTML } = useMarkdown(data?.content);
+  console.log(HTML);
   return (
     <section className={styles.individualBlog}>
       <div className={styles.imgDiv}>
