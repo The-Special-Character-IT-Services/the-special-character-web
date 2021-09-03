@@ -4,16 +4,17 @@ import List from '@components/List';
 import Typography from '@components/Typography';
 import Image from 'next/image';
 import { IndividualEventTypes } from 'types';
-import Marketing from '../../public/svg/Marketing.svg';
 import styles from './individualEvent.module.scss';
 import format from 'date-fns/format';
 import Icons from '@components/Icons';
+import useMarkdown from 'hooks/useMarkdown';
 
 interface Props {
   data?: IndividualEventTypes;
 }
 
 const IndividualEvent = ({ data }: Props) => {
+  const { HTML } = useMarkdown(data?.eventAgenda?.description);
   return (
     <section className={styles.individualEvent}>
       <div className={styles.imgDiv}>
@@ -73,9 +74,11 @@ const IndividualEvent = ({ data }: Props) => {
           <Typography variant="h2" className={styles.title}>
             {data?.eventAgenda?.title}
           </Typography>
-          <div className={styles.description}>
-            <Typography>{data?.eventAgenda?.description}</Typography>
-          </div>
+          <div
+            className={styles.description}
+            dangerouslySetInnerHTML={{ __html: HTML }}
+          />
+
           <Button>{data?.register?.buttonText}</Button>
         </div>
       </div>
