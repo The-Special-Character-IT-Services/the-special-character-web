@@ -49,6 +49,7 @@ const Resources = ({ data }: Props) => {
                   <div className="image-wrapper">
                     <div className="image">
                       <Image
+                        alt="Resources banner"
                         layout="fill"
                         src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.bannerImage.url}`}
                       />
@@ -59,6 +60,7 @@ const Resources = ({ data }: Props) => {
                           return (
                             <Fragment key={y.id}>
                               <Image
+                                alt="Resources"
                                 width={16}
                                 height={18}
                                 src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${y.icon.url}`}

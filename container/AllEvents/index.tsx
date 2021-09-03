@@ -12,15 +12,6 @@ interface Props {
 }
 
 const AllEvents = ({ data }: Props) => {
-  const array = [
-    {
-      id: 1,
-      buttonText: 'All',
-    },
-    { id: 2, buttonText: 'Development' },
-    { id: 3, buttonText: 'Design' },
-    { id: 4, buttonText: 'Marketing' },
-  ];
   return (
     <section className={styles.allEvents}>
       <div className={styles.container}>

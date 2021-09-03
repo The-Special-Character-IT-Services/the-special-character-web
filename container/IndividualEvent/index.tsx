@@ -4,16 +4,17 @@ import List from '@components/List';
 import Typography from '@components/Typography';
 import Image from 'next/image';
 import { IndividualEventTypes } from 'types';
-import Marketing from '../../public/svg/Marketing.svg';
 import styles from './individualEvent.module.scss';
 import format from 'date-fns/format';
 import Icons from '@components/Icons';
+import useMarkdown from 'hooks/useMarkdown';
 
 interface Props {
   data?: IndividualEventTypes;
 }
 
 const IndividualEvent = ({ data }: Props) => {
+  const { HTML } = useMarkdown(data?.eventAgenda?.description);
   return (
     <section className={styles.individualEvent}>
       <div className={styles.imgDiv}>
@@ -55,7 +56,11 @@ const IndividualEvent = ({ data }: Props) => {
                   </div>
                 );
               })}
-              <Button className={styles.button}>
+              <Button
+                className={styles.button}
+                onClick={() => {
+                  router.push(data?.category.link);
+                }}>
                 <Icons socialLink={data?.category} />
                 {data?.category.title}
               </Button>
@@ -66,17 +71,29 @@ const IndividualEvent = ({ data }: Props) => {
             <Typography className={styles.caption}>
               {data?.eventDetails?.description}
             </Typography>
-            <Button>{data?.register?.buttonText}</Button>
+            <Button
+              onClick={() => {
+                router.push(data?.register?.link);
+              }}>
+              {data?.register?.buttonText}
+            </Button>
           </div>
         </div>
         <div className={styles.container}>
           <Typography variant="h2" className={styles.title}>
             {data?.eventAgenda?.title}
           </Typography>
-          <div className={styles.description}>
-            <Typography>{data?.eventAgenda?.description}</Typography>
-          </div>
-          <Button>{data?.register?.buttonText}</Button>
+          <div
+            className={styles.description}
+            dangerouslySetInnerHTML={{ __html: HTML }}
+          />
+
+          <Button
+            onClick={() => {
+              router.push(data?.register?.link);
+            }}>
+            {data?.register?.buttonText}
+          </Button>
         </div>
       </div>
       <div className={styles.bgEvent} />
