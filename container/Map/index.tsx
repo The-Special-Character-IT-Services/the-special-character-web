@@ -50,7 +50,10 @@ const Map = ({ data }: Props) => {
                     className={styles.officeLink}>
                     {x?.phone}
                   </Typography>
-                  <Typography className={styles.officeAddress}>
+                  <Typography
+                    variant="a"
+                    href={x?.addressLink}
+                    className={styles.officeAddress}>
                     {x?.address}
                   </Typography>
                 </div>
