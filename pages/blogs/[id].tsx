@@ -11,9 +11,6 @@ const SingleBlog = (props: Props) => {
   const { data } = useRequest({
     url: `blogs/${id}`,
   });
-  // const html = useMarkdown(data?.content);
-
-  // console.log(html);
   const { HTML } = useMarkdown(data.content);
   console.log(HTML);
 
