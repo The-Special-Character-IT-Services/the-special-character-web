@@ -23,7 +23,7 @@ const Values = ({ data }: Props) => {
           <Typography>{data.heading.description}</Typography>
         </div>
         <div className="main">
-          {data?.card?.map(x => {
+          {data?.card?.map((x, i) => {
             return (
               <Card key={x.id}>
                 <div className="cardSection">
@@ -36,7 +36,7 @@ const Values = ({ data }: Props) => {
                         alt="none"
                       />
                     </Button>
-                    <button className="but">{x.id}</button>
+                    <button className="but">{i + 1}</button>
                   </div>
                   <div>
                     <Typography variant="h3">{x.title}</Typography>
@@ -81,6 +81,7 @@ const Values = ({ data }: Props) => {
               }
               & .cardSection {
                 padding: 2rem;
+                flex: 1;
               }
             }
           }
