@@ -12,6 +12,8 @@ import useMarkdown from '../../hooks/useMarkdown';
 interface Props {}
 
 const IndividualBlog = ({ data }: Props) => {
+  const { HTML } = useMarkdown(data?.content);
+
   return (
     <section className={styles.individualBlog}>
       <div className={styles.imgDiv}>
@@ -33,7 +35,7 @@ const IndividualBlog = ({ data }: Props) => {
               src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.bannerImage?.formats?.thumbnail?.url}`}
               variant="avtar"
               alt="avtar"
-              height={30}
+              height={80}
               width={80}
             />
             <div className={styles.info}>
@@ -57,25 +59,26 @@ const IndividualBlog = ({ data }: Props) => {
           </div>
         </div>
         <Divider className={styles.divider} />
-        <div className={styles.avatarCard}>
-          <Card variant="cardHover">
-            <Images
-              variant="avtar"
-              src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.bannerImage?.formats?.thumbnail?.url}`}
-              alt="author img"
-              height={200}
-              width={200}
-            />
-            <div className={styles.authInfo}>
-              <Typography
-                variant="h3"
-                className={
-                  styles.name
-                }>{`${data?.blog_author?.firstname} ${data?.blog_author?.lastname}`}</Typography>
-              <Typography>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Maxime, repellendus.
-              </Typography>
+        <div dangerouslySetInnerHTML={{ __html: HTML }} />
+        <Card variant="cardHover" className={styles.avatarCard}>
+          <Images
+            variant="avtar"
+            src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.bannerImage?.formats?.thumbnail?.url}`}
+            alt="author img"
+            height={200}
+            width={200}
+          />
+          <div className={styles.authInfo}>
+            <Typography
+              variant="h3"
+              className={
+                styles.name
+              }>{`${data?.blog_author?.firstname} ${data?.blog_author?.lastname}`}</Typography>
+            <Typography>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime,
+              repellendus.
+            </Typography>
+            <div className={styles.buttonDiv}>
               <Button className={`${styles.mr} socialIcon`}>
                 <Image
                   src="/svg/facebook.svg"
@@ -109,8 +112,8 @@ const IndividualBlog = ({ data }: Props) => {
                 />
               </Button>
             </div>
-          </Card>
-        </div>
+          </div>
+        </Card>
       </div>
     </section>
   );
