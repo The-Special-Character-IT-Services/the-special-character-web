@@ -240,7 +240,7 @@ export interface AboutValuesType {
   created_at: string;
   updated_at: string;
   heading: Heading;
-  card?: CardEntity[] | null;
+  valueCard?: CardEntity[] | null;
   localizations?: null[] | null;
 }
 
