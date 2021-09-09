@@ -5,6 +5,7 @@ module.exports = {
       'assets.website-files.com',
       '4f22-202-131-101-178.ngrok.io',
       'localhost',
+      'the-special-character-web-api.herokuapp.com',
     ],
   },
 };
