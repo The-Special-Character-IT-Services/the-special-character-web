@@ -4,14 +4,17 @@ import FeaturedCategory from '@components/FeaturedCategory';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
 import styles from './allCourses.module.scss';
-import { AllCourseTypes } from 'types';
-import { IKImage } from 'imagekitio-react';
+import { AllCourseTypes, CoursesEntity } from 'types';
+import useRequest from 'hooks/useRequest';
 
 interface Props {
   data: AllCourseTypes;
 }
 
 const AllCourses = ({ data }: Props) => {
+  const { data: coursesData } = useRequest<CoursesEntity>({
+    url: 'courses',
+  });
   if (!data) {
     return null;
   }
@@ -25,7 +28,7 @@ const AllCourses = ({ data }: Props) => {
           />
         )}
         <div className={styles.list}>
-          {data?.courses?.map(x => (
+          {coursesData?.map(x => (
             <Card key={x.id} variant="cardHover" className={styles.cardMain}>
               <a href={`courses/${x?.id}`}>
                 <div>

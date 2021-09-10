@@ -6,32 +6,18 @@ import Card from '@components/Card';
 import Image from 'next/image';
 import FeaturedCategory from '@components/FeaturedCategory';
 import { Fragment } from 'react';
-import { AllBlogsType } from 'types';
+import { AllBlogsType, BlogsEntity } from 'types';
 import format from 'date-fns/format';
+import useRequest from 'hooks/useRequest';
 
 interface Props {
   data?: AllBlogsType;
 }
 
 const Resources = ({ data }: Props) => {
-  const btnName = [
-    {
-      id: 1,
-      name: 'All',
-    },
-    {
-      id: 2,
-      name: 'Development',
-    },
-    {
-      id: 3,
-      name: 'Design',
-    },
-    {
-      id: 4,
-      name: 'Marketing',
-    },
-  ];
+  const { data: blogsData } = useRequest<BlogsEntity>({
+    url: 'blogs',
+  });
   return (
     <section className="blog-section">
       <div className="container">
@@ -39,7 +25,7 @@ const Resources = ({ data }: Props) => {
           title={data.heading.title}
           categoryList={data.categoryButton}></FeaturedCategory>
         <div className="blog-grid">
-          {data?.blogs?.map(x => {
+          {blogsData?.map(x => {
             return (
               <Card
                 key={x.id}

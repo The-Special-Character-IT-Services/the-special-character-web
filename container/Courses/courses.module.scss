@@ -39,7 +39,7 @@
         margin: 0.5rem 0;
       }
       & .paraDiv {
-        padding: 1rem;
+        padding: 2rem;
         text-align: start;
       }
       & .price {
@@ -157,6 +157,7 @@
     padding-top: 132px;
     padding-bottom: 132px;
   }
+
   .rightArrow,
   .leftArrow {
     width: 4.375rem;
@@ -169,6 +170,9 @@
     padding-bottom: 105px;
     & > .container {
       & > .cardDiv {
+        & .paraDiv {
+          padding: 1rem;
+        }
         & .price {
           top: 1rem;
           gap: 5px;
