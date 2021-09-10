@@ -4,13 +4,17 @@ import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './aboutTeachers.module.scss';
 import router from 'next/router';
-import { AboutTeacherType } from 'types';
+import { AboutTeacherType, TeachersEntity } from 'types';
+import useRequest from 'hooks/useRequest';
 
 interface Props {
   data?: AboutTeacherType;
 }
 
 const AboutTeachers = ({ data }: Props) => {
+  const { data: teachersData } = useRequest<TeachersEntity>({
+    url: 'teachers',
+  });
   return (
     <section id="Teachers" className={styles.aboutTeachers}>
       <div className={styles.container}>
@@ -31,7 +35,7 @@ const AboutTeachers = ({ data }: Props) => {
           </Button>
         </div>
         <div className={styles.cards}>
-          {data?.teachers?.map(x => {
+          {teachersData?.map(x => {
             return (
               <Card
                 key={x.id}

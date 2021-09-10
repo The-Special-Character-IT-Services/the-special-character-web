@@ -5,13 +5,17 @@ import Images from '@components/Images';
 import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './allEvents.module.scss';
-import { AllEventsType } from 'types';
+import { AllEventsType, EventsEntity } from 'types';
+import useRequest from 'hooks/useRequest';
 
 interface Props {
   data?: AllEventsType;
 }
 
 const AllEvents = ({ data }: Props) => {
+  const { data: eventsData } = useRequest<EventsEntity>({
+    url: 'events',
+  });
   return (
     <section className={styles.allEvents}>
       <div className={styles.container}>
@@ -20,7 +24,7 @@ const AllEvents = ({ data }: Props) => {
           categoryList={data?.categoryButton ?? []}
         />
         <div className={styles.list}>
-          {data?.events?.map(x => {
+          {eventsData?.map(x => {
             return (
               <Card key={x.id} variant="cardHover">
                 <a href={`events/${x?.id}`} className={styles.cardMain}>
