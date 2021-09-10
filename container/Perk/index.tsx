@@ -5,6 +5,7 @@ import card from '@components/Card/card.module.scss';
 import styles from './perk.module.scss';
 import Image from 'next/image';
 import { ReasonType } from 'types';
+import { IKImage } from 'imagekitio-react';
 
 interface Props {
   data?: ReasonType;
@@ -24,12 +25,17 @@ const Perk = ({ data }: Props) => {
             {data?.cards?.map(x => {
               return (
                 <Card key={x.id} variant="perkCard">
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}
+                  <IKImage
+                    path={`${x?.image?.url}`.split('/').at(-1)}
+                    transformation={[
+                      {
+                        height: 233,
+                        width: 233,
+                      },
+                    ]}
+                    loading="lazy"
+                    lqip={{ active: true }}
                     alt="Perk Image"
-                    height={233}
-                    width={233}
-                    className={card.imagePerk}
                   />
                   <div className="perkContent">
                     <Typography

@@ -3,9 +3,9 @@ import Card from '@components/Card';
 import FeaturedCategory from '@components/FeaturedCategory';
 import Images from '@components/Images';
 import Typography from '@components/Typography';
-import Image from 'next/image';
 import styles from './allCourses.module.scss';
 import { AllCourseTypes } from 'types';
+import { IKImage } from 'imagekitio-react';
 
 interface Props {
   data: AllCourseTypes;
@@ -28,12 +28,15 @@ const AllCourses = ({ data }: Props) => {
           {data?.courses?.map(x => (
             <Card key={x.id} variant="cardHover" className={styles.cardMain}>
               <a href={`courses/${x?.id}`}>
-                <Image
-                  alt="Featured image"
-                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.courseImage.url}`}
-                  height={319}
-                  width={567}
-                />
+                <div>
+                  <IKImage
+                    path={`${x?.courseImage?.url}`.split('/').at(-1)}
+                    transformation={[{ height: 319, width: 567 }]}
+                    loading="lazy"
+                    lqip={{ active: true }}
+                    alt="Featured image"
+                  />
+                </div>
                 <div className={styles.cardBox}>
                   <Typography variant="h3">{x.title}</Typography>
                   <Typography>{x.titleDescription}</Typography>

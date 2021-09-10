@@ -20,7 +20,7 @@ const IndividualEvent = ({ data }: Props) => {
       <div className={styles.imgDiv}>
         <Images
           alt="Event Description"
-          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.eventImage?.url}`}
+          src={`${data?.eventImage?.url}`}
           height={900}
           width={1600}
           className={styles.img}
@@ -48,7 +48,7 @@ const IndividualEvent = ({ data }: Props) => {
                   <div className={styles.firstDiv} key={x.id}>
                     <Image
                       alt="Calender"
-                      src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.icon.url}`}
+                      src={`${x.icon.url}`}
                       height={21}
                       width={21}
                     />

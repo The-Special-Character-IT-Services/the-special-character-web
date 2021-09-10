@@ -89,7 +89,7 @@ const Testimonials = ({ data }: Props) => {
                   height={203}
                   width={203}
                   className={styles.image}
-                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.avatar.url}`}
+                  src={`${x?.avatar?.url}`}
                 />
                 <div className="flex-grow">
                   <StarRating
