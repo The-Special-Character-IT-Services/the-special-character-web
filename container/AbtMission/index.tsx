@@ -18,7 +18,7 @@ const AbtMission = ({ data }: Props) => {
               className={classNames('main', { reverse: i % 2 !== 0 })}
               key={i}>
               <Images
-                src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}
+                src={`${x?.image?.url}`}
                 height={600}
                 width={580}
                 alt="Our mission"

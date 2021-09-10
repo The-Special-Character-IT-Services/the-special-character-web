@@ -6,6 +6,7 @@ import Image from 'next/image';
 import router from 'next/router';
 import styles from './blog.module.scss';
 import format from 'date-fns/format';
+import { IKImage } from 'imagekitio-react';
 
 interface Props {
   data?: string[] | Object;
@@ -35,10 +36,18 @@ const BlogContainer = ({ data, isBlog }: Props) => {
           <div className={styles.cards}>
             <Card variant="cardHover">
               <a href={`blogs/${data.id}`} className={styles.cardDiv}>
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data.featuredBlog.bannerImage.url}`}
-                  height={500}
-                  width={500}
+                <IKImage
+                  path={`${data.featuredBlog.bannerImage.url}`
+                    .split('/')
+                    .at(-1)}
+                  transformation={[
+                    {
+                      height: 500,
+                      width: 500,
+                    },
+                  ]}
+                  loading="lazy"
+                  lqip={{ active: true }}
                   alt="blog post"
                 />
                 <div className={styles.designbtn}>
@@ -71,10 +80,16 @@ const BlogContainer = ({ data, isBlog }: Props) => {
                     }
                     href={`blogs/${x?.id}`}>
                     <Card variant="cardHover" className={styles.sideCardDiv}>
-                      <Image
-                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.bannerImage.url}`}
-                        height={152}
-                        width={270}
+                      <IKImage
+                        path={`${x.bannerImage.url}`.split('/').at(-1)}
+                        transformation={[
+                          {
+                            height: 152,
+                            width: 270,
+                          },
+                        ]}
+                        loading="lazy"
+                        lqip={{ active: true }}
                         alt="blog post"
                       />
                       <div className={styles.blogCard}>

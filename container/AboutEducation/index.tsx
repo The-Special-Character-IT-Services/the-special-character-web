@@ -25,7 +25,7 @@ const AboutEducation = ({ data }: Props) => {
           </div>
           <div className="content">
             <Images
-              src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.aboutImage?.url}`}
+              src={`${data?.aboutImage?.url}`}
               width={600}
               height={600}
               alt="education"
@@ -35,7 +35,7 @@ const AboutEducation = ({ data }: Props) => {
                 <div key={x.id} className="abtContent">
                   <Button className="buttonIcon">
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}
+                      src={`${x?.image?.url}`}
                       height={60}
                       width={60}
                       alt="icon1"

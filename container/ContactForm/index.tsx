@@ -61,7 +61,7 @@ const ContactForm = ({ data }: Props) => {
                           alt="social Media Icon"
                           height={60}
                           width={60}
-                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
+                          src={`${x?.icon?.url}`}
                         />
                       </div>
                       <Typography variant="label">{x?.contactType}</Typography>

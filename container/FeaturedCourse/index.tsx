@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Images from '@components/Images';
 import Button from '@components/Button';
 import { CourseBannerTypes } from 'types';
+import { IKImage } from 'imagekitio-react';
 
 interface Props {
   data: CourseBannerTypes;
@@ -20,11 +21,17 @@ const FeaturedCourse = ({ data }: Props) => {
         <Card variant="cardHover">
           <a href={`/courses/${data?.id}`} className={styles.cardMain}>
             <div className={styles.imageDiv}>
-              <Image
+              <IKImage
+                path={`${data?.course?.courseImage?.url}`.split('/').at(-1)}
+                transformation={[
+                  {
+                    height: 608,
+                    width: 1080,
+                  },
+                ]}
+                loading="lazy"
+                lqip={{ active: true }}
                 alt="Featured image"
-                src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.course?.courseImage?.url}`}
-                height={608}
-                width={1080}
               />
             </div>
             <div className={styles.cardBox}>

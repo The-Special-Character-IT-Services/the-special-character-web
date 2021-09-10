@@ -23,7 +23,7 @@ const Banner = ({ data }: Props) => {
           <div className="btnDiv">
             <Button
               onClick={() => {
-                router.push(data.explore.buttonText);
+                router.push(data.explore.link);
               }}>
               {data.explore.buttonText}
             </Button>
@@ -37,7 +37,7 @@ const Banner = ({ data }: Props) => {
           </div>
         </div>
         <Images
-          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data.bannerImage.url}`}
+          src={`${data.bannerImage.url}`}
           height={692}
           width={546}
           alt="Banner"
