@@ -13,6 +13,7 @@ import LeftArrow from '../../public/svg/leftArrow.svg';
 import Link from 'next/link';
 import router from 'next/router';
 import { PopularCoursesType } from 'types';
+import { IKImage } from 'imagekitio-react';
 
 interface Props {
   data?: PopularCoursesType;
@@ -110,11 +111,17 @@ const Courses = ({ data }: Props) => {
                 return (
                   <Card key={x.id} variant="cardHover">
                     <a href={`courses/${x.id}`}>
-                      <Image
+                      <IKImage
+                        path={`${x?.courseImage?.url}`.split('/').at(-1)}
+                        transformation={[
+                          {
+                            height: 318,
+                            width: 567,
+                          },
+                        ]}
+                        loading="lazy"
+                        lqip={{ active: true }}
                         alt="card"
-                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.courseImage?.url}`}
-                        height={318}
-                        width={567}
                       />
                       <div className={styles.paraDiv}>
                         <Typography variant="h3" className={styles.cardHead}>

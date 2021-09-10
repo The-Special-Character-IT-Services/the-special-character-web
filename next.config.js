@@ -6,6 +6,7 @@ module.exports = {
       '4f22-202-131-101-178.ngrok.io',
       'localhost',
       'the-special-character-web-api.herokuapp.com',
+      'ik.imagekit.io',
     ],
   },
 };

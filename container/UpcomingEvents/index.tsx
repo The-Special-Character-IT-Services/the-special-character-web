@@ -7,6 +7,7 @@ import format from 'date-fns/format';
 import styles from './upcomingEvents.module.scss';
 import { UpcomingEventType } from 'types';
 import Icons from '@components/Icons';
+import { IKImage } from 'imagekitio-react';
 
 interface Props {
   data?: UpcomingEventType;
@@ -33,11 +34,17 @@ const UpcomingEvents = ({ data }: Props) => {
             return (
               <Card variant="cardHover" className={styles.cardMain} key={x.id}>
                 <div className={styles.imageDiv}>
-                  <Image
+                  <IKImage
+                    path={`${x.eventImage.url}`.split('/').at(-1)}
+                    transformation={[
+                      {
+                        height: 608,
+                        width: 1080,
+                      },
+                    ]}
+                    loading="lazy"
+                    lqip={{ active: true }}
                     alt="Featured image"
-                    src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.eventImage.url}`}
-                    height={608}
-                    width={1080}
                   />
                 </div>
                 <div className={styles.cardBox}>
@@ -45,7 +52,7 @@ const UpcomingEvents = ({ data }: Props) => {
                     <div className={styles.time}>
                       <div className={styles.contentTopLeft}>
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.schedule.icon.url}`}
+                          src={`${x.schedule.icon.url}`}
                           alt="calender"
                           height={21}
                           width={21}

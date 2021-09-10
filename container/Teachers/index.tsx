@@ -44,7 +44,7 @@ const Teachers = ({ data }: Props) => {
           </div>
           <div className="featured-teacher-content">
             <Images
-              src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data.teacher.image.url}`}
+              src={`${data.teacher.image.url}`}
               width={1076}
               height={1334}
             />

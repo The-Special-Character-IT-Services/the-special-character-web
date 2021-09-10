@@ -6,6 +6,8 @@ import Typography from '@components/Typography';
 import Image from 'next/image';
 import styles from './allEvents.module.scss';
 import { AllEventsType } from 'types';
+import { IKImage } from 'imagekitio-react';
+import format from 'date-fns/format';
 
 interface Props {
   data?: AllEventsType;
@@ -25,11 +27,12 @@ const AllEvents = ({ data }: Props) => {
               <Card key={x.id} variant="cardHover">
                 <a href={`events/${x?.id}`} className={styles.cardMain}>
                   <div className={styles.imageDiv}>
-                    <Image
+                    <IKImage
+                      path={`${x?.eventImage?.url}`.split('/').at(-1)}
+                      transformation={[{ height: 608, width: 1080 }]}
+                      loading="lazy"
+                      lqip={{ active: true }}
                       alt="Featured image"
-                      src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.eventImage?.url}`}
-                      height={608}
-                      width={1080}
                     />
                   </div>
                   <div className={styles.cardBox}>
@@ -49,8 +52,15 @@ const AllEvents = ({ data }: Props) => {
                           </Typography>
                         </div>
                         <div className={styles.mobileWrapper}>
-                          <div className={styles.month}>JULY</div>
-                          <div className={styles.date}>24</div>
+                          <div className={styles.month}>
+                            {format(new Date(x.dateOfEvent), 'MMM')}
+                          </div>
+                          <div className={styles.date}>
+                            {format(
+                              new Date(x.dateOfEvent),
+                              'dd                                                                              '
+                            )}
+                          </div>
                         </div>
                       </div>
                       <Typography variant="h3" className={styles.cardTitle}>
@@ -70,8 +80,15 @@ const AllEvents = ({ data }: Props) => {
                       </div>
                     </div>
                     <div className={styles.mobileWrapper}>
-                      <div className={styles.month}>JULY</div>
-                      <div className={styles.date}>24</div>
+                      <div className={styles.month}>
+                        {format(new Date(x.dateOfEvent), 'MMM')}
+                      </div>
+                      <div className={styles.date}>
+                        {format(
+                          new Date(x.dateOfEvent),
+                          'dd                                                                              '
+                        )}
+                      </div>
                     </div>
                   </div>
                 </a>

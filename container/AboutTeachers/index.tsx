@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './aboutTeachers.module.scss';
 import router from 'next/router';
 import { AboutTeacherType } from 'types';
+import { IKImage } from 'imagekitio-react';
 
 interface Props {
   data?: AboutTeacherType;
@@ -37,12 +38,15 @@ const AboutTeachers = ({ data }: Props) => {
                 key={x.id}
                 variant="cardHover"
                 className={styles.singleCard}>
-                <Image
-                  alt="John Carter"
-                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}
-                  width={349}
-                  height={330}
-                />
+                <div>
+                  <IKImage
+                    path={`${x?.image?.url}`.split('/').at(-1)}
+                    transformation={[{ height: 330, width: 349 }]}
+                    loading="lazy"
+                    lqip={{ active: true }}
+                    alt={x.firstName}
+                  />
+                </div>
                 <div className={styles.description}>
                   <Typography variant="h3">{`${x?.firstName} ${x?.lastName}`}</Typography>
                   <Typography>{x?.description}</Typography>
@@ -55,7 +59,7 @@ const AboutTeachers = ({ data }: Props) => {
                           className="socialIcon">
                           <Image
                             alt="Social Icon"
-                            src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${icon?.icon.url}`}
+                            src={`${icon?.icon.url}`}
                             height={21}
                             width={21}
                           />

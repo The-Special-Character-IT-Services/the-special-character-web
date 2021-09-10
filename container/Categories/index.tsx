@@ -22,7 +22,7 @@ const Categories = ({ data }: Props) => {
                 <a href={`/courses/${x.id}`}>
                   <Image
                     alt="Design Category"
-                    src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.image?.url}`}
+                    src={`${x?.image?.url}`}
                     height={400}
                     width={550}
                   />

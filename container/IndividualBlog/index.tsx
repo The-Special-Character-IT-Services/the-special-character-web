@@ -20,7 +20,7 @@ const IndividualBlog = ({ data }: Props) => {
       <div className={styles.imgDiv}>
         <Images
           alt="blog Description"
-          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.bannerImage?.url}`}
+          src={`${data?.bannerImage?.url}`}
           height={900}
           width={1600}
           className={styles.img}
@@ -33,7 +33,7 @@ const IndividualBlog = ({ data }: Props) => {
         <div className={styles.author}>
           <div className={styles.avatar}>
             <Images
-              src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.bannerImage?.formats?.thumbnail?.url}`}
+              src={`${data?.bannerImage?.formats?.thumbnail?.url}`}
               variant="avtar"
               alt="avtar"
               height={80}
@@ -65,7 +65,7 @@ const IndividualBlog = ({ data }: Props) => {
         <Card variant="cardHover" className={styles.avatarCard}>
           <Images
             variant="avtar"
-            src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.bannerImage?.formats?.thumbnail?.url}`}
+            src={`${data?.bannerImage?.formats?.thumbnail?.url}`}
             alt="author img"
             height={200}
             width={200}

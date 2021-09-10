@@ -30,7 +30,7 @@ const Map = ({ data }: Props) => {
                   className={styles.cardOfficeIcon}
                   height={64}
                   width={64}
-                  src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
+                  src={`${x?.icon?.url}`}
                 />
                 <div className="card-office-content">
                   <Typography
@@ -63,10 +63,10 @@ const Map = ({ data }: Props) => {
           })}
         </div>
         <Image
-          alt='Office'
+          alt="Office"
           width={1460}
           height={680}
-          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.mapImage?.url}`}
+          src={`${data?.mapImage?.url}`}
           className={styles.officeImage}
         />
       </div>

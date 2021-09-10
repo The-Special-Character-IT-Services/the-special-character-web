@@ -38,11 +38,7 @@ const SingleCourseSection = ({ data }: Props) => {
                 {data?.tags?.map(x => {
                   return (
                     <a key={x.id} className="course-category" href={x?.link}>
-                      <Image
-                        height={18}
-                        width={16}
-                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
-                      />
+                      <Image height={18} width={16} src={`${x?.icon?.url}`} />
                       <Typography className={styles.courseCategoryText}>
                         {x.title}
                       </Typography>
@@ -63,7 +59,7 @@ const SingleCourseSection = ({ data }: Props) => {
               className={styles.coursePreview}
               height={405}
               width={720}
-              src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${data?.courseImage?.url}`}>
+              src={`${data?.courseImage?.url}`}>
               <div className="course-preview-filter" />
               <a href="#!" className="course-preview-button">
                 <Image
@@ -87,11 +83,7 @@ const SingleCourseSection = ({ data }: Props) => {
                   return (
                     <div key={x.id} className="card-get-course-feature-wrapper">
                       <div className="card-get-course-feature-icon">
-                        <Image
-                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
-                          width={29}
-                          height={29}
-                        />
+                        <Image src={`${x?.icon?.url}`} width={29} height={29} />
                       </div>
                       <div className="card-get-course-feature-text-wrapper">
                         <Typography className={styles.marginRemove}>
@@ -154,7 +146,7 @@ const SingleCourseSection = ({ data }: Props) => {
                           height={203}
                           width={203}
                           className={testimonialStyle.image}
-                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.avatar?.url}`}
+                          src={`${x?.avatar?.url}`}
                         />
                         <div className="flex-grow">
                           <StarRating
@@ -197,11 +189,7 @@ const SingleCourseSection = ({ data }: Props) => {
                   return (
                     <div key={x.id} className="card-get-course-feature-wrapper">
                       <div className="card-get-course-feature-icon">
-                        <Image
-                          src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x?.icon?.url}`}
-                          width={29}
-                          height={29}
-                        />
+                        <Image src={`${x?.icon?.url}`} width={29} height={29} />
                       </div>
                       <div className="card-get-course-feature-text-wrapper">
                         <Typography className={styles.marginRemove}>

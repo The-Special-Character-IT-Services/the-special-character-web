@@ -51,7 +51,7 @@ const Resources = ({ data }: Props) => {
                       <Image
                         alt="Resources banner"
                         layout="fill"
-                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${x.bannerImage.url}`}
+                        src={`${x.bannerImage.url}`}
                       />
                     </div>
                     <div className="card-post-category-wrapper">
@@ -63,7 +63,7 @@ const Resources = ({ data }: Props) => {
                                 alt="Resources"
                                 width={16}
                                 height={18}
-                                src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${y.icon.url}`}
+                                src={`${y.icon.url}`}
                               />
                               <Typography className={styles.iconTitle}>
                                 {y.title}
