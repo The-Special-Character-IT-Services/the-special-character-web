@@ -6,6 +6,7 @@ import styles from './aboutTeachers.module.scss';
 import router from 'next/router';
 import { AboutTeacherType, TeachersEntity } from 'types';
 import useRequest from 'hooks/useRequest';
+import { IKImage } from 'imagekitio-react';
 
 interface Props {
   data?: AboutTeacherType;
