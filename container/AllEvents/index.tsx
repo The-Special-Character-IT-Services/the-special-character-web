@@ -7,7 +7,6 @@ import Image from 'next/image';
 import styles from './allEvents.module.scss';
 import { AllEventsType, EventsEntity } from 'types';
 import useRequest from 'hooks/useRequest';
-import { AllEventsType } from 'types';
 import { IKImage } from 'imagekitio-react';
 import format from 'date-fns/format';
 
