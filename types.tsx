@@ -632,21 +632,6 @@ export interface CategoryButtonEntityOrCategoryEntityOrRegister {
   buttonText: string;
   link?: string | any;
 }
-export interface EventsEntity {
-  id: number;
-  dateOfEvent: string;
-  locale: string;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
-  location: string;
-  minimalDetails?: MinimalDetailsEntity[] | null;
-  category?: CategoryButtonEntityOrCategoryEntityOrRegister[] | null;
-  eventDetails: EventDetailsOrEventAgendaOrHeading;
-  eventAgenda: EventDetailsOrEventAgendaOrHeading;
-  register: CategoryButtonEntityOrCategoryEntityOrRegister;
-  eventImage: EventImage;
-}
 export interface MinimalDetailsEntity {
   id: number;
   title: string;
@@ -886,7 +871,7 @@ export interface UpcomingEventType {
   created_at: string;
   updated_at: string;
   header: Header;
-  button: RegisterOrButton;
+  button: Button;
   events?: EventsEntity[] | null;
 }
 export interface Header {
@@ -894,7 +879,7 @@ export interface Header {
   title: string;
   description?: null;
 }
-export interface RegisterOrButton {
+export interface Button {
   id: number;
   buttonText: string;
   link?: null;
@@ -907,13 +892,84 @@ export interface EventsEntity {
   created_at: string;
   updated_at: string;
   location?: null;
-  minimalDetails?: MinimalDetailsEntityOrCategory[] | null;
+  minimalDetails?: MinimalDetailsEntityOrCategoryOrSchedule[] | null;
   eventDetails: EventDetailsOrEventAgenda;
-  register: RegisterOrButton;
+  register: Register;
   eventAgenda: EventDetailsOrEventAgenda;
-  category: MinimalDetailsEntityOrCategory;
+  category: MinimalDetailsEntityOrCategoryOrSchedule;
+  schedule: MinimalDetailsEntityOrCategoryOrSchedule;
   eventImage: EventImage;
 }
+export interface MinimalDetailsEntityOrCategoryOrSchedule {
+  id: number;
+  title: string;
+  description?: null;
+  link: string;
+  icon: Icon;
+}
+export interface Icon {
+  id: number;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
+  formats?: null;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl?: null;
+  provider: string;
+  provider_metadata: ProviderMetadata;
+  created_at: string;
+  updated_at: string;
+}
+export interface ProviderMetadata {
+  fileId: string;
+}
+export interface EventDetailsOrEventAgenda {
+  id: number;
+  title: string;
+  description: string;
+}
+export interface Register {
+  id: number;
+  buttonText: string;
+  link: string;
+}
+export interface EventImage {
+  id: number;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
+  formats: Formats;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl?: null;
+  provider: string;
+  provider_metadata: ProviderMetadata;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface Header {
+  id: number;
+  title: string;
+  description?: null;
+}
+export interface RegisterOrButton {
+  id: number;
+  buttonText: string;
+  link?: null;
+}
+
 export interface MinimalDetailsEntityOrCategory {
   id: number;
   title: string;
