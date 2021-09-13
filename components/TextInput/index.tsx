@@ -8,10 +8,12 @@ interface Props {
   type?: string;
   label: string;
   placeholder: string;
-  className?: string;
+  className?: string | any;
   isTextArea?: boolean;
   value?: string | any;
-  divClassName?: string;
+  divClassName?: string | any;
+  field?: object | any;
+  form?: object | any;
 }
 
 const TextInput = ({
@@ -36,7 +38,7 @@ const TextInput = ({
         id={field.name}
         className={cn('contactInput', {
           textArea: isTextArea,
-          [rest.className]: !!rest.className,
+          [className]: !!className,
           error: !!touched[field.name] && errors[field.name],
         })}
         {...field}
