@@ -35,7 +35,7 @@ const ContactForm = ({ data }: Props) => {
           <div className="contact-content">
             <div className="card-contact">
               <div className="w-form">
-                <Form
+                <Form<ContactFieldType>
                   fields={contactFields}
                   className={styles.contactForm}
                   initialValues={{

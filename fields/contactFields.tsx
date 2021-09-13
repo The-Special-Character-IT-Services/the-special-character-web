@@ -1,6 +1,16 @@
 import TextInput from '@components/TextInput';
 import { router } from '@container/ContactForm';
 import styles from '@container/ContactForm/contactForm.module.scss';
+import { FormikValues } from 'formik';
+
+export type ContactFieldType = {
+  name: string;
+  label: string;
+  placeholder: string;
+  component: JSX.Element;
+  validate: (value: FormikValues) => string;
+  type?: string;
+};
 
 export const contactFields = [
   {

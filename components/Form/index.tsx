@@ -1,11 +1,27 @@
 import React from 'react';
-import { Formik, Form as FormikForm, FastField } from 'formik';
+import { Formik, Form as FormikForm, FastField, FormikProps } from 'formik';
 import classNames from 'classnames';
 import Button from '@components/Button';
 
-interface Props {}
+interface Props<ObjectType> {
+  className?: string;
+  fields: ObjectType[];
+}
 
-const Form = ({ fields, children, className, ...props }: Props) => {
+// declare type Props<ObjectType> = FormikProps &
+//   FormikState<Values> &
+//   FormikHelpers<Values> &
+//   FormikHandlers &
+//   FormikComputedProps<Values> &
+//   FormikRegistration & {
+//     submitForm: () => Promise<any>;
+//   };
+
+const Form = <ObjectType extends object>({
+  fields,
+  className,
+  ...props
+}: Props<ObjectType>) => {
   return (
     <Formik {...props}>
       {({ isSubmitting }) => {
