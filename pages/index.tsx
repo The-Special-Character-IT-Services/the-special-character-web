@@ -11,6 +11,7 @@ import Blog from '@container/Blog';
 import Testimonials from '@container/Testimonials';
 import useRequest from 'hooks/useRequest';
 import {
+  BlogTypes,
   CourseCategoryType,
   EducationType,
   FeaturedTeacherType,
@@ -46,7 +47,7 @@ export default function Home() {
   const { data: successData } = useRequest<SuccessTypes>({
     url: 'success',
   });
-  const { data: blogData } = useRequest<string[]>({
+  const { data: blogData } = useRequest<BlogTypes>({
     url: 'blog-section',
   });
   return (

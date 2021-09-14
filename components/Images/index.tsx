@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { IKImage } from 'imagekitio-react';
 interface Props {
   children?: JSX.Element | any;
   className?: string;
@@ -23,18 +22,7 @@ const Images = ({
 }: Props) => {
   return (
     <div className={classNames(variant, className ? className : '')}>
-      <IKImage
-        path={`${src}`.split('/').at(-1)}
-        transformation={[
-          {
-            height: props.height,
-            width: props.width,
-          },
-        ]}
-        loading="lazy"
-        lqip={{ active: true }}
-        alt={alt}
-      />
+      <Image alt={alt} src={src} {...props} />
       {children}
       <style jsx>
         {`

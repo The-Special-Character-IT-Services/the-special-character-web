@@ -6,17 +6,17 @@ import Image from 'next/image';
 import router from 'next/router';
 import styles from './blog.module.scss';
 import format from 'date-fns/format';
-import { IKImage } from 'imagekitio-react';
+import { BlogTypes } from 'types';
 
 interface Props {
-  data?: string[] | Object;
+  data?: BlogTypes;
   isBlog?: Boolean;
 }
 
 const BlogContainer = ({ data, isBlog }: Props) => {
-  console.log(data.blogs.length, 'blog length');
-  const blogData = data.blogs.slice(0, 3);
-
+  if (!data) {
+    return null;
+  }
   return (
     <>
       <section className={styles.container}>
@@ -35,19 +35,11 @@ const BlogContainer = ({ data, isBlog }: Props) => {
         <div className="cards">
           <div className={styles.cards}>
             <Card variant="cardHover">
-              <a href={`blogs/${data.id}`} className={styles.cardDiv}>
-                <IKImage
-                  path={`${data.featuredBlog.bannerImage.url}`
-                    .split('/')
-                    .at(-1)}
-                  transformation={[
-                    {
-                      height: 500,
-                      width: 500,
-                    },
-                  ]}
-                  loading="lazy"
-                  lqip={{ active: true }}
+              <a href={`blogs/${data?.id}`} className={styles.cardDiv}>
+                <Image
+                  src={data.featuredBlog.bannerImage.url}
+                  height={500}
+                  width={500}
                   alt="blog post"
                 />
                 <div className={styles.designbtn}>
@@ -71,7 +63,7 @@ const BlogContainer = ({ data, isBlog }: Props) => {
             </Card>
 
             <div className={styles.sideDiv}>
-              {blogData.map((x, i) => {
+              {data?.blogs?.map((x, i) => {
                 return (
                   <a
                     key={x?.id}
@@ -80,16 +72,10 @@ const BlogContainer = ({ data, isBlog }: Props) => {
                     }
                     href={`blogs/${x?.id}`}>
                     <Card variant="cardHover" className={styles.sideCardDiv}>
-                      <IKImage
-                        path={`${x.bannerImage.url}`.split('/').at(-1)}
-                        transformation={[
-                          {
-                            height: 152,
-                            width: 270,
-                          },
-                        ]}
-                        loading="lazy"
-                        lqip={{ active: true }}
+                      <Image
+                        src={x.bannerImage.url}
+                        height={152}
+                        width={270}
                         alt="blog post"
                       />
                       <div className={styles.blogCard}>

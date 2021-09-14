@@ -15,7 +15,7 @@ interface Props {
 }
 
 const Resources = ({ data }: Props) => {
-  const { data: blogsData } = useRequest<BlogsEntity>({
+  const { data: blogsData } = useRequest<BlogsEntity[]>({
     url: 'blogs',
   });
   return (
