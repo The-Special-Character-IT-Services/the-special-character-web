@@ -6,6 +6,7 @@ import Typography from '@components/Typography';
 import styles from './allCourses.module.scss';
 import { AllCourseTypes, CoursesEntity } from 'types';
 import useRequest from 'hooks/useRequest';
+import { IKImage } from 'imagekitio-react';
 
 interface Props {
   data: AllCourseTypes;
