@@ -13,7 +13,6 @@ import LeftArrow from '../../public/svg/leftArrow.svg';
 import Link from 'next/link';
 import router from 'next/router';
 import { PopularCoursesType } from 'types';
-import { IKImage } from 'imagekitio-react';
 
 interface Props {
   data?: PopularCoursesType;
@@ -111,16 +110,10 @@ const Courses = ({ data }: Props) => {
                 return (
                   <Card key={x.id} variant="cardHover">
                     <a href={`courses/${x.id}`}>
-                      <IKImage
-                        path={`${x?.courseImage?.url}`.split('/').at(-1)}
-                        transformation={[
-                          {
-                            height: 318,
-                            width: 567,
-                          },
-                        ]}
-                        loading="lazy"
-                        lqip={{ active: true }}
+                      <Image
+                        src={x?.courseImage?.url}
+                        height={318}
+                        width={567}
                         alt="card"
                       />
                       <div className={styles.paraDiv}>

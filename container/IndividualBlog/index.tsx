@@ -8,13 +8,14 @@ import Marketing from '../../public/svg/Marketing.svg';
 import Card from '@components/Card';
 import Image from 'next/image';
 import useMarkdown from 'hooks/useMarkdown';
+import { IndividualBlogTypes } from 'types';
 
-interface Props {}
+interface Props {
+  data: IndividualBlogTypes;
+}
 
 const IndividualBlog = ({ data }: Props) => {
   const { HTML } = useMarkdown(data?.content);
-
-  console.log(HTML);
   return (
     <section className={styles.individualBlog}>
       <div className={styles.imgDiv}>
@@ -50,11 +51,11 @@ const IndividualBlog = ({ data }: Props) => {
             </div>
           </div>
           <div>
-            {data.categories.map(item => {
+            {data?.categories?.map(item => {
               return (
-                <Button key={item.id} className={styles.button}>
+                <Button key={item?.id} className={styles.button}>
                   <Marketing className={styles.marketing} />
-                  {item.title}
+                  {item?.title}
                 </Button>
               );
             })}

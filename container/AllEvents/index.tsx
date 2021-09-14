@@ -7,7 +7,6 @@ import Image from 'next/image';
 import styles from './allEvents.module.scss';
 import { AllEventsType, EventsEntity } from 'types';
 import useRequest from 'hooks/useRequest';
-import { IKImage } from 'imagekitio-react';
 import format from 'date-fns/format';
 
 interface Props {
@@ -15,7 +14,7 @@ interface Props {
 }
 
 const AllEvents = ({ data }: Props) => {
-  const { data: eventsData } = useRequest<EventsEntity>({
+  const { data: eventsData } = useRequest<EventsEntity[]>({
     url: 'events',
   });
   return (
@@ -31,11 +30,10 @@ const AllEvents = ({ data }: Props) => {
               <Card key={x.id} variant="cardHover">
                 <a href={`events/${x?.id}`} className={styles.cardMain}>
                   <div className={styles.imageDiv}>
-                    <IKImage
-                      path={`${x?.eventImage?.url}`.split('/').at(-1)}
-                      transformation={[{ height: 608, width: 1080 }]}
-                      loading="lazy"
-                      lqip={{ active: true }}
+                    <Image
+                      src={x?.eventImage?.url}
+                      height={608}
+                      width={1080}
                       alt="Featured image"
                     />
                   </div>

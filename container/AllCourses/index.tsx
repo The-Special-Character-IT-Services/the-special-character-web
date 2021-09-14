@@ -6,14 +6,14 @@ import Typography from '@components/Typography';
 import styles from './allCourses.module.scss';
 import { AllCourseTypes, CoursesEntity } from 'types';
 import useRequest from 'hooks/useRequest';
-import { IKImage } from 'imagekitio-react';
+import Image from 'next/image';
 
 interface Props {
   data: AllCourseTypes;
 }
 
 const AllCourses = ({ data }: Props) => {
-  const { data: coursesData } = useRequest<CoursesEntity>({
+  const { data: coursesData } = useRequest<CoursesEntity[]>({
     url: 'courses',
   });
   if (!data) {
@@ -33,12 +33,12 @@ const AllCourses = ({ data }: Props) => {
             <Card key={x.id} variant="cardHover" className={styles.cardMain}>
               <a href={`courses/${x?.id}`}>
                 <div>
-                  <IKImage
-                    path={`${x?.courseImage?.url}`.split('/').at(-1)}
-                    transformation={[{ height: 319, width: 567 }]}
-                    loading="lazy"
-                    lqip={{ active: true }}
+                  <Image
+                    src={x?.courseImage?.url}
+                    height={319}
+                    width={567}
                     alt="Featured image"
+                    layout="responsive"
                   />
                 </div>
                 <div className={styles.cardBox}>

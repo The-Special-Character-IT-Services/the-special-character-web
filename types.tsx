@@ -636,7 +636,7 @@ export interface MinimalDetailsEntity {
   id: number;
   title: string;
   description: string;
-  icon?: null;
+  icon?: Icon;
 }
 export interface EventImage {
   id: number;
@@ -826,7 +826,7 @@ export interface AllCourseTypes {
 export interface CategoryButtonsEntityOrEnroll {
   id: number;
   buttonText: string;
-  link?: null;
+  link: string | any;
 }
 export interface AllBlogsType {
   id: number;
@@ -1035,4 +1035,82 @@ export interface LargeOrSmallOrMediumOrThumbnail {
   size: number;
   width: number;
   height: number;
+}
+export interface BlogTypes {
+  id: number;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  featuredBlog: FeaturedBlog;
+  blogHeading: BlogHeading;
+  browseBlog: BrowseBlog;
+  blogs?: BlogsEntity[] | null;
+  localizations?: null[] | null;
+}
+export interface FeaturedBlog {
+  id: number;
+  title: string;
+  blog_author: number;
+  content: string;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  categories?: (CategoriesEntity | null)[] | null;
+  bannerImage: BannerImage;
+}
+export interface BannerImage {
+  id: number;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
+  formats: Formats;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl?: null;
+  provider: string;
+  provider_metadata: ProviderMetadata;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface BlogHeading {
+  id: number;
+  title: string;
+  description?: null;
+}
+export interface BrowseBlog {
+  id: number;
+  buttonText: string;
+  link: string | any;
+}
+export interface IndividualBlogTypes {
+  id: number;
+  title: string;
+  blog_author: BlogAuthor;
+  content: string;
+  locale: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
+  categories?: (CategoriesEntity | null)[] | null;
+  bannerImage: BannerImage;
+  localizations?: null[] | null;
+}
+export interface BlogAuthor {
+  id: number;
+  firstname: string;
+  lastname: string;
+  username?: null;
+  preferedLanguage?: null;
+}
+
+export interface ProviderMetadata {
+  fileId: string;
 }

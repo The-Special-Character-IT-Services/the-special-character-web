@@ -15,6 +15,9 @@ interface Props {
 
 const IndividualEvent = ({ data }: Props) => {
   const { HTML } = useMarkdown(data?.eventAgenda?.description);
+  if (!data) {
+    return null;
+  }
   return (
     <section className={styles.individualEvent}>
       <div className={styles.imgDiv}>
@@ -48,11 +51,11 @@ const IndividualEvent = ({ data }: Props) => {
                   <div className={styles.firstDiv} key={x.id}>
                     <Image
                       alt="Calender"
-                      src={`${x.icon.url}`}
+                      src={`${x?.icon?.url}`}
                       height={21}
                       width={21}
                     />
-                    <Typography variant="bold">{x.title}</Typography>
+                    <Typography variant="bold">{x?.title}</Typography>
                   </div>
                 );
               })}

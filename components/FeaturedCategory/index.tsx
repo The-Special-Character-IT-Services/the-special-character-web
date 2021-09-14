@@ -7,7 +7,7 @@ import styles from './featuredCategory.module.scss';
 type ButtonList = {
   id: number;
   buttonText: string;
-  link: string | any;
+  link?: string | any;
 };
 interface Props {
   title?: string;
