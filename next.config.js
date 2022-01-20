@@ -9,4 +9,5 @@ module.exports = {
       'ik.imagekit.io',
     ],
   },
+  ignoreBuildErrors: true,
 };

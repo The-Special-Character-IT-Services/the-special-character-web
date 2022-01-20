@@ -23,7 +23,7 @@ const Values = ({ data }: Props) => {
           <Typography>{data.heading.description}</Typography>
         </div>
         <div className="main">
-          {data?.valueCard.map((x, i) => {
+          {data?.valueCard?.map((x, i) => {
             return (
               <Card key={x.id}>
                 <div className="cardSection">

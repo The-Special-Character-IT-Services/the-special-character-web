@@ -1,31 +1,24 @@
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Typography from '@components/Typography';
+import { FieldProps, GenericFieldHTMLAttributes } from 'formik';
 
-interface Props {
-  name: string;
-  id: string;
-  type?: string;
+export interface TextInputProps {
   label: string;
-  placeholder: string;
   className?: string | any;
   isTextArea?: boolean;
-  value?: string | any;
+  type?: string;
   divClassName?: string | any;
-  field?: object | any;
-  form?: object | any;
 }
 
-const TextInput = ({
+const TextInput = <T, U>({
   field,
   form: { touched, errors },
-  id,
   isTextArea,
   divClassName,
   className,
   ...rest
-}: Props) => {
-  const Component = isTextArea ? 'textarea' : 'input';
+}: TextInputProps & FieldProps) => {
   return (
     <div
       className={cn('input-wrapper', {
@@ -34,16 +27,28 @@ const TextInput = ({
       <Typography variant="label" htmlFor={field.name}>
         {rest.label}
       </Typography>
-      <Component
-        id={field.name}
-        className={cn('contactInput', {
-          textArea: isTextArea,
-          [className]: !!className,
-          error: !!touched[field.name] && errors[field.name],
-        })}
-        {...field}
-        {...rest}
-      />
+      {isTextArea ? (
+        <textarea
+          className={cn('contactInput', {
+            textArea: isTextArea,
+            [className]: !!className,
+            error: !!touched[field.name] && errors[field.name],
+          })}
+          {...field}
+          {...rest}
+        />
+      ) : (
+        <input
+          className={cn('contactInput', {
+            textArea: isTextArea,
+            [className]: !!className,
+            error: !!touched[field.name] && errors[field.name],
+          })}
+          {...field}
+          {...rest}
+        />
+      )}
+
       <style jsx>
         {`
           @import '../../styles/variables.scss';

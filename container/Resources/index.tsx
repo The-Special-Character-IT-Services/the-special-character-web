@@ -21,9 +21,9 @@ const Resources = ({ data }: Props) => {
   return (
     <section className="blog-section">
       <div className="container">
-        <FeaturedCategory
+        {/* <FeaturedCategory
           title={data.heading.title}
-          categoryList={data.categoryButton}></FeaturedCategory>
+          categoryList={data.categoryButton}></FeaturedCategory> */}
         <div className="blog-grid">
           {blogsData?.map(x => {
             return (

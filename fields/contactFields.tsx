@@ -1,7 +1,7 @@
-import TextInput from '@components/TextInput';
-import { router } from '@container/ContactForm';
+import TextInput, { TextInputProps } from '@components/TextInput';
 import styles from '@container/ContactForm/contactForm.module.scss';
-import { FormikValues } from 'formik';
+import { FieldAttributes, FieldProps, FormikValues } from 'formik';
+import { ComponentType } from 'react';
 
 export type ContactFieldType = {
   name: string;
@@ -12,13 +12,25 @@ export type ContactFieldType = {
   type?: string;
 };
 
-export const contactFields = [
+export type ContactInitialType = {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+};
+
+export type ContactFieldsTypes = {
+  label: string;
+} & FieldAttributes<ContactInitialType>;
+
+export const contactFields: any = [
   {
     name: 'name',
     label: 'Name',
     placeholder: 'Ex. Elon Musk',
-    component: TextInput,
-    validate: value => {
+    component: TextInput as React.ComponentType,
+    validate: (value: string) => {
       if (!value) {
         return 'Please Enter Name.';
       }
@@ -31,7 +43,7 @@ export const contactFields = [
     placeholder: 'Ex.elon.musk@tesla.com',
     component: TextInput,
     type: 'email',
-    validate: value => {
+    validate: (value: string) => {
       if (!value) {
         return 'Please Enter Email Address.';
       }
@@ -44,7 +56,7 @@ export const contactFields = [
     placeholder: '123-4567-890',
     component: TextInput,
     type: 'tel',
-    validate: value => {
+    validate: (value: string) => {
       if (!value) {
         return 'Please Enter Phone Number.';
       }
@@ -56,7 +68,7 @@ export const contactFields = [
     label: 'Subject',
     placeholder: 'Ex. Courses',
     component: TextInput,
-    validate: value => {
+    validate: (value: string) => {
       if (!value) {
         return 'Please Enter Name.';
       }
@@ -70,7 +82,7 @@ export const contactFields = [
     placeholder: 'Write your message here...',
     component: TextInput,
     isTextArea: true,
-    validate: value => {
+    validate: (value: string) => {
       if (!value) {
         return 'Please Enter Message.';
       }
@@ -79,6 +91,10 @@ export const contactFields = [
   },
 ];
 
-export const initialValues = contactFields.reduce((p, c) => {
-  return { ...p, [c.name]: '' };
-}, {});
+export const contactInitialValues = {
+  name: '',
+  email: '',
+  phone: '',
+  subject: '',
+  message: '',
+};

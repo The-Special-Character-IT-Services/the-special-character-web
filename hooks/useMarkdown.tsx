@@ -18,11 +18,12 @@
 // };
 
 // export default useMarkdown;
+// @ts-nocheck
 import { useState, useEffect } from 'react';
 import remark from 'remark';
 import html from 'remark-html';
 
-const useMarkdown = markdown => {
+const useMarkdown = (markdown: string | undefined) => {
   const [HTML, setHTML] = useState('');
   useEffect(() => {
     const markdownToHtml = async () => {

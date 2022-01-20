@@ -1,4 +1,5 @@
 import Button from '@components/Button';
+import router from 'next/router';
 import Images from '@components/Images';
 import List from '@components/List';
 import Typography from '@components/Typography';
@@ -59,14 +60,14 @@ const IndividualEvent = ({ data }: Props) => {
                   </div>
                 );
               })}
-              <Button
+              {/* <Button
                 className={styles.button}
                 onClick={() => {
-                  router.push(data?.category.link);
+                  // if (data?.category?.link) router.push(data?.category.link);
                 }}>
                 <Icons socialLink={data?.category} />
                 {data?.category.title}
-              </Button>
+              </Button> */}
             </div>
             <Typography variant="h2" className={styles.title}>
               {data?.eventDetails?.title}
@@ -74,12 +75,12 @@ const IndividualEvent = ({ data }: Props) => {
             <Typography className={styles.caption}>
               {data?.eventDetails?.description}
             </Typography>
-            <Button
+            {/* <Button
               onClick={() => {
                 router.push(data?.register?.link);
               }}>
               {data?.register?.buttonText}
-            </Button>
+            </Button> */}
           </div>
         </div>
         <div className={styles.container}>
@@ -91,12 +92,12 @@ const IndividualEvent = ({ data }: Props) => {
             dangerouslySetInnerHTML={{ __html: HTML }}
           />
 
-          <Button
+          {/* <Button
             onClick={() => {
               router.push(data?.register?.link);
             }}>
             {data?.register?.buttonText}
-          </Button>
+          </Button> */}
         </div>
       </div>
       <div className={styles.bgEvent} />

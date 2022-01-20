@@ -67,9 +67,9 @@ const BlogContainer = ({ data, isBlog }: Props) => {
                 return (
                   <a
                     key={x?.id}
-                    className={
-                      data.blogs.length <= 2 && i === 0 && styles.anchor
-                    }
+                    // className={
+                    //   data.blogs.length <= 2 && i === 0 && styles.anchor
+                    // }
                     href={`blogs/${x?.id}`}>
                     <Card variant="cardHover" className={styles.sideCardDiv}>
                       <Image

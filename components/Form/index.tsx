@@ -1,34 +1,35 @@
-import React from 'react';
-import { Formik, Form as FormikForm, FastField, FormikProps } from 'formik';
+import React, { HtmlHTMLAttributes } from 'react';
+import {
+  Formik,
+  Form as FormikForm,
+  Field,
+  FastField,
+  FormikProps,
+  FormikValues,
+  FormikConfig,
+  FieldAttributes,
+  FieldConfig,
+} from 'formik';
 import classNames from 'classnames';
 import Button from '@components/Button';
 
-interface Props<ObjectType> {
+interface Props<Values> {
   className?: string;
-  fields: ObjectType[];
+  fields: FieldConfig<Values>[];
 }
 
-// declare type Props<ObjectType> = FormikProps &
-//   FormikState<Values> &
-//   FormikHelpers<Values> &
-//   FormikHandlers &
-//   FormikComputedProps<Values> &
-//   FormikRegistration & {
-//     submitForm: () => Promise<any>;
-//   };
-
-const Form = <ObjectType extends object>({
+const Form = <Values extends FormikValues = FormikValues>({
   fields,
   className,
   ...props
-}: Props<ObjectType>) => {
+}: Props<Values> & FormikConfig<Values>) => {
   return (
     <Formik {...props}>
       {({ isSubmitting }) => {
         return (
           <FormikForm
             className={classNames({
-              [className]: !!className,
+              [className || '']: !!className,
             })}>
             {fields.map(x => (
               <FastField key={x.name} {...x} />

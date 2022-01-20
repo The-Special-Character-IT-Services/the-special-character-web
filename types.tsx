@@ -53,12 +53,12 @@ export interface AboutBannerType {
   published_at: string;
   created_at: string;
   updated_at: string;
-  header: Header;
+  header: AboutBannerHeader;
   buttonText: ButtonText;
   localizations?: null[] | null;
 }
 
-export interface Header {
+export interface AboutBannerHeader {
   id: number;
   title: string;
   description: string;
@@ -306,9 +306,9 @@ export interface SocialMediaEntity {
   title: string;
   description?: null;
   link: string;
-  icon: Icon;
+  icon: SocialMediaIcon;
 }
-export interface Icon {
+export interface SocialMediaIcon {
   id: number;
   name: string;
   alternativeText: string;
@@ -498,7 +498,7 @@ export interface CourseType {
   feedbacks?: FeedbacksEntity[] | null;
   courseImage: CourseImage;
   localizations?: null[] | null;
-  sectionButtons?: SectionButtonsEntity[] | null;
+  sectionButtons?: SectionButtonsEntity[];
 }
 export interface SectionButtonsEntity {
   id: number;
@@ -586,8 +586,8 @@ export interface IndividualEventTypes {
   created_at: string;
   updated_at: string;
   location: string;
-  minimalDetails?: MinimalDetailsEntity[] | null;
-  category?: CategoryEntityOrRegister[] | null;
+  minimalDetails?: MinimalDetailsEntity[];
+  category?: CategoryEntityOrRegister[];
   eventDetails: EventDetailsOrEventAgenda;
   eventAgenda: EventDetailsOrEventAgenda;
   register: CategoryEntityOrRegister;
@@ -602,7 +602,7 @@ export interface EventDetailsOrEventAgenda {
 export interface CategoryEntityOrRegister {
   id: number;
   buttonText: string;
-  link?: string | any;
+  link?: string;
 }
 
 export interface AllEventsType {
@@ -854,7 +854,7 @@ export interface BlogsEntity {
   published_at: string;
   created_at: string;
   updated_at: string;
-  categories?: (CategoriesEntity | null)[] | null;
+  categories?: CategoriesEntity[];
   bannerImage: BannerImage;
 }
 export interface CategoriesEntity {
@@ -870,11 +870,11 @@ export interface UpcomingEventType {
   published_at: string;
   created_at: string;
   updated_at: string;
-  header: Header;
+  header: UpcomingEventHeader;
   button: Button;
-  events?: EventsEntity[] | null;
+  events?: EventsEntity[];
 }
-export interface Header {
+export interface UpcomingEventHeader {
   id: number;
   title: string;
   description?: null;
@@ -939,25 +939,6 @@ export interface Register {
   buttonText: string;
   link: string;
 }
-export interface EventImage {
-  id: number;
-  name: string;
-  alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
-  formats: Formats;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl?: null;
-  provider: string;
-  provider_metadata: ProviderMetadata;
-  created_at: string;
-  updated_at: string;
-}
 
 export interface Header {
   id: number;
@@ -974,9 +955,9 @@ export interface MinimalDetailsEntityOrCategory {
   id: number;
   title: string;
   link?: null;
-  icon: Icon;
+  icon: DetailsIcon;
 }
-export interface Icon {
+export interface DetailsIcon {
   id: number;
   name: string;
   alternativeText: string;
@@ -1000,25 +981,7 @@ export interface EventDetailsOrEventAgenda {
   title: string;
   description: string;
 }
-export interface EventImage {
-  id: number;
-  name: string;
-  alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
-  formats: Formats;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl?: null;
-  provider: string;
-  provider_metadata?: null;
-  created_at: string;
-  updated_at: string;
-}
+
 export interface Formats {
   large: LargeOrSmallOrMediumOrThumbnail;
   small: LargeOrSmallOrMediumOrThumbnail;
@@ -1058,9 +1021,9 @@ export interface FeaturedBlog {
   created_at: string;
   updated_at: string;
   categories?: (CategoriesEntity | null)[] | null;
-  bannerImage: BannerImage;
+  bannerImage: FeaturedBannerImage;
 }
-export interface BannerImage {
+export interface FeaturedBannerImage {
   id: number;
   name: string;
   alternativeText: string;

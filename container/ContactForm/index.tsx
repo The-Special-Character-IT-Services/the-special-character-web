@@ -9,9 +9,11 @@ import { ErrorMessage, useFormik } from 'formik';
 import { useRouter } from 'next/router';
 import { ContactPageType } from 'types';
 import Form from '@components/Form';
-import { contactFields, initialValues } from '../../fields/contactFields';
-
-const wait = time => new Promise(resolve => setTimeout(resolve, time));
+import {
+  contactFields,
+  contactInitialValues,
+  ContactInitialType,
+} from '../../fields/contactFields';
 
 interface Props {
   data?: ContactPageType;
@@ -35,15 +37,14 @@ const ContactForm = ({ data }: Props) => {
           <div className="contact-content">
             <div className="card-contact">
               <div className="w-form">
-                <Form<ContactFieldType>
+                <Form<ContactInitialType>
                   fields={contactFields}
                   className={styles.contactForm}
                   initialValues={{
-                    ...initialValues,
-                    message: router?.query?.value || '',
+                    ...contactInitialValues,
+                    message: `${router?.query?.value}`,
                   }}
                   onSubmit={async values => {
-                    await wait(3000);
                     console.log(values);
                   }}></Form>
               </div>

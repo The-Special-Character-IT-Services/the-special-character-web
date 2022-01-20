@@ -3,7 +3,12 @@ import Resources from '@container/Resources';
 import BlogContainer from '@container/Blog';
 import Header from '@components/Header';
 import useRequest from 'hooks/useRequest';
-import { AllBlogsType, BlogBannerTypes, SubscriptionType } from 'types';
+import {
+  AllBlogsType,
+  BlogBannerTypes,
+  BlogTypes,
+  SubscriptionType,
+} from 'types';
 
 interface Props {}
 
@@ -14,7 +19,7 @@ const Blog = (props: Props) => {
   const { data: newsData } = useRequest<SubscriptionType>({
     url: 'blog-subscription',
   });
-  const { data: blogData } = useRequest<SubscriptionType>({
+  const { data: blogData } = useRequest<BlogTypes>({
     url: 'blog-section',
   });
   const { data: allBlogData } = useRequest<AllBlogsType>({

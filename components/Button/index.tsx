@@ -10,8 +10,9 @@ interface Props {
     | 'buttonIcon'
     | 'socialIcon'
     | string
-    | any;
+    | undefined;
   isDisabled?: Boolean;
+  type?: 'submit' | 'button' | 'reset' | undefined;
   style?: Object | any;
   children: JSX.Element | string | any;
   isLoading?: Boolean;
@@ -37,7 +38,7 @@ const Button = ({
         className={classNames(!isDisabled && !isLoading, 'btn', 'primary', {
           disable: isDisabled || isLoading,
           isFooter: !!isFooter,
-          [className]: !!className,
+          [className || '']: !!className,
         })}
         onClick={isDisabled || isLoading ? () => {} : onClick}
         style={style}

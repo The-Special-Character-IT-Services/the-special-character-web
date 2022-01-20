@@ -1,5 +1,6 @@
 import Button from '@components/Button';
 import Card from '@components/Card';
+import router from 'next/router';
 import FeaturedCategory from '@components/FeaturedCategory';
 import Typography from '@components/Typography';
 import Image from 'next/image';
@@ -9,7 +10,7 @@ import { UpcomingEventType } from 'types';
 import Icons from '@components/Icons';
 
 interface Props {
-  data?: UpcomingEventType;
+  data: UpcomingEventType;
 }
 
 const UpcomingEvents = ({ data }: Props) => {
@@ -23,13 +24,13 @@ const UpcomingEvents = ({ data }: Props) => {
           <Button
             className="secondary"
             onClick={() => {
-              router.push(data?.button?.link);
+              if (data.button.link) router.push(data.button.link);
             }}>
             {data.button.buttonText}
           </Button>
         </div>
         <div className={styles.list}>
-          {data.events.map(x => {
+          {data.events?.map(x => {
             return (
               <Card variant="cardHover" className={styles.cardMain} key={x.id}>
                 <div className={styles.imageDiv}>

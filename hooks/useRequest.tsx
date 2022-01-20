@@ -2,8 +2,8 @@ import useSWR, { SWRConfiguration, SWRResponse } from 'swr';
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
 export const axiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
-  timeout: process.env.NEXT_PUBLIC_API_TIMEOUT,
+  baseURL: `${process.env.NEXT_PUBLIC_API_BASE_URL}`,
+  timeout: Number(process.env.NEXT_PUBLIC_API_TIMEOUT || 5000),
   timeoutErrorMessage:
     'Request Timeout. Please Try again or check your connection...',
 });
