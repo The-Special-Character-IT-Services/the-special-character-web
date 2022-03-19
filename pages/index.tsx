@@ -59,6 +59,7 @@ export default function Home() {
       {successData && <Ratings data={successData} />}
       {educationData && <AboutEducation data={educationData} />}
       <Divider isSectionDivider />
+      {/* this might contain an error: */}
       {courseData && <Categories data={courseData} />}
       {testimonialData && <Testimonials data={testimonialData} />}
       {blogData && <Blog data={blogData} />}

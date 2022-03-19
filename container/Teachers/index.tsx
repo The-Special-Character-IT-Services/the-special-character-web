@@ -1,6 +1,6 @@
 import Button from '@components/Button';
 import Card from '@components/Card';
-import Images from '@components/Images';
+// import Images from '@components/Images';
 import Typography from '@components/Typography';
 import classnames from 'classnames';
 import router from 'next/router';
@@ -43,11 +43,11 @@ const Teachers = ({ data }: Props) => {
             </div>
           </div>
           <div className="featured-teacher-content">
-            <Images
+            {/* <Images
               src={`${data.teacher.image.url}`}
               width={1076}
               height={1334}
-            />
+            /> */}
             <Card className={styles.cardFeaturedTeacher}>
               <div className={styles.cardFeaturedTeacherBadge}>
                 Featured Teacher

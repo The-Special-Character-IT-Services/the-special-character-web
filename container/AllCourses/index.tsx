@@ -13,6 +13,8 @@ interface Props {
 }
 
 const AllCourses = ({ data }: Props) => {
+  console.log('All Courses data:', data);
+
   const { data: coursesData } = useRequest<CoursesEntity[]>({
     url: 'courses',
   });

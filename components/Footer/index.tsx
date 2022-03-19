@@ -18,7 +18,7 @@ const Footer = (props: Props) => {
     <section className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.contentTop}>
-          <Link href="/">
+          <Link href="/" passHref>
             <Typography variant="a" className={styles.logo}>
               The Special Character
             </Typography>

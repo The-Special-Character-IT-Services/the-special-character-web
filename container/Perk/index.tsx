@@ -5,12 +5,15 @@ import card from '@components/Card/card.module.scss';
 import styles from './perk.module.scss';
 import Image from 'next/image';
 import { ReasonType } from 'types';
+import CustomImage from '@components/CustomImage';
 
 interface Props {
   data?: ReasonType;
 }
 
 const Perk = ({ data }: Props) => {
+  console.log('Perk data', data);
+
   return (
     <section id="Perks" className="bg-neutral-700 perks">
       <div className="container-default">
@@ -24,7 +27,7 @@ const Perk = ({ data }: Props) => {
             {data?.cards?.map(x => {
               return (
                 <Card key={x.id} variant="perkCard">
-                  <Image
+                  <CustomImage
                     src={x?.image?.url}
                     height={233}
                     width={233}

@@ -9,6 +9,9 @@ const Contact = (props: Props) => {
   const { data } = useRequest<ContactPageType>({
     url: 'contact-page',
   });
+
+  console.log(data);
+
   return (
     <>
       {data && (

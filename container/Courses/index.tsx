@@ -13,12 +13,15 @@ import LeftArrow from '../../public/svg/leftArrow.svg';
 import Link from 'next/link';
 import router from 'next/router';
 import { PopularCoursesType } from 'types';
+import CustomImage from '@components/CustomImage';
 
 interface Props {
   data?: PopularCoursesType;
 }
 
 const Courses = ({ data }: Props) => {
+  console.log('Course data:', data);
+
   function NextArrow(props: CustomArrowProps): JSX.Element {
     const { onClick } = props;
     return (
@@ -110,7 +113,7 @@ const Courses = ({ data }: Props) => {
                 return (
                   <Card key={x.id} variant="cardHover">
                     <a href={`courses/${x.id}`}>
-                      <Image
+                      <CustomImage
                         src={x?.courseImage?.url}
                         height={318}
                         width={567}

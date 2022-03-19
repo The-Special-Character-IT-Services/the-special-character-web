@@ -36,12 +36,14 @@ const BlogContainer = ({ data, isBlog }: Props) => {
           <div className={styles.cards}>
             <Card variant="cardHover">
               <a href={`blogs/${data?.id}`} className={styles.cardDiv}>
-                <Image
-                  src={data.featuredBlog.bannerImage.url}
-                  height={500}
-                  width={500}
-                  alt="blog post"
-                />
+                {data.featuredBlog.bannerImage.url && (
+                  <Image
+                    src={data.featuredBlog.bannerImage.url}
+                    height={500}
+                    width={500}
+                    alt="blog post"
+                  />
+                )}
                 <div className={styles.designbtn}>
                   <Image
                     src="/design.svg"

@@ -58,12 +58,14 @@ const ContactForm = ({ data }: Props) => {
                     className={classnames(styles.contactLink)}>
                     <a className="contact-link">
                       <div className="image-wrapper">
-                        <Image
-                          alt="social Media Icon"
-                          height={60}
-                          width={60}
-                          src={`${x?.icon?.url}`}
-                        />
+                        {x?.icon?.url && (
+                          <Image
+                            alt="social Media Icon"
+                            height={60}
+                            width={60}
+                            src={`${x?.icon?.url}`}
+                          />
+                        )}
                       </div>
                       <Typography variant="label">{x?.contactType}</Typography>
                       <a href={x?.link} target="_blank" rel="noreferrer">

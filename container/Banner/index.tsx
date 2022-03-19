@@ -6,12 +6,14 @@ import { useRef } from 'react';
 import styles from './banner.module.scss';
 import router from 'next/router';
 import { HomeBannerType } from 'types';
-
+import CustomImage from '@components/CustomImage';
 interface Props {
   data: HomeBannerType;
 }
 
-const Banner = ({ data }: Props) => {
+const Banner = ({ data, props }: Props) => {
+  console.log('Banner Page Data', data.bannerImage.name);
+
   return (
     <section className="banner">
       <div className="container">
@@ -19,7 +21,7 @@ const Banner = ({ data }: Props) => {
           <Typography variant="h1" style={{ marginTop: 0, fontFamily: 'auto' }}>
             {data.bannerDetails.title}
           </Typography>
-          <Typography>{data.bannerDetails.description}</Typography>
+          <Typography>{data?.bannerDetails?.description}</Typography>
           <div className="btnDiv">
             <Button
               onClick={() => {
@@ -36,11 +38,11 @@ const Banner = ({ data }: Props) => {
             </Button>
           </div>
         </div>
-        <Images
-          src={`${data.bannerImage.url}`}
+        <CustomImage
+          src={`${data.bannerImage.name}`}
           height={692}
           width={546}
-          alt="Banner"
+          alt="Image"
         />
       </div>
       <div className="circle" />
