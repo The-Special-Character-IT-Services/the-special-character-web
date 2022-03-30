@@ -20,8 +20,6 @@ interface Props {
 }
 
 const Courses = ({ data }: Props) => {
-  console.log('Course data:', data);
-
   function NextArrow(props: CustomArrowProps): JSX.Element {
     const { onClick } = props;
     return (
@@ -105,7 +103,7 @@ const Courses = ({ data }: Props) => {
       <section className={styles.courses}>
         <div className={styles.container}>
           <Typography variant="h2" className={styles.head}>
-            {data?.courseSectionDetails?.title}
+            {data?.courses?.title}
           </Typography>
           <div className={styles.cardDiv}>
             <Slider {...settings}>
@@ -138,9 +136,9 @@ const Courses = ({ data }: Props) => {
             <Button
               style={{ marginTop: '3rem' }}
               onClick={() => {
-                router.push(data?.explore?.link);
+                router.push(data?.popularCourse?.explore?.link);
               }}>
-              {data?.explore?.buttonText}
+              {data?.popularCourse?.explore?.buttonText}
             </Button>
           </div>
         </div>

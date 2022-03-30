@@ -23,10 +23,7 @@ const Footer = (props: Props) => {
               The Special Character
             </Typography>
           </Link>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt aliqua.
-          </Typography>
+          <Typography>Lets make your future-self proud</Typography>
         </div>
         <Divider isFooterTop />
         <div className={styles.contentMiddle}>
@@ -44,8 +41,8 @@ const Footer = (props: Props) => {
               </Button>
               <Typography variant="h2">Subscribe to our newsletter</Typography>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmo.
+                Get the latest updates on offers, courses, and events by
+                subscribing to our Newsletter
               </Typography>
             </div>
           </div>

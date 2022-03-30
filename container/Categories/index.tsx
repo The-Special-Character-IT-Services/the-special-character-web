@@ -16,10 +16,10 @@ const Categories = ({ data }: Props) => {
       <section className={styles.categories}>
         <div className={styles.container}>
           <Typography component={'span'} variant="h2">
-            {data?.heading?.title}
+            {data?.coursesCategory?.heading?.title}
           </Typography>
           <div className={styles.cardDiv}>
-            {data?.cardComponent?.map(x => (
+            {data?.coursesCategory?.cardComponent?.map(x => (
               <Card key={x.id} variant="cardHover" className={styles.cardBox}>
                 <a href={`/courses/${x.id}`}>
                   <Image

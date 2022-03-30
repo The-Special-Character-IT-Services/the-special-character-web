@@ -15,9 +15,9 @@ interface Props {
 }
 
 const Resources = ({ data }: Props) => {
-  const { data: blogsData } = useRequest<BlogsEntity[]>({
-    url: 'blogs',
-  });
+  // const { data: blogsData } = useRequest<BlogsEntity[]>({
+  //   url: 'blogs',
+  // });
   return (
     <section className="blog-section">
       <div className="container">
@@ -25,7 +25,7 @@ const Resources = ({ data }: Props) => {
           title={data.heading.title}
           categoryList={data.categoryButton}></FeaturedCategory> */}
         <div className="blog-grid">
-          {blogsData?.map(x => {
+          {data?.blogs?.map(x => {
             return (
               <Card
                 key={x.id}
@@ -61,9 +61,9 @@ const Resources = ({ data }: Props) => {
                     </div>
                   </div>
                   <div className="card-post-content">
-                    <Typography className={styles.cardPostDate}>
+                    {/* <Typography className={styles.cardPostDate}>
                       {format(new Date(x.updated_at), 'dd-mm-yyyy')}
-                    </Typography>
+                    </Typography> */}
                     <Typography
                       variant="h3"
                       className={classnames(styles.cardPost)}>

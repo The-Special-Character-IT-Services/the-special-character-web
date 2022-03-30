@@ -12,14 +12,14 @@ const FAQs = ({ data }: Props) => {
     <section className="faqs">
       <div className="container-small">
         <Typography variant="h2" className="commonHeading">
-          {data?.faqsHeading?.title}
+          {data?.contactPage?.faqsHeading?.title}
         </Typography>
         <Typography className={styles.paragraph}>
-          {data?.faqsHeading?.description}
+          {data?.contactPage?.faqsHeading?.description}
         </Typography>
       </div>
       <div className="container-medium">
-        {data?.faqsAccordian?.map(x => {
+        {data?.contactPage?.faqsAccordian?.map(x => {
           return (
             <Accordian
               key={x.id}

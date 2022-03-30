@@ -12,8 +12,6 @@ interface Props {
 }
 
 const Perk = ({ data }: Props) => {
-  console.log('Perk data', data);
-
   return (
     <section id="Perks" className="bg-neutral-700 perks">
       <div className="container-default">
@@ -21,14 +19,14 @@ const Perk = ({ data }: Props) => {
           <Typography
             variant="h2"
             className={classnames(styles.titlePerks, 'commonHeading')}>
-            {data?.heading?.title}
+            {data?.whyOurCourse?.heading?.title}
           </Typography>
           <div className="perks-grid">
-            {data?.cards?.map(x => {
+            {data?.whyOurCourse?.cards?.map(x => {
               return (
                 <Card key={x.id} variant="perkCard">
                   <CustomImage
-                    src={x?.image?.url}
+                    src={x?.image?.name}
                     height={233}
                     width={233}
                     alt="Perk Image"

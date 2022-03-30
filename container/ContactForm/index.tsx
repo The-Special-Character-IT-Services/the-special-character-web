@@ -28,10 +28,10 @@ const ContactForm = ({ data }: Props) => {
         <div className="contact-wrapper">
           <div className="contact-title-wrapper">
             <Typography variant="h1" className="commonHeading">
-              {data?.bannerHeading?.title}
+              {data?.contactPage?.bannerHeading?.title}
             </Typography>
             <Typography className={styles.contactParagraph}>
-              {data?.bannerHeading?.description}
+              {data?.contactPage?.bannerHeading?.description}
             </Typography>
           </div>
           <div className="contact-content">
@@ -50,7 +50,7 @@ const ContactForm = ({ data }: Props) => {
               </div>
             </div>
             <div className="contact-links-wrapper">
-              {data?.contactDetails?.map(x => {
+              {data?.contactPage?.contactDetails?.map(x => {
                 return (
                   <Card
                     key={x.id}

@@ -15,13 +15,13 @@ const FeaturedCourse = ({ data }: Props) => {
     <section className={styles.featuredCourse}>
       <div className={styles.container}>
         <Typography variant="h2" className={styles.head}>
-          {data?.featuredCourse?.title}
+          {data?.courseBanner?.course?.title}
         </Typography>
         <Card variant="cardHover">
-          <a href={`/courses/${data?.id}`} className={styles.cardMain}>
+          <a href={`/courses/${data?.course?.id}`} className={styles.cardMain}>
             <div className={styles.imageDiv}>
               <Image
-                src={data?.course?.courseImage?.url}
+                src={data?.courseBanner?.course?.courseImage?.url}
                 height={608}
                 width={1080}
                 alt="Featured image"
@@ -29,9 +29,11 @@ const FeaturedCourse = ({ data }: Props) => {
             </div>
             <div className={styles.cardBox}>
               <Typography variant="h3" className={styles.cardTitle}>
-                {data?.course?.title}
+                {data?.courseBanner?.course?.title}
               </Typography>
-              <Typography>{data?.course?.titleDescription}</Typography>
+              <Typography>
+                {data?.courseBanner?.course?.titleDescription}
+              </Typography>
             </div>
           </a>
         </Card>

@@ -11,35 +11,35 @@ interface Props {
   data: HomeBannerType;
 }
 
-const Banner = ({ data, props }: Props) => {
-  console.log('Banner Page Data', data.bannerImage.name);
-
+const Banner = ({ data }) => {
   return (
     <section className="banner">
       <div className="container">
         <div className="leftDiv">
           <Typography variant="h1" style={{ marginTop: 0, fontFamily: 'auto' }}>
-            {data.bannerDetails.title}
+            {data?.homeBanner?.bannerDetails?.title}
           </Typography>
-          <Typography>{data?.bannerDetails?.description}</Typography>
+          <Typography>
+            {data?.homeBanner?.bannerDetails?.description}
+          </Typography>
           <div className="btnDiv">
             <Button
               onClick={() => {
-                router.push(data.explore.link);
+                router.push(data?.homeBanner?.explore?.link);
               }}>
-              {data.explore.buttonText}
+              {data?.homeBanner?.explore?.buttonText}
             </Button>
             <Button
               className="secondary"
               onClick={() => {
-                router.push(data.learn.link);
+                router.push(data?.homeBanner?.learn?.link);
               }}>
-              {data.learn.buttonText}
+              {data?.homeBanner?.learn?.buttonText}
             </Button>
           </div>
         </div>
         <CustomImage
-          src={`${data.bannerImage.name}`}
+          src={`${data.homeBanner?.bannerImage?.name}`}
           height={692}
           width={546}
           alt="Image"

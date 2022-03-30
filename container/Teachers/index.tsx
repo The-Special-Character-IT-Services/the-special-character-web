@@ -1,5 +1,6 @@
 import Button from '@components/Button';
 import Card from '@components/Card';
+import Images from '@components/Images';
 // import Images from '@components/Images';
 import Typography from '@components/Typography';
 import classnames from 'classnames';
@@ -12,6 +13,8 @@ interface Props {
 }
 
 const Teachers = ({ data }: Props) => {
+  console.log(`teacher's data`, data);
+
   return (
     <section className="featured-teacher">
       <div className="container-default">
@@ -20,31 +23,31 @@ const Teachers = ({ data }: Props) => {
             <Typography
               variant="h2"
               className={classnames('commonHeading', styles.classH2)}>
-              {data.heading.title}
+              {data?.aboutTeacher?.heading?.title}
             </Typography>
             <Typography className={styles.featuredTeacherParagraph}>
-              {data.heading.description}
+              {data?.aboutTeacher?.heading?.description}
             </Typography>
             <div className="two-buttons">
               <Button
                 className={styles.btn}
                 onClick={() => {
-                  router.push(data.browse.link);
+                  router.push(data?.aboutTeacher?.browse.link);
                 }}>
-                {data.browse.buttonText}
+                {data?.aboutTeacher?.buttonText?.buttonText}
               </Button>
               <Button
                 className={classnames('secondary', styles.btn)}
                 onClick={() => {
-                  router.push(data.becomeTeacher.link);
+                  router.push(data?.aboutTeacher?.buttonText?.link);
                 }}>
-                {data.becomeTeacher.buttonText}
+                {/* {data.becomeTeacher.buttonText} */}
               </Button>
             </div>
           </div>
           <div className="featured-teacher-content">
             {/* <Images
-              src={`${data.teacher.image.url}`}
+              src={`${data?.teachers?.image.url}`}
               width={1076}
               height={1334}
             /> */}
@@ -58,14 +61,14 @@ const Teachers = ({ data }: Props) => {
                   'commonHeading',
                   styles.cardFeaturedTeacherTitle
                 )}>
-                {data.teacher.description}
+                {data?.aboutTeacher?.heading?.description}
               </Typography>
               <div className={styles.cardFeaturedTeacherAbout}>
                 <Typography className={styles.cardFeaturedTeacherName}>
-                  {`${data.teacher.firstName} ${data?.teacher?.lastName}`}
+                  {`${data?.teachers?.firstName} ${data?.teachers?.lastName}`}
                 </Typography>
                 <Typography className={styles.cardFeaturedTeacherRole}>
-                  {data.teacher.jobTitle}
+                  {data.teachers?.jobTitle}
                 </Typography>
               </div>
             </Card>

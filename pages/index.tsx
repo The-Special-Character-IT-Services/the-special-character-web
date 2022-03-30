@@ -21,14 +21,12 @@ import {
   SuccessTypes,
   TestimonialTypes,
 } from 'types';
+import axiosInstance from '../lib/axiosInstance';
+import HomeQuery from 'queries/homeQuery';
 
-export default function Home() {
-  const { data: bannerData } = useRequest<HomeBannerType>({
-    url: 'home-banner',
-  });
-  const { data: coursesData } = useRequest<PopularCoursesType>({
-    url: 'popular-courses',
-  });
+const Home = ({ webData }) => {
+  console.log('website data', webData);
+
   const { data: educationData } = useRequest<EducationType>({
     url: 'about-education',
   });
@@ -52,17 +50,35 @@ export default function Home() {
   });
   return (
     <>
-      {bannerData && <Banner data={bannerData} />}
-      {coursesData && <Courses data={coursesData} />}
-      {reasonData && <Perk data={reasonData} />}
-      {teachersData && <Teachers data={teachersData} />}
-      {successData && <Ratings data={successData} />}
-      {educationData && <AboutEducation data={educationData} />}
+      {webData && <Banner data={webData} />}
+      {webData && <Courses data={webData} />}
+      {webData && <Perk data={webData} />}
+      {webData && <Teachers data={webData} />}
+      {webData && <Ratings data={webData} />}
+      {webData && <AboutEducation data={webData} />}
       <Divider isSectionDivider />
       {/* this might contain an error: */}
-      {courseData && <Categories data={courseData} />}
-      {testimonialData && <Testimonials data={testimonialData} />}
-      {blogData && <Blog data={blogData} />}
+      {webData && <Categories data={webData} />}
+      {webData && <Testimonials data={webData} />}
+      {webData && <Blog data={webData} />}
     </>
   );
+};
+
+export async function getServerSideProps(context) {
+  const res = await axiosInstance.post('graphql', {
+    query: HomeQuery,
+
+    variables: {},
+  });
+
+  // console.log(res.data);
+
+  return {
+    props: {
+      webData: res.data.data,
+    }, // will be passed to the page component as props
+  };
 }
+
+export default Home;

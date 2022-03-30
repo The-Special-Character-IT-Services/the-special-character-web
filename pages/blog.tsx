@@ -9,39 +9,55 @@ import {
   BlogTypes,
   SubscriptionType,
 } from 'types';
+import BlogQuery from '@queries/blogQuery';
+import axiosInstance from 'lib/axiosInstance';
 
 interface Props {}
 
-const Blog = (props: Props) => {
-  const { data: blogBanner } = useRequest<BlogBannerTypes>({
-    url: 'blog-banner',
-  });
-  const { data: newsData } = useRequest<SubscriptionType>({
-    url: 'blog-subscription',
-  });
-  const { data: blogData } = useRequest<BlogTypes>({
-    url: 'blog-section',
-  });
-  const { data: allBlogData } = useRequest<AllBlogsType>({
-    url: 'all-blogs',
-  });
+const Blog = ({ allBlogData }) => {
+  console.log('allBlogData', allBlogData);
+
+  // const { data: allBlogData } = useRequest<BlogBannerTypes>({
+  //   url: 'blog-banner',
+  // });
+  // const { data: newsData } = useRequest<SubscriptionType>({
+  //   url: 'blog-subscription',
+  // });
+  // const { data: blogData } = useRequest<BlogTypes>({
+  //   url: 'blog-section',
+  // });
+  // const { data: allBlogData } = useRequest<AllBlogsType>({
+  //   url: 'all-blogs',
+  // });
   return (
     <>
-      {blogBanner && (
+      {allBlogData?.blogBanner && (
         <Header
-          label={blogBanner.heading.title}
-          caption={blogBanner.heading.description}
+          label={allBlogData?.blogBanner?.heading?.title}
+          caption={allBlogData?.blogBanner?.heading?.description}
           position={{
             circle1: ['top', 'right', '#f99d77'],
             circle2: ['bottom', 'left', '#064ea4'],
           }}
         />
       )}
-      {blogData && <BlogContainer isBlog data={blogData} />}
-      {newsData && <NewsLetter data={newsData} />}
+      {allBlogData && <BlogContainer isBlog data={allBlogData} />}
+      {allBlogData && <NewsLetter data={allBlogData} />}
       {allBlogData && <Resources data={allBlogData} />}
     </>
   );
 };
+
+export async function getServerSideProps(context) {
+  const res = await axiosInstance.post('graphql', {
+    query: BlogQuery,
+    variables: {},
+  });
+  return {
+    props: {
+      allBlogData: res.data.data,
+    },
+  };
+}
 
 export default Blog;
