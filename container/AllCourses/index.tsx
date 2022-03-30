@@ -13,6 +13,8 @@ interface Props {
 }
 
 const AllCourses = ({ data }: Props) => {
+  console.log('All Courses data:', data);
+
   const { data: coursesData } = useRequest<CoursesEntity[]>({
     url: 'courses',
   });
@@ -24,12 +26,12 @@ const AllCourses = ({ data }: Props) => {
       <div className={styles.container}>
         {data.categoryButtons && (
           <FeaturedCategory
-            title={data.heading.title}
-            categoryList={data?.categoryButtons ?? []}
+            title={data?.allCourse?.heading?.title}
+            categoryList={data?.allCourse?.categoryButtons ?? []}
           />
         )}
         <div className={styles.list}>
-          {coursesData?.map(x => (
+          {data?.courses?.map(x => (
             <Card key={x.id} variant="cardHover" className={styles.cardMain}>
               <a href={`courses/${x?.id}`}>
                 <div>

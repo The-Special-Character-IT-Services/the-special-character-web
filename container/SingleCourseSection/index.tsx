@@ -38,7 +38,9 @@ const SingleCourseSection = ({ data }: Props) => {
                 {data?.tags?.map(x => {
                   return (
                     <a key={x.id} className="course-category" href={x?.link}>
-                      <Image height={18} width={16} src={`${x?.icon?.url}`} />
+                      {x?.icon?.url && (
+                        <Image height={18} width={16} src={`${x?.icon?.url}`} />
+                      )}
                       <Typography className={styles.courseCategoryText}>
                         {x.title}
                       </Typography>
@@ -83,7 +85,7 @@ const SingleCourseSection = ({ data }: Props) => {
                   return (
                     <div key={x.id} className="card-get-course-feature-wrapper">
                       <div className="card-get-course-feature-icon">
-                        <Image src={`${x?.icon?.url}`} width={29} height={29} />
+                        {/* <Image src={`${x?.icon?.url}`} width={29} height={29} /> */}
                       </div>
                       <div className="card-get-course-feature-text-wrapper">
                         <Typography className={styles.marginRemove}>
@@ -112,11 +114,9 @@ const SingleCourseSection = ({ data }: Props) => {
               </Typography>
               {data?.curriculum?.map(x => {
                 return (
-                  <Accordian
-                    key={x.id}
-                    label={x.title}
-                    children={x.description}
-                  />
+                  <Accordian key={x.id} label={x.title}>
+                    {x.description}
+                  </Accordian>
                 );
               })}
             </div>
@@ -189,7 +189,7 @@ const SingleCourseSection = ({ data }: Props) => {
                   return (
                     <div key={x.id} className="card-get-course-feature-wrapper">
                       <div className="card-get-course-feature-icon">
-                        <Image src={`${x?.icon?.url}`} width={29} height={29} />
+                        {/* <Image src={`${x?.icon?.url}`} width={29} height={29} /> */}
                       </div>
                       <div className="card-get-course-feature-text-wrapper">
                         <Typography className={styles.marginRemove}>

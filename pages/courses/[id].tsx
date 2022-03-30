@@ -11,6 +11,9 @@ const SingleCourse = (props: Props) => {
   const { data } = useRequest<CourseType>({
     url: `courses/${id}`,
   });
+
+  console.log(data);
+
   return <>{data && <SingleCourseSection data={data} />}</>;
 };
 

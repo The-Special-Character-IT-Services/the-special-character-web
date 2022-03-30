@@ -6,41 +6,43 @@ import { useRef } from 'react';
 import styles from './banner.module.scss';
 import router from 'next/router';
 import { HomeBannerType } from 'types';
-
+import CustomImage from '@components/CustomImage';
 interface Props {
   data: HomeBannerType;
 }
 
-const Banner = ({ data }: Props) => {
+const Banner = ({ data }) => {
   return (
     <section className="banner">
       <div className="container">
         <div className="leftDiv">
           <Typography variant="h1" style={{ marginTop: 0, fontFamily: 'auto' }}>
-            {data.bannerDetails.title}
+            {data?.homeBanner?.bannerDetails?.title}
           </Typography>
-          <Typography>{data.bannerDetails.description}</Typography>
+          <Typography>
+            {data?.homeBanner?.bannerDetails?.description}
+          </Typography>
           <div className="btnDiv">
             <Button
               onClick={() => {
-                router.push(data.explore.link);
+                router.push(data?.homeBanner?.explore?.link);
               }}>
-              {data.explore.buttonText}
+              {data?.homeBanner?.explore?.buttonText}
             </Button>
             <Button
               className="secondary"
               onClick={() => {
-                router.push(data.learn.link);
+                router.push(data?.homeBanner?.learn?.link);
               }}>
-              {data.learn.buttonText}
+              {data?.homeBanner?.learn?.buttonText}
             </Button>
           </div>
         </div>
-        <Images
-          src={`${data.bannerImage.url}`}
+        <CustomImage
+          src={`${data.homeBanner?.bannerImage?.name}`}
           height={692}
           width={546}
-          alt="Banner"
+          alt="Image"
         />
       </div>
       <div className="circle" />

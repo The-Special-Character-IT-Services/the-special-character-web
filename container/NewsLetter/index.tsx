@@ -18,11 +18,11 @@ const NewsLetter = ({ data }: Props) => {
           <Typography
             variant="h2"
             className={classnames('commonHeading', styles.title)}>
-            {data?.heading?.title}
+            {data?.blogSubscription?.heading?.title}
           </Typography>
           <div className="newsletter-form-block">
             <SubscriptionEmail
-              submitValue={data?.buttonText?.buttonText}
+              submitValue={data?.blogSubscription?.buttonText?.buttonText}
               className={styles.color}
             />
           </div>

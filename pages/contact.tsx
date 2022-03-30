@@ -2,23 +2,41 @@ import FAQs from '@container/FAQs';
 import ContactForm from '@container/ContactForm';
 import useRequest from 'hooks/useRequest';
 import { ContactPageType } from 'types';
-
+import ContactQuery from '../queries/contactQuery';
+import axiosInstance from 'lib/axiosInstance';
 interface Props {}
 
-const Contact = (props: Props) => {
-  const { data } = useRequest<ContactPageType>({
-    url: 'contact-page',
-  });
+const Contact = ({ contactData }) => {
+  console.log('Contact data from contat.tsx', contactData);
+
+  // const { data } = useRequest<ContactPageType>({
+  //   url: 'contact-page',
+  // });
+
+  // console.log(data);
+
   return (
     <>
-      {data && (
+      {contactData && (
         <>
-          <ContactForm data={data} />
-          <FAQs data={data} />
+          <ContactForm data={contactData} />
+          <FAQs data={contactData} />
         </>
       )}
     </>
   );
 };
+
+export async function getServerSideProps() {
+  const res = await axiosInstance.post('graphql', {
+    query: ContactQuery,
+    variables: {},
+  });
+  return {
+    props: {
+      contactData: res.data.data,
+    },
+  };
+}
 
 export default Contact;

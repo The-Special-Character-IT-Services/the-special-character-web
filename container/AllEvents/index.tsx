@@ -14,18 +14,18 @@ interface Props {
 }
 
 const AllEvents = ({ data }: Props) => {
-  const { data: eventsData } = useRequest<EventsEntity[]>({
-    url: 'events',
-  });
+  // const { data: eventsData } = useRequest<EventsEntity[]>({
+  //   url: 'events',
+  // });
   return (
     <section className={styles.allEvents}>
       <div className={styles.container}>
         <FeaturedCategory
-          title={data?.allEventHeading?.title}
-          categoryList={data?.categoryButton ?? []}
+          title={data?.eventPage?.allEventHeading?.title}
+          categoryList={data?.eventPage?.categoryButton ?? []}
         />
         <div className={styles.list}>
-          {eventsData?.map(x => {
+          {data?.events?.map(x => {
             return (
               <Card key={x.id} variant="cardHover">
                 <a href={`events/${x?.id}`} className={styles.cardMain}>

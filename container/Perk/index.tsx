@@ -5,6 +5,7 @@ import card from '@components/Card/card.module.scss';
 import styles from './perk.module.scss';
 import Image from 'next/image';
 import { ReasonType } from 'types';
+import CustomImage from '@components/CustomImage';
 
 interface Props {
   data?: ReasonType;
@@ -18,14 +19,14 @@ const Perk = ({ data }: Props) => {
           <Typography
             variant="h2"
             className={classnames(styles.titlePerks, 'commonHeading')}>
-            {data?.heading?.title}
+            {data?.whyOurCourse?.heading?.title}
           </Typography>
           <div className="perks-grid">
-            {data?.cards?.map(x => {
+            {data?.whyOurCourse?.cards?.map(x => {
               return (
                 <Card key={x.id} variant="perkCard">
-                  <Image
-                    src={x?.image?.url}
+                  <CustomImage
+                    src={x?.image?.name}
                     height={233}
                     width={233}
                     alt="Perk Image"

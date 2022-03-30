@@ -26,9 +26,9 @@ const BlogContainer = ({ data, isBlog }: Props) => {
             <Button
               className="secondary"
               onClick={() => {
-                router.push(data?.browseBlog?.link);
+                router.push(data?.blogSection?.browseBlog?.link);
               }}>
-              {data?.browseBlog?.buttonText}
+              {data?.blogSection?.browseBlog?.buttonText}
             </Button>
           </div>
         )}
@@ -36,12 +36,14 @@ const BlogContainer = ({ data, isBlog }: Props) => {
           <div className={styles.cards}>
             <Card variant="cardHover">
               <a href={`blogs/${data?.id}`} className={styles.cardDiv}>
-                <Image
-                  src={data.featuredBlog.bannerImage.url}
-                  height={500}
-                  width={500}
-                  alt="blog post"
-                />
+                {data?.blogSection?.featuredBlog?.bannerImage?.url && (
+                  <Image
+                    src={data.featuredBlog.bannerImage.url}
+                    height={500}
+                    width={500}
+                    alt="blog post"
+                  />
+                )}
                 <div className={styles.designbtn}>
                   <Image
                     src="/design.svg"
@@ -53,10 +55,10 @@ const BlogContainer = ({ data, isBlog }: Props) => {
                 </div>
                 <div className={styles.blogCard}>
                   <Typography>
-                    {format(new Date(data.updated_at), 'MMM dd YYY')}
+                    {/* {format(new Date(data.updated_at), 'MMM dd YYY')} */}
                   </Typography>
                   <Typography variant="h3">
-                    {data?.featuredBlog?.title}
+                    {data?.courseBanner?.heading?.title}
                   </Typography>
                 </div>
               </a>

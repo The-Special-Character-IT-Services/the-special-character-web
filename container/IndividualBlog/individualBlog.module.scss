@@ -111,6 +111,12 @@
       margin: 5rem auto;
     }
   }
+  & .blogContentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: $breakpointLg) {

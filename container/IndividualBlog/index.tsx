@@ -19,13 +19,15 @@ const IndividualBlog = ({ data }: Props) => {
   return (
     <section className={styles.individualBlog}>
       <div className={styles.imgDiv}>
-        <Images
-          alt="blog Description"
-          src={`${data?.bannerImage?.url}`}
-          height={900}
-          width={1600}
-          className={styles.img}
-        />
+        {data?.bannerImage?.url && (
+          <Images
+            alt="blog Description"
+            src={`${data?.bannerImage?.url}`}
+            height={900}
+            width={1600}
+            className={styles.img}
+          />
+        )}
         <div className={styles.shape1} />
         <div className={styles.shape2} />
       </div>
@@ -33,14 +35,16 @@ const IndividualBlog = ({ data }: Props) => {
         <Typography variant="h1">{data?.title}</Typography>
         <div className={styles.author}>
           <div className={styles.avatar}>
-            <Images
-              src={`${data?.bannerImage?.formats?.thumbnail?.url}`}
-              variant="avtar"
-              alt="avtar"
-              height={80}
-              width={80}
-              className={styles.avtrImg}
-            />
+            {data?.bannerImage?.formats?.thumbnail?.url && (
+              <Images
+                src={`${data?.bannerImage?.formats?.thumbnail?.url}`}
+                variant="avtar"
+                alt="avtar"
+                height={80}
+                width={80}
+                className={styles.avtrImg}
+              />
+            )}
             <div className={styles.info}>
               <Typography
                 variant="h4"
@@ -62,7 +66,12 @@ const IndividualBlog = ({ data }: Props) => {
           </div>
         </div>
         <Divider className={styles.divider} />
-        <div dangerouslySetInnerHTML={{ __html: HTML }} />
+        {/* edit here */}
+        <div className={styles.blogContentWrapper}>
+          {/* {' '}
+          problem is in the div */}
+          <div dangerouslySetInnerHTML={{ __html: HTML }} />
+        </div>
         <Card variant="cardHover" className={styles.avatarCard}>
           <Images
             variant="avtar"
@@ -74,11 +83,12 @@ const IndividualBlog = ({ data }: Props) => {
           />
           <div className={styles.authInfo}>
             <Typography
+              component={'span'}
               variant="h3"
               className={
                 styles.name
               }>{`${data?.blog_author?.firstname} ${data?.blog_author?.lastname}`}</Typography>
-            <Typography>
+            <Typography component={'span'}>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime,
               repellendus.
             </Typography>

@@ -13,6 +13,7 @@ import LeftArrow from '../../public/svg/leftArrow.svg';
 import Link from 'next/link';
 import router from 'next/router';
 import { PopularCoursesType } from 'types';
+import CustomImage from '@components/CustomImage';
 
 interface Props {
   data?: PopularCoursesType;
@@ -102,7 +103,7 @@ const Courses = ({ data }: Props) => {
       <section className={styles.courses}>
         <div className={styles.container}>
           <Typography variant="h2" className={styles.head}>
-            {data?.courseSectionDetails?.title}
+            {data?.courses?.title}
           </Typography>
           <div className={styles.cardDiv}>
             <Slider {...settings}>
@@ -110,7 +111,7 @@ const Courses = ({ data }: Props) => {
                 return (
                   <Card key={x.id} variant="cardHover">
                     <a href={`courses/${x.id}`}>
-                      <Image
+                      <CustomImage
                         src={x?.courseImage?.url}
                         height={318}
                         width={567}
@@ -135,9 +136,9 @@ const Courses = ({ data }: Props) => {
             <Button
               style={{ marginTop: '3rem' }}
               onClick={() => {
-                router.push(data?.explore?.link);
+                router.push(data?.popularCourse?.explore?.link);
               }}>
-              {data?.explore?.buttonText}
+              {data?.popularCourse?.explore?.buttonText}
             </Button>
           </div>
         </div>

@@ -4,14 +4,14 @@ import Layout from '@components/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
+    <Layout component={'span'}>
       <Component {...pageProps} />
     </Layout>
   );
 }
 
-export function reportWebVitals(metric: NextWebVitalsMetric) {
-  console.log(metric);
-}
+// export function reportWebVitals(metric: NextWebVitalsMetric) {
+//   console.log(metric);
+// }
 
 export default MyApp;

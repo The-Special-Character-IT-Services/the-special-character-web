@@ -79,7 +79,7 @@ const Testimonials = ({ data }: Props) => {
           <Typography
             variant="h2"
             className={classnames('commonHeading', styles.title)}>
-            {data.heading.title}
+            {data?.testimonialSecion?.heading?.title}
           </Typography>
           <Slider {...settings}>
             {data?.testimonials?.map(x => (

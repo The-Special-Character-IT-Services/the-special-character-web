@@ -15,9 +15,11 @@ const Categories = ({ data }: Props) => {
     <>
       <section className={styles.categories}>
         <div className={styles.container}>
-          <Typography variant="h2">{data?.heading?.title}</Typography>
+          <Typography component={'span'} variant="h2">
+            {data?.coursesCategory?.heading?.title}
+          </Typography>
           <div className={styles.cardDiv}>
-            {data?.cardComponent?.map(x => (
+            {data?.coursesCategory?.cardComponent?.map(x => (
               <Card key={x.id} variant="cardHover" className={styles.cardBox}>
                 <a href={`/courses/${x.id}`}>
                   <Image
@@ -33,11 +35,13 @@ const Categories = ({ data }: Props) => {
                       height={12}
                       width={12}
                     />
-                    <Typography>12 courses</Typography>
+                    <Typography component={'span'}>12 courses</Typography>
                   </Button>
                   <div className={styles.paraDiv}>
-                    <Typography variant="h3">{x.title}</Typography>
-                    <Typography>{x.description}</Typography>
+                    <Typography component={'span'} variant="h3">
+                      {x.title}
+                    </Typography>
+                    <Typography component={'span'}>{x.description}</Typography>
                   </div>
                 </a>
               </Card>
