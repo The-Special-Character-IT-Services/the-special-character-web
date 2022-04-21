@@ -79,6 +79,13 @@ const HomeQuery = `{
       title
       description
     }
+    teacher{
+      firstName
+    lastName
+      image{
+        url
+      }
+    }
     browse{
       id
       buttonText
@@ -171,6 +178,20 @@ const HomeQuery = `{
     jobTitle
   }
   blogSection{
+    blogs{
+      id
+      bannerImage{
+        id
+        url
+      }
+    }
+    featuredBlog{
+      id
+      bannerImage{
+        id
+        url
+      }
+    }
     blogHeading{
       id
       title

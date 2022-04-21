@@ -38,7 +38,7 @@ const BlogContainer = ({ data, isBlog }: Props) => {
               <a href={`blogs/${data?.id}`} className={styles.cardDiv}>
                 {data?.blogSection?.featuredBlog?.bannerImage?.url && (
                   <Image
-                    src={data.featuredBlog.bannerImage.url}
+                    src={data.blogSection.featuredBlog.bannerImage.url}
                     height={500}
                     width={500}
                     alt="blog post"
@@ -65,7 +65,7 @@ const BlogContainer = ({ data, isBlog }: Props) => {
             </Card>
 
             <div className={styles.sideDiv}>
-              {data?.blogs?.map((x, i) => {
+              {data?.blogSection?.blogs?.map((x, i) => {
                 return (
                   <a
                     key={x?.id}

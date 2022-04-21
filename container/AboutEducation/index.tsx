@@ -58,7 +58,7 @@ const AboutEducation = ({ data }: Props) => {
             onClick={() => {
               router.push(data?.aboutEducation?.aboutEducation?.link);
             }}>
-            {data?.aboutEducation?.boutEducation?.buttonText}
+            {data?.aboutEducation?.aboutEducation?.buttonText}
           </Button>
         </div>
       </section>
