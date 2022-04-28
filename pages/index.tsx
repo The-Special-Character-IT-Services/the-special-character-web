@@ -25,8 +25,9 @@ import axiosInstance from '../lib/axiosInstance';
 import HomeQuery from 'queries/homeQuery';
 
 const Home = ({ data }) => {
-  console.log('data', data);
+  console.log('data.blogSection', data.blogSection);
   const courses = [data?.courses, data?.popularCourse];
+  const blogData = [data?.blogSection, data?.blogs];
   return (
     <>
       <Banner data={data?.homeBanner} />
@@ -38,7 +39,7 @@ const Home = ({ data }) => {
       <Divider isSectionDivider />
       <Categories data={data?.coursesCategory} />
       <Testimonials data={data?.testimonialSecion} />
-      <Blog data={data?.blogSection} />
+      <Blog data={blogData} />
     </>
   );
 };
