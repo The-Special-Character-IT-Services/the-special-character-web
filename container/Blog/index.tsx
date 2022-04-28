@@ -33,9 +33,9 @@ const BlogContainer = ({ data, isBlog }: Props) => {
             <Button
               className="secondary"
               onClick={() => {
-                router.push(data?.browseBlog?.link);
+                router.push(blogSection?.browseBlog?.link);
               }}>
-              {data?.browseBlog?.buttonText}
+              {blogSection?.browseBlog?.buttonText}
             </Button>
           </div>
         )}
