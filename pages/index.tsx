@@ -24,43 +24,21 @@ import {
 import axiosInstance from '../lib/axiosInstance';
 import HomeQuery from 'queries/homeQuery';
 
-const Home = ({ webData }) => {
-  console.log('website data', webData);
-
-  const { data: educationData } = useRequest<EducationType>({
-    url: 'about-education',
-  });
-  const { data: courseData } = useRequest<CourseCategoryType>({
-    url: 'courses-category',
-  });
-  const { data: testimonialData } = useRequest<TestimonialTypes>({
-    url: 'testimonial-section',
-  });
-  const { data: reasonData } = useRequest<ReasonType>({
-    url: 'why-our-course',
-  });
-  const { data: teachersData } = useRequest<FeaturedTeacherType>({
-    url: 'featured-teacher',
-  });
-  const { data: successData } = useRequest<SuccessTypes>({
-    url: 'success',
-  });
-  const { data: blogData } = useRequest<BlogTypes>({
-    url: 'blog-section',
-  });
+const Home = ({ data }) => {
+  console.log('data', data);
+  const courses = [data?.courses, data?.popularCourse];
   return (
     <>
-      {webData && <Banner data={webData} />}
-      {webData && <Courses data={webData} />}
-      {webData && <Perk data={webData} />}
-      {webData && <Teachers data={webData} />}
-      {webData && <Ratings data={webData} />}
-      {webData && <AboutEducation data={webData} />}
+      <Banner data={data?.homeBanner} />
+      <Courses data={courses} />
+      <Perk data={data?.whyOurCourse} />
+      <Teachers data={data?.featuredTeacher} />
+      <Ratings data={data?.success} />
+      <AboutEducation data={data?.aboutEducation} />
       <Divider isSectionDivider />
-      {/* this might contain an error: */}
-      {webData && <Categories data={webData} />}
-      {webData && <Testimonials data={webData} />}
-      {webData && <Blog data={webData} />}
+      <Categories data={data?.coursesCategory} />
+      <Testimonials data={data?.testimonialSecion} />
+      <Blog data={data?.blogSection} />
     </>
   );
 };
@@ -76,7 +54,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      webData: res.data.data,
+      data: res.data.data,
     }, // will be passed to the page component as props
   };
 }

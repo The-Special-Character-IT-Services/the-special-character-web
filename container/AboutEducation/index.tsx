@@ -17,21 +17,21 @@ const AboutEducation = ({ data }: Props) => {
         <div className="main">
           <div className="header">
             <Typography variant="h2" style={{ fontFamily: 'auto' }}>
-              {data?.aboutEducation?.heading?.title}
+              {data?.heading?.title}
             </Typography>
             <Typography className="subtitle" style={{ textAlign: 'center' }}>
-              {data?.aboutEducation?.heading?.description}
+              {data?.heading?.description}
             </Typography>
           </div>
           <div className="content">
             <Images
-              src={`${data?.aboutEducation?.aboutImage?.url}`}
+              src={`${data?.aboutImage?.url}`}
               width={600}
               height={600}
               alt="education"
             />
             <aside className="sideDiv">
-              {data?.aboutEducation?.educationList?.map(x => (
+              {data?.educationList?.map(x => (
                 <div key={x.id} className="abtContent">
                   <Button className="buttonIcon">
                     <Image
@@ -56,9 +56,9 @@ const AboutEducation = ({ data }: Props) => {
           <Button
             className="secondary"
             onClick={() => {
-              router.push(data?.aboutEducation?.aboutEducation?.link);
+              router.push(data?.aboutEducation?.link);
             }}>
-            {data?.aboutEducation?.aboutEducation?.buttonText}
+            {data?.aboutEducation?.buttonText}
           </Button>
         </div>
       </section>

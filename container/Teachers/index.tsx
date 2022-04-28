@@ -14,7 +14,7 @@ interface Props {
 
 const Teachers = ({ data }: Props) => {
   console.log(`teacher's data`, data);
-  console.log('first name', data?.featuredTeacher?.teacher?.image?.url);
+  console.log('first name', data?.teacher?.image?.url);
 
   return (
     <section className="featured-teacher">
@@ -24,36 +24,34 @@ const Teachers = ({ data }: Props) => {
             <Typography
               variant="h2"
               className={classnames('commonHeading', styles.classH2)}>
-              {data?.aboutTeacher?.heading?.title}
+              {data?.heading?.title}
             </Typography>
             <Typography className={styles.featuredTeacherParagraph}>
-              {data?.aboutTeacher?.heading?.description}
+              {data?.heading?.description}
             </Typography>
             <div className="two-buttons">
               <Button
                 className={styles.btn}
                 onClick={() => {
-                  router.push(data?.aboutTeacher?.browse.link);
+                  router.push(data?.becomeTeacher.link);
                 }}>
-                {data?.aboutTeacher?.buttonText?.buttonText}
+                {data?.becomeTeacher?.buttonText}
               </Button>
               <Button
                 className={classnames('secondary', styles.btn)}
                 onClick={() => {
-                  router.push(data?.featuredTeacher?.browse?.buttonText?.link);
+                  router.push(data?.browse?.link);
                 }}>
-                {data.featuredTeacher?.browse?.buttonText}
+                {data.browse?.buttonText}
               </Button>
             </div>
           </div>
           <div className="featured-teacher-content">
-            <Typography>{data?.featuredTeacher?.teacher?.firstName}</Typography>
+            <Typography>{data?.teacher?.firstName}</Typography>
 
-            <Images
-              src={`${data?.featuredTeacher?.teacher?.image?.url}`}
-              width={1076}
-              height={1334}
-            />
+            {data?.teacher?.image?.url && (
+              <Images src={data.teacher.image.url} width={1076} height={1334} />
+            )}
             <Card className={styles.cardFeaturedTeacher}>
               <div className={styles.cardFeaturedTeacherBadge}>
                 Featured Teacher
@@ -64,11 +62,11 @@ const Teachers = ({ data }: Props) => {
                   'commonHeading',
                   styles.cardFeaturedTeacherTitle
                 )}>
-                {data?.aboutTeacher?.heading?.description}
+                {data?.heading?.description}
               </Typography>
               <div className={styles.cardFeaturedTeacherAbout}>
                 <Typography className={styles.cardFeaturedTeacherName}>
-                  {`${data?.featuredTeacher?.teacher?.firstName} ${data?.featuredTeacher?.teacher?.lastName}`}
+                  {`${data?.teacher?.firstName} ${data?.teacher?.lastName}`}
                 </Typography>
                 <Typography className={styles.cardFeaturedTeacherRole}>
                   {data.teachers?.jobTitle}

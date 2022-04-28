@@ -17,20 +17,20 @@ const Ratings = ({ data }: Props) => {
       <div className={styles.container}>
         <div className={styles.leftDiv}>
           <Typography variant="h2" className="commonHeading">
-            {data?.success?.successHeading.title}
+            {data?.successHeading.title}
           </Typography>
-          <Typography>{data?.success?.successHeading?.description}</Typography>
+          <Typography>{data?.successHeading?.description}</Typography>
           <Button
             className="secondary"
             onClick={() => {
-              router.push(data?.success?.exploreCourse?.link);
+              router.push(data?.exploreCourse?.link);
             }}>
-            {data?.success?.exploreCourse?.buttonText}
+            {data?.exploreCourse?.buttonText}
           </Button>
         </div>
         <div className={styles.rightDiv}>
           <div className={styles.cards}>
-            {data?.success?.leftCards?.map(x => {
+            {data?.leftCards?.map(x => {
               return (
                 <Card key={x.id} className={styles.box}>
                   <Typography className={styles.boxHead}>{x.title}</Typography>
@@ -42,7 +42,7 @@ const Ratings = ({ data }: Props) => {
             })}
           </div>
           <div className={styles.singleCard}>
-            {data?.success?.rightCards?.map(x => {
+            {data?.rightCards?.map(x => {
               return (
                 <Card key={x.id} className={styles.box}>
                   <Typography className={styles.boxHead}>{x.title}</Typography>

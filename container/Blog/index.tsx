@@ -14,6 +14,13 @@ interface Props {
 }
 
 const BlogContainer = ({ data, isBlog }: Props) => {
+  console.log('data', data);
+
+  const [blogSection, blogs] = data;
+  console.log('blogs', blogs);
+  console.log('blogSection', blogSection);
+  console.log('blogs in blogSeciton:', blogSection.blogs);
+
   if (!data) {
     return null;
   }
@@ -26,78 +33,64 @@ const BlogContainer = ({ data, isBlog }: Props) => {
             <Button
               className="secondary"
               onClick={() => {
-                router.push(data?.blogSection?.browseBlog?.link);
+                router.push(data?.browseBlog?.link);
               }}>
-              {data?.blogSection?.browseBlog?.buttonText}
+              {data?.browseBlog?.buttonText}
             </Button>
           </div>
         )}
-        <div className="cards">
-          <div className={styles.cards}>
-            <Card variant="cardHover">
-              <a href={`blogs/${data?.id}`} className={styles.cardDiv}>
-                {data?.blogSection?.featuredBlog?.bannerImage?.url && (
+        <div className={styles.cards}>
+          <Card variant="cardHover" className={styles.fullCard}>
+            <a
+              href={`blogs/${blogSection?.featuredBlog?.id}`}
+              className={styles.cardDiv}>
+              {blogSection?.featuredBlog?.bannerImage?.url && (
+                <Image
+                  src={blogSection.featuredBlog.bannerImage.url}
+                  height={500}
+                  width={500}
+                  alt="blog post"
+                />
+              )}
+              <div className={styles.designbtn}>
+                <Image src="/design.svg" height={18} width={18} alt="design" />
+                Design
+              </div>
+              <div className={styles.blogCard}>
+                <Typography>
+                  {/* {format(new Date(data.updated_at), 'MMM dd YYY')} */}
+                </Typography>
+                <Typography variant="h3">
+                  {blogSection?.featuredBlog?.title}
+                </Typography>
+              </div>
+            </a>
+          </Card>
+
+          {blogSection?.blogs?.map(x => {
+            console.log('x.title', x.title);
+
+            return (
+              <Card
+                key={x?.id}
+                variant="cardHover"
+                className={styles.sideCardDiv}>
+                <a href={`blogs/${x?.id}`}>
                   <Image
-                    src={data.blogSection.featuredBlog.bannerImage.url}
-                    height={500}
-                    width={500}
+                    src={x.bannerImage.url}
+                    height={152}
+                    width={270}
                     alt="blog post"
                   />
-                )}
-                <div className={styles.designbtn}>
-                  <Image
-                    src="/design.svg"
-                    height={18}
-                    width={18}
-                    alt="design"
-                  />
-                  Design
-                </div>
-                <div className={styles.blogCard}>
-                  <Typography>
-                    {/* {format(new Date(data.updated_at), 'MMM dd YYY')} */}
-                  </Typography>
-                  <Typography variant="h3">
-                    {data?.courseBanner?.heading?.title}
-                  </Typography>
-                </div>
-              </a>
-            </Card>
-
-            <div className={styles.sideDiv}>
-              {data?.blogSection?.blogs?.map((x, i) => {
-                return (
-                  <a
-                    key={x?.id}
-                    // className={
-                    //   data.blogs.length <= 2 && i === 0 && styles.anchor
-                    // }
-                    href={`blogs/${x?.id}`}>
-                    <Card variant="cardHover" className={styles.sideCardDiv}>
-                      <Image
-                        src={x.bannerImage.url}
-                        height={152}
-                        width={270}
-                        alt="blog post"
-                      />
-                      <div className={styles.blogCard}>
-                        <Typography variant="h3">{x?.title}</Typography>
-                      </div>
-                    </Card>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
+                  <div className={styles.blogCard}>
+                    <Typography variant="h3">{x.title}</Typography>
+                  </div>
+                </a>
+              </Card>
+            );
+          })}
         </div>
       </section>
-      {isBlog && (
-        <style jsx>{`
-          .cards {
-            padding: 10rem 0rem 0rem;
-          }
-        `}</style>
-      )}
     </>
   );
 };
