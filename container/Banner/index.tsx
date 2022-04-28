@@ -17,29 +17,27 @@ const Banner = ({ data }) => {
       <div className="container">
         <div className="leftDiv">
           <Typography variant="h1" style={{ marginTop: 0, fontFamily: 'auto' }}>
-            {data?.homeBanner?.bannerDetails?.title}
+            {data?.bannerDetails?.title}
           </Typography>
-          <Typography>
-            {data?.homeBanner?.bannerDetails?.description}
-          </Typography>
+          <Typography>{data?.bannerDetails?.description}</Typography>
           <div className="btnDiv">
             <Button
               onClick={() => {
-                router.push(data?.homeBanner?.explore?.link);
+                router.push(data?.explore?.link);
               }}>
-              {data?.homeBanner?.explore?.buttonText}
+              {data?.explore?.buttonText}
             </Button>
             <Button
               className="secondary"
               onClick={() => {
-                router.push(data?.homeBanner?.learn?.link);
+                router.push(data?.learn?.link);
               }}>
-              {data?.homeBanner?.learn?.buttonText}
+              {data?.learn?.buttonText}
             </Button>
           </div>
         </div>
         <CustomImage
-          src={`${data.homeBanner?.bannerImage?.name}`}
+          src={`${data.bannerImage?.name}`}
           height={692}
           width={546}
           alt="Image"

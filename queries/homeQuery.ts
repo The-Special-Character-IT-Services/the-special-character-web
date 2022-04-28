@@ -30,8 +30,15 @@ const HomeQuery = `{
       buttonText
       link
     }
+    courses{
+      id
+      courseImage{
+        id
+        url
+      }
+    }
   }
-  whyOurCourse{
+   whyOurCourse{
     heading{
       id
       title
@@ -72,24 +79,30 @@ const HomeQuery = `{
       link
     }
   }
-  featuredTeacher{
+featuredTeacher{
     id
-    heading{
+   heading{
       id
       title
       description
     }
-    browse{
+    browse {
+      buttonText
+      link
+    }
+    teacher {
       id
+      firstName
+      lastName
+      image {
+        url
+      }
+    }
+    becomeTeacher {
       buttonText
       link
     }
-    becomeTeacher{
-      id 
-      buttonText
-      link
-    }
-  }
+}
   success{
     id
     successHeading{
@@ -171,6 +184,22 @@ const HomeQuery = `{
     jobTitle
   }
   blogSection{
+    blogs{
+      id
+      title
+      bannerImage{
+        id
+        url
+      }
+    }
+    featuredBlog{
+      id
+      title
+      bannerImage{
+        id
+        url
+      }
+    }
     blogHeading{
       id
       title
@@ -202,6 +231,8 @@ const HomeQuery = `{
       description
     }
   }
-  }`;
+
+}
+`;
 
 export default HomeQuery;

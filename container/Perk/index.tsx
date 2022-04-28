@@ -19,10 +19,10 @@ const Perk = ({ data }: Props) => {
           <Typography
             variant="h2"
             className={classnames(styles.titlePerks, 'commonHeading')}>
-            {data?.whyOurCourse?.heading?.title}
+            {data?.heading?.title}
           </Typography>
           <div className="perks-grid">
-            {data?.whyOurCourse?.cards?.map(x => {
+            {data?.cards?.map(x => {
               return (
                 <Card key={x.id} variant="perkCard">
                   <CustomImage

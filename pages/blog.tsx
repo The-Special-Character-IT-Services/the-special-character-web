@@ -15,20 +15,8 @@ import axiosInstance from 'lib/axiosInstance';
 interface Props {}
 
 const Blog = ({ allBlogData }) => {
-  console.log('allBlogData', allBlogData);
-
-  // const { data: allBlogData } = useRequest<BlogBannerTypes>({
-  //   url: 'blog-banner',
-  // });
-  // const { data: newsData } = useRequest<SubscriptionType>({
-  //   url: 'blog-subscription',
-  // });
-  // const { data: blogData } = useRequest<BlogTypes>({
-  //   url: 'blog-section',
-  // });
-  // const { data: allBlogData } = useRequest<AllBlogsType>({
-  //   url: 'all-blogs',
-  // });
+  const blogContainer = [allBlogData?.blogSection, allBlogData?.blogs];
+  // console.log('blogContainer', blogContainer);
   return (
     <>
       {allBlogData?.blogBanner && (
@@ -41,7 +29,7 @@ const Blog = ({ allBlogData }) => {
           }}
         />
       )}
-      {allBlogData && <BlogContainer isBlog data={allBlogData} />}
+      {blogContainer && <BlogContainer isBlog data={blogContainer} />}
       {allBlogData && <NewsLetter data={allBlogData} />}
       {allBlogData && <Resources data={allBlogData} />}
     </>
