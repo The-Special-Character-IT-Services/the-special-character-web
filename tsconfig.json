@@ -21,6 +21,6 @@
       "@queries/*":["queries/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "queries/aboutQuery.js", "queries/homeQuery.js", "queries/eventQuery.js", "queries/coursesQuery.js", "queries/contactQuery.js", "queries/blogQuery.js"],
   "exclude": ["node_modules"]
 }

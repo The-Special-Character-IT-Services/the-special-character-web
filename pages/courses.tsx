@@ -10,14 +10,6 @@ import { AllCourseTypes, CourseBannerTypes } from 'types';
 interface Props {}
 
 const Courses = ({ coursesData }) => {
-  // console.log('All courses data:', props);
-
-  // const { data: courseBanner } = useRequest<CourseBannerTypes>({
-  //   url: 'course-banner',
-  // });
-  // const { data: allCourseData } = useRequest<AllCourseTypes>({
-  //   url: 'all-courses',
-  // });
   console.log('coursesData from courses.tsx', coursesData);
 
   return (

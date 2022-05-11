@@ -25,7 +25,7 @@ const FAQs = ({ data }: Props) => {
               key={x.id}
               className={styles.mr0}
               label={x?.title}
-              children={x?.description}
+              // children={x?.description}
             />
           );
         })}

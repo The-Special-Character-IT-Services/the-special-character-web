@@ -1,5 +1,5 @@
 import styles from './card.module.scss';
-import classNames from 'classnames';
+var classNames = require('classnames');
 import PropTypes from 'prop-types';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLDivElement> {
