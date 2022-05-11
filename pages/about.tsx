@@ -17,42 +17,35 @@ import {
   AboutTeacherType,
   AboutValuesType,
 } from 'types';
-
+import AboutQuery from '@queries/aboutQuery';
+import axiosInstance from 'lib/axiosInstance';
 interface Props {}
 
-const About = (props: Props) => {
-  const { data: bannerData } = useRequest<AboutBannerType>({
-    url: 'about-banner',
-  });
-  const { data: successData } = useRequest<AboutSuccessType>({
-    url: 'about-success',
-  });
-  const { data: missionData } = useRequest<AboutMissionType>({
-    url: 'about-mission',
-  });
-  const { data: valuesData } = useRequest<AboutValuesType>({
-    url: 'about-values',
-  });
-  const { data: teacherData } = useRequest<AboutTeacherType>({
-    url: 'about-teacher',
-  });
-  const { data: historyData } = useRequest<AboutHistoryType>({
-    url: 'about-history',
-  });
-  const { data: officeData } = useRequest<AboutOfficesType>({
-    url: 'about-offices',
-  });
+const About = ({ data }) => {
+  console.log('data', data);
   return (
     <>
-      {bannerData && <AboutBanner data={bannerData} />}
-      {successData && <Success data={successData} />}
-      {missionData && <AbtMission data={missionData} />}
-      {valuesData && <Values data={valuesData} />}
-      {teacherData && <AboutTeachers data={teacherData} />}
-      {historyData && <TimelineSection data={historyData} />}
-      {officeData && <Map data={officeData} />}
+      {data.aboutBanner && <AboutBanner data={data.aboutBanner} />}
+      {data.aboutSuccess && <Success data={data.aboutSuccess} />}
+      {data.aboutMission && <AbtMission data={data.aboutMission} />}
+      {data.aboutValue && <Values data={data.aboutValue} />}
+      {data.aboutTeacher && <AboutTeachers data={data.aboutTeacher} />}
+      {data.aboutHistory && <TimelineSection data={data.aboutHistory} />}
+      {data.aboutOffice && <Map data={data.aboutOffice} />}
     </>
   );
 };
+
+export async function getServerSideProps(context) {
+  const res = await axiosInstance.post('graphql', {
+    query: AboutQuery,
+    variables: {},
+  });
+  return {
+    props: {
+      data: res.data.data,
+    },
+  };
+}
 
 export default About;

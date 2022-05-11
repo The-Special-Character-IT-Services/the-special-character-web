@@ -37,20 +37,22 @@
       }
       & .sideCardDiv {
         display: flex;
-        min-height: 12rem;
-        max-height: 12rem;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
         & .blogCard {
-          padding: 1rem 0rem 1rem 1rem;
+          margin: 0px   ;
           display: flex;
-          align-items: center;
+          align-items: flex-end;
           width: 100%;
           max-width: 296px;
           padding: 31px 25px 31px 27px;
-
+          position: absolute;
+          z-index: 1200;
           p {
             margin: 0;
           }
-          h3 {
+          h5 {
             margin: 0;
           }
         }
