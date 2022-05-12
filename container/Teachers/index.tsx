@@ -47,7 +47,7 @@ const Teachers = ({ data }: Props) => {
             </div>
           </div>
           <div className="featured-teacher-content">
-            <Typography>{data?.teacher?.firstName}</Typography>
+            {/* <Typography>{data?.teacher?.firstName}</Typography> */}
 
             {data?.teacher?.image?.url && (
               <Images src={data.teacher.image.url} width={1076} height={1334} />
@@ -62,14 +62,14 @@ const Teachers = ({ data }: Props) => {
                   'commonHeading',
                   styles.cardFeaturedTeacherTitle
                 )}>
-                {data?.heading?.description}
+                {`"${data?.heading?.description}"`}
               </Typography>
               <div className={styles.cardFeaturedTeacherAbout}>
                 <Typography className={styles.cardFeaturedTeacherName}>
                   {`${data?.teacher?.firstName} ${data?.teacher?.lastName}`}
                 </Typography>
                 <Typography className={styles.cardFeaturedTeacherRole}>
-                  {data.teachers?.jobTitle}
+                  {data?.teacher?.jobTitle}
                 </Typography>
               </div>
             </Card>

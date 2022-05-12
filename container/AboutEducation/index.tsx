@@ -33,14 +33,14 @@ const AboutEducation = ({ data }: Props) => {
             <aside className="sideDiv">
               {data?.educationList?.map(x => (
                 <div key={x.id} className="abtContent">
-                  <Button className="buttonIcon">
+                  <div className="buttonIcon">
                     <Image
                       src={`${x?.image?.url}`}
                       height={60}
                       width={60}
                       alt="icon1"
                     />
-                  </Button>
+                  </div>
                   <div>
                     <Typography
                       style={{ margin: 0, marginBottom: '0.5rem' }}
@@ -66,13 +66,14 @@ const AboutEducation = ({ data }: Props) => {
         @import '../../styles/variables.scss';
 
         .container {
-          padding: 5rem 0rem;
+          padding: 6rem;
           & > .main {
             display: flex;
             align-items: center;
             flex-direction: column;
             & .header {
               text-align: center;
+              margin-bottom: 2rem;
               & .subtitle {
                 line-clamp: 2;
               }
@@ -80,23 +81,43 @@ const AboutEducation = ({ data }: Props) => {
           }
           & .content {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: center;
+            margin-bottom: 4rem;
+            gap: 2rem;
           }
           & .sideDiv {
-            max-width: 519px;
-          }
-        }
-        @media screen and (min-width: $breakpointXl) {
-          .container {
-            & .content {
-              margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            & .abtContent {
+              flex: 1;
+              max-width: 600px;
+              & .buttonIcon {
+                background-color: $icon;
+                display: flex;
+                justofy-content: center;
+                align-items: center;
+                padding: 0.2rem;
+                border: none;
+                border-radius: 2rem;
+                cursor: auto;
+                overflow: hidden;
+                &:hover {
+                  background-color: $icon;
+                  transform: scale(1);
+                }
+              }
             }
           }
         }
         @media screen and (max-width: $breakpointXl) {
           .container {
-            padding: 1rem;
+            padding: 6rem 2rem;
+          }
+        }
+        @media screen and (max-width: $breakpointLg) {
+          .container {
             & .content {
               display: flex;
               flex-direction: column;
@@ -104,9 +125,6 @@ const AboutEducation = ({ data }: Props) => {
             & .sideDiv {
               margin-top: 3rem;
               max-width: 700px;
-              & .abtContent {
-                margin-left: 0;
-              }
             }
           }
         }
@@ -114,22 +132,21 @@ const AboutEducation = ({ data }: Props) => {
           .abtContent {
             display: flex;
             align-items: start;
-            margin-left: 3rem;
             margin-bottom: 1rem;
             gap: 1rem;
           }
         }
         @media screen and (max-width: $breakpointSm) {
           .container {
+            padding: 6rem 1rem;
             & .abtContent {
               display: flex;
               flex-direction: column;
               align-items: center;
               text-align: center;
               margin-bottom: 2.5rem;
+              margin-left: 0 !important;
               gap: 1rem;
-            }
-            & .content {
             }
           }
         }

@@ -1,22 +1,29 @@
 @import '../../styles/variables.scss';
 .container {
-  max-width: 1209px;
-  margin: auto;
-  padding: 5rem 1rem;
+  background-color: $Neutral200;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  padding: 6rem;
   & .main {
+    flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem;
   }
   & .cards {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(3, 160px);
+    display: flex;
+    height: 650px;
+    // flex-direction: column;
+    // grid-template-columns: repeat(2, auto);
+    // grid-template-rows: repeat(3, 160px);
     gap: 2rem;
 
     & .fullCard {
-      grid-row: 3 span;
+      flex: 1;
+      // grid-row: 3 span;
     }
     // grid-auto-columns: 1fr;
     // grid-template-columns: 1fr 1fr;
@@ -26,34 +33,41 @@
     // grid-template-columns: 1fr 1fr;
     // grid-template-rows: auto;
     & .sideDiv {
-      display: grid;
-      grid-auto-columns: 1fr;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      flex: 1;
+      // grid-auto-columns: 1fr;
       // grid-column-gap: 1rem;
-      grid-row-gap: 2rem;
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
+      // grid-row-gap: 2rem;
+      // grid-template-columns: 1fr;
+      // grid-template-rows: auto;
       & .anchor {
         height: 1rem;
       }
       & .sideCardDiv {
         display: flex;
+        flex: 1;
         justify-content: space-between;
-        align-items: center;
+        // align-items: center;
         margin-top: auto;
         & .blogCard {
-          margin: 0px   ;
           display: flex;
-          align-items: flex-end;
-          width: 100%;
-          max-width: 296px;
-          padding: 31px 25px 31px 27px;
-          position: absolute;
-          z-index: 1200;
+          flex: 1;
+          padding: 1.5rem 1rem;
           p {
             margin: 0;
           }
           h5 {
             margin: 0;
+          }
+          h3 {
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
       }
@@ -86,24 +100,42 @@
     }
   }
 }
+@media screen and (max-width: $breakpointXl) {
+  .container {
+    padding: 6rem 4rem;
+  }
+}
 @media screen and (max-width: $breakpointMd) {
-  .sideDiv {
-    & .anchor {
-      min-height: 13rem;
+  .container {
+    padding: 6rem 3rem;
+    .cards {
+      height: fit-content !important;
+      flex-direction: column;
+      padding: 0 4rem;
+      .sideDiv {
+        & .anchor {
+          min-height: 13rem;
+        }
+        & .sideCardDiv {
+          img {
+            width: 300px !important;
+          }
+        }
+      }
     }
   }
 }
 @media screen and (max-width: $breakpointSm) {
   .container {
+    padding: 6rem 2rem;
     & .main {
       display: flex;
       flex-direction: column;
       margin-bottom: 2rem;
     }
     .cards {
-      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+      padding: 0;
       & .sideDiv {
-        grid-gap: 2rem;
         & .anchor {
           min-height: 18rem;
         }

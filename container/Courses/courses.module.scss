@@ -26,6 +26,11 @@
     & > .cardDiv {
       position: relative;
       overflow: visible;
+      & .cardHover {
+        height: 550px;
+        display: flex;
+        flex-direction: column;
+      }
       & .faculty {
         display: flex;
         flex: 1;
@@ -33,7 +38,11 @@
         align-items: center;
       }
       & .para {
-        word-break: break-all;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       & .cardHead {
         margin: 0.5rem 0;
@@ -143,6 +152,11 @@
   }
 }
 @media screen and (max-width: $breakpointLg) {
+  .cardHover {
+    & img {
+      height: 370px !important;
+    }
+  }
   .courses {
     padding-top: 165px;
     padding-bottom: 165px;
