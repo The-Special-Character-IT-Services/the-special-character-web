@@ -3,9 +3,20 @@
 .individualBlog {
   position: relative;
   overflow: hidden;
-  padding-top: 9rem;
   padding: 0rem 2rem;
+  padding-top: 9rem;
   padding-bottom: 12rem;
+  & .middleRound {
+    right: -15rem;
+    bottom: 547px;
+    z-index: -1;
+    width: 451px;
+    min-height: 451px;
+    min-width: 451px;
+    border-radius: 1000px;
+    background-color: $Secondary2;
+    position: absolute;
+  }
   & .imgDiv {
     position: relative;
     max-width: 1209px;
@@ -14,11 +25,11 @@
     padding: 0 1.5rem;
     flex: 1;
     & .img {
-      border-radius: 1.25rem;
+      border-radius: 2rem;
     }
     & .shape1 {
-      left: -20.5rem;
-      bottom: -1.25rem;
+      left: -17rem;
+      top: -2rem;
       z-index: -1;
       width: 548px;
       min-height: 548px;
@@ -28,20 +39,21 @@
       position: absolute;
     }
     & .shape2 {
-      top: 3.75rem;
-      right: -14rem;
-      z-index: -1;
-      width: 448px;
-      min-height: 448px;
-      min-width: 448px;
-      border-radius: 61rem;
-      background-color: $Secondary2;
       position: absolute;
+      z-index: -2;
+      top: -9rem;
+      left: -20rem;
+      right: -20rem;
+      min-height: 300px;
+      background-color: $Primary1;
     }
   }
   .blogSection {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto !important;
+    & h1 {
+      font-family: $newsReaderFont;
+    }
     & .author {
       display: flex;
       align-items: center;
@@ -91,6 +103,7 @@
       }
     }
     & .avatarCard {
+      margin: 3rem 0;
       padding: 1rem;
       & .avtrImg {
         & img {
@@ -111,11 +124,78 @@
       margin: 5rem auto;
     }
   }
+
   & .blogContentWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    & div {
+      display: 'flex';
+      flex-direction: 'column';
+      max-width: '800px';
+    }
+    & h2 {
+      margin-bottom: 8px;
+      font-family: $newsReaderFont;
+      color: $Neutral800;
+      font-size: 38px;
+      line-height: 1.289em;
+      font-weight: 600;
+    }
+    & h3 {
+      margin-bottom: 20px;
+      font-family: $newsReaderFont;
+      color: $Neutral700;
+      font-size: 24px;
+      line-height: 1.5em;
+      font-weight: 600;
+    }
+    & h4 {
+      margin-bottom: 20px;
+      font-family: $newsReaderFont;
+      color: $Neutral700;
+      font-size: 20px;
+      line-height: 1.5em;
+      font-weight: 600;
+    }
+    & blockquote {
+      padding: 4rem;
+      border-left: 11px solid #f99d77;
+      border-radius: 10px 20px 20px 10px;
+      background-color: #fff;
+      box-shadow: 0 5px 15px 0 rgb(30 61 96 / 3%);
+      font-size: 24px;
+      line-height: 1.583em;
+      margin: 3rem -3rem;
+    }
+    & img {
+      width: 800px;
+      height: 400px;
+      border-radius: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpointXl) {
+  .individualBlog {
+    padding-bottom: 8rem;
+    & .middleRound {
+      right: -5rem;
+      bottom: -50px;
+      width: 350px;
+      min-height: 350px;
+      min-width: 350px;
+    }
+    .imgDiv {
+      margin-right: 0;
+      margin-left: 0;
+      padding: 0;
+      & > .shape1 {
+        top: -9rem;
+        left: -18rem;
+      }
+    }
   }
 }
 
@@ -127,22 +207,23 @@
       margin-bottom: 3rem;
       & > .shape1 {
         left: -20.5rem;
-        bottom: 3rem;
+        top: -10rem;
         width: 438px;
         min-height: 438px;
         min-width: 438px;
       }
       & .shape2 {
-        top: 2.25rem;
-        right: -9.75rem;
-        width: 358px;
-        min-height: 358px;
-        min-width: 358px;
+        min-height: 200px;
       }
     }
     .blogSection {
       max-width: 800px;
       margin: 0 auto;
+      & .blogContentWrapper {
+        & div {
+          padding: 0 3rem;
+        }
+      }
       & .author {
         display: flex;
         flex-direction: column;
@@ -163,26 +244,57 @@
   }
 }
 
+@media screen and (max-width: $breakpointMd) {
+  .individualBlog {
+    & .blogSection {
+      & .blogContentWrapper {
+        & div {
+          min-width: 500px;
+          padding: 0 3rem;
+          & img {
+            height: 250px;
+            width: 500px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: $breakpointSm) {
   .individualBlog {
+    padding: 4rem 1rem;
+    & .middleRound {
+      right: -5rem;
+      bottom: -50px;
+      width: 300px;
+      min-height: 300px;
+      min-width: 300px;
+    }
     .imgDiv {
       margin-bottom: 3rem;
       & .shape1 {
-        left: -15rem;
-        bottom: 7.5rem;
-        width: 350px;
-        min-height: 350px;
-        min-width: 350px;
+        left: -7rem;
+        top: -5rem;
+        width: 170px;
+        min-height: 170px;
+        min-width: 170px;
       }
       & .shape2 {
-        top: 7.5rem;
-        right: -11rem;
-        width: 286px;
-        min-height: 286px;
-        min-width: 286px;
+        min-height: 250px;
       }
     }
     .blogSection {
+      & .blogContentWrapper {
+        & div {
+          min-width: 300px;
+          padding: 0;
+          & img {
+            height: 150px;
+            width: 300px;
+          }
+        }
+      }
       & .author {
         & .avatar {
           flex-direction: column;

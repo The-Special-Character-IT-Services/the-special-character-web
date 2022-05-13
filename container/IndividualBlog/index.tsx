@@ -129,6 +129,7 @@ const IndividualBlog = ({ data }: Props) => {
           </div>
         </Card>
       </div>
+      <div className={styles.middleRound} />
     </section>
   );
 };

@@ -19,7 +19,7 @@
   & > .arrow {
     left: 0;
     right: 0;
-    bottom: -7.25rem;
+    bottom: -5.25rem;
     display: flex;
     justify-content: center;
     position: absolute;
@@ -38,8 +38,8 @@
     padding: 6.5rem 0;
     & > .arrow {
       bottom: -6rem;
-      & > img {
-        width: 65px;
+      & img {
+        width: 65px !important;
       }
     }
   }
@@ -48,9 +48,9 @@
   .common {
     padding: 5.25rem 0;
     & > .arrow {
-      bottom: -5rem;
+      bottom: -4.25rem;
       & img {
-        width: 65px;
+        width: 65px !important;
       }
     }
   }
@@ -61,7 +61,7 @@
     & > .arrow {
       bottom: -3.5rem;
       & img {
-        width: 45px;
+        width: 55px !important;
       }
     }
   }

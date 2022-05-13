@@ -49,7 +49,7 @@ const Header = ({ caption, className, label, position, ...props }: Props) => {
       <div className={styles.arrow}>
         <Image
           src="https://assets.website-files.com/607de2d8e8911e32707a3efe/607f6baa56bb661a7bbbf5eb_arrow-3-education-x-template.svg"
-          height={206}
+          height={150}
           width={77}
           alt="Down Arrow"
         />

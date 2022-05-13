@@ -40,25 +40,27 @@ const Resources = ({ data }: Props) => {
                         src={`${x.bannerImage.url}`}
                       />
                     </div>
-                    <div className="card-post-category-wrapper">
-                      <div className={styles.cardIcon}>
-                        {x?.categories?.map(y => {
-                          return (
-                            <Fragment key={y.id}>
-                              <Image
-                                alt="Resources"
-                                width={16}
-                                height={18}
-                                src={`${y.icon.url}`}
-                              />
-                              <Typography className={styles.iconTitle}>
-                                {y.title}
-                              </Typography>
-                            </Fragment>
-                          );
-                        })}
+                    {x?.categories && (
+                      <div className="card-post-category-wrapper">
+                        <div className={styles.cardIcon}>
+                          {x.categories?.map(y => {
+                            return (
+                              <Fragment key={y.id}>
+                                <Image
+                                  alt="Resources"
+                                  width={16}
+                                  height={18}
+                                  src={`${y.icon.url}`}
+                                />
+                                <Typography className={styles.iconTitle}>
+                                  {y.title}
+                                </Typography>
+                              </Fragment>
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                   <div className="card-post-content">
                     {/* <Typography className={styles.cardPostDate}>
