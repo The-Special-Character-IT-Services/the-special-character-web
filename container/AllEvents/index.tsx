@@ -75,7 +75,7 @@ const AllEvents = ({ data }: Props) => {
                             src="https://assets.website-files.com/607de2d8e8911ebf197a3f0f/60870a1a6fa2bf07a97df928_icon-1-categories-education-x-template.svg"
                             alt="icon"
                             height={16}
-                            width={21}
+                            width={23}
                           />
                           Marketing
                         </Button>
