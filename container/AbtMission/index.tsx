@@ -91,12 +91,21 @@ const AbtMission = ({ data }: Props) => {
         @media screen and (max-width: $breakpointXl) {
           .container {
             padding: 2rem;
-            & .circle {
-              display: none;
+            & .main {
+              & .image {
+                flex: 1;
+              }
+              & .mission {
+                flex: 1;
+              }
             }
+          }
+        }
+        @media screen and (max-width: $breakpointLg) {
+          .container {
             & .main {
               display: flex;
-              flex-direction: column;
+              flex-direction: column-reverse;
               align-items: center;
               text-align: center;
               &.reverse {
@@ -107,6 +116,9 @@ const AbtMission = ({ data }: Props) => {
                 margin-top: 0rem;
                 margin-bottom: 3rem;
               }
+            }
+            & .circle {
+              display: none;
             }
           }
         }

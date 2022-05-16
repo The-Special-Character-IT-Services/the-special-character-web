@@ -34,10 +34,7 @@ const Perk = ({ data }: Props) => {
                   <div className="perkContent">
                     <Typography
                       variant="h3"
-                      className={classnames(
-                        card.subTitlePerk,
-                        'commonHeading'
-                      )}>
+                      className={classnames(card.subTitlePerk)}>
                       {x.title}
                     </Typography>
                     <Typography className={classnames(card.paragraphPerk)}>
