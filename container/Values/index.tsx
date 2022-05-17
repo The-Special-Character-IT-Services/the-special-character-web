@@ -28,14 +28,14 @@ const Values = ({ data }: Props) => {
               <Card key={x.id}>
                 <div className="cardSection">
                   <div className="cardBtn">
-                    <Button className="buttonIcon">
+                    <div className="buttonIcon">
                       <Image
                         src={`${x.icon.url}`}
                         height={60}
                         width={60}
                         alt="none"
                       />
-                    </Button>
+                    </div>
                     <button className="but">{i + 1}</button>
                   </div>
                   <div>
@@ -70,6 +70,21 @@ const Values = ({ data }: Props) => {
               & .cardBtn {
                 display: flex;
                 justify-content: space-between;
+                & .buttonIcon {
+                  background-color: $icon;
+                  display: flex;
+                  justofy-content: center;
+                  align-items: center;
+                  padding: 0.2rem;
+                  border: none;
+                  border-radius: 2rem;
+                  cursor: auto;
+                  overflow: hidden;
+                  &:hover {
+                    background-color: $icon;
+                    transform: scale(1);
+                  }
+                }
               }
               & .but {
                 background: transparent;
@@ -78,6 +93,7 @@ const Values = ({ data }: Props) => {
                 border-radius: 100px;
                 border: solid 1px $Neutral300;
                 font-size: large;
+                font-weight: 600;
               }
               & .cardSection {
                 padding: 2rem;

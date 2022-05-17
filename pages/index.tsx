@@ -28,6 +28,8 @@ const Home = ({ data }) => {
   console.log('data.blogSection', data.blogSection);
   const courses = [data?.courses, data?.popularCourse];
   const blogData = [data?.blogSection, data?.blogs];
+  console.log('COURSES ::::', data?.courses);
+
   return (
     <>
       <Banner data={data?.homeBanner} />

@@ -53,12 +53,12 @@
     }
   }
   & .arrow {
-    left: 0;
-    right: 0;
-    bottom: -7.25rem;
     display: flex;
-    justify-content: center;
     position: absolute;
+    justify-content: center;
+    left: 0px;
+    right: 0px;
+    bottom: -116px;
   }
 }
 @media screen and (max-width: $breakpointLg) {
@@ -76,9 +76,9 @@
       }
     }
     & .arrow {
-      bottom: -6.25rem;
+      bottom: -100px;
       & img {
-        width: 65px;
+        width: 65px !important;
       }
     }
   }
@@ -99,7 +99,7 @@
     & .arrow {
       bottom: -5rem;
       & img {
-        width: 55px;
+        width: 55px !important;
       }
     }
   }

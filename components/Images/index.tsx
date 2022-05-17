@@ -32,6 +32,7 @@ const Images = ({
             border-radius: 2rem;
             overflow: hidden;
             width: fit-content;
+            flex: 1;
           }
           .avtar {
             display: flex;

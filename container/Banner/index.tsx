@@ -36,12 +36,15 @@ const Banner = ({ data }) => {
             </Button>
           </div>
         </div>
-        <CustomImage
-          src={`${data.bannerImage?.name}`}
-          height={692}
-          width={546}
-          alt="Image"
-        />
+        <div
+          style={{ borderRadius: '2rem', overflow: 'hidden', display: 'flex' }}>
+          <CustomImage
+            src={`${data.bannerImage?.name}`}
+            height={692}
+            width={546}
+            alt="Image"
+          />
+        </div>
       </div>
       <div className="circle" />
       <div className="circle2" />
@@ -54,8 +57,8 @@ const Banner = ({ data }) => {
           padding-top: 7.938rem;
           padding-bottom: 7.938rem;
           & > .circle {
-            left: -550px;
-            top: -300px;
+            left: -370px;
+            top: -370px;
             z-index: -1;
             width: 640px;
             min-height: 640px;
@@ -65,8 +68,8 @@ const Banner = ({ data }) => {
             position: absolute;
           }
           & > .circle2 {
-            right: -400px;
-            bottom: -400px;
+            right: -300px;
+            bottom: -350px;
             z-index: -1;
             width: 645px;
             min-height: 645px;
@@ -103,6 +106,14 @@ const Banner = ({ data }) => {
         }
         @media screen and (max-width: $breakpointXl) {
           .banner {
+            & > .circle {
+              left: -530px;
+              top: -370px;
+            }
+            & > .circle2 {
+              right: -450px;
+              bottom: -370px;
+            }
             & > .bgBlue {
               top: 0;
               right: 0;
@@ -133,22 +144,44 @@ const Banner = ({ data }) => {
               width: 100%;
               min-height: 550px;
             }
+            & > .circle {
+              left: -530px;
+              top: -400px;
+            }
+            & > .circle2 {
+              right: -470px;
+              bottom: -400px;
+            }
           }
         }
         @media screen and (max-width: $breakpointMd) {
+          .banner {
+            & > .circle2 {
+              right: -450px;
+              bottom: -400px;
+            }
+          }
           .leftDiv {
             margin-bottom: 1.875rem;
           }
         }
         @media screen and (max-width: $breakpointSm) {
           .banner {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
             align-items: stretch;
             & > .circle {
               left: -550px;
               top: -464px;
             }
+            & > .circle2 {
+              right: -450px;
+              bottom: -430px;
+            }
             & > .container {
               max-width: 100%;
+              padding-right: 1rem;
+              padding-left: 1rem;
               & > .leftDiv {
                 max-width: 535px;
                 min-width: auto;

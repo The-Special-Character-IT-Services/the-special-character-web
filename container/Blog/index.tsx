@@ -19,7 +19,6 @@ const BlogContainer = ({ data, isBlog }: Props) => {
   const [blogSection, blogs] = data;
   console.log('blogs', blogs);
   console.log('blogSection', blogSection);
-  console.log('blogs in blogSeciton:', blogSection.blogs);
 
   if (!data) {
     return null;
@@ -29,7 +28,9 @@ const BlogContainer = ({ data, isBlog }: Props) => {
       <section className={styles.container}>
         {!isBlog && (
           <div className={styles.main}>
-            <Typography variant="h2">Resources & News</Typography>
+            <Typography variant="h2" style={{ fontFamily: 'auto !important' }}>
+              Resources & News
+            </Typography>
             <Button
               className="secondary"
               onClick={() => {
@@ -66,29 +67,29 @@ const BlogContainer = ({ data, isBlog }: Props) => {
               </div>
             </a>
           </Card>
-
-          {blogSection?.blogs?.map(x => {
-            console.log('x.title', x.title);
-
-            return (
-              <Card
-                key={x?.id}
-                variant="cardHover"
-                className={styles.sideCardDiv}>
-                <a href={`blogs/${x?.id}`}>
-                  <Image
-                    src={x.bannerImage.url}
-                    height={152}
-                    width={270}
-                    alt="blog post"
-                  />
-                  <div className={styles.blogCard}>
-                    <Typography variant="h3">{x.title}</Typography>
-                  </div>
-                </a>
-              </Card>
-            );
-          })}
+          <div className={styles.sideDiv}>
+            {blogSection?.blogs?.map(x => {
+              console.log('x.title', x.title);
+              return (
+                <Card
+                  key={x?.id}
+                  variant="cardHover"
+                  className={styles.sideCardDiv}>
+                  <a href={`blogs/${x?.id}`} className={styles.sideCardDiv}>
+                    <Image
+                      src={x.bannerImage.url}
+                      height={200}
+                      width={250}
+                      alt="blog post"
+                    />
+                    <div className={styles.blogCard}>
+                      <Typography variant="h3">{x.title}</Typography>
+                    </div>
+                  </a>
+                </Card>
+              );
+            })}
+          </div>
         </div>
       </section>
     </>

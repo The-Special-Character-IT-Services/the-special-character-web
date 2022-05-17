@@ -71,11 +71,13 @@ const Typography = ({ variant, className, ...props }: Props, ref: any) => {
             color: $Neutral800;
             font-size: var(--fs-h1);
             line-height: 1.3em;
+            font-family: $newsReaderFont;
           }
           .typography--class-h2 {
             color: $Neutral800;
             font-size: var(--fs-h2);
             line-height: 1.289em;
+            font-family: $newsReaderFont;
           }
           .typography--class-h3 {
             color: $Neutral700;

@@ -24,7 +24,7 @@ const AllCourses = ({ data }: Props) => {
   return (
     <section className={styles.allCourses}>
       <div className={styles.container}>
-        {data.categoryButtons && (
+        {data?.allCourse?.categoryButtons && (
           <FeaturedCategory
             title={data?.allCourse?.heading?.title}
             categoryList={data?.allCourse?.categoryButtons ?? []}

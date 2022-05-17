@@ -39,7 +39,9 @@ const Footer = (props: Props) => {
                   height={72}
                 />
               </Button>
-              <Typography variant="h2">Subscribe to our newsletter</Typography>
+              <Typography variant="h2" style={{ fontFamily: 'Kumbh Sans' }}>
+                Subscribe to our newsletter
+              </Typography>
               <Typography>
                 Get the latest updates on offers, courses, and events by
                 subscribing to our Newsletter

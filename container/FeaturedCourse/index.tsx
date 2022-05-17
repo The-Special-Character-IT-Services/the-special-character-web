@@ -11,14 +11,18 @@ interface Props {
 }
 
 const FeaturedCourse = ({ data }: Props) => {
+  console.log('FEATURED COURSE ::: ', data?.courseBanner);
+
   return (
     <section className={styles.featuredCourse}>
       <div className={styles.container}>
         <Typography variant="h2" className={styles.head}>
-          {data?.courseBanner?.course?.title}
+          {data?.courseBanner?.featuredCourse?.title}
         </Typography>
         <Card variant="cardHover">
-          <a href={`/courses/${data?.course?.id}`} className={styles.cardMain}>
+          <a
+            href={`/courses/${data?.courseBanner?.course?.id}`}
+            className={styles.cardMain}>
             <div className={styles.imageDiv}>
               <Image
                 src={data?.courseBanner?.course?.courseImage?.url}

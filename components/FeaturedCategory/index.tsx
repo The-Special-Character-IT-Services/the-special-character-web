@@ -58,6 +58,7 @@ const FeaturedCategory = ({ categoryList, title }: Props) => {
           justify-content: center;
         }
         .category-item {
+          gap: 1.75rem;
           display: flex;
         }
         @media screen and (max-width: $breakpointLgForMw) {
