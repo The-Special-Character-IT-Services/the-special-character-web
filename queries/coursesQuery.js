@@ -5,6 +5,10 @@ const CoursesQuery = `{
         title
         description
       }
+      featuredCourse{
+        title
+        id
+      }
       course{
         id
         courseImage{
