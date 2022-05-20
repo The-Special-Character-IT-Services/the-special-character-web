@@ -1,3 +1,4 @@
+import EnrollDropdown from '@components/EnrollDropdown';
 import TextInput, { TextInputProps } from '@components/TextInput';
 import styles from '@container/EnrollForm/enrollForm.module.scss';
 import { FieldAttributes, FieldProps, FormikValues } from 'formik';
@@ -207,6 +208,26 @@ export const enrollFields: any = [
     divClassName: `${styles.textInput}`,
     component: TextInput,
   },
+  {
+    name: 'technologyInterests',
+    label: 'Technology Interests',
+    component: EnrollDropdown,
+    divClassName: `${styles.textInput}`,
+  },
+  {
+    name: 'courseEnrollingfor',
+    label: 'Course Enrolling for',
+    component: EnrollDropdown,
+    divClassName: `${styles.textInput}`,
+  },
+  {
+    name: 'image-upload',
+    label: 'Upload photo',
+    type: 'file',
+    placeholder: 'Enter your twitter ID ',
+    divClassName: `${styles.textInput} ${styles.imageUpload}`,
+    component: TextInput,
+  },
 ];
 
 export const enrollInitialValues = {
@@ -225,4 +246,6 @@ export const enrollInitialValues = {
   instagram: '',
   linkedin: '',
   twitter: '',
+  technologyInterests: '',
+  courseEnrollingfor: '',
 };
