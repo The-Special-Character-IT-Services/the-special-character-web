@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+
+.enrollForm {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2.5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.textInput {
+  width: 400px;
+}
+@media screen and (max-width: $breakpointLgForMw) {
+  .textInput {
+    width: 300px;
+  }
+}
+@media screen and (max-width: $breakpointMdForMw) {
+  .enrollForm {
+    grid-template-columns: 1fr;
+  }
+  .textInput {
+    width: 500px;
+  }
+}
+@media screen and (max-width: $breakpointSmForMw) {
+  .textInput {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: $breakpointMd) {
+  .textInputCol {
+    grid-column: 1/3;
+  }
+}
