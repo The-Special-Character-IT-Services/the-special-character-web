@@ -19,7 +19,7 @@ interface Props {
 const SingleCourseSection = ({ data }: Props) => {
   const goToContact = () => {
     router.push({
-      pathname: '/contact',
+      pathname: '/enroll',
       query: {
         value: data?.title,
       },
