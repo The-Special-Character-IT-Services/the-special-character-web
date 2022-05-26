@@ -9,7 +9,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  if (req.method === 'POST') {
+  if (req.method === 'GET') {
     // Process a POST request
     res.status(200).json({ name: 'John Doe' })
   }
