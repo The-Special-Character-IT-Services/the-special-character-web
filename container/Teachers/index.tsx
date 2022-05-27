@@ -13,9 +13,6 @@ interface Props {
 }
 
 const Teachers = ({ data }: Props) => {
-  console.log(`teacher's data`, data);
-  console.log('first name', data?.teacher?.image?.url);
-
   return (
     <section className="featured-teacher">
       <div className="container-default">
