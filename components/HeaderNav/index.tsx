@@ -77,8 +77,8 @@ const HeaderNav = (props: Props) => {
             <li className={classnames('nav-item-wrapper', styles.navLink)}>
               <Typography
                 variant="a"
-                href="/blog"
-                className={pathname === '/blog' ? styles.active : undefined}
+                href="/blogs"
+                className={pathname === '/blogs' ? styles.active : undefined}
                 aria-current="page">
                 Blog
               </Typography>
