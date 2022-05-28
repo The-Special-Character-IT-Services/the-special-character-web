@@ -8,6 +8,8 @@ interface Props {
 }
 
 const FAQs = ({ data }: Props) => {
+  console.log(data?.contactPage?.faqsAccordian);
+
   return (
     <section className="faqs">
       <div className="container-small">
@@ -21,12 +23,9 @@ const FAQs = ({ data }: Props) => {
       <div className="container-medium">
         {data?.contactPage?.faqsAccordian?.map(x => {
           return (
-            <Accordian
-              key={x.id}
-              className={styles.mr0}
-              label={x?.title}
-              // children={x?.description}
-            />
+            <Accordian key={x.id} className={styles.mr0} label={x?.title}>
+              {x?.description}
+            </Accordian>
           );
         })}
       </div>
