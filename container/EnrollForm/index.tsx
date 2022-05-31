@@ -1,12 +1,6 @@
 import styles from './enrollForm.module.scss';
 import Typography from '@components/Typography';
-import Button from '@components/Button';
-import Card from '@components/Card';
-import classnames from 'classnames';
-import Image from 'next/image';
-import { ErrorMessage, useFormik } from 'formik';
 import { useRouter } from 'next/router';
-import { EnrollPageType } from 'types';
 import Form from '@components/Form';
 import {
   enrollFields,
@@ -34,7 +28,6 @@ const EnrollFrom = () => {
                   className={styles.enrollForm}
                   initialValues={{
                     ...enrollInitialValues,
-                    message: `${router?.query?.value}`,
                   }}
                   onSubmit={async values => {
                     console.log(values);
