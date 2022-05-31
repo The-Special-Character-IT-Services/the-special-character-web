@@ -42,7 +42,7 @@ const ContactForm = ({ data }: Props) => {
                   className={styles.contactForm}
                   initialValues={{
                     ...contactInitialValues,
-                    message: `${router?.query?.value}`,
+                    // message: `${router?.query?.value}`,
                   }}
                   onSubmit={async values => {
                     console.log(values);
