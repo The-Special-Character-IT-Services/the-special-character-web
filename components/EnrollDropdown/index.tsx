@@ -120,6 +120,7 @@ const EnrollDropdown = ({ ...props }) => {
           {list.map((item, index) => {
             return (
               <EnrollFieldChecked
+                key={index}
                 item={item}
                 index={index}
                 checked={item.isChecked}
