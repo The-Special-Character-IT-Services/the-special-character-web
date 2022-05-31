@@ -1,8 +1,123 @@
+import DatePickerField from '@components/DatePickerComponent';
 import EnrollDropdown from '@components/EnrollDropdown';
-import TextInput, { TextInputProps } from '@components/TextInput';
+import TextInput from '@components/TextInput';
+import UploadeImage from '@components/UploadImage';
 import styles from '@container/EnrollForm/enrollForm.module.scss';
-import { FieldAttributes, FieldProps, FormikValues } from 'formik';
-import { ComponentType } from 'react';
+import { FieldAttributes, FormikValues } from 'formik';
+import { useState } from 'react';
+
+const CheckBox = () => {
+  const [checked, setChecked] = useState(false);
+  return (
+    <>
+      <div className="gridColumn">
+        <input
+          type="checkbox"
+          value="Use different address"
+          onClick={() => setChecked(!checked)}
+        />
+        <label>Use different address</label>
+      </div>
+      {checked && (
+        <>
+          <div className={`${styles.textInput} input-wrapper`}>
+            <label className="label">Street Address 1</label>
+            <input
+              className="contactInput"
+              type="text"
+              placeholder="Ex. 206, The Special Character"
+            />
+          </div>
+          <div className={`${styles.textInput} input-wrapper`}>
+            <label className="label">Street Address 2</label>
+            <input
+              className="contactInput"
+              type="text"
+              placeholder="Ex. Jagatpur Road"
+            />
+          </div>
+          <div className={`${styles.textInput} input-wrapper`}>
+            <label className="label">City</label>
+            <input
+              className="contactInput"
+              type="text"
+              placeholder="Ex. Ahmedabad"
+            />
+          </div>
+          <div className={`${styles.textInput} input-wrapper`}>
+            <label className="label">State</label>
+            <input
+              className="contactInput"
+              type="text"
+              placeholder="Ex. Gujarat"
+            />
+          </div>
+          <div className={`${styles.textInput} input-wrapper gridColumn`}>
+            <label className="label">Country</label>
+            <input
+              className="contactInput"
+              type="text"
+              placeholder="Ex. India"
+            />
+          </div>
+        </>
+      )}
+      <style jsx>
+        {`
+          @import './../styles/variables.scss';
+          .input-wrapper {
+            & > label {
+              display: block;
+              margin-bottom: 1rem;
+              color: $Neutral700;
+              line-height: 1.111em;
+              font-weight: 700;
+            }
+            & > .contactInput {
+              min-height: 4rem;
+              max-width: 100%;
+              min-width: 100%;
+              margin-bottom: 0px;
+              padding-right: 1.875rem;
+              padding-left: 1.875rem;
+              border: 1px solid transparent;
+              border-radius: 6.25rem;
+              background-color: $Neutral200;
+              color: $Neutral800;
+              font-size: 18px;
+              line-height: 1.111em;
+              &:hover,
+              &:focus {
+                border-color: $Neutral400;
+                transition-duration: 300ms;
+                outline: 0;
+              }
+              &.error {
+                border-color: $danger;
+              }
+            }
+          }
+          .gridColumn {
+            grid-column: 1/3;
+          }
+          @media screen and (max-width: $breakpointMd) {
+            .gridColumn {
+              grid-column: 1/2;
+            }
+          }
+          @media screen and (max-width: $breakpointSm) {
+            .input-wrapper {
+              & > .contactInput {
+                padding-right: 0.9rem;
+                padding-left: 0.9rem;
+              }
+            }
+          }
+        `}
+      </style>
+    </>
+  );
+};
 
 export type EnrollFieldType = {
   name: string;
@@ -18,11 +133,14 @@ export type EnrollInitialType = {
   dob: string;
   college: string;
   enrollmentNumber: string;
-  homeAddress: string;
+  streetAddress1: string;
+  streetAddress2: string;
+  city: string;
+  state: string;
+  country: string;
   guardianName: string;
   guardianPhoneNumber: string;
   currentResidentialAddress: string;
-  bloodGroup: string;
   medicalNotes: string;
   email: string;
   fb: string;
@@ -54,8 +172,7 @@ export const enrollFields: any = [
     label: 'Date of Birth',
     placeholder: 'Ex.DD/MM/YYYY',
     divClassName: `${styles.textInput}`,
-    component: TextInput,
-    type: '',
+    component: DatePickerField,
     validate: (value: string) => {
       if (!value) {
         return 'Please Enter Date of Birth.';
@@ -90,32 +207,73 @@ export const enrollFields: any = [
     },
   },
   {
-    name: 'homeAddress',
-    divClassName: `${styles.textInputCol}`,
-    label: 'Home Address',
-    placeholder: 'Write your home address here...',
+    name: 'streetAddress1',
+    divClassName: `${styles.textInput}`,
+    label: 'Street Address 1',
+    placeholder: 'Ex. B-206,The Special Character',
     component: TextInput,
-    isTextArea: true,
     validate: (value: string) => {
       if (!value) {
-        return 'Please Enter Home Address.';
+        return 'Please Enter Street Address.';
+      }
+      return '';
+    },
+  },
+  {
+    name: 'streetAddress2',
+    divClassName: `${styles.textInput}`,
+    label: 'Street Address 2',
+    placeholder: 'Ex. Jagatpur Road',
+    component: TextInput,
+    validate: (value: string) => {
+      if (!value) {
+        return 'Please Enter Street Address.';
+      }
+      return '';
+    },
+  },
+  {
+    name: 'city',
+    divClassName: `${styles.textInput}`,
+    label: 'City',
+    placeholder: 'Ex. Ahmedabad',
+    component: TextInput,
+    validate: (value: string) => {
+      if (!value) {
+        return 'Please Enter City.';
+      }
+      return '';
+    },
+  },
+  {
+    name: 'state',
+    divClassName: `${styles.textInput}`,
+    label: 'State',
+    placeholder: 'Ex. Gujarat',
+    component: TextInput,
+    validate: (value: string) => {
+      if (!value) {
+        return 'Please Enter State.';
+      }
+      return '';
+    },
+  },
+  {
+    name: 'country',
+    divClassName: `${styles.textInput}`,
+    label: 'Country',
+    placeholder: 'Ex. India',
+    component: TextInput,
+    validate: (value: string) => {
+      if (!value) {
+        return 'Please Enter Country.';
       }
       return '';
     },
   },
   {
     name: 'currentResidentialAddress',
-    divClassName: `${styles.textInputCol}`,
-    label: 'Current Residential Address',
-    placeholder: 'Write your current residential address here...',
-    component: TextInput,
-    isTextArea: true,
-    validate: (value: string) => {
-      if (!value) {
-        return 'Please Enter Current Residential Address.';
-      }
-      return '';
-    },
+    component: CheckBox,
   },
   {
     name: 'guardianName',
@@ -140,20 +298,6 @@ export const enrollFields: any = [
     validate: (value: string) => {
       if (!value) {
         return 'Please Enter Guardian Phone Number.';
-      }
-      return '';
-    },
-  },
-
-  {
-    name: 'bloodGroup',
-    label: 'Blood Group',
-    placeholder: 'Ex. O positive',
-    divClassName: `${styles.textInput}`,
-    component: TextInput as React.ComponentType,
-    validate: (value: string) => {
-      if (!value) {
-        return 'Please Enter Your Blood Group.';
       }
       return '';
     },
@@ -209,13 +353,15 @@ export const enrollFields: any = [
     component: TextInput,
   },
   {
-    name: 'technologyInterests',
+    name: 'Choose Options',
+    placeholder: 'Choose Options',
     label: 'Technology Interests',
     component: EnrollDropdown,
     divClassName: `${styles.textInput}`,
   },
   {
-    name: 'courseEnrollingfor',
+    name: 'Choose Options',
+    placeholder: 'Choose Options',
     label: 'Course Enrolling for',
     component: EnrollDropdown,
     divClassName: `${styles.textInput}`,
@@ -223,10 +369,14 @@ export const enrollFields: any = [
   {
     name: 'image-upload',
     label: 'Upload photo',
-    type: 'file',
-    placeholder: 'Enter your twitter ID ',
     divClassName: `${styles.textInput} ${styles.imageUpload}`,
-    component: TextInput,
+    component: UploadeImage,
+  },
+  {
+    name: 'image-upload',
+    label: 'Upload Aadhar',
+    divClassName: `${styles.textInput} ${styles.imageUpload}`,
+    component: UploadeImage,
   },
 ];
 
@@ -235,11 +385,14 @@ export const enrollInitialValues = {
   dob: '',
   college: '',
   enrollmentNumber: '',
-  homeAddress: '',
+  streetAddress1: '',
+  streetAddress2: '',
+  city: '',
+  state: '',
+  country: '',
   guardianName: '',
   guardianPhoneNumber: '',
   currentResidentialAddress: '',
-  bloodGroup: '',
   medicalNotes: '',
   email: '',
   fb: '',

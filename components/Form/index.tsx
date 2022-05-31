@@ -34,7 +34,7 @@ const Form = <Values extends FormikValues = FormikValues>({
             {fields.map(x => (
               <FastField key={x.name} {...x} />
             ))}
-            <Button type="submit" isDisabled={isSubmitting}>
+            <Button id="submit" type="submit" isDisabled={isSubmitting}>
               {isSubmitting ? 'Please Wait...' : 'Submit'}
             </Button>
           </FormikForm>
