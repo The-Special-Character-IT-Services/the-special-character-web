@@ -1,7 +1,8 @@
+import ConnectComponent from '@components/ConnectComponent';
 import React from 'react';
 
 const Connect = () => {
-  return <div>Connect</div>;
+  return <ConnectComponent />;
 };
 
 export default Connect;

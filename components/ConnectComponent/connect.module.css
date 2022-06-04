@@ -1,0 +1,106 @@
+.connect-component{
+    width: 60%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tsc-logo{
+    width: 20%;
+    height: auto;
+}
+
+.tsc-logo img{
+    width: 100%;
+    height: auto;
+}
+
+.connect-component h2{
+    font-size: 1.2rem;
+    margin: 0rem;
+    margin-top: 1rem;
+    text-align: center;
+    padding: 0rem;
+    line-height: inherit;
+}
+
+.connect-component h3{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.connect-component h3{
+    text-align: center;
+}
+
+.tile{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 236, 236);
+    border: 2px solid rgb(236, 236, 236);
+    margin-top: 1rem;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.connect-component a{
+    width: 100%;
+}
+
+.tile p{
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    padding: 0rem;
+    margin: 0rem;
+    transition: color 0.3s ease;
+}
+
+.tile:hover, .social-media a:hover{
+    background-color: black;
+    transition: background-color 0.3s ease;
+}
+
+.tile:hover p{
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-media{
+    width: 100%;
+    max-width: 200px;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social-media a{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 236, 236);
+    border: 2px solid rgb(236, 236, 236);
+    border-radius: 100%;
+}
+
+
+.social-media a svg{
+    width: 20px;
+    height: 20px;
+    fill: black;
+}
+
+.social-media a:hover svg{
+    fill: white;
+    transition: fill 0.3s ease;
+}
