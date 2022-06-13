@@ -36,9 +36,6 @@
   color: $Neutral600 !important;
   text-decoration: none !important;
 }
-.officeImage {
-  margin-top: -6.75rem !important;
-}
 @media screen and (max-width: $breakpointLgForMw) {
   .cardOffice {
     max-width: 576px;
@@ -53,9 +50,6 @@
     padding-top: 1.75rem;
     padding-bottom: 2rem;
   }
-  .officeImage {
-    margin-top: -4rem !important;
-  }
 }
 @media screen and (max-width: $breakpointSmForMw) {
   .cardOffice {
@@ -64,8 +58,5 @@
   }
   .officeTitle {
     margin-bottom: 0.75rem;
-  }
-  .officeImage {
-    margin-top: -2rem !important;
   }
 }

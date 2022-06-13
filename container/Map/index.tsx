@@ -65,7 +65,7 @@ const Map = ({ data }: Props) => {
         <Image
           alt="Office"
           width={1460}
-          height={680}
+          height={780}
           src={`${data?.mapImage?.url}`}
           className={styles.officeImage}
         />
@@ -101,6 +101,7 @@ const Map = ({ data }: Props) => {
             margin-right: auto;
             margin-left: auto;
             justify-content: center;
+            margin-bottom: -10rem;
           }
           .card-office-content {
             display: flex;
@@ -140,6 +141,9 @@ const Map = ({ data }: Props) => {
             .bg-primary-1 {
               right: -66px;
             }
+            .office-card-wrapper {
+              margin-bottom: -7rem;
+            }
           }
           @media screen and (max-width: $breakpointSmForMw) {
             .map {
@@ -156,6 +160,9 @@ const Map = ({ data }: Props) => {
             .bg-primary-1 {
               right: -77px;
               bottom: -58px;
+            }
+            .office-card-wrapper {
+              margin-bottom: 0rem;
             }
           }
         `}
