@@ -59,7 +59,7 @@ const Typography = ({ variant, className, ...props }: Props, ref: any) => {
         {`
           @import './styles/variables.scss';
           .commonHeading {
-            font-family: $newsReaderFont;
+            font-family: $subordinateFont;
             margin-top: 0;
             font-weight: bold;
           }
@@ -71,13 +71,13 @@ const Typography = ({ variant, className, ...props }: Props, ref: any) => {
             color: $Neutral800;
             font-size: var(--fs-h1);
             line-height: 1.3em;
-            font-family: $newsReaderFont;
+            font-family: $subordinateFont;
           }
           .typography--class-h2 {
             color: $Neutral800;
             font-size: var(--fs-h2);
             line-height: 1.289em;
-            font-family: $newsReaderFont;
+            font-family: $subordinateFont;
           }
           .typography--class-h3 {
             color: $Neutral700;
