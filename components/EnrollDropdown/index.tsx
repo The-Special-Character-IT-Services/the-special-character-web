@@ -9,7 +9,6 @@ const EnrollFieldChecked = ({ ...props }) => {
   const { item, index, checked } = props;
   const [isChecked, setIsChecked] = useState(checked);
 
-  console.log('IS CHECKED :::: ', isChecked, index, item.id);
   return (
     <div className="listDiv" onClick={() => setIsChecked(!isChecked)}>
       {isChecked ? (
@@ -95,6 +94,7 @@ const EnrollDropdown = ({ ...props }) => {
       isChecked: false,
     },
   ];
+
   return (
     <div className={`${styles.dropdownDiv} ${divClassName} `}>
       <Typography variant="label">{label}</Typography>
@@ -135,6 +135,7 @@ const EnrollDropdown = ({ ...props }) => {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          cursor: pointer;
         }
         .showDropdown {
           border: solid;
@@ -144,6 +145,8 @@ const EnrollDropdown = ({ ...props }) => {
           border-end-end-radius: 2rem;
           padding: 2rem 1.7rem;
           width: 400px;
+          height: 300px;
+          overflow-y: scroll;
           box-shadow: 0 5px 5px #62778f;
           position: absolute;
           background-color: #fff;
@@ -151,7 +154,9 @@ const EnrollDropdown = ({ ...props }) => {
           display: flex;
           flex-direction: column;
         }
-
+        .showDropdown::-webkit-scrollbar {
+          width: 10px;
+        }
         @media screen and (max-width: $breakpointLgForMw) {
           .showDropdown {
             width: 300px;

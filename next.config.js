@@ -1,27 +1,27 @@
-const withPWA = require('next-pwa');
-module.exports = withPWA({
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
-      'assets.website-files.com',
-      '4f22-202-131-101-178.ngrok.io',
-      'localhost',
-      'the-special-character-web-api.herokuapp.com',
-      'ik.imagekit.io',
+      "tailwindui.com",
+      "images.unsplash.com",
+      "res.cloudinary.com",
+      "placeimg.com",
+      "assets.website-files.com",
+      "ik.imagekit.io"
     ],
+    formats: ["image/avif", "image/webp"],
   },
-  // experimental: {
-  //   runtime: 'nodejs',
-  //   serverComponents: true,
-  // },
-  ignoreBuildErrors: true,
-  pwa: {
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-    disable: process.env.NODE_ENV === 'development',
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
+    return config;
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-});
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  swcMinify: true,
+};
+
+module.exports = nextConfig;
