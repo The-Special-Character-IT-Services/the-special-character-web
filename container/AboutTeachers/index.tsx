@@ -47,7 +47,7 @@ const AboutTeachers = ({ data }: Props) => {
                   key={x.id}
                   variant="cardHover"
                   className={styles.singleCard}>
-                  {/* <div>
+                  <div>
                     <Image
                       layout="responsive"
                       src={x?.image?.url}
@@ -55,7 +55,7 @@ const AboutTeachers = ({ data }: Props) => {
                       width={349}
                       alt={x.firstName}
                     />
-                  </div> */}
+                  </div>
                   <div className={styles.description}>
                     <Typography variant="h3">{`${x?.firstName} ${x?.lastName}`}</Typography>
                     <Typography>{x?.description}</Typography>

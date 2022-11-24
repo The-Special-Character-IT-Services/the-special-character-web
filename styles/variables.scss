@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
 $breakpointSm: 576px;
 $breakpointMd: 768px;
 $breakpointLg: 992px;
@@ -32,4 +35,5 @@ $info: #17a2b8;
 $warning: #ffc107;
 $danger: #dc3545;
 $light: #f8f9fa;
-$newsReaderFont: Newsreader, sans-serif;
+$subordinateFont: 'Merriweather', serif;
+$mainFont: 'PT Sans', sans-serif;
